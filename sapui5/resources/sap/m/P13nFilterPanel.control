@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>P13nFilterPanel</name>
+    <derived/>
+    <documentation>The P13nFilterPanel control is used to define filter-specific settings for table personalization.</documentation>
+    <since>1.26.0</since>
+    <baseType>sap.m/P13nPanel</baseType>
+    <properties>
+        <property group="Misc" defaultValue="-1" type="sap.ui.core/string" name="maxIncludes">
+            <documentation>Defines the maximum number of include filters.</documentation>
+        </property>
+        <property group="Misc" defaultValue="-1" type="sap.ui.core/string" name="maxExcludes">
+            <documentation>Defines the maximum number of exclude filters.</documentation>
+        </property>
+        <property group="Misc" defaultValue="false" type="sap.ui.core/boolean" name="containerQuery">
+            <documentation>Defines if the &lt;code&gt;mediaQuery&lt;/code&gt; or a &lt;code&gt;ContainerResize&lt;/code&gt; is used for layout update. If the
+&lt;code&gt;ConditionPanel&lt;/code&gt; is used in a dialog, the property must be set to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property group="Misc" type="sap.ui.core/string" name="layoutMode">
+            <documentation>Can be used to control the layout behavior. Default is &quot;&quot; which will automatically change the layout. With &quot;Desktop&quot;, &quot;Table&quot;
+or&quot;Phone&quot; you can set a fixed layout.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="addFilterItem">
+            <documentation>Event raised if a filter item has been added.</documentation>
+        </event>
+        <event allowPreventDefault="false" name="removeFilterItem">
+            <documentation>Event raised if a filter item has been removed.</documentation>
+        </event>
+        <event allowPreventDefault="false" name="updateFilterItem">
+            <documentation>Event raised if a filter item has been updated.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation visibility="hidden" cardinality="0..n" type="sap.ui.core/Control" name="content">
+            <documentation>Contains content for include and exclude panels.</documentation>
+        </aggregation>
+        <aggregation bindable="bindable" cardinality="0..n" type="sap.m/P13nFilterItem" name="filterItems">
+            <documentation>Defines filter items.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

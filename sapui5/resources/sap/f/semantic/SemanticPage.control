@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/SemanticPage</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An enhanced {@link sap.f.DynamicPage}, that contains controls with semantic-specific meaning.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+Content specified in the &lt;code&gt;sap.f.semantic.SemanticPage&lt;/code&gt; aggregations is automatically
+positioned in dedicated sections of the title or the footer of the page, depending on
+the control's semantics.
+
+The actions in the &lt;code&gt;SemanticPage&lt;/code&gt; title are grouped to text actions or icon actions.
+When an aggregation is set, the actions appear in the following predefined order (from left to right):
+
+&lt;ul&gt;Text actions:
+&lt;li&gt;The main semantic text action - &lt;code&gt;titleMainAction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Any custom text actions - &lt;code&gt;titleCustomTextActions&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The semantic text actions - &lt;code&gt;addAction&lt;/code&gt;, &lt;code&gt;deleteAction&lt;/code&gt;, and &lt;code&gt;copyAction&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;ul&gt;Icon actions:
+&lt;li&gt;Any custom icon actions - &lt;code&gt;titleCustomIconActions&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The simple semantic icon actions - &lt;code&gt;favoriteAction&lt;/code&gt; and &lt;code&gt;flagAction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The share menu semantic icon actions as a drop-down list with the following order:
+	&lt;ul&gt;&lt;li&gt;&lt;code&gt;sendEmailAction&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;discussInJamAction&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;shareInJamAction&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;sendMessageAction&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;printAction&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;Any &lt;code&gt;customShareActions&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;The navigation semantic actions - &lt;code&gt;fullScreenAction&lt;/code&gt;, &lt;code&gt;exitFullScreenAction&lt;/code&gt;,
+and &lt;code&gt;closeAction&lt;/li&gt;&lt;/code&gt;&lt;/ul&gt;
+
+The actions in the &lt;code&gt;SemanticPage&lt;/code&gt; footer are positioned either on its left or right area and have the following predefined order:
+
+&lt;ul&gt;Footer left area:
+&lt;li&gt;The semantic text action - &lt;code&gt;messagesIndicator&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The semantic label - &lt;code&gt;draftIndicator&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;ul&gt;Footer right area:
+&lt;li&gt;The main semantic text action - &lt;code&gt;footerMainAction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The semantic text actions - &lt;code&gt;positiveAction&lt;/code&gt; and &lt;code&gt;negativeAction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Any custom text actions - &lt;code&gt;footerCustomActions&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+Using the &lt;code&gt;SemanticPage&lt;/code&gt; facilitates the implementation of the SAP Fiori 2.0 design guidelines.
+
+&lt;h3&gt;Responsive behavior&lt;/h3&gt;
+
+The responsive behavior of the &lt;code&gt;SemanticPage&lt;/code&gt; depends on the behavior of the content that is displayed.</documentation>
+    <since>1.46.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Behavior" defaultValue="true" type="sap.ui.core/boolean" name="headerExpanded">
+            <documentation>Determines whether the header is expanded.
+
+The header can be also expanded/collapsed by user interaction,
+which requires the property to be internally mutated by the control to reflect the changed state.
+
+&lt;b&gt;Note:&lt;/b&gt; Please be aware, that initially collapsed header state is not supported,
+so &lt;code&gt;headerExpanded&lt;/code&gt; should not be set to &lt;code&gt;false&lt;/code&gt; when initializing the control.</documentation>
+        </property>
+        <property group="Behavior" defaultValue="true" type="sap.ui.core/boolean" name="headerPinnable">
+            <documentation>Determines whether the header is pinnable.</documentation>
+        </property>
+        <property group="Behavior" defaultValue="false" type="sap.ui.core/boolean" name="preserveHeaderStateOnScroll">
+            <documentation>Preserves the current header state when scrolling.
+
+For example, if the user expands the header by clicking on the title
+and then scrolls down the page, the header will remain expanded.
+
+&lt;b&gt;Note:&lt;/b&gt; Based on internal rules, the value of the property is not always taken into account - for example,
+when the control is rendered on tablet or mobile and the title and the header
+are with height larger than a given threshold.</documentation>
+        </property>
+        <property group="Behavior" defaultValue="true" type="sap.ui.core/boolean" name="toggleHeaderOnTitleClick">
+            <documentation>Determines whether the the user can switch between the expanded/collapsed states of the
+header by clicking on the title.
+
+If set to &lt;code&gt;false&lt;/code&gt;, the title is not clickable and the application
+must provide other means for expanding/collapsing the header, if necessary.</documentation>
+        </property>
+        <property group="Behavior" defaultValue="false" type="sap.ui.core/boolean" name="showFooter">
+            <documentation>Determines whether the footer is visible.</documentation>
+        </property>
+    </properties>
+    <aggregations default="content">
+        <aggregation cardinality="0..1" type="sap.ui.core/Control" name="titleHeading">
+            <documentation>The &lt;code&gt;SemanticPage&lt;/code&gt; heading.
+
+A typical usage is the &lt;code&gt;sap.m.Title&lt;/code&gt; or any other UI5 control,
+that serves as a heading for an object.
+
+&lt;b&gt;Note:&lt;/b&gt; The control will be placed in the title`s leftmost area.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..n" type="sap.ui.core/Control" name="titleSnappedContent">
+            <documentation>The content, displayed in the title, when the header is in collapsed state.
+
+&lt;b&gt;Note:&lt;/b&gt; The controls will be placed in the title`s middle area.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..n" type="sap.ui.core/Control" name="titleExpandedContent">
+            <documentation>The content,displayed in the title, when the header is in expanded state.
+
+&lt;b&gt;Note:&lt;/b&gt; The controls will be placed in the title`s middle area.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/TitleMainAction" name="titleMainAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;SemanticPage&lt;/code&gt; title as first action.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/AddAction" name="addAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;TextActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/DeleteAction" name="deleteAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;TextActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/CopyAction" name="copyAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;TextActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/FlagAction" name="flagAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/FavoriteAction" name="favoriteAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/FullScreenAction" name="fullScreenAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/ExitFullScreenAction" name="exitFullScreenAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/CloseAction" name="closeAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..n" type="sap.m/Button" name="titleCustomTextActions">
+            <documentation>The &lt;code&gt;titleCustomTextActions&lt;/code&gt; are placed in the &lt;code&gt;TextActions&lt;/code&gt; area of the
+&lt;code&gt;SemanticPage&lt;/code&gt; title, right before the semantic text action.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..n" type="sap.m/OverflowToolbarButton" name="titleCustomIconActions">
+            <documentation>The &lt;code&gt;titleCustomIconActions&lt;/code&gt; are placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the
+&lt;code&gt;SemanticPage&lt;/code&gt; title, right before the semantic icon action.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..n" type="sap.ui.core/Control" name="headerContent">
+            <documentation>The header content.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.ui.core/Control" name="content">
+            <documentation>The &lt;code&gt;SemanticPage&lt;/code&gt; content.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/FooterMainAction" name="footerMainAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;FooterRight&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt;
+footer with default text value set to &lt;code&gt;Save&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/MessagesIndicator" name="messagesIndicator">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;FooterLeft&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt;
+footer as a first action.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.m/DraftIndicator" name="draftIndicator">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;FooterLeft&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt;
+footer as a second action.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/PositiveAction" name="positiveAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;FooterRight&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt;
+footer with default text value set to &lt;code&gt;Accept&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/NegativeAction" name="negativeAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;FooterRight&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt;
+footer with default text value set to &lt;code&gt;Reject&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..n" type="sap.m/Button" name="footerCustomActions">
+            <documentation>The &lt;code&gt;footerCustomActions&lt;/code&gt; are placed in the &lt;code&gt;FooterRight&lt;/code&gt; area of the
+&lt;code&gt;SemanticPage&lt;/code&gt; footer, right after the semantic footer actions.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/DiscussInJamAction" name="discussInJamAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.m/Button" name="saveAsTileAction">
+            <documentation>A button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/ShareInJamAction" name="shareInJamAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/SendMessageAction" name="sendMessageAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/SendEmailAction" name="sendEmailAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.f/semantic/PrintAction" name="printAction">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation cardinality="0..n" type="sap.m/Button" name="customShareActions">
+            <documentation>The &lt;code&gt;customShareActions&lt;/code&gt; are placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the
+&lt;code&gt;SemanticPage&lt;/code&gt; title, right after the the semantic actions.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.f/DynamicPage" name="_dynamicPage">
+            <documentation>The aggregation holds &lt;code&gt;DynamicPage&lt;/code&gt;, used internally.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

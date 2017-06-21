@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Tokenizer</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>&lt;h3&gt;Overview&lt;/h3&gt;
+A tokenizer is a container for {@link sap.m.Token Tokens}. It also handles all actions associated with the tokens like adding, deleting, selecting and editing.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The tokens are stored in the &lt;code&gt;tokens&lt;/code&gt; aggregation.
+The tokenizer can determine, by setting the &lt;code&gt;editable&lt;/code&gt; property, whether the tokens in it are editable.
+Still the Token itself can determine if it is &lt;code&gt;editable&lt;/code&gt;. This allows you to have non-editable Tokens in an editable Tokenizer.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+The tokenizer can only be used as part of {@link sap.m.MultiComboBox MultiComboBox},{@link sap.m.MultiInput MultiInput} or {@link sap.ui.comp.valuehelpdialog.ValueHelpDialog ValueHelpDialog}</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Misc" defaultValue="true" type="sap.ui.core/boolean" name="editable">
+            <documentation>true if tokens shall be editable otherwise false</documentation>
+        </property>
+        <property group="Dimension" type="sap.ui.core/CSSSize" name="width">
+            <documentation>Defines the width of the Tokenizer.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="tokenChange">
+            <documentation>fired when the tokens aggregation changed (add / remove token)</documentation>
+            <parameters>
+                <parameter type="sap.ui.core/string" name="type">
+                    <documentation>type of tokenChange event.
+There are four TokenChange types: &quot;added&quot;, &quot;removed&quot;, &quot;removedAll&quot;, &quot;tokensChanged&quot;.
+Use Tokenizer.TokenChangeType.Added for &quot;added&quot;,	Tokenizer.TokenChangeType.Removed for &quot;removed&quot;, Tokenizer.TokenChangeType.RemovedAll for &quot;removedAll&quot; and Tokenizer.TokenChangeType.TokensChanged for &quot;tokensChanged&quot;.</documentation>
+                </parameter>
+                <parameter type="sap.m/Token" name="token">
+                    <documentation>the added token or removed token.
+This parameter is used when tokenChange type is &quot;added&quot; or &quot;removed&quot;.</documentation>
+                </parameter>
+                <parameter type="sap.m/Token[]" name="tokens">
+                    <documentation>the array of removed tokens.
+This parameter is used when tokenChange type is &quot;removedAll&quot;.</documentation>
+                </parameter>
+                <parameter type="sap.m/Token[]" name="addedTokens">
+                    <documentation>the array of tokens that are added.
+This parameter is used when tokenChange type is &quot;tokenChanged&quot;.</documentation>
+                </parameter>
+                <parameter type="sap.m/Token[]" name="removedTokens">
+                    <documentation>the array of tokens that are removed.
+This parameter is used when tokenChange type is &quot;tokenChanged&quot;.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event allowPreventDefault="false" name="tokenUpdate">
+            <documentation>Fired when the tokens aggregation changed (add / remove token)</documentation>
+        </event>
+    </events>
+    <aggregations default="tokens">
+        <aggregation cardinality="0..n" type="sap.m/Token" name="tokens">
+            <documentation>the currently displayed tokens</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association cardinality="0..n" type="sap.ui.core/Control" name="ariaDescribedBy">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association cardinality="0..n" type="sap.ui.core/Control" name="ariaLabelledBy">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

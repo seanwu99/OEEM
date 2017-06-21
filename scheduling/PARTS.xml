@@ -1,0 +1,5542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Rowsets CachedTime="" DateCreated="2017-06-19T12:18:19" EndDate="2017-06-19T12:18:19" StartDate="2017-06-19T11:18:19"
+         Version="15.0 SP4 Patch 11 (Aug 28, 2015)">
+    <Rowset>
+        <Columns>
+            <Column Description="MOLD" MaxRange="1" MinRange="0" Name="MOLD" SQLDataType="-9" SourceColumn="MOLD"/>
+            <Column Description="SEMI" MaxRange="1" MinRange="0" Name="SEMI" SQLDataType="-9" SourceColumn="SEMI"/>
+            <Column Description="DESCRIPTION" MaxRange="1" MinRange="0" Name="DESCRIPTION" SQLDataType="-9" SourceColumn="DESCRIPTION"/>
+            <Column Description="TOTALPARTS" MaxRange="1" MinRange="0" Name="TOTALPARTS" SQLDataType="4" SourceColumn="TOTALPARTS"/>
+            <Column Description="REJECTPARTS" MaxRange="1" MinRange="0" Name="REJECTPARTS" SQLDataType="4" SourceColumn="REJECTPARTS"/>
+            <Column Description="GOODPARTS" MaxRange="1" MinRange="0" Name="GOODPARTS" SQLDataType="4" SourceColumn="GOODPARTS"/>
+        </Columns>
+        <Row>
+            <MOLD>P049</MOLD>
+            <SEMI>3024010</SEMI>
+            <DESCRIPTION>LR TASSEL</DESCRIPTION>
+            <TOTALPARTS>3650</TOTALPARTS>
+            <REJECTPARTS>124</REJECTPARTS>
+            <GOODPARTS>3526</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M649A</MOLD>
+            <SEMI>3024011</SEMI>
+            <DESCRIPTION>LR LIFT/TILT ROLL</DESCRIPTION>
+            <TOTALPARTS>17936</TOTALPARTS>
+            <REJECTPARTS>1704</REJECTPARTS>
+            <GOODPARTS>16232</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M639</MOLD>
+            <SEMI>3024012</SEMI>
+            <DESCRIPTION>LR CRD HOOD</DESCRIPTION>
+            <TOTALPARTS>26751</TOTALPARTS>
+            <REJECTPARTS>288</REJECTPARTS>
+            <GOODPARTS>26463</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M651</MOLD>
+            <SEMI>3024013</SEMI>
+            <DESCRIPTION>LR LADDER PLY W/GEAR</DESCRIPTION>
+            <TOTALPARTS>20296</TOTALPARTS>
+            <REJECTPARTS>960</REJECTPARTS>
+            <GOODPARTS>19336</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M650</MOLD>
+            <SEMI>3024014</SEMI>
+            <DESCRIPTION>LR LIFT ROLL SUPPORT</DESCRIPTION>
+            <TOTALPARTS>25565</TOTALPARTS>
+            <REJECTPARTS>684</REJECTPARTS>
+            <GOODPARTS>24881</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M653</MOLD>
+            <SEMI>3024015</SEMI>
+            <DESCRIPTION>LRTILTER DRIVE GEAR</DESCRIPTION>
+            <TOTALPARTS>36240</TOTALPARTS>
+            <REJECTPARTS>848</REJECTPARTS>
+            <GOODPARTS>35392</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M649B</MOLD>
+            <SEMI>3024016</SEMI>
+            <DESCRIPTION>LR FAB LIFT ROLL</DESCRIPTION>
+            <TOTALPARTS>517776</TOTALPARTS>
+            <REJECTPARTS>5508</REJECTPARTS>
+            <GOODPARTS>512268</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M654</MOLD>
+            <SEMI>3024017</SEMI>
+            <DESCRIPTION>LR TILT CRADLE</DESCRIPTION>
+            <TOTALPARTS>6296</TOTALPARTS>
+            <REJECTPARTS>104</REJECTPARTS>
+            <GOODPARTS>6192</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M672</MOLD>
+            <SEMI>3024019</SEMI>
+            <DESCRIPTION>LR 1 COAX ADPTR PLAT</DESCRIPTION>
+            <TOTALPARTS>72080</TOTALPARTS>
+            <REJECTPARTS>608</REJECTPARTS>
+            <GOODPARTS>71472</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M657</MOLD>
+            <SEMI>3024020</SEMI>
+            <DESCRIPTION>LR C TRANS INNER CAP</DESCRIPTION>
+            <TOTALPARTS>489504</TOTALPARTS>
+            <REJECTPARTS>2192</REJECTPARTS>
+            <GOODPARTS>487312</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M631</MOLD>
+            <SEMI>3024021</SEMI>
+            <DESCRIPTION>LR SHORT TRAN HSG</DESCRIPTION>
+            <TOTALPARTS>844489</TOTALPARTS>
+            <REJECTPARTS>7126</REJECTPARTS>
+            <GOODPARTS>837363</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M016</MOLD>
+            <SEMI>3024022</SEMI>
+            <DESCRIPTION>LR 2 LIFT ROLL SPRT</DESCRIPTION>
+            <TOTALPARTS>133728</TOTALPARTS>
+            <REJECTPARTS>5322</REJECTPARTS>
+            <GOODPARTS>128406</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M658B</MOLD>
+            <SEMI>3024023</SEMI>
+            <DESCRIPTION>LR 2IN TILT PULLEY</DESCRIPTION>
+            <TOTALPARTS>129327</TOTALPARTS>
+            <REJECTPARTS>1488</REJECTPARTS>
+            <GOODPARTS>127839</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M670</MOLD>
+            <SEMI>3024024</SEMI>
+            <DESCRIPTION>LR 2IN ROLL SPRT CVR</DESCRIPTION>
+            <TOTALPARTS>162197</TOTALPARTS>
+            <REJECTPARTS>19557</REJECTPARTS>
+            <GOODPARTS>142640</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M649C</MOLD>
+            <SEMI>3024025</SEMI>
+            <DESCRIPTION>LR 2IN LIFT/TLT ROLL</DESCRIPTION>
+            <TOTALPARTS>122960</TOTALPARTS>
+            <REJECTPARTS>5033</REJECTPARTS>
+            <GOODPARTS>117927</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M678A</MOLD>
+            <SEMI>3024028</SEMI>
+            <DESCRIPTION>LR 3/8 DUET BR HNDL</DESCRIPTION>
+            <TOTALPARTS>60212</TOTALPARTS>
+            <REJECTPARTS>758</REJECTPARTS>
+            <GOODPARTS>59454</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M673A</MOLD>
+            <SEMI>3024029</SEMI>
+            <DESCRIPTION>LR 3/4 FABRIC BR HND</DESCRIPTION>
+            <TOTALPARTS>198494</TOTALPARTS>
+            <REJECTPARTS>1672</REJECTPARTS>
+            <GOODPARTS>196822</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M676</MOLD>
+            <SEMI>3024031</SEMI>
+            <DESCRIPTION>LRLOCKSEAM BR HNDL</DESCRIPTION>
+            <TOTALPARTS>10334</TOTALPARTS>
+            <REJECTPARTS>2011</REJECTPARTS>
+            <GOODPARTS>8323</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P045</MOLD>
+            <SEMI>3024032</SEMI>
+            <DESCRIPTION>LR BUSHING 1</DESCRIPTION>
+            <TOTALPARTS>2528611</TOTALPARTS>
+            <REJECTPARTS>20731</REJECTPARTS>
+            <GOODPARTS>2507880</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P046</MOLD>
+            <SEMI>3024033</SEMI>
+            <DESCRIPTION>LR BUSHING 2</DESCRIPTION>
+            <TOTALPARTS>2889994</TOTALPARTS>
+            <REJECTPARTS>5884</REJECTPARTS>
+            <GOODPARTS>2884110</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M663</MOLD>
+            <SEMI>3024034</SEMI>
+            <DESCRIPTION>LR CRD TLT DRM</DESCRIPTION>
+            <TOTALPARTS>5220</TOTALPARTS>
+            <REJECTPARTS>140</REJECTPARTS>
+            <GOODPARTS>5080</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M656</MOLD>
+            <SEMI>3024035</SEMI>
+            <DESCRIPTION>LR CRD TILT HSG</DESCRIPTION>
+            <TOTALPARTS>15302</TOTALPARTS>
+            <REJECTPARTS>1815</REJECTPARTS>
+            <GOODPARTS>13487</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M664</MOLD>
+            <SEMI>3024037</SEMI>
+            <DESCRIPTION>LR COAX TRANSOUT CVR</DESCRIPTION>
+            <TOTALPARTS>545836</TOTALPARTS>
+            <REJECTPARTS>2272</REJECTPARTS>
+            <GOODPARTS>543564</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M677</MOLD>
+            <SEMI>3024038</SEMI>
+            <DESCRIPTION>LR C2 TRANS ADPT PLT</DESCRIPTION>
+            <TOTALPARTS>47782</TOTALPARTS>
+            <REJECTPARTS>3352</REJECTPARTS>
+            <GOODPARTS>44430</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M856</MOLD>
+            <SEMI>3024044</SEMI>
+            <DESCRIPTION>LUM SCISSORARM-MALE</DESCRIPTION>
+            <TOTALPARTS>1779296</TOTALPARTS>
+            <REJECTPARTS>39473</REJECTPARTS>
+            <GOODPARTS>1739823</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M937</MOLD>
+            <SEMI>3024045</SEMI>
+            <DESCRIPTION>LUM SCISSORARM-FEML</DESCRIPTION>
+            <TOTALPARTS>1780189</TOTALPARTS>
+            <REJECTPARTS>313886</REJECTPARTS>
+            <GOODPARTS>1466303</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M443</MOLD>
+            <SEMI>3024045</SEMI>
+            <DESCRIPTION>LUM SCISSORARM-FEML</DESCRIPTION>
+            <TOTALPARTS>234704</TOTALPARTS>
+            <REJECTPARTS>3130</REJECTPARTS>
+            <GOODPARTS>231574</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P052</MOLD>
+            <SEMI>3024054</SEMI>
+            <DESCRIPTION>LR C2 MOTOR LCK</DESCRIPTION>
+            <TOTALPARTS>88504</TOTALPARTS>
+            <REJECTPARTS>142</REJECTPARTS>
+            <GOODPARTS>88362</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M669</MOLD>
+            <SEMI>3024062</SEMI>
+            <DESCRIPTION>LR 2 TRANS INNER CAP</DESCRIPTION>
+            <TOTALPARTS>70696</TOTALPARTS>
+            <REJECTPARTS>232</REJECTPARTS>
+            <GOODPARTS>70464</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M675</MOLD>
+            <SEMI>3024064</SEMI>
+            <DESCRIPTION>LR 2IN TRANS HSG</DESCRIPTION>
+            <TOTALPARTS>60996</TOTALPARTS>
+            <REJECTPARTS>2917</REJECTPARTS>
+            <GOODPARTS>58079</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P051</MOLD>
+            <SEMI>3024066</SEMI>
+            <DESCRIPTION>LR BUSHING 3</DESCRIPTION>
+            <TOTALPARTS>107164</TOTALPARTS>
+            <REJECTPARTS>641</REJECTPARTS>
+            <GOODPARTS>106523</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M382</MOLD>
+            <SEMI>3024077</SEMI>
+            <DESCRIPTION>2LP CABLE TRS-DOUBLE</DESCRIPTION>
+            <TOTALPARTS>511296</TOTALPARTS>
+            <REJECTPARTS>21141</REJECTPARTS>
+            <GOODPARTS>490155</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M011</MOLD>
+            <SEMI>3024079</SEMI>
+            <DESCRIPTION>LR CUSTODIAL WND TIP</DESCRIPTION>
+            <TOTALPARTS>6487</TOTALPARTS>
+            <REJECTPARTS>86</REJECTPARTS>
+            <GOODPARTS>6401</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P073</MOLD>
+            <SEMI>3024080</SEMI>
+            <DESCRIPTION>LUM MNTG CLAMP</DESCRIPTION>
+            <TOTALPARTS>196416</TOTALPARTS>
+            <REJECTPARTS>6870</REJECTPARTS>
+            <GOODPARTS>189546</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M898B</MOLD>
+            <SEMI>3024081</SEMI>
+            <DESCRIPTION>LR 1 MTR HSG W/SPCR</DESCRIPTION>
+            <TOTALPARTS>1250326</TOTALPARTS>
+            <REJECTPARTS>12511</REJECTPARTS>
+            <GOODPARTS>1237815</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M334</MOLD>
+            <SEMI>3024085</SEMI>
+            <DESCRIPTION>LUM MNTG FACEPLATE</DESCRIPTION>
+            <TOTALPARTS>101452</TOTALPARTS>
+            <REJECTPARTS>5256</REJECTPARTS>
+            <GOODPARTS>96196</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M150B</MOLD>
+            <SEMI>3024090</SEMI>
+            <DESCRIPTION>CRD SAFETY STOP</DESCRIPTION>
+            <TOTALPARTS>1049490</TOTALPARTS>
+            <REJECTPARTS>7259</REJECTPARTS>
+            <GOODPARTS>1042231</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M339</MOLD>
+            <SEMI>3024091</SEMI>
+            <DESCRIPTION>LUM MNTG SPACER</DESCRIPTION>
+            <TOTALPARTS>242516</TOTALPARTS>
+            <REJECTPARTS>2559</REJECTPARTS>
+            <GOODPARTS>239957</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M018</MOLD>
+            <SEMI>3024092</SEMI>
+            <DESCRIPTION>LUM CEILING MNT BRKT</DESCRIPTION>
+            <TOTALPARTS>98188</TOTALPARTS>
+            <REJECTPARTS>260</REJECTPARTS>
+            <GOODPARTS>97928</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M025</MOLD>
+            <SEMI>3024093</SEMI>
+            <DESCRIPTION>LUM CVR EXT BRKT</DESCRIPTION>
+            <TOTALPARTS>19612</TOTALPARTS>
+            <REJECTPARTS>392</REJECTPARTS>
+            <GOODPARTS>19220</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M323</MOLD>
+            <SEMI>3024102</SEMI>
+            <DESCRIPTION>INTER.SPRT SPCR BLCK</DESCRIPTION>
+            <TOTALPARTS>13012</TOTALPARTS>
+            <REJECTPARTS>30</REJECTPARTS>
+            <GOODPARTS>12982</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M462A</MOLD>
+            <SEMI>3024106</SEMI>
+            <DESCRIPTION>MTR SDE EC 38-12</DESCRIPTION>
+            <TOTALPARTS>2178</TOTALPARTS>
+            <REJECTPARTS>71</REJECTPARTS>
+            <GOODPARTS>2107</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M462B</MOLD>
+            <SEMI>3024107</SEMI>
+            <DESCRIPTION>MTR SIDE EC 38-12 LH</DESCRIPTION>
+            <TOTALPARTS>1323</TOTALPARTS>
+            <REJECTPARTS>44</REJECTPARTS>
+            <GOODPARTS>1279</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M571</MOLD>
+            <SEMI>3024124</SEMI>
+            <DESCRIPTION>RH LMT ASM SCRW-HDMC</DESCRIPTION>
+            <TOTALPARTS>2120</TOTALPARTS>
+            <REJECTPARTS>64</REJECTPARTS>
+            <GOODPARTS>2056</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M481A</MOLD>
+            <SEMI>3024125</SEMI>
+            <DESCRIPTION>LH LIMIT ASM SCREW</DESCRIPTION>
+            <TOTALPARTS>11764</TOTALPARTS>
+            <REJECTPARTS>613</REJECTPARTS>
+            <GOODPARTS>11151</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M296</MOLD>
+            <SEMI>3024126</SEMI>
+            <DESCRIPTION>LH LIMIT ASM NUT</DESCRIPTION>
+            <TOTALPARTS>62790</TOTALPARTS>
+            <REJECTPARTS>11583</REJECTPARTS>
+            <GOODPARTS>51207</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M564</MOLD>
+            <SEMI>3024127</SEMI>
+            <DESCRIPTION>RH LIMIT ASM NUT</DESCRIPTION>
+            <TOTALPARTS>77274</TOTALPARTS>
+            <REJECTPARTS>2300</REJECTPARTS>
+            <GOODPARTS>74974</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M355</MOLD>
+            <SEMI>3024134</SEMI>
+            <DESCRIPTION>SU BATTERY PACK</DESCRIPTION>
+            <TOTALPARTS>13435</TOTALPARTS>
+            <REJECTPARTS>617</REJECTPARTS>
+            <GOODPARTS>12818</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M421</MOLD>
+            <SEMI>3024135</SEMI>
+            <DESCRIPTION>SU CVR BATTERY PAK</DESCRIPTION>
+            <TOTALPARTS>20075</TOTALPARTS>
+            <REJECTPARTS>3036</REJECTPARTS>
+            <GOODPARTS>17039</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M127</MOLD>
+            <SEMI>3024138</SEMI>
+            <DESCRIPTION>SU INSERT PLUG</DESCRIPTION>
+            <TOTALPARTS>36888</TOTALPARTS>
+            <REJECTPARTS>1314</REJECTPARTS>
+            <GOODPARTS>35574</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P090</MOLD>
+            <SEMI>3024139</SEMI>
+            <DESCRIPTION>SU SWITCH CVR</DESCRIPTION>
+            <TOTALPARTS>5462</TOTALPARTS>
+            <REJECTPARTS>180</REJECTPARTS>
+            <GOODPARTS>5282</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M419</MOLD>
+            <SEMI>3024141</SEMI>
+            <DESCRIPTION>SU CRCT BRD HSG CVR</DESCRIPTION>
+            <TOTALPARTS>39464</TOTALPARTS>
+            <REJECTPARTS>1610</REJECTPARTS>
+            <GOODPARTS>37854</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M420A</MOLD>
+            <SEMI>3024142</SEMI>
+            <DESCRIPTION>SU CRCT BRD HSG</DESCRIPTION>
+            <TOTALPARTS>25696</TOTALPARTS>
+            <REJECTPARTS>2749</REJECTPARTS>
+            <GOODPARTS>22947</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M439</MOLD>
+            <SEMI>3024144</SEMI>
+            <DESCRIPTION>REFLECT TAPE DRM</DESCRIPTION>
+            <TOTALPARTS>473150</TOTALPARTS>
+            <REJECTPARTS>3602</REJECTPARTS>
+            <GOODPARTS>469548</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M442</MOLD>
+            <SEMI>3024145</SEMI>
+            <DESCRIPTION>REFLECT CBL TAPE CVR</DESCRIPTION>
+            <TOTALPARTS>483353</TOTALPARTS>
+            <REJECTPARTS>5122</REJECTPARTS>
+            <GOODPARTS>478231</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M440</MOLD>
+            <SEMI>3024146</SEMI>
+            <DESCRIPTION>REFLECT SLAT CLP</DESCRIPTION>
+            <TOTALPARTS>90120</TOTALPARTS>
+            <REJECTPARTS>1252</REJECTPARTS>
+            <GOODPARTS>88868</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M448</MOLD>
+            <SEMI>3024147</SEMI>
+            <DESCRIPTION>CRD PLY FOR ACTVE EC</DESCRIPTION>
+            <TOTALPARTS>61816</TOTALPARTS>
+            <REJECTPARTS>688</REJECTPARTS>
+            <GOODPARTS>61128</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M449A</MOLD>
+            <SEMI>3024148</SEMI>
+            <DESCRIPTION>LUM CENTER BODY-RH</DESCRIPTION>
+            <TOTALPARTS>15164</TOTALPARTS>
+            <REJECTPARTS>599</REJECTPARTS>
+            <GOODPARTS>14565</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M445</MOLD>
+            <SEMI>3024149</SEMI>
+            <DESCRIPTION>LUM RACK BODY</DESCRIPTION>
+            <TOTALPARTS>960759</TOTALPARTS>
+            <REJECTPARTS>3029</REJECTPARTS>
+            <GOODPARTS>957730</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M446</MOLD>
+            <SEMI>3024150</SEMI>
+            <DESCRIPTION>LUM TILT CLIP</DESCRIPTION>
+            <TOTALPARTS>862146</TOTALPARTS>
+            <REJECTPARTS>18147</REJECTPARTS>
+            <GOODPARTS>843999</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M449B</MOLD>
+            <SEMI>3024151</SEMI>
+            <DESCRIPTION>LUM CENTER BODY-LH</DESCRIPTION>
+            <TOTALPARTS>15803</TOTALPARTS>
+            <REJECTPARTS>208</REJECTPARTS>
+            <GOODPARTS>15595</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M287</MOLD>
+            <SEMI>3024152</SEMI>
+            <DESCRIPTION>LUM CARRIER BODY</DESCRIPTION>
+            <TOTALPARTS>757015</TOTALPARTS>
+            <REJECTPARTS>5620</REJECTPARTS>
+            <GOODPARTS>751395</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M450A</MOLD>
+            <SEMI>3024153</SEMI>
+            <DESCRIPTION>LUM LEAD CARRIER-R/L</DESCRIPTION>
+            <TOTALPARTS>17030</TOTALPARTS>
+            <REJECTPARTS>320</REJECTPARTS>
+            <GOODPARTS>16711</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M451</MOLD>
+            <SEMI>3024154</SEMI>
+            <DESCRIPTION>LUM LEAD CAR SWV ARM</DESCRIPTION>
+            <TOTALPARTS>35778</TOTALPARTS>
+            <REJECTPARTS>1445</REJECTPARTS>
+            <GOODPARTS>34333</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M450B</MOLD>
+            <SEMI>3024155</SEMI>
+            <DESCRIPTION>LUM LEAD CARRIER-R/L</DESCRIPTION>
+            <TOTALPARTS>17657</TOTALPARTS>
+            <REJECTPARTS>455</REJECTPARTS>
+            <GOODPARTS>17203</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P089</MOLD>
+            <SEMI>3024165</SEMI>
+            <DESCRIPTION>LUM SPACER</DESCRIPTION>
+            <TOTALPARTS>192839</TOTALPARTS>
+            <REJECTPARTS>2002</REJECTPARTS>
+            <GOODPARTS>190837</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M569</MOLD>
+            <SEMI>3024166</SEMI>
+            <DESCRIPTION>QCK REL SPRING STOP</DESCRIPTION>
+            <TOTALPARTS>1203058</TOTALPARTS>
+            <REJECTPARTS>9620</REJECTPARTS>
+            <GOODPARTS>1193438</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M436</MOLD>
+            <SEMI>3024167</SEMI>
+            <DESCRIPTION>QCK REL MOUNT BRKT</DESCRIPTION>
+            <TOTALPARTS>1295784</TOTALPARTS>
+            <REJECTPARTS>22387</REJECTPARTS>
+            <GOODPARTS>1273397</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M429B</MOLD>
+            <SEMI>3024169</SEMI>
+            <DESCRIPTION>I/R PCB SPACER</DESCRIPTION>
+            <TOTALPARTS>59178</TOTALPARTS>
+            <REJECTPARTS>330</REJECTPARTS>
+            <GOODPARTS>58848</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M429A</MOLD>
+            <SEMI>3024170</SEMI>
+            <DESCRIPTION>PR UNIV CRD GRD</DESCRIPTION>
+            <TOTALPARTS>7567</TOTALPARTS>
+            <REJECTPARTS>211</REJECTPARTS>
+            <GOODPARTS>7356</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M682</MOLD>
+            <SEMI>3024171</SEMI>
+            <DESCRIPTION>LR ANTI-RN CRD HOOD</DESCRIPTION>
+            <TOTALPARTS>480770</TOTALPARTS>
+            <REJECTPARTS>6184</REJECTPARTS>
+            <GOODPARTS>474586</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M432</MOLD>
+            <SEMI>3024203</SEMI>
+            <DESCRIPTION>UCT HSG</DESCRIPTION>
+            <TOTALPARTS>17201</TOTALPARTS>
+            <REJECTPARTS>461</REJECTPARTS>
+            <GOODPARTS>16740</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M476</MOLD>
+            <SEMI>3024204</SEMI>
+            <DESCRIPTION>BEARING INSERT-UCT</DESCRIPTION>
+            <TOTALPARTS>193796</TOTALPARTS>
+            <REJECTPARTS>94</REJECTPARTS>
+            <GOODPARTS>193702</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M467</MOLD>
+            <SEMI>3024206</SEMI>
+            <DESCRIPTION>EWX TAPE SPACER</DESCRIPTION>
+            <TOTALPARTS>12992</TOTALPARTS>
+            <REJECTPARTS>508</REJECTPARTS>
+            <GOODPARTS>12484</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M468</MOLD>
+            <SEMI>3024222</SEMI>
+            <DESCRIPTION>YOUNG JAMB JACK PLUG</DESCRIPTION>
+            <TOTALPARTS>102966</TOTALPARTS>
+            <REJECTPARTS>3360</REJECTPARTS>
+            <GOODPARTS>99606</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P118</MOLD>
+            <SEMI>3024232</SEMI>
+            <DESCRIPTION>1 1/4 UG BR EC</DESCRIPTION>
+            <TOTALPARTS>67005</TOTALPARTS>
+            <REJECTPARTS>2322</REJECTPARTS>
+            <GOODPARTS>64683</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M683</MOLD>
+            <SEMI>3024234</SEMI>
+            <DESCRIPTION>1 1/4 UG ADP LFT HSG</DESCRIPTION>
+            <TOTALPARTS>35507</TOTALPARTS>
+            <REJECTPARTS>1384</REJECTPARTS>
+            <GOODPARTS>34123</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P121</MOLD>
+            <SEMI>3024235</SEMI>
+            <DESCRIPTION>FOWARD ROLL STOP</DESCRIPTION>
+            <TOTALPARTS>23259</TOTALPARTS>
+            <REJECTPARTS>707</REJECTPARTS>
+            <GOODPARTS>22552</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M471</MOLD>
+            <SEMI>3024236</SEMI>
+            <DESCRIPTION>DIFFUSER</DESCRIPTION>
+            <TOTALPARTS>50410</TOTALPARTS>
+            <REJECTPARTS>423</REJECTPARTS>
+            <GOODPARTS>49987</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M477</MOLD>
+            <SEMI>3024242</SEMI>
+            <DESCRIPTION>UCT MNTG BRKT</DESCRIPTION>
+            <TOTALPARTS>370913</TOTALPARTS>
+            <REJECTPARTS>1936</REJECTPARTS>
+            <GOODPARTS>368977</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1044</MOLD>
+            <SEMI>3024243</SEMI>
+            <DESCRIPTION>LR TLTRD STP PAD</DESCRIPTION>
+            <TOTALPARTS>32848</TOTALPARTS>
+            <REJECTPARTS>180</REJECTPARTS>
+            <GOODPARTS>32668</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M272</MOLD>
+            <SEMI>3024244</SEMI>
+            <DESCRIPTION>UG CVR ADPT LIFT HSG</DESCRIPTION>
+            <TOTALPARTS>296863</TOTALPARTS>
+            <REJECTPARTS>19404</REJECTPARTS>
+            <GOODPARTS>277459</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M456A</MOLD>
+            <SEMI>3024245</SEMI>
+            <DESCRIPTION>SUPPORT REL BRKT RH</DESCRIPTION>
+            <TOTALPARTS>64430</TOTALPARTS>
+            <REJECTPARTS>770</REJECTPARTS>
+            <GOODPARTS>63660</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M456B</MOLD>
+            <SEMI>3024246</SEMI>
+            <DESCRIPTION>SUPPORT REL BRKT LH</DESCRIPTION>
+            <TOTALPARTS>24750</TOTALPARTS>
+            <REJECTPARTS>646</REJECTPARTS>
+            <GOODPARTS>24104</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M452</MOLD>
+            <SEMI>3024250</SEMI>
+            <DESCRIPTION>LR FABRIC ROLL SPRT</DESCRIPTION>
+            <TOTALPARTS>335445</TOTALPARTS>
+            <REJECTPARTS>3061</REJECTPARTS>
+            <GOODPARTS>332384</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M423B</MOLD>
+            <SEMI>3024254</SEMI>
+            <DESCRIPTION>COVER CAP JAMB JACK</DESCRIPTION>
+            <TOTALPARTS>238256</TOTALPARTS>
+            <REJECTPARTS>1722</REJECTPARTS>
+            <GOODPARTS>236534</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M488</MOLD>
+            <SEMI>3024262</SEMI>
+            <DESCRIPTION>CLTCH COIL PCKT/PIN</DESCRIPTION>
+            <TOTALPARTS>104404</TOTALPARTS>
+            <REJECTPARTS>1587</REJECTPARTS>
+            <GOODPARTS>102817</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M680</MOLD>
+            <SEMI>3024263</SEMI>
+            <DESCRIPTION>3/4 TRANS ADAPTOR</DESCRIPTION>
+            <TOTALPARTS>23441</TOTALPARTS>
+            <REJECTPARTS>267</REJECTPARTS>
+            <GOODPARTS>23174</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P128</MOLD>
+            <SEMI>3024264</SEMI>
+            <DESCRIPTION>LR 3/4 MOTOR SPRT</DESCRIPTION>
+            <TOTALPARTS>41642</TOTALPARTS>
+            <REJECTPARTS>55</REJECTPARTS>
+            <GOODPARTS>41587</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M791</MOLD>
+            <SEMI>3024265</SEMI>
+            <DESCRIPTION>3/4 UG SPOOL SPRT</DESCRIPTION>
+            <TOTALPARTS>139002</TOTALPARTS>
+            <REJECTPARTS>2026</REJECTPARTS>
+            <GOODPARTS>136976</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M518A</MOLD>
+            <SEMI>3024266</SEMI>
+            <DESCRIPTION>CONVEX RAIL EC</DESCRIPTION>
+            <TOTALPARTS>174318</TOTALPARTS>
+            <REJECTPARTS>5584</REJECTPARTS>
+            <GOODPARTS>168734</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M277B</MOLD>
+            <SEMI>3024268</SEMI>
+            <DESCRIPTION>3/8 UG BR EC NL</DESCRIPTION>
+            <TOTALPARTS>46608</TOTALPARTS>
+            <REJECTPARTS>5748</REJECTPARTS>
+            <GOODPARTS>40860</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M006B</MOLD>
+            <SEMI>3024269</SEMI>
+            <DESCRIPTION>3/4 UG BR EC NL</DESCRIPTION>
+            <TOTALPARTS>234262</TOTALPARTS>
+            <REJECTPARTS>24677</REJECTPARTS>
+            <GOODPARTS>209585</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M004B</MOLD>
+            <SEMI>3024270</SEMI>
+            <DESCRIPTION>UG 3/4 HR EC NL</DESCRIPTION>
+            <TOTALPARTS>92760</TOTALPARTS>
+            <REJECTPARTS>5726</REJECTPARTS>
+            <GOODPARTS>87034</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M496A</MOLD>
+            <SEMI>3024272</SEMI>
+            <DESCRIPTION>SHEER TOP EC R/L</DESCRIPTION>
+            <TOTALPARTS>54966</TOTALPARTS>
+            <REJECTPARTS>2376</REJECTPARTS>
+            <GOODPARTS>52591</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M496B</MOLD>
+            <SEMI>3024273</SEMI>
+            <DESCRIPTION>SHEER TOP EC R/L</DESCRIPTION>
+            <TOTALPARTS>54966</TOTALPARTS>
+            <REJECTPARTS>2376</REJECTPARTS>
+            <GOODPARTS>52591</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M454B</MOLD>
+            <SEMI>3024274</SEMI>
+            <DESCRIPTION>AL SPRING PIN</DESCRIPTION>
+            <TOTALPARTS>27014</TOTALPARTS>
+            <REJECTPARTS>5850</REJECTPARTS>
+            <GOODPARTS>21164</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M813</MOLD>
+            <SEMI>3024281</SEMI>
+            <DESCRIPTION>AL BR EC</DESCRIPTION>
+            <TOTALPARTS>30812</TOTALPARTS>
+            <REJECTPARTS>2360</REJECTPARTS>
+            <GOODPARTS>28452</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M580</MOLD>
+            <SEMI>3024282</SEMI>
+            <DESCRIPTION>AL BR CRADLE BACK</DESCRIPTION>
+            <TOTALPARTS>41103</TOTALPARTS>
+            <REJECTPARTS>1330</REJECTPARTS>
+            <GOODPARTS>39773</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P139</MOLD>
+            <SEMI>3024283</SEMI>
+            <DESCRIPTION>AL CL HSG LH</DESCRIPTION>
+            <TOTALPARTS>11716</TOTALPARTS>
+            <REJECTPARTS>1652</REJECTPARTS>
+            <GOODPARTS>10064</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P141</MOLD>
+            <SEMI>3024284</SEMI>
+            <DESCRIPTION>AL CL HSG RH</DESCRIPTION>
+            <TOTALPARTS>10493</TOTALPARTS>
+            <REJECTPARTS>2971</REJECTPARTS>
+            <GOODPARTS>7522</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P140</MOLD>
+            <SEMI>3024285</SEMI>
+            <DESCRIPTION>AL CL HSG CVR LH</DESCRIPTION>
+            <TOTALPARTS>14906</TOTALPARTS>
+            <REJECTPARTS>2269</REJECTPARTS>
+            <GOODPARTS>12637</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P142</MOLD>
+            <SEMI>3024286</SEMI>
+            <DESCRIPTION>AL CL HSG CVR RH</DESCRIPTION>
+            <TOTALPARTS>10459</TOTALPARTS>
+            <REJECTPARTS>1354</REJECTPARTS>
+            <GOODPARTS>9105</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M933A</MOLD>
+            <SEMI>3024287</SEMI>
+            <DESCRIPTION>AL CRD TLT HSG/CVR L</DESCRIPTION>
+            <TOTALPARTS>5263</TOTALPARTS>
+            <REJECTPARTS>601</REJECTPARTS>
+            <GOODPARTS>4662</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P137</MOLD>
+            <SEMI>3024287</SEMI>
+            <DESCRIPTION>AL CRD TILT HSG LH</DESCRIPTION>
+            <TOTALPARTS>3975</TOTALPARTS>
+            <REJECTPARTS>1559</REJECTPARTS>
+            <GOODPARTS>2416</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M934A</MOLD>
+            <SEMI>3024288</SEMI>
+            <DESCRIPTION>AL CRD TLT HSG/CVR R</DESCRIPTION>
+            <TOTALPARTS>4425</TOTALPARTS>
+            <REJECTPARTS>281</REJECTPARTS>
+            <GOODPARTS>4144</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P134</MOLD>
+            <SEMI>3024288</SEMI>
+            <DESCRIPTION>AL CRD TILT HSG RH</DESCRIPTION>
+            <TOTALPARTS>4208</TOTALPARTS>
+            <REJECTPARTS>536</REJECTPARTS>
+            <GOODPARTS>3672</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M933B</MOLD>
+            <SEMI>3024289</SEMI>
+            <DESCRIPTION>AL CRD TLT HSG/CVR L</DESCRIPTION>
+            <TOTALPARTS>5263</TOTALPARTS>
+            <REJECTPARTS>601</REJECTPARTS>
+            <GOODPARTS>4662</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P138</MOLD>
+            <SEMI>3024289</SEMI>
+            <DESCRIPTION>AL CRD TLT HSG CVR L</DESCRIPTION>
+            <TOTALPARTS>4325</TOTALPARTS>
+            <REJECTPARTS>955</REJECTPARTS>
+            <GOODPARTS>3370</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M934B</MOLD>
+            <SEMI>3024290</SEMI>
+            <DESCRIPTION>AL CRD TLT HSG/CVR R</DESCRIPTION>
+            <TOTALPARTS>4425</TOTALPARTS>
+            <REJECTPARTS>281</REJECTPARTS>
+            <GOODPARTS>4144</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P135</MOLD>
+            <SEMI>3024290</SEMI>
+            <DESCRIPTION>AL CRD TLT HSG CVR R</DESCRIPTION>
+            <TOTALPARTS>1809</TOTALPARTS>
+            <REJECTPARTS>343</REJECTPARTS>
+            <GOODPARTS>1466</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M749</MOLD>
+            <SEMI>3024291</SEMI>
+            <DESCRIPTION>AL CRD TLT WGHT CVR</DESCRIPTION>
+            <TOTALPARTS>40806</TOTALPARTS>
+            <REJECTPARTS>11448</REJECTPARTS>
+            <GOODPARTS>29358</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M590</MOLD>
+            <SEMI>3024293</SEMI>
+            <DESCRIPTION>AL CRD TSL SEGMENT</DESCRIPTION>
+            <TOTALPARTS>45927</TOTALPARTS>
+            <REJECTPARTS>2445</REJECTPARTS>
+            <GOODPARTS>43482</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P154</MOLD>
+            <SEMI>3024295</SEMI>
+            <DESCRIPTION>AL HLD DWN BRKT SPCR</DESCRIPTION>
+            <TOTALPARTS>3873</TOTALPARTS>
+            <REJECTPARTS>20</REJECTPARTS>
+            <GOODPARTS>3853</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M750</MOLD>
+            <SEMI>3024297</SEMI>
+            <DESCRIPTION>AL REAR CRD ATCHMNT</DESCRIPTION>
+            <TOTALPARTS>6008</TOTALPARTS>
+            <REJECTPARTS>104</REJECTPARTS>
+            <GOODPARTS>5904</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M593</MOLD>
+            <SEMI>3024298</SEMI>
+            <DESCRIPTION>AL REAR CRD GUIDE</DESCRIPTION>
+            <TOTALPARTS>11711</TOTALPARTS>
+            <REJECTPARTS>973</REJECTPARTS>
+            <GOODPARTS>10738</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M665B</MOLD>
+            <SEMI>3024299</SEMI>
+            <DESCRIPTION>AL BR CRADLE</DESCRIPTION>
+            <TOTALPARTS>49475</TOTALPARTS>
+            <REJECTPARTS>8042</REJECTPARTS>
+            <GOODPARTS>41433</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P122</MOLD>
+            <SEMI>3024301</SEMI>
+            <DESCRIPTION>AL CRD GUIDE PULLEY</DESCRIPTION>
+            <TOTALPARTS>85396</TOTALPARTS>
+            <REJECTPARTS>340</REJECTPARTS>
+            <GOODPARTS>85056</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M470</MOLD>
+            <SEMI>3024302</SEMI>
+            <DESCRIPTION>AL CNTRL BAR TOP EC</DESCRIPTION>
+            <TOTALPARTS>6471</TOTALPARTS>
+            <REJECTPARTS>1631</REJECTPARTS>
+            <GOODPARTS>4840</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M589</MOLD>
+            <SEMI>3024303</SEMI>
+            <DESCRIPTION>AL BAR CONN CAM LOCK</DESCRIPTION>
+            <TOTALPARTS>17212</TOTALPARTS>
+            <REJECTPARTS>866</REJECTPARTS>
+            <GOODPARTS>16346</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M498B</MOLD>
+            <SEMI>3024304</SEMI>
+            <DESCRIPTION>AL BARTLT HSGCVR LH</DESCRIPTION>
+            <TOTALPARTS>2659</TOTALPARTS>
+            <REJECTPARTS>380</REJECTPARTS>
+            <GOODPARTS>2279</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M498A</MOLD>
+            <SEMI>3024305</SEMI>
+            <DESCRIPTION>AL BARTLT HSGCVR</DESCRIPTION>
+            <TOTALPARTS>4196</TOTALPARTS>
+            <REJECTPARTS>577</REJECTPARTS>
+            <GOODPARTS>3619</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P026B</MOLD>
+            <SEMI>3024308</SEMI>
+            <DESCRIPTION>AL CNTRL BAR CONN</DESCRIPTION>
+            <TOTALPARTS>8373</TOTALPARTS>
+            <REJECTPARTS>361</REJECTPARTS>
+            <GOODPARTS>8012</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M497A</MOLD>
+            <SEMI>3024310</SEMI>
+            <DESCRIPTION>AL BAR TLT HSG RH</DESCRIPTION>
+            <TOTALPARTS>5512</TOTALPARTS>
+            <REJECTPARTS>1663</REJECTPARTS>
+            <GOODPARTS>3849</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M497B</MOLD>
+            <SEMI>3024311</SEMI>
+            <DESCRIPTION>AL BAR TLT HSG</DESCRIPTION>
+            <TOTALPARTS>4506</TOTALPARTS>
+            <REJECTPARTS>2134</REJECTPARTS>
+            <GOODPARTS>2372</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M592B</MOLD>
+            <SEMI>3024312</SEMI>
+            <DESCRIPTION>AL BREAKAWAY FEMALE</DESCRIPTION>
+            <TOTALPARTS>6850</TOTALPARTS>
+            <REJECTPARTS>634</REJECTPARTS>
+            <GOODPARTS>6216</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M592A</MOLD>
+            <SEMI>3024313</SEMI>
+            <DESCRIPTION>AL BREAKAWAY MALE</DESCRIPTION>
+            <TOTALPARTS>6748</TOTALPARTS>
+            <REJECTPARTS>849</REJECTPARTS>
+            <GOODPARTS>5899</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P112B</MOLD>
+            <SEMI>3024314</SEMI>
+            <DESCRIPTION>AL POST BRKAWAY EQUA</DESCRIPTION>
+            <TOTALPARTS>18549</TOTALPARTS>
+            <REJECTPARTS>1927</REJECTPARTS>
+            <GOODPARTS>16622</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M935</MOLD>
+            <SEMI>3024315</SEMI>
+            <DESCRIPTION>AL SIDE BRKAWAY EQUA</DESCRIPTION>
+            <TOTALPARTS>34247</TOTALPARTS>
+            <REJECTPARTS>5304</REJECTPARTS>
+            <GOODPARTS>28943</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M469C</MOLD>
+            <SEMI>3024315</SEMI>
+            <DESCRIPTION>AL SIDE BRKAWAY EQUA</DESCRIPTION>
+            <TOTALPARTS>28740</TOTALPARTS>
+            <REJECTPARTS>507</REJECTPARTS>
+            <GOODPARTS>28233</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P123</MOLD>
+            <SEMI>3024320</SEMI>
+            <DESCRIPTION>AL CNTRL BAR PULLEY</DESCRIPTION>
+            <TOTALPARTS>4751</TOTALPARTS>
+            <REJECTPARTS>20</REJECTPARTS>
+            <GOODPARTS>4731</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M678B</MOLD>
+            <SEMI>3024322</SEMI>
+            <DESCRIPTION>LR 3/8 FAB HNDL NL</DESCRIPTION>
+            <TOTALPARTS>1608</TOTALPARTS>
+            <REJECTPARTS>44</REJECTPARTS>
+            <GOODPARTS>1564</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M673B</MOLD>
+            <SEMI>3024323</SEMI>
+            <DESCRIPTION>3/4 BR HNDL NO LOGO</DESCRIPTION>
+            <TOTALPARTS>1485</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>1485</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M769B</MOLD>
+            <SEMI>3024325</SEMI>
+            <DESCRIPTION>MNT/TOP BKT CVR</DESCRIPTION>
+            <TOTALPARTS>2217</TOTALPARTS>
+            <REJECTPARTS>46</REJECTPARTS>
+            <GOODPARTS>2171</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M668C</MOLD>
+            <SEMI>3024326</SEMI>
+            <DESCRIPTION>LR 2 TRANS OUTER CVR</DESCRIPTION>
+            <TOTALPARTS>117952</TOTALPARTS>
+            <REJECTPARTS>4521</REJECTPARTS>
+            <GOODPARTS>113431</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M668B</MOLD>
+            <SEMI>3024326</SEMI>
+            <DESCRIPTION>LR 2 TRANS OUTER CVR</DESCRIPTION>
+            <TOTALPARTS>8984</TOTALPARTS>
+            <REJECTPARTS>1756</REJECTPARTS>
+            <GOODPARTS>7228</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M519</MOLD>
+            <SEMI>3024402</SEMI>
+            <DESCRIPTION>VG HANDLE - FRONT</DESCRIPTION>
+            <TOTALPARTS>114607</TOTALPARTS>
+            <REJECTPARTS>9527</REJECTPARTS>
+            <GOODPARTS>105080</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P146</MOLD>
+            <SEMI>3024403</SEMI>
+            <DESCRIPTION>VG CRD TENSIONER</DESCRIPTION>
+            <TOTALPARTS>36088</TOTALPARTS>
+            <REJECTPARTS>232</REJECTPARTS>
+            <GOODPARTS>35856</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M473A</MOLD>
+            <SEMI>3024407</SEMI>
+            <DESCRIPTION>FRONT CORD GUIDE</DESCRIPTION>
+            <TOTALPARTS>3089</TOTALPARTS>
+            <REJECTPARTS>277</REJECTPARTS>
+            <GOODPARTS>2812</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M586A</MOLD>
+            <SEMI>3024409</SEMI>
+            <DESCRIPTION>SU UG CRD GUIDE R/L</DESCRIPTION>
+            <TOTALPARTS>56116</TOTALPARTS>
+            <REJECTPARTS>7042</REJECTPARTS>
+            <GOODPARTS>49074</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M586B</MOLD>
+            <SEMI>3024410</SEMI>
+            <DESCRIPTION>SU UG CRD GUIDE R/L</DESCRIPTION>
+            <TOTALPARTS>20522</TOTALPARTS>
+            <REJECTPARTS>1311</REJECTPARTS>
+            <GOODPARTS>19211</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M585A</MOLD>
+            <SEMI>3024412</SEMI>
+            <DESCRIPTION>SU UG SHIFT ARM RH</DESCRIPTION>
+            <TOTALPARTS>53067</TOTALPARTS>
+            <REJECTPARTS>1351</REJECTPARTS>
+            <GOODPARTS>51716</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M585B</MOLD>
+            <SEMI>3024413</SEMI>
+            <DESCRIPTION>SU UG SHIFT ARM R/L</DESCRIPTION>
+            <TOTALPARTS>14555</TOTALPARTS>
+            <REJECTPARTS>677</REJECTPARTS>
+            <GOODPARTS>13878</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M583A</MOLD>
+            <SEMI>3024414</SEMI>
+            <DESCRIPTION>SU UG PULLEY</DESCRIPTION>
+            <TOTALPARTS>53880</TOTALPARTS>
+            <REJECTPARTS>426</REJECTPARTS>
+            <GOODPARTS>53454</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P155</MOLD>
+            <SEMI>3024415</SEMI>
+            <DESCRIPTION>SU UG SPIDER</DESCRIPTION>
+            <TOTALPARTS>59350</TOTALPARTS>
+            <REJECTPARTS>1996</REJECTPARTS>
+            <GOODPARTS>57354</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M072</MOLD>
+            <SEMI>3020101</SEMI>
+            <DESCRIPTION>3/8 PSS BRACKET</DESCRIPTION>
+            <TOTALPARTS>61950</TOTALPARTS>
+            <REJECTPARTS>735</REJECTPARTS>
+            <GOODPARTS>61215</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M095A</MOLD>
+            <SEMI>3020102</SEMI>
+            <DESCRIPTION>PSS DUETTE BRKT TAB</DESCRIPTION>
+            <TOTALPARTS>118234</TOTALPARTS>
+            <REJECTPARTS>3069</REJECTPARTS>
+            <GOODPARTS>115165</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M345</MOLD>
+            <SEMI>3020104</SEMI>
+            <DESCRIPTION>3/8 LH CL BODY</DESCRIPTION>
+            <TOTALPARTS>25342</TOTALPARTS>
+            <REJECTPARTS>840</REJECTPARTS>
+            <GOODPARTS>24502</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M065</MOLD>
+            <SEMI>3020105</SEMI>
+            <DESCRIPTION>3/4 PSS BRACKET</DESCRIPTION>
+            <TOTALPARTS>195756</TOTALPARTS>
+            <REJECTPARTS>1031</REJECTPARTS>
+            <GOODPARTS>194725</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M344</MOLD>
+            <SEMI>3020106</SEMI>
+            <DESCRIPTION>3/4 RH CL BODY</DESCRIPTION>
+            <TOTALPARTS>131624</TOTALPARTS>
+            <REJECTPARTS>164</REJECTPARTS>
+            <GOODPARTS>131460</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M343</MOLD>
+            <SEMI>3020107</SEMI>
+            <DESCRIPTION>3/4 LH CL BODY</DESCRIPTION>
+            <TOTALPARTS>14874</TOTALPARTS>
+            <REJECTPARTS>2784</REJECTPARTS>
+            <GOODPARTS>12090</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P127</MOLD>
+            <SEMI>3020109</SEMI>
+            <DESCRIPTION>DECOR WAND EC</DESCRIPTION>
+            <TOTALPARTS>587936</TOTALPARTS>
+            <REJECTPARTS>32456</REJECTPARTS>
+            <GOODPARTS>555480</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P078</MOLD>
+            <SEMI>3020110</SEMI>
+            <DESCRIPTION>DECOR WAND CONN.</DESCRIPTION>
+            <TOTALPARTS>695368</TOTALPARTS>
+            <REJECTPARTS>53144</REJECTPARTS>
+            <GOODPARTS>642224</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P091</MOLD>
+            <SEMI>3020111</SEMI>
+            <DESCRIPTION>DECOR WAND SLEEVE</DESCRIPTION>
+            <TOTALPARTS>701091</TOTALPARTS>
+            <REJECTPARTS>4796</REJECTPARTS>
+            <GOODPARTS>696295</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M184</MOLD>
+            <SEMI>3020120</SEMI>
+            <DESCRIPTION>MICRO WAND CONN</DESCRIPTION>
+            <TOTALPARTS>397956</TOTALPARTS>
+            <REJECTPARTS>3524</REJECTPARTS>
+            <GOODPARTS>394432</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M265B</MOLD>
+            <SEMI>3020121</SEMI>
+            <DESCRIPTION>MICRO WAND EC</DESCRIPTION>
+            <TOTALPARTS>314764</TOTALPARTS>
+            <REJECTPARTS>721</REJECTPARTS>
+            <GOODPARTS>314043</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M078A</MOLD>
+            <SEMI>3020127</SEMI>
+            <DESCRIPTION>1.5 CSTM TILT HSG</DESCRIPTION>
+            <TOTALPARTS>38900</TOTALPARTS>
+            <REJECTPARTS>352</REJECTPARTS>
+            <GOODPARTS>38548</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M078B</MOLD>
+            <SEMI>3020130</SEMI>
+            <DESCRIPTION>1.5 TLT HSG BACK</DESCRIPTION>
+            <TOTALPARTS>16626</TOTALPARTS>
+            <REJECTPARTS>88</REJECTPARTS>
+            <GOODPARTS>16538</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I525</MOLD>
+            <SEMI>3020131</SEMI>
+            <DESCRIPTION>WIDE RAIL 2 POS CL H</DESCRIPTION>
+            <TOTALPARTS>5038</TOTALPARTS>
+            <REJECTPARTS>10</REJECTPARTS>
+            <GOODPARTS>5028</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M252</MOLD>
+            <SEMI>3020135</SEMI>
+            <DESCRIPTION>1 2POS CL HSG</DESCRIPTION>
+            <TOTALPARTS>7285</TOTALPARTS>
+            <REJECTPARTS>94</REJECTPARTS>
+            <GOODPARTS>7191</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P180</MOLD>
+            <SEMI>3020141</SEMI>
+            <DESCRIPTION>WOOD WAND CONN. PLUG</DESCRIPTION>
+            <TOTALPARTS>115162</TOTALPARTS>
+            <REJECTPARTS>216</REJECTPARTS>
+            <GOODPARTS>114946</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P088</MOLD>
+            <SEMI>3020153</SEMI>
+            <DESCRIPTION>SILL HLD DWN PIN</DESCRIPTION>
+            <TOTALPARTS>74314</TOTALPARTS>
+            <REJECTPARTS>944</REJECTPARTS>
+            <GOODPARTS>73370</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I308B</MOLD>
+            <SEMI>3020154</SEMI>
+            <DESCRIPTION>JAMB HOLD DWN BRKT</DESCRIPTION>
+            <TOTALPARTS>19928</TOTALPARTS>
+            <REJECTPARTS>425</REJECTPARTS>
+            <GOODPARTS>19503</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M484</MOLD>
+            <SEMI>3020155</SEMI>
+            <DESCRIPTION>SILL HOLD DWN BRKT</DESCRIPTION>
+            <TOTALPARTS>51600</TOTALPARTS>
+            <REJECTPARTS>372</REJECTPARTS>
+            <GOODPARTS>51228</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P161</MOLD>
+            <SEMI>3020168</SEMI>
+            <DESCRIPTION>1.5 ECNMY TLT WRM</DESCRIPTION>
+            <TOTALPARTS>17356</TOTALPARTS>
+            <REJECTPARTS>176</REJECTPARTS>
+            <GOODPARTS>17180</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M485A</MOLD>
+            <SEMI>3020197</SEMI>
+            <DESCRIPTION>UNIV. HOLD DWN BRKT</DESCRIPTION>
+            <TOTALPARTS>6088</TOTALPARTS>
+            <REJECTPARTS>184</REJECTPARTS>
+            <GOODPARTS>5904</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M085</MOLD>
+            <SEMI>3020201</SEMI>
+            <DESCRIPTION>1IN TAPE SPACER</DESCRIPTION>
+            <TOTALPARTS>796223</TOTALPARTS>
+            <REJECTPARTS>4616</REJECTPARTS>
+            <GOODPARTS>791607</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M081</MOLD>
+            <SEMI>3020206</SEMI>
+            <DESCRIPTION>DECOR TAPE ROLL</DESCRIPTION>
+            <TOTALPARTS>7430</TOTALPARTS>
+            <REJECTPARTS>2497</REJECTPARTS>
+            <GOODPARTS>4933</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M017</MOLD>
+            <SEMI>3020211</SEMI>
+            <DESCRIPTION>3/4IN EC</DESCRIPTION>
+            <TOTALPARTS>1545470</TOTALPARTS>
+            <REJECTPARTS>61421</REJECTPARTS>
+            <GOODPARTS>1484049</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I577</MOLD>
+            <SEMI>3020215</SEMI>
+            <DESCRIPTION>MB LIFT CRD BRIDGE</DESCRIPTION>
+            <TOTALPARTS>12713</TOTALPARTS>
+            <REJECTPARTS>186</REJECTPARTS>
+            <GOODPARTS>12527</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M356</MOLD>
+            <SEMI>3020225</SEMI>
+            <DESCRIPTION>WOOD TAPE BUTTON</DESCRIPTION>
+            <TOTALPARTS>4387170</TOTALPARTS>
+            <REJECTPARTS>72021</REJECTPARTS>
+            <GOODPARTS>4315149</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M248</MOLD>
+            <SEMI>3020229</SEMI>
+            <DESCRIPTION>DUET CRD EQUALIZER</DESCRIPTION>
+            <TOTALPARTS>552162</TOTALPARTS>
+            <REJECTPARTS>11982</REJECTPARTS>
+            <GOODPARTS>540180</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M348A</MOLD>
+            <SEMI>3020231</SEMI>
+            <DESCRIPTION>3/8 RH CL CVR</DESCRIPTION>
+            <TOTALPARTS>85125</TOTALPARTS>
+            <REJECTPARTS>7240</REJECTPARTS>
+            <GOODPARTS>77885</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M347A</MOLD>
+            <SEMI>3020232</SEMI>
+            <DESCRIPTION>3/8 LH CL CVR</DESCRIPTION>
+            <TOTALPARTS>32163</TOTALPARTS>
+            <REJECTPARTS>3748</REJECTPARTS>
+            <GOODPARTS>28415</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M350A</MOLD>
+            <SEMI>3020234</SEMI>
+            <DESCRIPTION>3/4 RH CL CVR</DESCRIPTION>
+            <TOTALPARTS>73044</TOTALPARTS>
+            <REJECTPARTS>7243</REJECTPARTS>
+            <GOODPARTS>65801</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M349A</MOLD>
+            <SEMI>3020235</SEMI>
+            <DESCRIPTION>3/4 LH CL CVR</DESCRIPTION>
+            <TOTALPARTS>41237</TOTALPARTS>
+            <REJECTPARTS>3762</REJECTPARTS>
+            <GOODPARTS>37475</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M106B</MOLD>
+            <SEMI>3020238</SEMI>
+            <DESCRIPTION>3/8 EC NO LOGO</DESCRIPTION>
+            <TOTALPARTS>845852</TOTALPARTS>
+            <REJECTPARTS>25994</REJECTPARTS>
+            <GOODPARTS>819858</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P119</MOLD>
+            <SEMI>3020243</SEMI>
+            <DESCRIPTION>3/8 SKYLIGHT EC</DESCRIPTION>
+            <TOTALPARTS>14169</TOTALPARTS>
+            <REJECTPARTS>708</REJECTPARTS>
+            <GOODPARTS>13461</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I420</MOLD>
+            <SEMI>3020246</SEMI>
+            <DESCRIPTION>SKYLIGHT HANDLE</DESCRIPTION>
+            <TOTALPARTS>23697</TOTALPARTS>
+            <REJECTPARTS>3785</REJECTPARTS>
+            <GOODPARTS>19912</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M780</MOLD>
+            <SEMI>3020250</SEMI>
+            <DESCRIPTION>DUET RL HANG SNP PIN</DESCRIPTION>
+            <TOTALPARTS>122280</TOTALPARTS>
+            <REJECTPARTS>551</REJECTPARTS>
+            <GOODPARTS>121729</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P125</MOLD>
+            <SEMI>3020252</SEMI>
+            <DESCRIPTION>ARCH TOP SPRT CLIP</DESCRIPTION>
+            <TOTALPARTS>55902</TOTALPARTS>
+            <REJECTPARTS>1216</REJECTPARTS>
+            <GOODPARTS>54686</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M075</MOLD>
+            <SEMI>3020265</SEMI>
+            <DESCRIPTION>STD IDLE EC</DESCRIPTION>
+            <TOTALPARTS>51318</TOTALPARTS>
+            <REJECTPARTS>2337</REJECTPARTS>
+            <GOODPARTS>48981</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M111</MOLD>
+            <SEMI>3020270</SEMI>
+            <DESCRIPTION>VVB ROLLER</DESCRIPTION>
+            <TOTALPARTS>61307</TOTALPARTS>
+            <REJECTPARTS>1239</REJECTPARTS>
+            <GOODPARTS>60068</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M057</MOLD>
+            <SEMI>3020279</SEMI>
+            <DESCRIPTION>VAC-C CLOSED CORNER</DESCRIPTION>
+            <TOTALPARTS>118162</TOTALPARTS>
+            <REJECTPARTS>294</REJECTPARTS>
+            <GOODPARTS>117868</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M056</MOLD>
+            <SEMI>3020280</SEMI>
+            <DESCRIPTION>OPEN VALANCE CORNER</DESCRIPTION>
+            <TOTALPARTS>6748</TOTALPARTS>
+            <REJECTPARTS>64</REJECTPARTS>
+            <GOODPARTS>6684</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M147B</MOLD>
+            <SEMI>3020281</SEMI>
+            <DESCRIPTION>STD DRV EC NL</DESCRIPTION>
+            <TOTALPARTS>50621</TOTALPARTS>
+            <REJECTPARTS>1702</REJECTPARTS>
+            <GOODPARTS>48919</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M189A</MOLD>
+            <SEMI>3020290</SEMI>
+            <DESCRIPTION>STD TLTROD GEAR</DESCRIPTION>
+            <TOTALPARTS>81987</TOTALPARTS>
+            <REJECTPARTS>2433</REJECTPARTS>
+            <GOODPARTS>79554</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M099A</MOLD>
+            <SEMI>3020350</SEMI>
+            <DESCRIPTION>3/4 DUET HLD DWN BRK</DESCRIPTION>
+            <TOTALPARTS>15376</TOTALPARTS>
+            <REJECTPARTS>248</REJECTPARTS>
+            <GOODPARTS>15128</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M064</MOLD>
+            <SEMI>3020359</SEMI>
+            <DESCRIPTION>SIL LIMIT STOP BRKT</DESCRIPTION>
+            <TOTALPARTS>58120</TOTALPARTS>
+            <REJECTPARTS>4058</REJECTPARTS>
+            <GOODPARTS>54062</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M089</MOLD>
+            <SEMI>3020360</SEMI>
+            <DESCRIPTION>STOP BALL BODY</DESCRIPTION>
+            <TOTALPARTS>6084</TOTALPARTS>
+            <REJECTPARTS>1600</REJECTPARTS>
+            <GOODPARTS>4484</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M183</MOLD>
+            <SEMI>3020361</SEMI>
+            <DESCRIPTION>SIL BR EC</DESCRIPTION>
+            <TOTALPARTS>132318</TOTALPARTS>
+            <REJECTPARTS>12096</REJECTPARTS>
+            <GOODPARTS>120222</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M300B</MOLD>
+            <SEMI>3020363</SEMI>
+            <DESCRIPTION>SIL TR EC R/L</DESCRIPTION>
+            <TOTALPARTS>470</TOTALPARTS>
+            <REJECTPARTS>228</REJECTPARTS>
+            <GOODPARTS>242</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M202A</MOLD>
+            <SEMI>3020369</SEMI>
+            <DESCRIPTION>SIL WGHT CLIP</DESCRIPTION>
+            <TOTALPARTS>169238</TOTALPARTS>
+            <REJECTPARTS>4039</REJECTPARTS>
+            <GOODPARTS>165199</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I362</MOLD>
+            <SEMI>3020378</SEMI>
+            <DESCRIPTION>3/4 SKYLIGHT EC</DESCRIPTION>
+            <TOTALPARTS>16018</TOTALPARTS>
+            <REJECTPARTS>349</REJECTPARTS>
+            <GOODPARTS>15669</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M061</MOLD>
+            <SEMI>3020391</SEMI>
+            <DESCRIPTION>P VALANCE CORNER CAP</DESCRIPTION>
+            <TOTALPARTS>312165</TOTALPARTS>
+            <REJECTPARTS>1830</REJECTPARTS>
+            <GOODPARTS>310335</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I383</MOLD>
+            <SEMI>3020407</SEMI>
+            <DESCRIPTION>SPCLTY WALL MNT BRKT</DESCRIPTION>
+            <TOTALPARTS>5518</TOTALPARTS>
+            <REJECTPARTS>50</REJECTPARTS>
+            <GOODPARTS>5468</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I441</MOLD>
+            <SEMI>3020408</SEMI>
+            <DESCRIPTION>3/4 SPEC WALL M. BRK</DESCRIPTION>
+            <TOTALPARTS>1796</TOTALPARTS>
+            <REJECTPARTS>68</REJECTPARTS>
+            <GOODPARTS>1728</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M071</MOLD>
+            <SEMI>3020423</SEMI>
+            <DESCRIPTION>91-5 TILTER HSG</DESCRIPTION>
+            <TOTALPARTS>696699</TOTALPARTS>
+            <REJECTPARTS>23634</REJECTPARTS>
+            <GOODPARTS>673065</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M210B</MOLD>
+            <SEMI>3020424</SEMI>
+            <DESCRIPTION>91-5 TLTR HSG BACK</DESCRIPTION>
+            <TOTALPARTS>72036</TOTALPARTS>
+            <REJECTPARTS>930</REJECTPARTS>
+            <GOODPARTS>71106</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M097</MOLD>
+            <SEMI>3020427</SEMI>
+            <DESCRIPTION>2 TAPE ROLL-UNIV</DESCRIPTION>
+            <TOTALPARTS>36497</TOTALPARTS>
+            <REJECTPARTS>381</REJECTPARTS>
+            <GOODPARTS>36116</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M090</MOLD>
+            <SEMI>3020433</SEMI>
+            <DESCRIPTION>STOP BALL CAP</DESCRIPTION>
+            <TOTALPARTS>16137</TOTALPARTS>
+            <REJECTPARTS>319</REJECTPARTS>
+            <GOODPARTS>15818</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M300A</MOLD>
+            <SEMI>3020434</SEMI>
+            <DESCRIPTION>SIL TR EC R/L</DESCRIPTION>
+            <TOTALPARTS>470</TOTALPARTS>
+            <REJECTPARTS>228</REJECTPARTS>
+            <GOODPARTS>242</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M120A</MOLD>
+            <SEMI>3020451</SEMI>
+            <DESCRIPTION>BRK-THRU SAFTEY TSL</DESCRIPTION>
+            <TOTALPARTS>85370</TOTALPARTS>
+            <REJECTPARTS>510</REJECTPARTS>
+            <GOODPARTS>84860</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M104</MOLD>
+            <SEMI>3020453</SEMI>
+            <DESCRIPTION>3/8 CRD GUIDE</DESCRIPTION>
+            <TOTALPARTS>162800</TOTALPARTS>
+            <REJECTPARTS>350</REJECTPARTS>
+            <GOODPARTS>162450</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M033D</MOLD>
+            <SEMI>3020455</SEMI>
+            <DESCRIPTION>MOTOR COUPLING S MOT</DESCRIPTION>
+            <TOTALPARTS>4149</TOTALPARTS>
+            <REJECTPARTS>35</REJECTPARTS>
+            <GOODPARTS>4114</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I605</MOLD>
+            <SEMI>3020458</SEMI>
+            <DESCRIPTION>ER EC S MOTOR 2 HOLE</DESCRIPTION>
+            <TOTALPARTS>2987</TOTALPARTS>
+            <REJECTPARTS>210</REJECTPARTS>
+            <GOODPARTS>2777</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M114</MOLD>
+            <SEMI>3020462</SEMI>
+            <DESCRIPTION>DLX GEARED DRIVE EC</DESCRIPTION>
+            <TOTALPARTS>9591</TOTALPARTS>
+            <REJECTPARTS>377</REJECTPARTS>
+            <GOODPARTS>9214</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M112</MOLD>
+            <SEMI>3020464</SEMI>
+            <DESCRIPTION>DLX TILT ROD GEAR</DESCRIPTION>
+            <TOTALPARTS>3980</TOTALPARTS>
+            <REJECTPARTS>298</REJECTPARTS>
+            <GOODPARTS>3682</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I636</MOLD>
+            <SEMI>3020465</SEMI>
+            <DESCRIPTION>DLX GEARED TILT GEAR</DESCRIPTION>
+            <TOTALPARTS>6032</TOTALPARTS>
+            <REJECTPARTS>796</REJECTPARTS>
+            <GOODPARTS>5236</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P187</MOLD>
+            <SEMI>3020466</SEMI>
+            <DESCRIPTION>1/4 OMEGA SPACER</DESCRIPTION>
+            <TOTALPARTS>81416</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>81416</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M217B</MOLD>
+            <SEMI>3020494</SEMI>
+            <DESCRIPTION>MB DIAMOND TASSEL</DESCRIPTION>
+            <TOTALPARTS>293223</TOTALPARTS>
+            <REJECTPARTS>1513</REJECTPARTS>
+            <GOODPARTS>291710</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M126B</MOLD>
+            <SEMI>3020499</SEMI>
+            <DESCRIPTION>3/4 CORD GUIDE</DESCRIPTION>
+            <TOTALPARTS>25672</TOTALPARTS>
+            <REJECTPARTS>690</REJECTPARTS>
+            <GOODPARTS>24982</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I242C</MOLD>
+            <SEMI>3020517</SEMI>
+            <DESCRIPTION>3/8 HOLD DWN BRKT NL</DESCRIPTION>
+            <TOTALPARTS>2620</TOTALPARTS>
+            <REJECTPARTS>500</REJECTPARTS>
+            <GOODPARTS>2120</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P150</MOLD>
+            <SEMI>3020528</SEMI>
+            <DESCRIPTION>PVC WAND SLEEVE</DESCRIPTION>
+            <TOTALPARTS>110842</TOTALPARTS>
+            <REJECTPARTS>9469</REJECTPARTS>
+            <GOODPARTS>101373</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M223A</MOLD>
+            <SEMI>3020529</SEMI>
+            <DESCRIPTION>PVC WAND BOTTOM PLUG</DESCRIPTION>
+            <TOTALPARTS>57771</TOTALPARTS>
+            <REJECTPARTS>758</REJECTPARTS>
+            <GOODPARTS>57013</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M142</MOLD>
+            <SEMI>3020568</SEMI>
+            <DESCRIPTION>MB VERTICAL VAL CLI</DESCRIPTION>
+            <TOTALPARTS>381809</TOTALPARTS>
+            <REJECTPARTS>4158</REJECTPARTS>
+            <GOODPARTS>377651</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M426</MOLD>
+            <SEMI>3020575</SEMI>
+            <DESCRIPTION>CRD CLEAT</DESCRIPTION>
+            <TOTALPARTS>14192</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>14192</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M120C</MOLD>
+            <SEMI>3020579</SEMI>
+            <DESCRIPTION>BRK-THRU SAFETY TSL</DESCRIPTION>
+            <TOTALPARTS>88504</TOTALPARTS>
+            <REJECTPARTS>3266</REJECTPARTS>
+            <GOODPARTS>85238</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M110A</MOLD>
+            <SEMI>3020581</SEMI>
+            <DESCRIPTION>1.5 TAPE ECC SPRT</DESCRIPTION>
+            <TOTALPARTS>8839</TOTALPARTS>
+            <REJECTPARTS>4045</REJECTPARTS>
+            <GOODPARTS>4794</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M153</MOLD>
+            <SEMI>3020604</SEMI>
+            <DESCRIPTION/>
+            <TOTALPARTS>63256</TOTALPARTS>
+            <REJECTPARTS>1626</REJECTPARTS>
+            <GOODPARTS>61630</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M167C</MOLD>
+            <SEMI>3020610</SEMI>
+            <DESCRIPTION>NEP-VIG EC L/R</DESCRIPTION>
+            <TOTALPARTS>30021</TOTALPARTS>
+            <REJECTPARTS>3715</REJECTPARTS>
+            <GOODPARTS>26307</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M167D</MOLD>
+            <SEMI>3020611</SEMI>
+            <DESCRIPTION>NEP-VIG EC L/R</DESCRIPTION>
+            <TOTALPARTS>19078</TOTALPARTS>
+            <REJECTPARTS>1733</REJECTPARTS>
+            <GOODPARTS>17346</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M120B</MOLD>
+            <SEMI>3020618</SEMI>
+            <DESCRIPTION>IMPACT SAFETY TASSEL</DESCRIPTION>
+            <TOTALPARTS>516889</TOTALPARTS>
+            <REJECTPARTS>1365</REJECTPARTS>
+            <GOODPARTS>515524</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M128B</MOLD>
+            <SEMI>3020667</SEMI>
+            <DESCRIPTION>MAN LP CL BODY R/L</DESCRIPTION>
+            <TOTALPARTS>780</TOTALPARTS>
+            <REJECTPARTS>20</REJECTPARTS>
+            <GOODPARTS>760</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M128A</MOLD>
+            <SEMI>3020668</SEMI>
+            <DESCRIPTION>MAN LP CL BODY R/L</DESCRIPTION>
+            <TOTALPARTS>780</TOTALPARTS>
+            <REJECTPARTS>20</REJECTPARTS>
+            <GOODPARTS>760</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M099b</MOLD>
+            <SEMI>3020669</SEMI>
+            <DESCRIPTION>MB 3/4 HLD DWN BRKT</DESCRIPTION>
+            <TOTALPARTS>6320</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>6320</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>I647</MOLD>
+            <SEMI>3020674</SEMI>
+            <DESCRIPTION>VVB WAND SLEEVE</DESCRIPTION>
+            <TOTALPARTS>53956</TOTALPARTS>
+            <REJECTPARTS>4966</REJECTPARTS>
+            <GOODPARTS>48990</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M576</MOLD>
+            <SEMI>3020691</SEMI>
+            <DESCRIPTION>CRD POCKET/FERRELL</DESCRIPTION>
+            <TOTALPARTS>4887300</TOTALPARTS>
+            <REJECTPARTS>35642</REJECTPARTS>
+            <GOODPARTS>4851658</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M182C</MOLD>
+            <SEMI>3020698</SEMI>
+            <DESCRIPTION>MAN ER TRVS SCREW-RH</DESCRIPTION>
+            <TOTALPARTS>5028</TOTALPARTS>
+            <REJECTPARTS>150</REJECTPARTS>
+            <GOODPARTS>4878</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M182D</MOLD>
+            <SEMI>3020699</SEMI>
+            <DESCRIPTION>MAN ER TRVS SCREW-LH</DESCRIPTION>
+            <TOTALPARTS>4700</TOTALPARTS>
+            <REJECTPARTS>480</REJECTPARTS>
+            <GOODPARTS>4220</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M199</MOLD>
+            <SEMI>3020707</SEMI>
+            <DESCRIPTION>2 VALANCE CRNR HING</DESCRIPTION>
+            <TOTALPARTS>64344</TOTALPARTS>
+            <REJECTPARTS>920</REJECTPARTS>
+            <GOODPARTS>63424</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M103B</MOLD>
+            <SEMI>3020708</SEMI>
+            <DESCRIPTION>2 TLTR HSG</DESCRIPTION>
+            <TOTALPARTS>6020</TOTALPARTS>
+            <REJECTPARTS>42</REJECTPARTS>
+            <GOODPARTS>5978</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M192</MOLD>
+            <SEMI>3020709</SEMI>
+            <DESCRIPTION>2 TILTER CVR WOOD</DESCRIPTION>
+            <TOTALPARTS>330236</TOTALPARTS>
+            <REJECTPARTS>4252</REJECTPARTS>
+            <GOODPARTS>325984</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M491</MOLD>
+            <SEMI>3020711</SEMI>
+            <DESCRIPTION>1 LIGHTLINE TES</DESCRIPTION>
+            <TOTALPARTS>591403</TOTALPARTS>
+            <REJECTPARTS>2888</REJECTPARTS>
+            <GOODPARTS>588515</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M212</MOLD>
+            <SEMI>3020717</SEMI>
+            <DESCRIPTION>PLASTIC TILTER LOCK</DESCRIPTION>
+            <TOTALPARTS>59313</TOTALPARTS>
+            <REJECTPARTS>745</REJECTPARTS>
+            <GOODPARTS>58568</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M250D</MOLD>
+            <SEMI>3020719</SEMI>
+            <DESCRIPTION>2 TRS WIDE TAPE WOOD</DESCRIPTION>
+            <TOTALPARTS>33798</TOTALPARTS>
+            <REJECTPARTS>205</REJECTPARTS>
+            <GOODPARTS>33593</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M190</MOLD>
+            <SEMI>3020738</SEMI>
+            <DESCRIPTION>VVB VAL CORNER ROUND</DESCRIPTION>
+            <TOTALPARTS>139744</TOTALPARTS>
+            <REJECTPARTS>9176</REJECTPARTS>
+            <GOODPARTS>130568</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P094B</MOLD>
+            <SEMI>3020741</SEMI>
+            <DESCRIPTION>ER NON-MOTOR EC</DESCRIPTION>
+            <TOTALPARTS>5126</TOTALPARTS>
+            <REJECTPARTS>380</REJECTPARTS>
+            <GOODPARTS>4746</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M472</MOLD>
+            <SEMI>3020750</SEMI>
+            <DESCRIPTION>EQUALIZER COVER</DESCRIPTION>
+            <TOTALPARTS>581921</TOTALPARTS>
+            <REJECTPARTS>33530</REJECTPARTS>
+            <GOODPARTS>548391</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M225A</MOLD>
+            <SEMI>3020751</SEMI>
+            <DESCRIPTION>2 LP TILTER HSG-IMP</DESCRIPTION>
+            <TOTALPARTS>317086</TOTALPARTS>
+            <REJECTPARTS>3056</REJECTPARTS>
+            <GOODPARTS>314030</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M228</MOLD>
+            <SEMI>3020754</SEMI>
+            <DESCRIPTION>2 LP RIBBON WOOD</DESCRIPTION>
+            <TOTALPARTS>155208</TOTALPARTS>
+            <REJECTPARTS>2749</REJECTPARTS>
+            <GOODPARTS>152459</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P096</MOLD>
+            <SEMI>3020766</SEMI>
+            <DESCRIPTION>MARATHON TLTR WRM GR</DESCRIPTION>
+            <TOTALPARTS>54112</TOTALPARTS>
+            <REJECTPARTS>1911</REJECTPARTS>
+            <GOODPARTS>52201</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M078C</MOLD>
+            <SEMI>3020767</SEMI>
+            <DESCRIPTION>MB 1.5 TILTER HSG</DESCRIPTION>
+            <TOTALPARTS>14514</TOTALPARTS>
+            <REJECTPARTS>365</REJECTPARTS>
+            <GOODPARTS>14149</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M266A</MOLD>
+            <SEMI>3020772</SEMI>
+            <DESCRIPTION>1.5 DELIGHTED TRS</DESCRIPTION>
+            <TOTALPARTS>19954</TOTALPARTS>
+            <REJECTPARTS>2342</REJECTPARTS>
+            <GOODPARTS>17612</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M261</MOLD>
+            <SEMI>3020774</SEMI>
+            <DESCRIPTION>DECOR HR EC</DESCRIPTION>
+            <TOTALPARTS>263256</TOTALPARTS>
+            <REJECTPARTS>10200</REJECTPARTS>
+            <GOODPARTS>253056</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M268</MOLD>
+            <SEMI>3020792</SEMI>
+            <DESCRIPTION>WIDE WIDTH LIMIT SC</DESCRIPTION>
+            <TOTALPARTS>42774</TOTALPARTS>
+            <REJECTPARTS>2808</REJECTPARTS>
+            <GOODPARTS>39966</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M279</MOLD>
+            <SEMI>3020795</SEMI>
+            <DESCRIPTION>2 LIFT CRD ANCHOR</DESCRIPTION>
+            <TOTALPARTS>22112</TOTALPARTS>
+            <REJECTPARTS>100</REJECTPARTS>
+            <GOODPARTS>22012</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M332A</MOLD>
+            <SEMI>3020798</SEMI>
+            <DESCRIPTION>VERT CHAIN SFTY TSL</DESCRIPTION>
+            <TOTALPARTS>151708</TOTALPARTS>
+            <REJECTPARTS>17379</REJECTPARTS>
+            <GOODPARTS>134329</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M374</MOLD>
+            <SEMI>3020804</SEMI>
+            <DESCRIPTION>PARA EC</DESCRIPTION>
+            <TOTALPARTS>7415</TOTALPARTS>
+            <REJECTPARTS>298</REJECTPARTS>
+            <GOODPARTS>7117</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M280</MOLD>
+            <SEMI>3020820</SEMI>
+            <DESCRIPTION>MB VRT VAL CRNR SPRT</DESCRIPTION>
+            <TOTALPARTS>64678</TOTALPARTS>
+            <REJECTPARTS>768</REJECTPARTS>
+            <GOODPARTS>63910</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M283</MOLD>
+            <SEMI>3020832</SEMI>
+            <DESCRIPTION>WOOD CRD TLT TSL</DESCRIPTION>
+            <TOTALPARTS>435856</TOTALPARTS>
+            <REJECTPARTS>11122</REJECTPARTS>
+            <GOODPARTS>424734</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M310</MOLD>
+            <SEMI>3020836</SEMI>
+            <DESCRIPTION>DOVETAIL CORNER KEY</DESCRIPTION>
+            <TOTALPARTS>14080</TOTALPARTS>
+            <REJECTPARTS>1000</REJECTPARTS>
+            <GOODPARTS>13080</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M351C</MOLD>
+            <SEMI>3020851</SEMI>
+            <DESCRIPTION>LOW PROFILE VAL CLIP</DESCRIPTION>
+            <TOTALPARTS>71351</TOTALPARTS>
+            <REJECTPARTS>487</REJECTPARTS>
+            <GOODPARTS>70864</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M427</MOLD>
+            <SEMI>3020853</SEMI>
+            <DESCRIPTION>SWING ARM TRS BASE</DESCRIPTION>
+            <TOTALPARTS>30455</TOTALPARTS>
+            <REJECTPARTS>233</REJECTPARTS>
+            <GOODPARTS>30222</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M385A</MOLD>
+            <SEMI>3020854</SEMI>
+            <DESCRIPTION>PARA SWG ARM TRS</DESCRIPTION>
+            <TOTALPARTS>31488</TOTALPARTS>
+            <REJECTPARTS>192</REJECTPARTS>
+            <GOODPARTS>31296</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M297</MOLD>
+            <SEMI>3020855</SEMI>
+            <DESCRIPTION>PARA TLTROD RET WSHR</DESCRIPTION>
+            <TOTALPARTS>133624</TOTALPARTS>
+            <REJECTPARTS>658</REJECTPARTS>
+            <GOODPARTS>132966</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M332B</MOLD>
+            <SEMI>3020860</SEMI>
+            <DESCRIPTION>VERT CHAIN TSL NL</DESCRIPTION>
+            <TOTALPARTS>104085</TOTALPARTS>
+            <REJECTPARTS>5821</REJECTPARTS>
+            <GOODPARTS>98264</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M357</MOLD>
+            <SEMI>3020865</SEMI>
+            <DESCRIPTION>1 TES ROLLFORM RAIL</DESCRIPTION>
+            <TOTALPARTS>1419018</TOTALPARTS>
+            <REJECTPARTS>107444</REJECTPARTS>
+            <GOODPARTS>1311574</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M371B</MOLD>
+            <SEMI>3020874</SEMI>
+            <DESCRIPTION>PLASTIC VVB C-CLIP</DESCRIPTION>
+            <TOTALPARTS>25580</TOTALPARTS>
+            <REJECTPARTS>20</REJECTPARTS>
+            <GOODPARTS>25560</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M369A</MOLD>
+            <SEMI>3020876</SEMI>
+            <DESCRIPTION>PARA FXD WND LCK CLR</DESCRIPTION>
+            <TOTALPARTS>45532</TOTALPARTS>
+            <REJECTPARTS>266</REJECTPARTS>
+            <GOODPARTS>45266</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M399A</MOLD>
+            <SEMI>3020887</SEMI>
+            <DESCRIPTION>PARA INST BRKT TEMP</DESCRIPTION>
+            <TOTALPARTS>2263</TOTALPARTS>
+            <REJECTPARTS>25</REJECTPARTS>
+            <GOODPARTS>2238</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M366A</MOLD>
+            <SEMI>3020890</SEMI>
+            <DESCRIPTION>P FXD WND CRD T HSG</DESCRIPTION>
+            <TOTALPARTS>47936</TOTALPARTS>
+            <REJECTPARTS>1245</REJECTPARTS>
+            <GOODPARTS>46691</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M367</MOLD>
+            <SEMI>3020891</SEMI>
+            <DESCRIPTION>P FXD WND CRD T CVR</DESCRIPTION>
+            <TOTALPARTS>45574</TOTALPARTS>
+            <REJECTPARTS>868</REJECTPARTS>
+            <GOODPARTS>44706</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M295</MOLD>
+            <SEMI>3020904</SEMI>
+            <DESCRIPTION>UG GOVERNOR</DESCRIPTION>
+            <TOTALPARTS>392809</TOTALPARTS>
+            <REJECTPARTS>6609</REJECTPARTS>
+            <GOODPARTS>386200</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M289</MOLD>
+            <SEMI>3020906</SEMI>
+            <DESCRIPTION>UG ONE WAY GEAR</DESCRIPTION>
+            <TOTALPARTS>376911</TOTALPARTS>
+            <REJECTPARTS>1183</REJECTPARTS>
+            <GOODPARTS>375728</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M365</MOLD>
+            <SEMI>3020907</SEMI>
+            <DESCRIPTION>UG DRIVEN SPOOL</DESCRIPTION>
+            <TOTALPARTS>373775</TOTALPARTS>
+            <REJECTPARTS>21404</REJECTPARTS>
+            <GOODPARTS>352371</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M607</MOLD>
+            <SEMI>3020945</SEMI>
+            <DESCRIPTION>ER SHAFT 6 IN</DESCRIPTION>
+            <TOTALPARTS>4304</TOTALPARTS>
+            <REJECTPARTS>24</REJECTPARTS>
+            <GOODPARTS>4280</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M009</MOLD>
+            <SEMI>3020947</SEMI>
+            <DESCRIPTION>UG GOV HSG PART 2</DESCRIPTION>
+            <TOTALPARTS>356583</TOTALPARTS>
+            <REJECTPARTS>2491</REJECTPARTS>
+            <GOODPARTS>354092</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M003</MOLD>
+            <SEMI>3020948</SEMI>
+            <DESCRIPTION>UG GOV HSG EC 4</DESCRIPTION>
+            <TOTALPARTS>353133</TOTALPARTS>
+            <REJECTPARTS>1680</REJECTPARTS>
+            <GOODPARTS>351453</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M012</MOLD>
+            <SEMI>3020949</SEMI>
+            <DESCRIPTION>UG GOV HSG</DESCRIPTION>
+            <TOTALPARTS>351502</TOTALPARTS>
+            <REJECTPARTS>3117</REJECTPARTS>
+            <GOODPARTS>348385</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M008</MOLD>
+            <SEMI>3020950</SEMI>
+            <DESCRIPTION>REEL HSG</DESCRIPTION>
+            <TOTALPARTS>359338</TOTALPARTS>
+            <REJECTPARTS>2210</REJECTPARTS>
+            <GOODPARTS>357128</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M630</MOLD>
+            <SEMI>3020951</SEMI>
+            <DESCRIPTION>LARGE WAND HANDLE</DESCRIPTION>
+            <TOTALPARTS>52356</TOTALPARTS>
+            <REJECTPARTS>1535</REJECTPARTS>
+            <GOODPARTS>50821</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M625</MOLD>
+            <SEMI>3020952</SEMI>
+            <DESCRIPTION>LARGE WND HANDLE CVR</DESCRIPTION>
+            <TOTALPARTS>34872</TOTALPARTS>
+            <REJECTPARTS>2372</REJECTPARTS>
+            <GOODPARTS>32500</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M293</MOLD>
+            <SEMI>3020953</SEMI>
+            <DESCRIPTION>PASSIVE EC BODY</DESCRIPTION>
+            <TOTALPARTS>39704</TOTALPARTS>
+            <REJECTPARTS>5426</REJECTPARTS>
+            <GOODPARTS>34278</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M294</MOLD>
+            <SEMI>3020954</SEMI>
+            <DESCRIPTION>PASSIVE EC CVR</DESCRIPTION>
+            <TOTALPARTS>39360</TOTALPARTS>
+            <REJECTPARTS>956</REJECTPARTS>
+            <GOODPARTS>38404</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M621</MOLD>
+            <SEMI>3020964</SEMI>
+            <DESCRIPTION>ADAPTOR LIFT HSG 3/4</DESCRIPTION>
+            <TOTALPARTS>261545</TOTALPARTS>
+            <REJECTPARTS>8896</REJECTPARTS>
+            <GOODPARTS>252649</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M610</MOLD>
+            <SEMI>3020969</SEMI>
+            <DESCRIPTION>BATTERY TUBING HLDR</DESCRIPTION>
+            <TOTALPARTS>5203</TOTALPARTS>
+            <REJECTPARTS>15</REJECTPARTS>
+            <GOODPARTS>5188</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M276</MOLD>
+            <SEMI>3020972</SEMI>
+            <DESCRIPTION>UG CONN 2</DESCRIPTION>
+            <TOTALPARTS>267088</TOTALPARTS>
+            <REJECTPARTS>2866</REJECTPARTS>
+            <GOODPARTS>264222</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M125B</MOLD>
+            <SEMI>3020974</SEMI>
+            <DESCRIPTION>ALT VVB DRV END CVR</DESCRIPTION>
+            <TOTALPARTS>5595</TOTALPARTS>
+            <REJECTPARTS>100</REJECTPARTS>
+            <GOODPARTS>5495</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M107C</MOLD>
+            <SEMI>3020976</SEMI>
+            <DESCRIPTION>3/4 DUET EC NL</DESCRIPTION>
+            <TOTALPARTS>820148</TOTALPARTS>
+            <REJECTPARTS>51851</REJECTPARTS>
+            <GOODPARTS>768297</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M360B</MOLD>
+            <SEMI>3020985</SEMI>
+            <DESCRIPTION>SU TIT RTR COUNTER</DESCRIPTION>
+            <TOTALPARTS>2935</TOTALPARTS>
+            <REJECTPARTS>96</REJECTPARTS>
+            <GOODPARTS>2839</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC128</MOLD>
+            <SEMI>3022129</SEMI>
+            <DESCRIPTION>1.5 TLT WORM SHAFT</DESCRIPTION>
+            <TOTALPARTS>31290</TOTALPARTS>
+            <REJECTPARTS>3920</REJECTPARTS>
+            <GOODPARTS>27370</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC126A</MOLD>
+            <SEMI>3022132</SEMI>
+            <DESCRIPTION>1.5 UNLOCK FINGER RH</DESCRIPTION>
+            <TOTALPARTS>3533</TOTALPARTS>
+            <REJECTPARTS>328</REJECTPARTS>
+            <GOODPARTS>3205</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC147A</MOLD>
+            <SEMI>3022136</SEMI>
+            <DESCRIPTION>1 UNLOCK FINGER RH</DESCRIPTION>
+            <TOTALPARTS>4219</TOTALPARTS>
+            <REJECTPARTS>403</REJECTPARTS>
+            <GOODPARTS>3816</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC151</MOLD>
+            <SEMI>3022139</SEMI>
+            <DESCRIPTION>1 IN TLT WORM SHAFT</DESCRIPTION>
+            <TOTALPARTS>420225</TOTALPARTS>
+            <REJECTPARTS>6741</REJECTPARTS>
+            <GOODPARTS>413484</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC152</MOLD>
+            <SEMI>3022139</SEMI>
+            <DESCRIPTION>1 IN TLT WORM SHAFT</DESCRIPTION>
+            <TOTALPARTS>157710</TOTALPARTS>
+            <REJECTPARTS>3654</REJECTPARTS>
+            <GOODPARTS>154056</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC131A</MOLD>
+            <SEMI>3022172</SEMI>
+            <DESCRIPTION>2 TLT GEAR -260 DEG</DESCRIPTION>
+            <TOTALPARTS>6165</TOTALPARTS>
+            <REJECTPARTS>279</REJECTPARTS>
+            <GOODPARTS>5886</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC130</MOLD>
+            <SEMI>3022173</SEMI>
+            <DESCRIPTION>2 TLTR WORM</DESCRIPTION>
+            <TOTALPARTS>7441</TOTALPARTS>
+            <REJECTPARTS>740</REJECTPARTS>
+            <GOODPARTS>6701</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC166</MOLD>
+            <SEMI>3022186</SEMI>
+            <DESCRIPTION>91-5 GEAR</DESCRIPTION>
+            <TOTALPARTS>607282</TOTALPARTS>
+            <REJECTPARTS>10881</REJECTPARTS>
+            <GOODPARTS>596401</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC143</MOLD>
+            <SEMI>3022203</SEMI>
+            <DESCRIPTION>HEX TASSEL WEIGHT</DESCRIPTION>
+            <TOTALPARTS>17304</TOTALPARTS>
+            <REJECTPARTS>4788</REJECTPARTS>
+            <GOODPARTS>12516</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC160</MOLD>
+            <SEMI>3022204</SEMI>
+            <DESCRIPTION>PARA CRD TSL WGHT</DESCRIPTION>
+            <TOTALPARTS>38304</TOTALPARTS>
+            <REJECTPARTS>524</REJECTPARTS>
+            <GOODPARTS>37780</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC154</MOLD>
+            <SEMI>3022208</SEMI>
+            <DESCRIPTION>2 LP TAPE ROLL SLOT</DESCRIPTION>
+            <TOTALPARTS>15081</TOTALPARTS>
+            <REJECTPARTS>186</REJECTPARTS>
+            <GOODPARTS>14895</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC149</MOLD>
+            <SEMI>3022209</SEMI>
+            <DESCRIPTION>2 LP TLT WRM SHAFT</DESCRIPTION>
+            <TOTALPARTS>292585</TOTALPARTS>
+            <REJECTPARTS>18989</REJECTPARTS>
+            <GOODPARTS>273596</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC157</MOLD>
+            <SEMI>3022211</SEMI>
+            <DESCRIPTION>P. FXD WND CRD T.WGH</DESCRIPTION>
+            <TOTALPARTS>52576</TOTALPARTS>
+            <REJECTPARTS>3130</REJECTPARTS>
+            <GOODPARTS>49446</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC197</MOLD>
+            <SEMI>3022213</SEMI>
+            <DESCRIPTION>UG BRAKE ARM</DESCRIPTION>
+            <TOTALPARTS>337653</TOTALPARTS>
+            <REJECTPARTS>11698</REJECTPARTS>
+            <GOODPARTS>325955</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC200</MOLD>
+            <SEMI>3022214</SEMI>
+            <DESCRIPTION>UG GOV WGHT</DESCRIPTION>
+            <TOTALPARTS>254190</TOTALPARTS>
+            <REJECTPARTS>2456</REJECTPARTS>
+            <GOODPARTS>251734</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC199</MOLD>
+            <SEMI>3022214</SEMI>
+            <DESCRIPTION>UG GOV WGHT</DESCRIPTION>
+            <TOTALPARTS>170126</TOTALPARTS>
+            <REJECTPARTS>3770</REJECTPARTS>
+            <GOODPARTS>166356</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC192</MOLD>
+            <SEMI>3022215</SEMI>
+            <DESCRIPTION>LR C2 OUTPUT SPOOL</DESCRIPTION>
+            <TOTALPARTS>66588</TOTALPARTS>
+            <REJECTPARTS>10360</REJECTPARTS>
+            <GOODPARTS>56228</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC191</MOLD>
+            <SEMI>3022215</SEMI>
+            <DESCRIPTION>LR C2 OUTPUT SPOOL</DESCRIPTION>
+            <TOTALPARTS>21495</TOTALPARTS>
+            <REJECTPARTS>1100</REJECTPARTS>
+            <GOODPARTS>20395</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC186A</MOLD>
+            <SEMI>3022221</SEMI>
+            <DESCRIPTION>LR 3:1 TRANS CONE</DESCRIPTION>
+            <TOTALPARTS>425379</TOTALPARTS>
+            <REJECTPARTS>2811</REJECTPARTS>
+            <GOODPARTS>422568</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC187</MOLD>
+            <SEMI>3022221</SEMI>
+            <DESCRIPTION>LR 3:1 TRANS CONE</DESCRIPTION>
+            <TOTALPARTS>300093</TOTALPARTS>
+            <REJECTPARTS>1696</REJECTPARTS>
+            <GOODPARTS>298397</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC185</MOLD>
+            <SEMI>3022222</SEMI>
+            <DESCRIPTION>LR 3:1 TRANS CYL</DESCRIPTION>
+            <TOTALPARTS>658520</TOTALPARTS>
+            <REJECTPARTS>12633</REJECTPARTS>
+            <GOODPARTS>645887</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC193</MOLD>
+            <SEMI>3022223</SEMI>
+            <DESCRIPTION>LR SHORT 5:1 CYL</DESCRIPTION>
+            <TOTALPARTS>263693</TOTALPARTS>
+            <REJECTPARTS>11268</REJECTPARTS>
+            <GOODPARTS>252425</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC189</MOLD>
+            <SEMI>3022225</SEMI>
+            <DESCRIPTION>LR CRD TLT DBL GEAR</DESCRIPTION>
+            <TOTALPARTS>13203</TOTALPARTS>
+            <REJECTPARTS>1786</REJECTPARTS>
+            <GOODPARTS>11417</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC183</MOLD>
+            <SEMI>3022228</SEMI>
+            <DESCRIPTION>LR COAX OP SPOOL 1</DESCRIPTION>
+            <TOTALPARTS>226431</TOTALPARTS>
+            <REJECTPARTS>2318</REJECTPARTS>
+            <GOODPARTS>224113</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC184</MOLD>
+            <SEMI>3022228</SEMI>
+            <DESCRIPTION>LR COAX OP SPOOL 1</DESCRIPTION>
+            <TOTALPARTS>195813</TOTALPARTS>
+            <REJECTPARTS>5466</REJECTPARTS>
+            <GOODPARTS>190347</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC196</MOLD>
+            <SEMI>3022229</SEMI>
+            <DESCRIPTION>LR 27TOOTH TRNS CONE</DESCRIPTION>
+            <TOTALPARTS>46520</TOTALPARTS>
+            <REJECTPARTS>2309</REJECTPARTS>
+            <GOODPARTS>44211</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC194</MOLD>
+            <SEMI>3022230</SEMI>
+            <DESCRIPTION>LR 8.5:1 TRANS CYL</DESCRIPTION>
+            <TOTALPARTS>9968</TOTALPARTS>
+            <REJECTPARTS>631</REJECTPARTS>
+            <GOODPARTS>9337</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC210</MOLD>
+            <SEMI>3022237</SEMI>
+            <DESCRIPTION>LUM GEAR WORM TILT</DESCRIPTION>
+            <TOTALPARTS>1072</TOTALPARTS>
+            <REJECTPARTS>45</REJECTPARTS>
+            <GOODPARTS>1027</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC211</MOLD>
+            <SEMI>3022238</SEMI>
+            <DESCRIPTION>LUM GEAR DRIVER TILT</DESCRIPTION>
+            <TOTALPARTS>2323</TOTALPARTS>
+            <REJECTPARTS>115</REJECTPARTS>
+            <GOODPARTS>2208</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC205</MOLD>
+            <SEMI>3022240</SEMI>
+            <DESCRIPTION>LR OUTPUT SPOOL 3/4</DESCRIPTION>
+            <TOTALPARTS>681565</TOTALPARTS>
+            <REJECTPARTS>9373</REJECTPARTS>
+            <GOODPARTS>672192</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC207B</MOLD>
+            <SEMI>3022241</SEMI>
+            <DESCRIPTION>BOTTOM RAIL WEIGHT</DESCRIPTION>
+            <TOTALPARTS>48786</TOTALPARTS>
+            <REJECTPARTS>1048</REJECTPARTS>
+            <GOODPARTS>47738</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC212</MOLD>
+            <SEMI>3022242</SEMI>
+            <DESCRIPTION>AL COUNTER BAL WGHT</DESCRIPTION>
+            <TOTALPARTS>7461</TOTALPARTS>
+            <REJECTPARTS>915</REJECTPARTS>
+            <GOODPARTS>6546</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC217</MOLD>
+            <SEMI>3022243</SEMI>
+            <DESCRIPTION>AL CRD TILT WGHT</DESCRIPTION>
+            <TOTALPARTS>9392</TOTALPARTS>
+            <REJECTPARTS>438</REJECTPARTS>
+            <GOODPARTS>8954</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC224</MOLD>
+            <SEMI>3022244</SEMI>
+            <DESCRIPTION>URR KEY</DESCRIPTION>
+            <TOTALPARTS>102036</TOTALPARTS>
+            <REJECTPARTS>1893</REJECTPARTS>
+            <GOODPARTS>100143</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC206B</MOLD>
+            <SEMI>3022244</SEMI>
+            <DESCRIPTION>URR KEY</DESCRIPTION>
+            <TOTALPARTS>21745</TOTALPARTS>
+            <REJECTPARTS>15</REJECTPARTS>
+            <GOODPARTS>21730</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC215</MOLD>
+            <SEMI>3022246</SEMI>
+            <DESCRIPTION>VPR MTR SHAFT ADPTR</DESCRIPTION>
+            <TOTALPARTS>7399</TOTALPARTS>
+            <REJECTPARTS>961</REJECTPARTS>
+            <GOODPARTS>6438</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC216A</MOLD>
+            <SEMI>3022247</SEMI>
+            <DESCRIPTION>CRNR BRKT/REAR BRKT</DESCRIPTION>
+            <TOTALPARTS>12424</TOTALPARTS>
+            <REJECTPARTS>267</REJECTPARTS>
+            <GOODPARTS>12157</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC216B</MOLD>
+            <SEMI>3022254</SEMI>
+            <DESCRIPTION>CRNR BRKT/REAR BRKT</DESCRIPTION>
+            <TOTALPARTS>12424</TOTALPARTS>
+            <REJECTPARTS>267</REJECTPARTS>
+            <GOODPARTS>12157</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC223A</MOLD>
+            <SEMI>3022255</SEMI>
+            <DESCRIPTION>SHIFT ARM R</DESCRIPTION>
+            <TOTALPARTS>11288</TOTALPARTS>
+            <REJECTPARTS>186</REJECTPARTS>
+            <GOODPARTS>11102</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC223B</MOLD>
+            <SEMI>3022256</SEMI>
+            <DESCRIPTION>SHIFT ARM R/L</DESCRIPTION>
+            <TOTALPARTS>1623</TOTALPARTS>
+            <REJECTPARTS>35</REJECTPARTS>
+            <GOODPARTS>1588</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC225A</MOLD>
+            <SEMI>3022257</SEMI>
+            <DESCRIPTION>SHIFT ARM VUG RH/LH</DESCRIPTION>
+            <TOTALPARTS>18725</TOTALPARTS>
+            <REJECTPARTS>422</REJECTPARTS>
+            <GOODPARTS>18303</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC225B</MOLD>
+            <SEMI>3022258</SEMI>
+            <DESCRIPTION>SHIFT ARM VUG RH/LH</DESCRIPTION>
+            <TOTALPARTS>6627</TOTALPARTS>
+            <REJECTPARTS>252</REJECTPARTS>
+            <GOODPARTS>6375</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC226</MOLD>
+            <SEMI>3022259</SEMI>
+            <DESCRIPTION>2IN TLT ADPTR D ROD</DESCRIPTION>
+            <TOTALPARTS>43241</TOTALPARTS>
+            <REJECTPARTS>2987</REJECTPARTS>
+            <GOODPARTS>40254</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC214B</MOLD>
+            <SEMI>3022260</SEMI>
+            <DESCRIPTION>2IN LP TILT GEAR 360</DESCRIPTION>
+            <TOTALPARTS>305772</TOTALPARTS>
+            <REJECTPARTS>3640</REJECTPARTS>
+            <GOODPARTS>302132</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC228</MOLD>
+            <SEMI>3022261</SEMI>
+            <DESCRIPTION>FW TRANS CYL 4</DESCRIPTION>
+            <TOTALPARTS>45097</TOTALPARTS>
+            <REJECTPARTS>1000</REJECTPARTS>
+            <GOODPARTS>44097</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC227</MOLD>
+            <SEMI>3022261</SEMI>
+            <DESCRIPTION>FW TRANS CYL 4</DESCRIPTION>
+            <TOTALPARTS>5037</TOTALPARTS>
+            <REJECTPARTS>55</REJECTPARTS>
+            <GOODPARTS>4982</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC230</MOLD>
+            <SEMI>3022262</SEMI>
+            <DESCRIPTION>LR 2 TRANS OUTPUT GR</DESCRIPTION>
+            <TOTALPARTS>85665</TOTALPARTS>
+            <REJECTPARTS>4542</REJECTPARTS>
+            <GOODPARTS>81123</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC229</MOLD>
+            <SEMI>3022263</SEMI>
+            <DESCRIPTION>LR 23 TOOTH CONE</DESCRIPTION>
+            <TOTALPARTS>45274</TOTALPARTS>
+            <REJECTPARTS>5356</REJECTPARTS>
+            <GOODPARTS>39918</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC167B</MOLD>
+            <SEMI>3022264</SEMI>
+            <DESCRIPTION>DOUBLE PITCH GEAR</DESCRIPTION>
+            <TOTALPARTS>64664</TOTALPARTS>
+            <REJECTPARTS>6082</REJECTPARTS>
+            <GOODPARTS>58582</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC188A</MOLD>
+            <SEMI>3022276</SEMI>
+            <DESCRIPTION>LR C TRANS OUTPUT GR</DESCRIPTION>
+            <TOTALPARTS>435980</TOTALPARTS>
+            <REJECTPARTS>5968</REJECTPARTS>
+            <GOODPARTS>430012</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC239</MOLD>
+            <SEMI>3022277</SEMI>
+            <DESCRIPTION>LR CHR TRANS OUT GR</DESCRIPTION>
+            <TOTALPARTS>390717</TOTALPARTS>
+            <REJECTPARTS>6953</REJECTPARTS>
+            <GOODPARTS>383764</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC236</MOLD>
+            <SEMI>3022279</SEMI>
+            <DESCRIPTION>SUXL MTR COUP HUB</DESCRIPTION>
+            <TOTALPARTS>11177</TOTALPARTS>
+            <REJECTPARTS>2345</REJECTPARTS>
+            <GOODPARTS>8832</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC235</MOLD>
+            <SEMI>3022280</SEMI>
+            <DESCRIPTION>GOV WEIGHT</DESCRIPTION>
+            <TOTALPARTS>32336</TOTALPARTS>
+            <REJECTPARTS>865</REJECTPARTS>
+            <GOODPARTS>31471</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC234</MOLD>
+            <SEMI>3022281</SEMI>
+            <DESCRIPTION>BRAKE</DESCRIPTION>
+            <TOTALPARTS>20068</TOTALPARTS>
+            <REJECTPARTS>4470</REJECTPARTS>
+            <GOODPARTS>15598</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC238</MOLD>
+            <SEMI>3022286</SEMI>
+            <DESCRIPTION>PGM TLT GR MTR</DESCRIPTION>
+            <TOTALPARTS>3188</TOTALPARTS>
+            <REJECTPARTS>283</REJECTPARTS>
+            <GOODPARTS>2905</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>DC237</MOLD>
+            <SEMI>3022287</SEMI>
+            <DESCRIPTION>TLT GEAR ROD</DESCRIPTION>
+            <TOTALPARTS>4278</TOTALPARTS>
+            <REJECTPARTS>857</REJECTPARTS>
+            <GOODPARTS>3421</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M648</MOLD>
+            <SEMI>3024003</SEMI>
+            <DESCRIPTION>LR MOTOR LOCK</DESCRIPTION>
+            <TOTALPARTS>1250896</TOTALPARTS>
+            <REJECTPARTS>14716</REJECTPARTS>
+            <GOODPARTS>1236180</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M898A</MOLD>
+            <SEMI>3024005</SEMI>
+            <DESCRIPTION>LR C1MOTOR HSG</DESCRIPTION>
+            <TOTALPARTS>905111</TOTALPARTS>
+            <REJECTPARTS>10010</REJECTPARTS>
+            <GOODPARTS>895101</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M652</MOLD>
+            <SEMI>3024008</SEMI>
+            <DESCRIPTION>LR C2 MTR HSG SPL SS</DESCRIPTION>
+            <TOTALPARTS>168615</TOTALPARTS>
+            <REJECTPARTS>6877</REJECTPARTS>
+            <GOODPARTS>161738</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M582</MOLD>
+            <SEMI>3024420</SEMI>
+            <DESCRIPTION>SU UG AXLE HI CAP</DESCRIPTION>
+            <TOTALPARTS>122610</TOTALPARTS>
+            <REJECTPARTS>2815</REJECTPARTS>
+            <GOODPARTS>119795</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M536</MOLD>
+            <SEMI>3024421</SEMI>
+            <DESCRIPTION>JAMB JACK III</DESCRIPTION>
+            <TOTALPARTS>25156</TOTALPARTS>
+            <REJECTPARTS>114</REJECTPARTS>
+            <GOODPARTS>25042</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M527</MOLD>
+            <SEMI>3024425</SEMI>
+            <DESCRIPTION>3/8 DU RH TR EC</DESCRIPTION>
+            <TOTALPARTS>18668</TOTALPARTS>
+            <REJECTPARTS>1028</REJECTPARTS>
+            <GOODPARTS>17640</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M526</MOLD>
+            <SEMI>3024426</SEMI>
+            <DESCRIPTION>3/8 DU LH TR EC</DESCRIPTION>
+            <TOTALPARTS>13660</TOTALPARTS>
+            <REJECTPARTS>468</REJECTPARTS>
+            <GOODPARTS>13192</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M529</MOLD>
+            <SEMI>3024427</SEMI>
+            <DESCRIPTION>3/4 DU RH TR EC</DESCRIPTION>
+            <TOTALPARTS>20464</TOTALPARTS>
+            <REJECTPARTS>651</REJECTPARTS>
+            <GOODPARTS>19813</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M528</MOLD>
+            <SEMI>3024428</SEMI>
+            <DESCRIPTION>3/4 DU LH TR EC</DESCRIPTION>
+            <TOTALPARTS>27631</TOTALPARTS>
+            <REJECTPARTS>1436</REJECTPARTS>
+            <GOODPARTS>26195</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M523</MOLD>
+            <SEMI>3024429</SEMI>
+            <DESCRIPTION>3/8 DU RH CL CVR</DESCRIPTION>
+            <TOTALPARTS>17279</TOTALPARTS>
+            <REJECTPARTS>1234</REJECTPARTS>
+            <GOODPARTS>16045</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M522</MOLD>
+            <SEMI>3024430</SEMI>
+            <DESCRIPTION>3/8 DU LH CL CVR</DESCRIPTION>
+            <TOTALPARTS>15080</TOTALPARTS>
+            <REJECTPARTS>1025</REJECTPARTS>
+            <GOODPARTS>14055</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M525</MOLD>
+            <SEMI>3024431</SEMI>
+            <DESCRIPTION>3/4 DU RH CL CVR</DESCRIPTION>
+            <TOTALPARTS>13464</TOTALPARTS>
+            <REJECTPARTS>460</REJECTPARTS>
+            <GOODPARTS>13004</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M524</MOLD>
+            <SEMI>3024432</SEMI>
+            <DESCRIPTION>3/4 DU LH CL CVR</DESCRIPTION>
+            <TOTALPARTS>14280</TOTALPARTS>
+            <REJECTPARTS>650</REJECTPARTS>
+            <GOODPARTS>13630</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M558</MOLD>
+            <SEMI>3024434</SEMI>
+            <DESCRIPTION>FLUSH MNT CRD TENS</DESCRIPTION>
+            <TOTALPARTS>570936</TOTALPARTS>
+            <REJECTPARTS>1433</REJECTPARTS>
+            <GOODPARTS>569503</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M566</MOLD>
+            <SEMI>3024435</SEMI>
+            <DESCRIPTION>SU UG CRD CONN UPPER</DESCRIPTION>
+            <TOTALPARTS>28696</TOTALPARTS>
+            <REJECTPARTS>1671</REJECTPARTS>
+            <GOODPARTS>27025</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M581</MOLD>
+            <SEMI>3024436</SEMI>
+            <DESCRIPTION>SU UG CRD CONN LOWER</DESCRIPTION>
+            <TOTALPARTS>7873</TOTALPARTS>
+            <REJECTPARTS>20097</REJECTPARTS>
+            <GOODPARTS>-12224</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M530</MOLD>
+            <SEMI>3024437</SEMI>
+            <DESCRIPTION>VG VALANCE TR EC</DESCRIPTION>
+            <TOTALPARTS>91221</TOTALPARTS>
+            <REJECTPARTS>2048</REJECTPARTS>
+            <GOODPARTS>89173</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M567</MOLD>
+            <SEMI>3024439</SEMI>
+            <DESCRIPTION>SU UG TASSEL</DESCRIPTION>
+            <TOTALPARTS>125246</TOTALPARTS>
+            <REJECTPARTS>12706</REJECTPARTS>
+            <GOODPARTS>112540</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M533</MOLD>
+            <SEMI>3024441</SEMI>
+            <DESCRIPTION>ER PKT/BKL SET</DESCRIPTION>
+            <TOTALPARTS>6920</TOTALPARTS>
+            <REJECTPARTS>440</REJECTPARTS>
+            <GOODPARTS>6480</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M027B</MOLD>
+            <SEMI>3024442</SEMI>
+            <DESCRIPTION>CENTER PULLEY</DESCRIPTION>
+            <TOTALPARTS>16752</TOTALPARTS>
+            <REJECTPARTS>13</REJECTPARTS>
+            <GOODPARTS>16739</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M402B</MOLD>
+            <SEMI>3024500</SEMI>
+            <DESCRIPTION>LP CLOTH TAPE ROLL</DESCRIPTION>
+            <TOTALPARTS>98093</TOTALPARTS>
+            <REJECTPARTS>738</REJECTPARTS>
+            <GOODPARTS>97355</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M021</MOLD>
+            <SEMI>3024504</SEMI>
+            <DESCRIPTION>2IN BR EC - NO PIN</DESCRIPTION>
+            <TOTALPARTS>194001</TOTALPARTS>
+            <REJECTPARTS>6177</REJECTPARTS>
+            <GOODPARTS>187824</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M534A</MOLD>
+            <SEMI>3024510</SEMI>
+            <DESCRIPTION>1.25 ER MTRZ/STD EC</DESCRIPTION>
+            <TOTALPARTS>634</TOTALPARTS>
+            <REJECTPARTS>11</REJECTPARTS>
+            <GOODPARTS>623</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M534B</MOLD>
+            <SEMI>3024511</SEMI>
+            <DESCRIPTION>1.25 ER MTRZ/STD EC</DESCRIPTION>
+            <TOTALPARTS>634</TOTALPARTS>
+            <REJECTPARTS>11</REJECTPARTS>
+            <GOODPARTS>623</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M591A</MOLD>
+            <SEMI>3024515</SEMI>
+            <DESCRIPTION>AL INST BRKT LID</DESCRIPTION>
+            <TOTALPARTS>12940</TOTALPARTS>
+            <REJECTPARTS>984</REJECTPARTS>
+            <GOODPARTS>11956</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M591B</MOLD>
+            <SEMI>3024516</SEMI>
+            <DESCRIPTION>AL INST BRKT LID LH</DESCRIPTION>
+            <TOTALPARTS>13689</TOTALPARTS>
+            <REJECTPARTS>1570</REJECTPARTS>
+            <GOODPARTS>12119</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M595B</MOLD>
+            <SEMI>3024517</SEMI>
+            <DESCRIPTION>AL INST BRKT L/R</DESCRIPTION>
+            <TOTALPARTS>17776</TOTALPARTS>
+            <REJECTPARTS>3637</REJECTPARTS>
+            <GOODPARTS>14139</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M595A</MOLD>
+            <SEMI>3024518</SEMI>
+            <DESCRIPTION>AL INST BRKT L/R</DESCRIPTION>
+            <TOTALPARTS>16630</TOTALPARTS>
+            <REJECTPARTS>2846</REJECTPARTS>
+            <GOODPARTS>13784</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M596B</MOLD>
+            <SEMI>3024519</SEMI>
+            <DESCRIPTION>AL INST BRKT CVR L/R</DESCRIPTION>
+            <TOTALPARTS>11870</TOTALPARTS>
+            <REJECTPARTS>1163</REJECTPARTS>
+            <GOODPARTS>10707</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M596A</MOLD>
+            <SEMI>3024520</SEMI>
+            <DESCRIPTION>AL INST BRKT CVR L/R</DESCRIPTION>
+            <TOTALPARTS>13734</TOTALPARTS>
+            <REJECTPARTS>1919</REJECTPARTS>
+            <GOODPARTS>11815</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M555B</MOLD>
+            <SEMI>3024521</SEMI>
+            <DESCRIPTION>AL REAR HLD DWN SPCR</DESCRIPTION>
+            <TOTALPARTS>580</TOTALPARTS>
+            <REJECTPARTS>53</REJECTPARTS>
+            <GOODPARTS>527</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M559A</MOLD>
+            <SEMI>3024522</SEMI>
+            <DESCRIPTION>3/4 MTR SIDE EC R/L</DESCRIPTION>
+            <TOTALPARTS>5060</TOTALPARTS>
+            <REJECTPARTS>771</REJECTPARTS>
+            <GOODPARTS>4290</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M559B</MOLD>
+            <SEMI>3024523</SEMI>
+            <DESCRIPTION>3/4 MTR SIDE EC</DESCRIPTION>
+            <TOTALPARTS>7331</TOTALPARTS>
+            <REJECTPARTS>684</REJECTPARTS>
+            <GOODPARTS>6648</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M573A</MOLD>
+            <SEMI>3024527</SEMI>
+            <DESCRIPTION>SURATCHET CATCH/BRKT</DESCRIPTION>
+            <TOTALPARTS>253107</TOTALPARTS>
+            <REJECTPARTS>1694</REJECTPARTS>
+            <GOODPARTS>251414</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M573B</MOLD>
+            <SEMI>3024528</SEMI>
+            <DESCRIPTION>SURATCHET CATCH/BRKT</DESCRIPTION>
+            <TOTALPARTS>253107</TOTALPARTS>
+            <REJECTPARTS>1694</REJECTPARTS>
+            <GOODPARTS>251414</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M577</MOLD>
+            <SEMI>3024530</SEMI>
+            <DESCRIPTION>UNIV BEARING-KEY RTR</DESCRIPTION>
+            <TOTALPARTS>100132</TOTALPARTS>
+            <REJECTPARTS>782</REJECTPARTS>
+            <GOODPARTS>99350</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M565</MOLD>
+            <SEMI>3024531</SEMI>
+            <DESCRIPTION>UG BTM-MVG EC 1 1/4</DESCRIPTION>
+            <TOTALPARTS>95668</TOTALPARTS>
+            <REJECTPARTS>1470</REJECTPARTS>
+            <GOODPARTS>94198</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M584B</MOLD>
+            <SEMI>3024532</SEMI>
+            <DESCRIPTION>HND SMPL PLATE 19 IN</DESCRIPTION>
+            <TOTALPARTS>11041</TOTALPARTS>
+            <REJECTPARTS>346</REJECTPARTS>
+            <GOODPARTS>10695</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M062E</MOLD>
+            <SEMI>3024602</SEMI>
+            <DESCRIPTION>MCB KICKLESS SPL</DESCRIPTION>
+            <TOTALPARTS>7499</TOTALPARTS>
+            <REJECTPARTS>1343</REJECTPARTS>
+            <GOODPARTS>6156</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M721B</MOLD>
+            <SEMI>3024603</SEMI>
+            <DESCRIPTION>TRURISE SPOOL SPT</DESCRIPTION>
+            <TOTALPARTS>10445</TOTALPARTS>
+            <REJECTPARTS>812</REJECTPARTS>
+            <GOODPARTS>9633</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P184</MOLD>
+            <SEMI>3024605</SEMI>
+            <DESCRIPTION>MCB ADAPTOR 1.25</DESCRIPTION>
+            <TOTALPARTS>7758</TOTALPARTS>
+            <REJECTPARTS>145</REJECTPARTS>
+            <GOODPARTS>7613</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M700</MOLD>
+            <SEMI>3024609</SEMI>
+            <DESCRIPTION>MCB ROLLER LOCK HSG</DESCRIPTION>
+            <TOTALPARTS>7063</TOTALPARTS>
+            <REJECTPARTS>444</REJECTPARTS>
+            <GOODPARTS>6619</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M704B</MOLD>
+            <SEMI>3024615</SEMI>
+            <DESCRIPTION>TR 1-1/4IN FD HSG</DESCRIPTION>
+            <TOTALPARTS>3857</TOTALPARTS>
+            <REJECTPARTS>65</REJECTPARTS>
+            <GOODPARTS>3792</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M733B</MOLD>
+            <SEMI>3024626</SEMI>
+            <DESCRIPTION>SAFETY TASSEL L/R</DESCRIPTION>
+            <TOTALPARTS>56896</TOTALPARTS>
+            <REJECTPARTS>1412</REJECTPARTS>
+            <GOODPARTS>55485</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M773A</MOLD>
+            <SEMI>3024627</SEMI>
+            <DESCRIPTION>SAFETY TASSEL L/R</DESCRIPTION>
+            <TOTALPARTS>56896</TOTALPARTS>
+            <REJECTPARTS>1412</REJECTPARTS>
+            <GOODPARTS>55485</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M483B</MOLD>
+            <SEMI>3024698</SEMI>
+            <DESCRIPTION>SU PR LIMIT NUTS</DESCRIPTION>
+            <TOTALPARTS>15271</TOTALPARTS>
+            <REJECTPARTS>200</REJECTPARTS>
+            <GOODPARTS>15072</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M483A</MOLD>
+            <SEMI>3024699</SEMI>
+            <DESCRIPTION>SU PR LIMIT NUTS L</DESCRIPTION>
+            <TOTALPARTS>8672</TOTALPARTS>
+            <REJECTPARTS>2041</REJECTPARTS>
+            <GOODPARTS>6632</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M463C</MOLD>
+            <SEMI>3024700</SEMI>
+            <DESCRIPTION>SRA ER STOP RH</DESCRIPTION>
+            <TOTALPARTS>6305</TOTALPARTS>
+            <REJECTPARTS>1473</REJECTPARTS>
+            <GOODPARTS>4832</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M463D</MOLD>
+            <SEMI>3024701</SEMI>
+            <DESCRIPTION>SRA ER STOP LH</DESCRIPTION>
+            <TOTALPARTS>4005</TOTALPARTS>
+            <REJECTPARTS>1122</REJECTPARTS>
+            <GOODPARTS>2883</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M540</MOLD>
+            <SEMI>3024704</SEMI>
+            <DESCRIPTION>SRA SPRING HSG</DESCRIPTION>
+            <TOTALPARTS>14656</TOTALPARTS>
+            <REJECTPARTS>438</REJECTPARTS>
+            <GOODPARTS>14218</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M541</MOLD>
+            <SEMI>3024705</SEMI>
+            <DESCRIPTION>SRA SPRING SPCR</DESCRIPTION>
+            <TOTALPARTS>2799</TOTALPARTS>
+            <REJECTPARTS>16</REJECTPARTS>
+            <GOODPARTS>2783</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M542B</MOLD>
+            <SEMI>3024706</SEMI>
+            <DESCRIPTION>SRA CNTR RAIL EC R/L</DESCRIPTION>
+            <TOTALPARTS>6759</TOTALPARTS>
+            <REJECTPARTS>487</REJECTPARTS>
+            <GOODPARTS>6273</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>N542A</MOLD>
+            <SEMI>3024707</SEMI>
+            <DESCRIPTION>SRA CNTR RAIL EC R/L</DESCRIPTION>
+            <TOTALPARTS>10505</TOTALPARTS>
+            <REJECTPARTS>550</REJECTPARTS>
+            <GOODPARTS>9956</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M543A</MOLD>
+            <SEMI>3024708</SEMI>
+            <DESCRIPTION>SRA SKEW ADJUSTER</DESCRIPTION>
+            <TOTALPARTS>10280</TOTALPARTS>
+            <REJECTPARTS>112</REJECTPARTS>
+            <GOODPARTS>10168</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M543B</MOLD>
+            <SEMI>3024709</SEMI>
+            <DESCRIPTION>SRA BACK CVR CLIP</DESCRIPTION>
+            <TOTALPARTS>25976</TOTALPARTS>
+            <REJECTPARTS>1042</REJECTPARTS>
+            <GOODPARTS>24934</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M544</MOLD>
+            <SEMI>3024710</SEMI>
+            <DESCRIPTION>SRA BLOCK PULLEY PVT</DESCRIPTION>
+            <TOTALPARTS>13907</TOTALPARTS>
+            <REJECTPARTS>468</REJECTPARTS>
+            <GOODPARTS>13439</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M546A</MOLD>
+            <SEMI>3024711</SEMI>
+            <DESCRIPTION>SRA SPRING HSG CVR</DESCRIPTION>
+            <TOTALPARTS>9222</TOTALPARTS>
+            <REJECTPARTS>372</REJECTPARTS>
+            <GOODPARTS>8850</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M547A</MOLD>
+            <SEMI>3024712</SEMI>
+            <DESCRIPTION>SRA SCREW SPRT BRKT</DESCRIPTION>
+            <TOTALPARTS>13657</TOTALPARTS>
+            <REJECTPARTS>283</REJECTPARTS>
+            <GOODPARTS>13374</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M547B</MOLD>
+            <SEMI>3024713</SEMI>
+            <DESCRIPTION>SRA SHAFT SPRT BRKT</DESCRIPTION>
+            <TOTALPARTS>12800</TOTALPARTS>
+            <REJECTPARTS>1071</REJECTPARTS>
+            <GOODPARTS>11729</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M548A</MOLD>
+            <SEMI>3024714</SEMI>
+            <DESCRIPTION>SRA ADAPTR D-ROD MTR</DESCRIPTION>
+            <TOTALPARTS>6179</TOTALPARTS>
+            <REJECTPARTS>207</REJECTPARTS>
+            <GOODPARTS>5972</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M740</MOLD>
+            <SEMI>3024715</SEMI>
+            <DESCRIPTION>SRA PULLEY</DESCRIPTION>
+            <TOTALPARTS>80700</TOTALPARTS>
+            <REJECTPARTS>824</REJECTPARTS>
+            <GOODPARTS>79876</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M549</MOLD>
+            <SEMI>3024716</SEMI>
+            <DESCRIPTION>SRA BRKT IDLER SPRT</DESCRIPTION>
+            <TOTALPARTS>10632</TOTALPARTS>
+            <REJECTPARTS>285</REJECTPARTS>
+            <GOODPARTS>10347</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M550B</MOLD>
+            <SEMI>3024717</SEMI>
+            <DESCRIPTION>SRA TR EC CLP/LR R/L</DESCRIPTION>
+            <TOTALPARTS>6025</TOTALPARTS>
+            <REJECTPARTS>735</REJECTPARTS>
+            <GOODPARTS>5290</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M550A</MOLD>
+            <SEMI>3024718</SEMI>
+            <DESCRIPTION>SRA TR EC CLP/LR L/R</DESCRIPTION>
+            <TOTALPARTS>5798</TOTALPARTS>
+            <REJECTPARTS>491</REJECTPARTS>
+            <GOODPARTS>5308</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M550D</MOLD>
+            <SEMI>3024719</SEMI>
+            <DESCRIPTION>SRA TR EC CLP/LR L/R</DESCRIPTION>
+            <TOTALPARTS>5798</TOTALPARTS>
+            <REJECTPARTS>491</REJECTPARTS>
+            <GOODPARTS>5308</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M550C</MOLD>
+            <SEMI>3024720</SEMI>
+            <DESCRIPTION>SRA TR EC CLP/LR R/L</DESCRIPTION>
+            <TOTALPARTS>6025</TOTALPARTS>
+            <REJECTPARTS>735</REJECTPARTS>
+            <GOODPARTS>5290</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M551</MOLD>
+            <SEMI>3024721</SEMI>
+            <DESCRIPTION>SRA LR HSG</DESCRIPTION>
+            <TOTALPARTS>6326</TOTALPARTS>
+            <REJECTPARTS>298</REJECTPARTS>
+            <GOODPARTS>6028</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M552</MOLD>
+            <SEMI>3024722</SEMI>
+            <DESCRIPTION>SRA LR CVR</DESCRIPTION>
+            <TOTALPARTS>8248</TOTALPARTS>
+            <REJECTPARTS>236</REJECTPARTS>
+            <GOODPARTS>8012</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M620B</MOLD>
+            <SEMI>3024725</SEMI>
+            <DESCRIPTION>SRA DUAL PLY BLOCK</DESCRIPTION>
+            <TOTALPARTS>11581</TOTALPARTS>
+            <REJECTPARTS>130</REJECTPARTS>
+            <GOODPARTS>11451</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M619B</MOLD>
+            <SEMI>3024726</SEMI>
+            <DESCRIPTION>SRA WINDING BLOCK</DESCRIPTION>
+            <TOTALPARTS>8488</TOTALPARTS>
+            <REJECTPARTS>102</REJECTPARTS>
+            <GOODPARTS>8386</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M588</MOLD>
+            <SEMI>3024727</SEMI>
+            <DESCRIPTION>PLUG WGHT ANTI-RATL</DESCRIPTION>
+            <TOTALPARTS>20352</TOTALPARTS>
+            <REJECTPARTS>160</REJECTPARTS>
+            <GOODPARTS>20192</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P157</MOLD>
+            <SEMI>3024735</SEMI>
+            <DESCRIPTION>EV CRD SPOUT</DESCRIPTION>
+            <TOTALPARTS>7381</TOTALPARTS>
+            <REJECTPARTS>1377</REJECTPARTS>
+            <GOODPARTS>6004</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M579</MOLD>
+            <SEMI>3024736</SEMI>
+            <DESCRIPTION>EV CRD GUIDE</DESCRIPTION>
+            <TOTALPARTS>3105</TOTALPARTS>
+            <REJECTPARTS>39</REJECTPARTS>
+            <GOODPARTS>3066</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M568</MOLD>
+            <SEMI>3024737</SEMI>
+            <DESCRIPTION>SAMPLE SHADE HANDLE</DESCRIPTION>
+            <TOTALPARTS>6946</TOTALPARTS>
+            <REJECTPARTS>601</REJECTPARTS>
+            <GOODPARTS>6345</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M742</MOLD>
+            <SEMI>3024740</SEMI>
+            <DESCRIPTION>BRAKE HSG URR</DESCRIPTION>
+            <TOTALPARTS>79877</TOTALPARTS>
+            <REJECTPARTS>3314</REJECTPARTS>
+            <GOODPARTS>76563</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M745</MOLD>
+            <SEMI>3024741</SEMI>
+            <DESCRIPTION>SU UG LIMIT SCREW RH</DESCRIPTION>
+            <TOTALPARTS>63396</TOTALPARTS>
+            <REJECTPARTS>1304</REJECTPARTS>
+            <GOODPARTS>62092</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M572</MOLD>
+            <SEMI>3024742</SEMI>
+            <DESCRIPTION>LIMIT ASSM SCREW LH</DESCRIPTION>
+            <TOTALPARTS>28373</TOTALPARTS>
+            <REJECTPARTS>2501</REJECTPARTS>
+            <GOODPARTS>25872</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P162</MOLD>
+            <SEMI>3024749</SEMI>
+            <DESCRIPTION>VPR COUNTER ROTATOR</DESCRIPTION>
+            <TOTALPARTS>11696</TOTALPARTS>
+            <REJECTPARTS>191</REJECTPARTS>
+            <GOODPARTS>11505</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M584A</MOLD>
+            <SEMI>3024752</SEMI>
+            <DESCRIPTION>HAND SMPL CARRIER 17</DESCRIPTION>
+            <TOTALPARTS>2632</TOTALPARTS>
+            <REJECTPARTS>35</REJECTPARTS>
+            <GOODPARTS>2597</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M688</MOLD>
+            <SEMI>3024754</SEMI>
+            <DESCRIPTION>VG RAIL CARR 1-1/4</DESCRIPTION>
+            <TOTALPARTS>30760</TOTALPARTS>
+            <REJECTPARTS>1064</REJECTPARTS>
+            <GOODPARTS>29696</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M685</MOLD>
+            <SEMI>3024755</SEMI>
+            <DESCRIPTION>VG CRD GUIDE EC 3/4</DESCRIPTION>
+            <TOTALPARTS>40579</TOTALPARTS>
+            <REJECTPARTS>177</REJECTPARTS>
+            <GOODPARTS>40402</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M686</MOLD>
+            <SEMI>3024756</SEMI>
+            <DESCRIPTION>VG CRD GDE EC 1-1/4</DESCRIPTION>
+            <TOTALPARTS>7210</TOTALPARTS>
+            <REJECTPARTS>73</REJECTPARTS>
+            <GOODPARTS>7137</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P163</MOLD>
+            <SEMI>3024757</SEMI>
+            <DESCRIPTION>VG MAGNET CAP</DESCRIPTION>
+            <TOTALPARTS>5664</TOTALPARTS>
+            <REJECTPARTS>32</REJECTPARTS>
+            <GOODPARTS>5632</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M641B</MOLD>
+            <SEMI>3024758</SEMI>
+            <DESCRIPTION>SU DC TASSEL</DESCRIPTION>
+            <TOTALPARTS>11944</TOTALPARTS>
+            <REJECTPARTS>955</REJECTPARTS>
+            <GOODPARTS>10989</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P160</MOLD>
+            <SEMI>3024759</SEMI>
+            <DESCRIPTION>VPR PUSH RETAINER</DESCRIPTION>
+            <TOTALPARTS>11310</TOTALPARTS>
+            <REJECTPARTS>34</REJECTPARTS>
+            <GOODPARTS>11276</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M697A</MOLD>
+            <SEMI>3024760</SEMI>
+            <DESCRIPTION>VPR BTRY PACK BASE</DESCRIPTION>
+            <TOTALPARTS>4612</TOTALPARTS>
+            <REJECTPARTS>295</REJECTPARTS>
+            <GOODPARTS>4317</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M420B</MOLD>
+            <SEMI>3024761</SEMI>
+            <DESCRIPTION>VPR CRCT BOARD HSG</DESCRIPTION>
+            <TOTALPARTS>9782</TOTALPARTS>
+            <REJECTPARTS>1982</REJECTPARTS>
+            <GOODPARTS>7800</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M329A</MOLD>
+            <SEMI>3024762</SEMI>
+            <DESCRIPTION>BTRY TUBE EC FIX/SNP</DESCRIPTION>
+            <TOTALPARTS>10598</TOTALPARTS>
+            <REJECTPARTS>134</REJECTPARTS>
+            <GOODPARTS>10464</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M329B</MOLD>
+            <SEMI>3024763</SEMI>
+            <DESCRIPTION>BTRY TUBE EC FIX/SNP</DESCRIPTION>
+            <TOTALPARTS>10595</TOTALPARTS>
+            <REJECTPARTS>85</REJECTPARTS>
+            <GOODPARTS>10510</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M338D</MOLD>
+            <SEMI>3024769</SEMI>
+            <DESCRIPTION>SU UG OS EC</DESCRIPTION>
+            <TOTALPARTS>13819</TOTALPARTS>
+            <REJECTPARTS>4518</REJECTPARTS>
+            <GOODPARTS>9301</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M338E</MOLD>
+            <SEMI>3024770</SEMI>
+            <DESCRIPTION>SU UG OS EC R/L</DESCRIPTION>
+            <TOTALPARTS>6669</TOTALPARTS>
+            <REJECTPARTS>2144</REJECTPARTS>
+            <GOODPARTS>4525</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P151</MOLD>
+            <SEMI>3024771</SEMI>
+            <DESCRIPTION>DU CNTR CVR 1/2 ARCH</DESCRIPTION>
+            <TOTALPARTS>1777</TOTALPARTS>
+            <REJECTPARTS>506</REJECTPARTS>
+            <GOODPARTS>1271</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P152</MOLD>
+            <SEMI>3024772</SEMI>
+            <DESCRIPTION>DU CNTR CVR 1/4 ARCH</DESCRIPTION>
+            <TOTALPARTS>1004</TOTALPARTS>
+            <REJECTPARTS>15</REJECTPARTS>
+            <GOODPARTS>989</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P168</MOLD>
+            <SEMI>3024773</SEMI>
+            <DESCRIPTION>LR TDBU ROD STOP 3/4</DESCRIPTION>
+            <TOTALPARTS>15078</TOTALPARTS>
+            <REJECTPARTS>32</REJECTPARTS>
+            <GOODPARTS>15046</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M599</MOLD>
+            <SEMI>3024774</SEMI>
+            <DESCRIPTION>SU TDBU BRKT SPRT</DESCRIPTION>
+            <TOTALPARTS>2273</TOTALPARTS>
+            <REJECTPARTS>10</REJECTPARTS>
+            <GOODPARTS>2263</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M689</MOLD>
+            <SEMI>3024780</SEMI>
+            <DESCRIPTION>ROLLER- LARGE</DESCRIPTION>
+            <TOTALPARTS>16728</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>16728</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P165</MOLD>
+            <SEMI>3024782</SEMI>
+            <DESCRIPTION>IOM PLASTIC BRACKET</DESCRIPTION>
+            <TOTALPARTS>26248</TOTALPARTS>
+            <REJECTPARTS>1672</REJECTPARTS>
+            <GOODPARTS>24576</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M720</MOLD>
+            <SEMI>3024783</SEMI>
+            <DESCRIPTION>SKYLIGHT CORNER CVR</DESCRIPTION>
+            <TOTALPARTS>14454</TOTALPARTS>
+            <REJECTPARTS>281</REJECTPARTS>
+            <GOODPARTS>14173</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M724</MOLD>
+            <SEMI>3024784</SEMI>
+            <DESCRIPTION>SKYLIGHT SPACER BRKT</DESCRIPTION>
+            <TOTALPARTS>7720</TOTALPARTS>
+            <REJECTPARTS>472</REJECTPARTS>
+            <GOODPARTS>7248</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P182</MOLD>
+            <SEMI>3024785</SEMI>
+            <DESCRIPTION>STOP SPRING MOTOR</DESCRIPTION>
+            <TOTALPARTS>6220</TOTALPARTS>
+            <REJECTPARTS>1072</REJECTPARTS>
+            <GOODPARTS>5148</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M723</MOLD>
+            <SEMI>3024786</SEMI>
+            <DESCRIPTION>BRACKET ROLLER COVER</DESCRIPTION>
+            <TOTALPARTS>13572</TOTALPARTS>
+            <REJECTPARTS>857</REJECTPARTS>
+            <GOODPARTS>12715</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M709B</MOLD>
+            <SEMI>3024789</SEMI>
+            <DESCRIPTION>BATTERY TUBE</DESCRIPTION>
+            <TOTALPARTS>3394</TOTALPARTS>
+            <REJECTPARTS>89</REJECTPARTS>
+            <GOODPARTS>3305</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M697B</MOLD>
+            <SEMI>3024792</SEMI>
+            <DESCRIPTION>CVR SATELITE BATPAK</DESCRIPTION>
+            <TOTALPARTS>4684</TOTALPARTS>
+            <REJECTPARTS>193</REJECTPARTS>
+            <GOODPARTS>4491</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P167</MOLD>
+            <SEMI>3024793</SEMI>
+            <DESCRIPTION>URR SOMFY MTR SPCR</DESCRIPTION>
+            <TOTALPARTS>7188</TOTALPARTS>
+            <REJECTPARTS>15</REJECTPARTS>
+            <GOODPARTS>7173</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M693</MOLD>
+            <SEMI>3024794</SEMI>
+            <DESCRIPTION>URR SOMFY MTR CPLG</DESCRIPTION>
+            <TOTALPARTS>8705</TOTALPARTS>
+            <REJECTPARTS>247</REJECTPARTS>
+            <GOODPARTS>8458</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M684A</MOLD>
+            <SEMI>3024795</SEMI>
+            <DESCRIPTION>FABRIC CVR OS EC R/L</DESCRIPTION>
+            <TOTALPARTS>27938</TOTALPARTS>
+            <REJECTPARTS>2178</REJECTPARTS>
+            <GOODPARTS>25761</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M684B</MOLD>
+            <SEMI>3024796</SEMI>
+            <DESCRIPTION>FABRIC CVR OS EC R/L</DESCRIPTION>
+            <TOTALPARTS>36205</TOTALPARTS>
+            <REJECTPARTS>3769</REJECTPARTS>
+            <GOODPARTS>32437</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P067C</MOLD>
+            <SEMI>3024799</SEMI>
+            <DESCRIPTION>SU POWERISE ROTATOR</DESCRIPTION>
+            <TOTALPARTS>30390</TOTALPARTS>
+            <REJECTPARTS>1272</REJECTPARTS>
+            <GOODPARTS>29118</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M709A</MOLD>
+            <SEMI>3024805</SEMI>
+            <DESCRIPTION>BATTERY HOLDER</DESCRIPTION>
+            <TOTALPARTS>8544</TOTALPARTS>
+            <REJECTPARTS>237</REJECTPARTS>
+            <GOODPARTS>8307</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M746A</MOLD>
+            <SEMI>3024807</SEMI>
+            <DESCRIPTION>BT STOP BALLS</DESCRIPTION>
+            <TOTALPARTS>2425923</TOTALPARTS>
+            <REJECTPARTS>148902</REJECTPARTS>
+            <GOODPARTS>2277021</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M746B</MOLD>
+            <SEMI>3024808</SEMI>
+            <DESCRIPTION>BT STOP BALLS</DESCRIPTION>
+            <TOTALPARTS>2425923</TOTALPARTS>
+            <REJECTPARTS>148902</REJECTPARTS>
+            <GOODPARTS>2277021</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P186</MOLD>
+            <SEMI>3024810</SEMI>
+            <DESCRIPTION>SU TDBU BARB</DESCRIPTION>
+            <TOTALPARTS>9576</TOTALPARTS>
+            <REJECTPARTS>412</REJECTPARTS>
+            <GOODPARTS>9164</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P093D</MOLD>
+            <SEMI>3024811</SEMI>
+            <DESCRIPTION>SPIDER LITE</DESCRIPTION>
+            <TOTALPARTS>78499</TOTALPARTS>
+            <REJECTPARTS>9244</REJECTPARTS>
+            <GOODPARTS>69255</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M640B</MOLD>
+            <SEMI>3024812</SEMI>
+            <DESCRIPTION>CONNECT CNTRL BAR RH</DESCRIPTION>
+            <TOTALPARTS>5520</TOTALPARTS>
+            <REJECTPARTS>1146</REJECTPARTS>
+            <GOODPARTS>4374</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M736</MOLD>
+            <SEMI>3024813</SEMI>
+            <DESCRIPTION>CONNECT CNTRL BAR LH</DESCRIPTION>
+            <TOTALPARTS>3329</TOTALPARTS>
+            <REJECTPARTS>565</REJECTPARTS>
+            <GOODPARTS>2764</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M708B</MOLD>
+            <SEMI>3024814</SEMI>
+            <DESCRIPTION>BRACKET KEYHOLE 2IN</DESCRIPTION>
+            <TOTALPARTS>924</TOTALPARTS>
+            <REJECTPARTS>15</REJECTPARTS>
+            <GOODPARTS>909</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M708E</MOLD>
+            <SEMI>3024815</SEMI>
+            <DESCRIPTION>BRACKET KEYHOLE 3IN</DESCRIPTION>
+            <TOTALPARTS>952</TOTALPARTS>
+            <REJECTPARTS>24</REJECTPARTS>
+            <GOODPARTS>928</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P185</MOLD>
+            <SEMI>3024816</SEMI>
+            <DESCRIPTION>SHIMS ARCHES ANGLES</DESCRIPTION>
+            <TOTALPARTS>3768</TOTALPARTS>
+            <REJECTPARTS>136</REJECTPARTS>
+            <GOODPARTS>3632</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M708A</MOLD>
+            <SEMI>3024817</SEMI>
+            <DESCRIPTION>2IN CLIP ANGLE</DESCRIPTION>
+            <TOTALPARTS>937</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>937</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M708C</MOLD>
+            <SEMI>3024818</SEMI>
+            <DESCRIPTION>2IN BRACKET ANGLE</DESCRIPTION>
+            <TOTALPARTS>1367</TOTALPARTS>
+            <REJECTPARTS>21</REJECTPARTS>
+            <GOODPARTS>1346</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M708D</MOLD>
+            <SEMI>3024819</SEMI>
+            <DESCRIPTION>3IN CLIP ANGLE</DESCRIPTION>
+            <TOTALPARTS>920</TOTALPARTS>
+            <REJECTPARTS>60</REJECTPARTS>
+            <GOODPARTS>860</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M708F</MOLD>
+            <SEMI>3024820</SEMI>
+            <DESCRIPTION>3IN BRACKET ANGLE</DESCRIPTION>
+            <TOTALPARTS>1416</TOTALPARTS>
+            <REJECTPARTS>17</REJECTPARTS>
+            <GOODPARTS>1399</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M695A</MOLD>
+            <SEMI>3024821</SEMI>
+            <DESCRIPTION>1 1/4IN PR EC LH/RH</DESCRIPTION>
+            <TOTALPARTS>6025</TOTALPARTS>
+            <REJECTPARTS>635</REJECTPARTS>
+            <GOODPARTS>5390</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M695B</MOLD>
+            <SEMI>3024822</SEMI>
+            <DESCRIPTION>1 1/4IN PR EC LH/RH</DESCRIPTION>
+            <TOTALPARTS>1921</TOTALPARTS>
+            <REJECTPARTS>221</REJECTPARTS>
+            <GOODPARTS>1700</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P181B</MOLD>
+            <SEMI>3024823</SEMI>
+            <DESCRIPTION>CNTRL BAR BTM EC LH</DESCRIPTION>
+            <TOTALPARTS>1089</TOTALPARTS>
+            <REJECTPARTS>60</REJECTPARTS>
+            <GOODPARTS>1029</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P181A</MOLD>
+            <SEMI>3024824</SEMI>
+            <DESCRIPTION>CNTRL BAR BTM EC</DESCRIPTION>
+            <TOTALPARTS>1946</TOTALPARTS>
+            <REJECTPARTS>89</REJECTPARTS>
+            <GOODPARTS>1857</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M338B</MOLD>
+            <SEMI>3024825</SEMI>
+            <DESCRIPTION>SU CLUTCH FCH EC</DESCRIPTION>
+            <TOTALPARTS>46856</TOTALPARTS>
+            <REJECTPARTS>4892</REJECTPARTS>
+            <GOODPARTS>41964</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M338C</MOLD>
+            <SEMI>3024826</SEMI>
+            <DESCRIPTION>SU CLUTCH FCH EC R/L</DESCRIPTION>
+            <TOTALPARTS>22845</TOTALPARTS>
+            <REJECTPARTS>2827</REJECTPARTS>
+            <GOODPARTS>20018</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M744A</MOLD>
+            <SEMI>3024827</SEMI>
+            <DESCRIPTION>SU FCH IDLER EC R/L</DESCRIPTION>
+            <TOTALPARTS>69676</TOTALPARTS>
+            <REJECTPARTS>15781</REJECTPARTS>
+            <GOODPARTS>53896</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M744B</MOLD>
+            <SEMI>3024828</SEMI>
+            <DESCRIPTION>SU FCH IDLER EC R/L</DESCRIPTION>
+            <TOTALPARTS>87861</TOTALPARTS>
+            <REJECTPARTS>20383</REJECTPARTS>
+            <GOODPARTS>67479</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P188</MOLD>
+            <SEMI>3024829</SEMI>
+            <DESCRIPTION>ER SHFT RSTRNT LCKNG</DESCRIPTION>
+            <TOTALPARTS>6309</TOTALPARTS>
+            <REJECTPARTS>33</REJECTPARTS>
+            <GOODPARTS>6276</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M739</MOLD>
+            <SEMI>3024830</SEMI>
+            <DESCRIPTION>SUTDBU HLD DWN BRKT</DESCRIPTION>
+            <TOTALPARTS>16430</TOTALPARTS>
+            <REJECTPARTS>334</REJECTPARTS>
+            <GOODPARTS>16096</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M583B</MOLD>
+            <SEMI>3024832</SEMI>
+            <DESCRIPTION>SU UG PULLEY</DESCRIPTION>
+            <TOTALPARTS>6784</TOTALPARTS>
+            <REJECTPARTS>1210</REJECTPARTS>
+            <GOODPARTS>5574</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M696A</MOLD>
+            <SEMI>3024833</SEMI>
+            <DESCRIPTION>BTM PIVOT BRACKET</DESCRIPTION>
+            <TOTALPARTS>9615</TOTALPARTS>
+            <REJECTPARTS>1005</REJECTPARTS>
+            <GOODPARTS>8610</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M696B</MOLD>
+            <SEMI>3024834</SEMI>
+            <DESCRIPTION>BTM PIVOT ARM</DESCRIPTION>
+            <TOTALPARTS>7313</TOTALPARTS>
+            <REJECTPARTS>518</REJECTPARTS>
+            <GOODPARTS>6795</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M696C</MOLD>
+            <SEMI>3024835</SEMI>
+            <DESCRIPTION>BTM PIVOT BRKT CVR</DESCRIPTION>
+            <TOTALPARTS>10195</TOTALPARTS>
+            <REJECTPARTS>814</REJECTPARTS>
+            <GOODPARTS>9381</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M982B</MOLD>
+            <SEMI>3024845</SEMI>
+            <DESCRIPTION>VIG STPTB/BR EC 2ON1</DESCRIPTION>
+            <TOTALPARTS>5940</TOTALPARTS>
+            <REJECTPARTS>247</REJECTPARTS>
+            <GOODPARTS>5694</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P190</MOLD>
+            <SEMI>3024847</SEMI>
+            <DESCRIPTION>PR INSERT EC BATTERY</DESCRIPTION>
+            <TOTALPARTS>11991</TOTALPARTS>
+            <REJECTPARTS>212</REJECTPARTS>
+            <GOODPARTS>11779</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M735</MOLD>
+            <SEMI>3024849</SEMI>
+            <DESCRIPTION>VG KEY RTR 2 ON 1</DESCRIPTION>
+            <TOTALPARTS>5385</TOTALPARTS>
+            <REJECTPARTS>70</REJECTPARTS>
+            <GOODPARTS>5315</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M624D</MOLD>
+            <SEMI>3024851</SEMI>
+            <DESCRIPTION>TR DRIVE CONE</DESCRIPTION>
+            <TOTALPARTS>3696</TOTALPARTS>
+            <REJECTPARTS>550</REJECTPARTS>
+            <GOODPARTS>3146</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M765</MOLD>
+            <SEMI>3024863</SEMI>
+            <DESCRIPTION>VUG BRAKE HSG ALT</DESCRIPTION>
+            <TOTALPARTS>20054</TOTALPARTS>
+            <REJECTPARTS>468</REJECTPARTS>
+            <GOODPARTS>19586</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M762A</MOLD>
+            <SEMI>3024864</SEMI>
+            <DESCRIPTION>VUG CRD GUIDE RH</DESCRIPTION>
+            <TOTALPARTS>15465</TOTALPARTS>
+            <REJECTPARTS>280</REJECTPARTS>
+            <GOODPARTS>15185</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M761A</MOLD>
+            <SEMI>3024866</SEMI>
+            <DESCRIPTION>VG UG ENDCAPS</DESCRIPTION>
+            <TOTALPARTS>20158</TOTALPARTS>
+            <REJECTPARTS>2392</REJECTPARTS>
+            <GOODPARTS>17766</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M761B</MOLD>
+            <SEMI>3024867</SEMI>
+            <DESCRIPTION>VG UG ENDCAPS</DESCRIPTION>
+            <TOTALPARTS>6728</TOTALPARTS>
+            <REJECTPARTS>685</REJECTPARTS>
+            <GOODPARTS>6043</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M861B</MOLD>
+            <SEMI>3024867</SEMI>
+            <DESCRIPTION>VG UG ENDCAPS RH LH</DESCRIPTION>
+            <TOTALPARTS>1636</TOTALPARTS>
+            <REJECTPARTS>229</REJECTPARTS>
+            <GOODPARTS>1407</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P197</MOLD>
+            <SEMI>3024868</SEMI>
+            <DESCRIPTION>VG SHIM ASPEN WHITE</DESCRIPTION>
+            <TOTALPARTS>43136</TOTALPARTS>
+            <REJECTPARTS>5658</REJECTPARTS>
+            <GOODPARTS>37478</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P200</MOLD>
+            <SEMI>3024873</SEMI>
+            <DESCRIPTION>TR CRD PADDLE</DESCRIPTION>
+            <TOTALPARTS>16430</TOTALPARTS>
+            <REJECTPARTS>518</REJECTPARTS>
+            <GOODPARTS>15912</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M783</MOLD>
+            <SEMI>3024874</SEMI>
+            <DESCRIPTION>SU XL BUSHING</DESCRIPTION>
+            <TOTALPARTS>61148</TOTALPARTS>
+            <REJECTPARTS>618</REJECTPARTS>
+            <GOODPARTS>60530</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P201</MOLD>
+            <SEMI>3024875</SEMI>
+            <DESCRIPTION>SU XL LIMIT</DESCRIPTION>
+            <TOTALPARTS>111418</TOTALPARTS>
+            <REJECTPARTS>933</REJECTPARTS>
+            <GOODPARTS>110485</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M784</MOLD>
+            <SEMI>3024876</SEMI>
+            <DESCRIPTION>SUXL LIMIT NUT ADPTR</DESCRIPTION>
+            <TOTALPARTS>24556</TOTALPARTS>
+            <REJECTPARTS>104</REJECTPARTS>
+            <GOODPARTS>24452</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M785</MOLD>
+            <SEMI>3024877</SEMI>
+            <DESCRIPTION>SU XL BR EC</DESCRIPTION>
+            <TOTALPARTS>111554</TOTALPARTS>
+            <REJECTPARTS>5411</REJECTPARTS>
+            <GOODPARTS>106143</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P158I</MOLD>
+            <SEMI>3024878</SEMI>
+            <DESCRIPTION>TR RLLR LOCK RLLR</DESCRIPTION>
+            <TOTALPARTS>8556</TOTALPARTS>
+            <REJECTPARTS>1667</REJECTPARTS>
+            <GOODPARTS>6889</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M981</MOLD>
+            <SEMI>3024881</SEMI>
+            <DESCRIPTION>BR EC RH/LH</DESCRIPTION>
+            <TOTALPARTS>46536</TOTALPARTS>
+            <REJECTPARTS>3820</REJECTPARTS>
+            <GOODPARTS>42716</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M789</MOLD>
+            <SEMI>3024881</SEMI>
+            <DESCRIPTION>BR EC RH/LH</DESCRIPTION>
+            <TOTALPARTS>4933</TOTALPARTS>
+            <REJECTPARTS>73</REJECTPARTS>
+            <GOODPARTS>4860</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M782A</MOLD>
+            <SEMI>3024884</SEMI>
+            <DESCRIPTION>SU XL FCH HR EC R/L</DESCRIPTION>
+            <TOTALPARTS>26443</TOTALPARTS>
+            <REJECTPARTS>2004</REJECTPARTS>
+            <GOODPARTS>24439</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M782B</MOLD>
+            <SEMI>3024885</SEMI>
+            <DESCRIPTION>SU XL FCH HR EC R/L</DESCRIPTION>
+            <TOTALPARTS>26443</TOTALPARTS>
+            <REJECTPARTS>2004</REJECTPARTS>
+            <GOODPARTS>24439</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M095C</MOLD>
+            <SEMI>3024890</SEMI>
+            <DESCRIPTION>SLOTTED BRKT TAB</DESCRIPTION>
+            <TOTALPARTS>425495</TOTALPARTS>
+            <REJECTPARTS>13694</REJECTPARTS>
+            <GOODPARTS>411801</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M803</MOLD>
+            <SEMI>3024891</SEMI>
+            <DESCRIPTION>STOP BALL GROMMET</DESCRIPTION>
+            <TOTALPARTS>395476</TOTALPARTS>
+            <REJECTPARTS>480</REJECTPARTS>
+            <GOODPARTS>394996</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M802</MOLD>
+            <SEMI>3024892</SEMI>
+            <DESCRIPTION>CORNER BOARD</DESCRIPTION>
+            <TOTALPARTS>16840</TOTALPARTS>
+            <REJECTPARTS>202</REJECTPARTS>
+            <GOODPARTS>16638</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M799A</MOLD>
+            <SEMI>3024894</SEMI>
+            <DESCRIPTION>BOYNE HR EC LH/RH</DESCRIPTION>
+            <TOTALPARTS>4865</TOTALPARTS>
+            <REJECTPARTS>320</REJECTPARTS>
+            <GOODPARTS>4546</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M799B</MOLD>
+            <SEMI>3024895</SEMI>
+            <DESCRIPTION>BOYNE HR EC LH/RH</DESCRIPTION>
+            <TOTALPARTS>4865</TOTALPARTS>
+            <REJECTPARTS>320</REJECTPARTS>
+            <GOODPARTS>4546</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M980</MOLD>
+            <SEMI>3024896</SEMI>
+            <DESCRIPTION>SKEW WGHT LOCK</DESCRIPTION>
+            <TOTALPARTS>105664</TOTALPARTS>
+            <REJECTPARTS>4956</REJECTPARTS>
+            <GOODPARTS>100708</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P207B</MOLD>
+            <SEMI>3024896</SEMI>
+            <DESCRIPTION>SKEW WGHT LOCK</DESCRIPTION>
+            <TOTALPARTS>2344</TOTALPARTS>
+            <REJECTPARTS>94</REJECTPARTS>
+            <GOODPARTS>2250</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M453B</MOLD>
+            <SEMI>3024904</SEMI>
+            <DESCRIPTION>BYN PVT CUP DETENT</DESCRIPTION>
+            <TOTALPARTS>1872</TOTALPARTS>
+            <REJECTPARTS>46</REJECTPARTS>
+            <GOODPARTS>1826</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M453C</MOLD>
+            <SEMI>3024905</SEMI>
+            <DESCRIPTION>BYN RAM COMPRESSION</DESCRIPTION>
+            <TOTALPARTS>1730</TOTALPARTS>
+            <REJECTPARTS>20</REJECTPARTS>
+            <GOODPARTS>1710</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M806</MOLD>
+            <SEMI>3024909</SEMI>
+            <DESCRIPTION>TR SNAP HSG COMBO</DESCRIPTION>
+            <TOTALPARTS>415</TOTALPARTS>
+            <REJECTPARTS>180</REJECTPARTS>
+            <GOODPARTS>235</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P208</MOLD>
+            <SEMI>3024915</SEMI>
+            <DESCRIPTION>VG PR RAIL STOP SNAP</DESCRIPTION>
+            <TOTALPARTS>20558</TOTALPARTS>
+            <REJECTPARTS>74</REJECTPARTS>
+            <GOODPARTS>20484</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P211</MOLD>
+            <SEMI>3024920</SEMI>
+            <DESCRIPTION>BYN WAND HOOK</DESCRIPTION>
+            <TOTALPARTS>2663</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>2663</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M842</MOLD>
+            <SEMI>3024929</SEMI>
+            <DESCRIPTION>PUCKER CLIP BRKT</DESCRIPTION>
+            <TOTALPARTS>2300</TOTALPARTS>
+            <REJECTPARTS>42</REJECTPARTS>
+            <GOODPARTS>2258</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M840</MOLD>
+            <SEMI>3024930</SEMI>
+            <DESCRIPTION>PUCKER CLIP SLDER</DESCRIPTION>
+            <TOTALPARTS>6022</TOTALPARTS>
+            <REJECTPARTS>40</REJECTPARTS>
+            <GOODPARTS>5982</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M808</MOLD>
+            <SEMI>3024933</SEMI>
+            <DESCRIPTION>SLOTTED SEGMENT</DESCRIPTION>
+            <TOTALPARTS>14841</TOTALPARTS>
+            <REJECTPARTS>1333</REJECTPARTS>
+            <GOODPARTS>13508</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M798</MOLD>
+            <SEMI>3024934</SEMI>
+            <DESCRIPTION>VPR SENSOR HOLDER</DESCRIPTION>
+            <TOTALPARTS>8137</TOTALPARTS>
+            <REJECTPARTS>226</REJECTPARTS>
+            <GOODPARTS>7911</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M809</MOLD>
+            <SEMI>3024935</SEMI>
+            <DESCRIPTION>TR TSL WEIGHT CVR</DESCRIPTION>
+            <TOTALPARTS>968</TOTALPARTS>
+            <REJECTPARTS>32</REJECTPARTS>
+            <GOODPARTS>936</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P209</MOLD>
+            <SEMI>3024936</SEMI>
+            <DESCRIPTION>TR TSL WGHT TIE OFF</DESCRIPTION>
+            <TOTALPARTS>1374</TOTALPARTS>
+            <REJECTPARTS>28</REJECTPARTS>
+            <GOODPARTS>1346</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P216</MOLD>
+            <SEMI>3024938</SEMI>
+            <DESCRIPTION>LR TILT ROD EXTNDR</DESCRIPTION>
+            <TOTALPARTS>8796</TOTALPARTS>
+            <REJECTPARTS>220</REJECTPARTS>
+            <GOODPARTS>8576</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M826</MOLD>
+            <SEMI>3024944</SEMI>
+            <DESCRIPTION>LUM PIN SWIVEL ARM</DESCRIPTION>
+            <TOTALPARTS>54552</TOTALPARTS>
+            <REJECTPARTS>1205</REJECTPARTS>
+            <GOODPARTS>53347</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P212</MOLD>
+            <SEMI>3024946</SEMI>
+            <DESCRIPTION>GOV FOLLOWER</DESCRIPTION>
+            <TOTALPARTS>14835</TOTALPARTS>
+            <REJECTPARTS>66</REJECTPARTS>
+            <GOODPARTS>14769</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M829</MOLD>
+            <SEMI>3024947</SEMI>
+            <DESCRIPTION>UG II 3/4 ADPTR</DESCRIPTION>
+            <TOTALPARTS>9443</TOTALPARTS>
+            <REJECTPARTS>713</REJECTPARTS>
+            <GOODPARTS>8730</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P217</MOLD>
+            <SEMI>3024948</SEMI>
+            <DESCRIPTION>91-5 TLTR HSG BACK</DESCRIPTION>
+            <TOTALPARTS>708219</TOTALPARTS>
+            <REJECTPARTS>22794</REJECTPARTS>
+            <GOODPARTS>685425</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M951</MOLD>
+            <SEMI>3024949</SEMI>
+            <DESCRIPTION>3/8 DU CHR EC</DESCRIPTION>
+            <TOTALPARTS>106366</TOTALPARTS>
+            <REJECTPARTS>6452</REJECTPARTS>
+            <GOODPARTS>99914</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M952</MOLD>
+            <SEMI>3024950</SEMI>
+            <DESCRIPTION>3/4 DU CHR EC</DESCRIPTION>
+            <TOTALPARTS>454624</TOTALPARTS>
+            <REJECTPARTS>14611</REJECTPARTS>
+            <GOODPARTS>440013</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M845A</MOLD>
+            <SEMI>3024951</SEMI>
+            <DESCRIPTION>3/8 CHR EC W/O VAL</DESCRIPTION>
+            <TOTALPARTS>35349</TOTALPARTS>
+            <REJECTPARTS>635</REJECTPARTS>
+            <GOODPARTS>34714</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M845C</MOLD>
+            <SEMI>3024953</SEMI>
+            <DESCRIPTION>1.25 CHR EC W/O VAL</DESCRIPTION>
+            <TOTALPARTS>44223</TOTALPARTS>
+            <REJECTPARTS>1072</REJECTPARTS>
+            <GOODPARTS>43151</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M870</MOLD>
+            <SEMI>3024954</SEMI>
+            <DESCRIPTION>FLX UNIV HR EC</DESCRIPTION>
+            <TOTALPARTS>269312</TOTALPARTS>
+            <REJECTPARTS>6118</REJECTPARTS>
+            <GOODPARTS>263194</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M869</MOLD>
+            <SEMI>3024955</SEMI>
+            <DESCRIPTION>FLX MTR TRANS ADPTR</DESCRIPTION>
+            <TOTALPARTS>46368</TOTALPARTS>
+            <REJECTPARTS>2128</REJECTPARTS>
+            <GOODPARTS>44240</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M868</MOLD>
+            <SEMI>3024956</SEMI>
+            <DESCRIPTION>FLX SPL SPRT CVR</DESCRIPTION>
+            <TOTALPARTS>326976</TOTALPARTS>
+            <REJECTPARTS>5755</REJECTPARTS>
+            <GOODPARTS>321221</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M833B</MOLD>
+            <SEMI>3024957</SEMI>
+            <DESCRIPTION>SUXL MTR COUPL DMPR</DESCRIPTION>
+            <TOTALPARTS>10465</TOTALPARTS>
+            <REJECTPARTS>227</REJECTPARTS>
+            <GOODPARTS>10238</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M834</MOLD>
+            <SEMI>3024958</SEMI>
+            <DESCRIPTION>SUXL MTR COUP RTNR</DESCRIPTION>
+            <TOTALPARTS>9027</TOTALPARTS>
+            <REJECTPARTS>77</REJECTPARTS>
+            <GOODPARTS>8950</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M815</MOLD>
+            <SEMI>3024960</SEMI>
+            <DESCRIPTION>SUXL HSG PCB</DESCRIPTION>
+            <TOTALPARTS>8396</TOTALPARTS>
+            <REJECTPARTS>180</REJECTPARTS>
+            <GOODPARTS>8216</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M814</MOLD>
+            <SEMI>3024961</SEMI>
+            <DESCRIPTION>SUXL HSG PCB CVR</DESCRIPTION>
+            <TOTALPARTS>7598</TOTALPARTS>
+            <REJECTPARTS>556</REJECTPARTS>
+            <GOODPARTS>7042</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M835</MOLD>
+            <SEMI>3024962</SEMI>
+            <DESCRIPTION>SUXL BRKT MTG BAT AA</DESCRIPTION>
+            <TOTALPARTS>11887</TOTALPARTS>
+            <REJECTPARTS>270</REJECTPARTS>
+            <GOODPARTS>11617</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M847</MOLD>
+            <SEMI>3024969</SEMI>
+            <DESCRIPTION>MAMMOTH RAIL EC</DESCRIPTION>
+            <TOTALPARTS>16605</TOTALPARTS>
+            <REJECTPARTS>1053</REJECTPARTS>
+            <GOODPARTS>15552</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M855</MOLD>
+            <SEMI>3024971</SEMI>
+            <DESCRIPTION>MM THREAD SHAFT</DESCRIPTION>
+            <TOTALPARTS>20330</TOTALPARTS>
+            <REJECTPARTS>1116</REJECTPARTS>
+            <GOODPARTS>19214</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M977</MOLD>
+            <SEMI>3024972</SEMI>
+            <DESCRIPTION>PIR UG SHIFTER CVR</DESCRIPTION>
+            <TOTALPARTS>19188</TOTALPARTS>
+            <REJECTPARTS>112</REJECTPARTS>
+            <GOODPARTS>19076</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M976A</MOLD>
+            <SEMI>3024973</SEMI>
+            <DESCRIPTION>PIR UG SHIFTER L/R</DESCRIPTION>
+            <TOTALPARTS>6834</TOTALPARTS>
+            <REJECTPARTS>76</REJECTPARTS>
+            <GOODPARTS>6758</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M892A</MOLD>
+            <SEMI>3024973</SEMI>
+            <DESCRIPTION>PIR UG SHIFTER L/R</DESCRIPTION>
+            <TOTALPARTS>2672</TOTALPARTS>
+            <REJECTPARTS>696</REJECTPARTS>
+            <GOODPARTS>1976</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M976B</MOLD>
+            <SEMI>3024974</SEMI>
+            <DESCRIPTION>PIR UG SHIFTER L/R</DESCRIPTION>
+            <TOTALPARTS>6834</TOTALPARTS>
+            <REJECTPARTS>76</REJECTPARTS>
+            <GOODPARTS>6758</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M892B</MOLD>
+            <SEMI>3024974</SEMI>
+            <DESCRIPTION>PIR UG SHIFTER L/R</DESCRIPTION>
+            <TOTALPARTS>2672</TOTALPARTS>
+            <REJECTPARTS>696</REJECTPARTS>
+            <GOODPARTS>1976</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P120B</MOLD>
+            <SEMI>3024975</SEMI>
+            <DESCRIPTION>1 1/4 UG TR EC</DESCRIPTION>
+            <TOTALPARTS>51600</TOTALPARTS>
+            <REJECTPARTS>6938</REJECTPARTS>
+            <GOODPARTS>44662</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M879</MOLD>
+            <SEMI>3024977</SEMI>
+            <DESCRIPTION>CR TRANS ADPTR</DESCRIPTION>
+            <TOTALPARTS>393448</TOTALPARTS>
+            <REJECTPARTS>2698</REJECTPARTS>
+            <GOODPARTS>390750</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M883</MOLD>
+            <SEMI>3024979</SEMI>
+            <DESCRIPTION>ER CLTCH BASE</DESCRIPTION>
+            <TOTALPARTS>8290</TOTALPARTS>
+            <REJECTPARTS>140</REJECTPARTS>
+            <GOODPARTS>8150</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M885</MOLD>
+            <SEMI>3024981</SEMI>
+            <DESCRIPTION>ER CLUTCH INPUT</DESCRIPTION>
+            <TOTALPARTS>7394</TOTALPARTS>
+            <REJECTPARTS>25</REJECTPARTS>
+            <GOODPARTS>7369</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M886</MOLD>
+            <SEMI>3024982</SEMI>
+            <DESCRIPTION>ER CLUTCH OUTPUT</DESCRIPTION>
+            <TOTALPARTS>12318</TOTALPARTS>
+            <REJECTPARTS>48</REJECTPARTS>
+            <GOODPARTS>12270</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M882</MOLD>
+            <SEMI>3024985</SEMI>
+            <DESCRIPTION>ER CRD SPRCKT 1 TO 1</DESCRIPTION>
+            <TOTALPARTS>12520</TOTALPARTS>
+            <REJECTPARTS>1855</REJECTPARTS>
+            <GOODPARTS>10665</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M848</MOLD>
+            <SEMI>3024986</SEMI>
+            <DESCRIPTION>MM SPRING CLIP</DESCRIPTION>
+            <TOTALPARTS>40255</TOTALPARTS>
+            <REJECTPARTS>261</REJECTPARTS>
+            <GOODPARTS>39994</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M850</MOLD>
+            <SEMI>3024987</SEMI>
+            <DESCRIPTION>MM BR CLIP</DESCRIPTION>
+            <TOTALPARTS>25048</TOTALPARTS>
+            <REJECTPARTS>236</REJECTPARTS>
+            <GOODPARTS>24812</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M853</MOLD>
+            <SEMI>3024988</SEMI>
+            <DESCRIPTION>MM TRAVEL NUT STOP</DESCRIPTION>
+            <TOTALPARTS>10052</TOTALPARTS>
+            <REJECTPARTS>273</REJECTPARTS>
+            <GOODPARTS>9779</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M854</MOLD>
+            <SEMI>3024989</SEMI>
+            <DESCRIPTION>MM FIXED NUT STOP</DESCRIPTION>
+            <TOTALPARTS>24383</TOTALPARTS>
+            <REJECTPARTS>291</REJECTPARTS>
+            <GOODPARTS>24092</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M863</MOLD>
+            <SEMI>3024990</SEMI>
+            <DESCRIPTION>MM LIMIT SIDE RTR</DESCRIPTION>
+            <TOTALPARTS>9789</TOTALPARTS>
+            <REJECTPARTS>376</REJECTPARTS>
+            <GOODPARTS>9413</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M858</MOLD>
+            <SEMI>3024991</SEMI>
+            <DESCRIPTION>MM KICKER NUT LH</DESCRIPTION>
+            <TOTALPARTS>7432</TOTALPARTS>
+            <REJECTPARTS>230</REJECTPARTS>
+            <GOODPARTS>7202</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M851</MOLD>
+            <SEMI>3024993</SEMI>
+            <DESCRIPTION>MM SPOOL TOP HSG</DESCRIPTION>
+            <TOTALPARTS>18375</TOTALPARTS>
+            <REJECTPARTS>872</REJECTPARTS>
+            <GOODPARTS>17503</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M862</MOLD>
+            <SEMI>3024995</SEMI>
+            <DESCRIPTION>MM CLUTCH COUPLING</DESCRIPTION>
+            <TOTALPARTS>13089</TOTALPARTS>
+            <REJECTPARTS>1281</REJECTPARTS>
+            <GOODPARTS>11808</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M861</MOLD>
+            <SEMI>3024996</SEMI>
+            <DESCRIPTION>MM KICKER BLADE</DESCRIPTION>
+            <TOTALPARTS>13639</TOTALPARTS>
+            <REJECTPARTS>1895</REJECTPARTS>
+            <GOODPARTS>11744</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M852</MOLD>
+            <SEMI>3024997</SEMI>
+            <DESCRIPTION>MM SPL BTM HSG</DESCRIPTION>
+            <TOTALPARTS>25632</TOTALPARTS>
+            <REJECTPARTS>4232</REJECTPARTS>
+            <GOODPARTS>21400</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M953</MOLD>
+            <SEMI>3025003</SEMI>
+            <DESCRIPTION>11/4 DU COMMON HR EC</DESCRIPTION>
+            <TOTALPARTS>37272</TOTALPARTS>
+            <REJECTPARTS>1390</REJECTPARTS>
+            <GOODPARTS>35882</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M838</MOLD>
+            <SEMI>3025004</SEMI>
+            <DESCRIPTION>SIL CAM LOCK BTN</DESCRIPTION>
+            <TOTALPARTS>37060</TOTALPARTS>
+            <REJECTPARTS>1257</REJECTPARTS>
+            <GOODPARTS>35803</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M839A</MOLD>
+            <SEMI>3025005</SEMI>
+            <DESCRIPTION>SU TDBU BR EC</DESCRIPTION>
+            <TOTALPARTS>7524</TOTALPARTS>
+            <REJECTPARTS>492</REJECTPARTS>
+            <GOODPARTS>7032</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M839B</MOLD>
+            <SEMI>3025006</SEMI>
+            <DESCRIPTION>SU TDBU BR EC</DESCRIPTION>
+            <TOTALPARTS>7524</TOTALPARTS>
+            <REJECTPARTS>492</REJECTPARTS>
+            <GOODPARTS>7032</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M860</MOLD>
+            <SEMI>3025007</SEMI>
+            <DESCRIPTION>MM CORD CLIP</DESCRIPTION>
+            <TOTALPARTS>27577</TOTALPARTS>
+            <REJECTPARTS>1068</REJECTPARTS>
+            <GOODPARTS>26509</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M958</MOLD>
+            <SEMI>3025008</SEMI>
+            <DESCRIPTION>CHR 3/8 MTNG BRKT</DESCRIPTION>
+            <TOTALPARTS>155288</TOTALPARTS>
+            <REJECTPARTS>20856</REJECTPARTS>
+            <GOODPARTS>134432</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M874B</MOLD>
+            <SEMI>3025008</SEMI>
+            <DESCRIPTION>CHR 3/8 MTNG BRKT</DESCRIPTION>
+            <TOTALPARTS>9954</TOTALPARTS>
+            <REJECTPARTS>105</REJECTPARTS>
+            <GOODPARTS>9849</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M959</MOLD>
+            <SEMI>3025009</SEMI>
+            <DESCRIPTION>CHR 3/4 MTNG BRKT</DESCRIPTION>
+            <TOTALPARTS>591280</TOTALPARTS>
+            <REJECTPARTS>51986</REJECTPARTS>
+            <GOODPARTS>539294</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M874C</MOLD>
+            <SEMI>3025009</SEMI>
+            <DESCRIPTION>CHR 3/4 MTNG BRKT</DESCRIPTION>
+            <TOTALPARTS>25254</TOTALPARTS>
+            <REJECTPARTS>320</REJECTPARTS>
+            <GOODPARTS>24934</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M960</MOLD>
+            <SEMI>3025010</SEMI>
+            <DESCRIPTION>CHR BRKT SPACER</DESCRIPTION>
+            <TOTALPARTS>131336</TOTALPARTS>
+            <REJECTPARTS>6186</REJECTPARTS>
+            <GOODPARTS>125150</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P214</MOLD>
+            <SEMI>3025012</SEMI>
+            <DESCRIPTION>BRAKE SHUTTLE</DESCRIPTION>
+            <TOTALPARTS>1496</TOTALPARTS>
+            <REJECTPARTS>19</REJECTPARTS>
+            <GOODPARTS>1477</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M821</MOLD>
+            <SEMI>3025013</SEMI>
+            <DESCRIPTION>HOUSING BOTTOM</DESCRIPTION>
+            <TOTALPARTS>2094</TOTALPARTS>
+            <REJECTPARTS>1829</REJECTPARTS>
+            <GOODPARTS>265</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M918</MOLD>
+            <SEMI>3025014</SEMI>
+            <DESCRIPTION>UCT SPRNG HLDR-MOD B</DESCRIPTION>
+            <TOTALPARTS>406395</TOTALPARTS>
+            <REJECTPARTS>12746</REJECTPARTS>
+            <GOODPARTS>393649</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M475B</MOLD>
+            <SEMI>3025015</SEMI>
+            <DESCRIPTION>UCT HSG</DESCRIPTION>
+            <TOTALPARTS>1046445</TOTALPARTS>
+            <REJECTPARTS>43543</REJECTPARTS>
+            <GOODPARTS>1002902</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M957</MOLD>
+            <SEMI>3025016</SEMI>
+            <DESCRIPTION>CHR LR MTR SPRT</DESCRIPTION>
+            <TOTALPARTS>457609</TOTALPARTS>
+            <REJECTPARTS>21618</REJECTPARTS>
+            <GOODPARTS>435991</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P213</MOLD>
+            <SEMI>3025017</SEMI>
+            <DESCRIPTION>GOV HSG</DESCRIPTION>
+            <TOTALPARTS>18955</TOTALPARTS>
+            <REJECTPARTS>192</REJECTPARTS>
+            <GOODPARTS>18763</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M820</MOLD>
+            <SEMI>3025018</SEMI>
+            <DESCRIPTION>HOUSING TOP</DESCRIPTION>
+            <TOTALPARTS>2198</TOTALPARTS>
+            <REJECTPARTS>98</REJECTPARTS>
+            <GOODPARTS>2100</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M823</MOLD>
+            <SEMI>3025019</SEMI>
+            <DESCRIPTION>OUTPUT COUPLER</DESCRIPTION>
+            <TOTALPARTS>15655</TOTALPARTS>
+            <REJECTPARTS>595</REJECTPARTS>
+            <GOODPARTS>15060</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M872A</MOLD>
+            <SEMI>3025020</SEMI>
+            <DESCRIPTION>PIR UG TR EC L/R</DESCRIPTION>
+            <TOTALPARTS>9185</TOTALPARTS>
+            <REJECTPARTS>2475</REJECTPARTS>
+            <GOODPARTS>6711</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M872B</MOLD>
+            <SEMI>3025021</SEMI>
+            <DESCRIPTION>PIR UG TR EC RH</DESCRIPTION>
+            <TOTALPARTS>12808</TOTALPARTS>
+            <REJECTPARTS>2675</REJECTPARTS>
+            <GOODPARTS>10134</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M890A</MOLD>
+            <SEMI>3025022</SEMI>
+            <DESCRIPTION>LIFT SPOOL</DESCRIPTION>
+            <TOTALPARTS>881886</TOTALPARTS>
+            <REJECTPARTS>11311</REJECTPARTS>
+            <GOODPARTS>870575</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M890B</MOLD>
+            <SEMI>3025023</SEMI>
+            <DESCRIPTION>CHR SPOOL ROD STOP</DESCRIPTION>
+            <TOTALPARTS>483588</TOTALPARTS>
+            <REJECTPARTS>11690</REJECTPARTS>
+            <GOODPARTS>471898</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M902</MOLD>
+            <SEMI>3025024</SEMI>
+            <DESCRIPTION>ARCH VG CRD GDE 1.25</DESCRIPTION>
+            <TOTALPARTS>1399</TOTALPARTS>
+            <REJECTPARTS>10</REJECTPARTS>
+            <GOODPARTS>1389</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M005B</MOLD>
+            <SEMI>3025027</SEMI>
+            <DESCRIPTION>3/8 UG TR EC</DESCRIPTION>
+            <TOTALPARTS>82728</TOTALPARTS>
+            <REJECTPARTS>4914</REJECTPARTS>
+            <GOODPARTS>77814</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M805A</MOLD>
+            <SEMI>3025036</SEMI>
+            <DESCRIPTION>TR 1 TO 1 OUTPT GR</DESCRIPTION>
+            <TOTALPARTS>414</TOTALPARTS>
+            <REJECTPARTS>160</REJECTPARTS>
+            <GOODPARTS>254</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M807B</MOLD>
+            <SEMI>3025038</SEMI>
+            <DESCRIPTION>2 ON 1 BRKT</DESCRIPTION>
+            <TOTALPARTS>805</TOTALPARTS>
+            <REJECTPARTS>50</REJECTPARTS>
+            <GOODPARTS>755</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M899A</MOLD>
+            <SEMI>3025039</SEMI>
+            <DESCRIPTION>CRNR VAL EC R/L</DESCRIPTION>
+            <TOTALPARTS>6519</TOTALPARTS>
+            <REJECTPARTS>287</REJECTPARTS>
+            <GOODPARTS>6232</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M899B</MOLD>
+            <SEMI>3025040</SEMI>
+            <DESCRIPTION>CRNR VAL EC R/L</DESCRIPTION>
+            <TOTALPARTS>5338</TOTALPARTS>
+            <REJECTPARTS>539</REJECTPARTS>
+            <GOODPARTS>4799</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M914</MOLD>
+            <SEMI>3025043</SEMI>
+            <DESCRIPTION>SPACER 1.5</DESCRIPTION>
+            <TOTALPARTS>3030</TOTALPARTS>
+            <REJECTPARTS>130</REJECTPARTS>
+            <GOODPARTS>2900</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M919A</MOLD>
+            <SEMI>3025044</SEMI>
+            <DESCRIPTION>MM BR EC LIMIT/CLTCH</DESCRIPTION>
+            <TOTALPARTS>106534</TOTALPARTS>
+            <REJECTPARTS>7267</REJECTPARTS>
+            <GOODPARTS>99267</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M919B</MOLD>
+            <SEMI>3025045</SEMI>
+            <DESCRIPTION>MM BR EC LIMIT/CLTCH</DESCRIPTION>
+            <TOTALPARTS>106534</TOTALPARTS>
+            <REJECTPARTS>7267</REJECTPARTS>
+            <GOODPARTS>99267</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M864</MOLD>
+            <SEMI>3025046</SEMI>
+            <DESCRIPTION>MM ROTATOR CLUTCH</DESCRIPTION>
+            <TOTALPARTS>11825</TOTALPARTS>
+            <REJECTPARTS>1019</REJECTPARTS>
+            <GOODPARTS>10806</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M849</MOLD>
+            <SEMI>3025047</SEMI>
+            <DESCRIPTION>MM CRD BUSHING</DESCRIPTION>
+            <TOTALPARTS>5133</TOTALPARTS>
+            <REJECTPARTS>12</REJECTPARTS>
+            <GOODPARTS>5121</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M859</MOLD>
+            <SEMI>3025048</SEMI>
+            <DESCRIPTION>MM KICKER WHEEL</DESCRIPTION>
+            <TOTALPARTS>14527</TOTALPARTS>
+            <REJECTPARTS>687</REJECTPARTS>
+            <GOODPARTS>13840</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M955</MOLD>
+            <SEMI>3025051</SEMI>
+            <DESCRIPTION>CHR 3/4 SPL ADPTR</DESCRIPTION>
+            <TOTALPARTS>530430</TOTALPARTS>
+            <REJECTPARTS>18686</REJECTPARTS>
+            <GOODPARTS>511744</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M956</MOLD>
+            <SEMI>3025052</SEMI>
+            <DESCRIPTION>CHR 1 1/4 SPL ADPTR</DESCRIPTION>
+            <TOTALPARTS>11134</TOTALPARTS>
+            <REJECTPARTS>587</REJECTPARTS>
+            <GOODPARTS>10547</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P225</MOLD>
+            <SEMI>3025053</SEMI>
+            <DESCRIPTION>UCT BEARING INSERT</DESCRIPTION>
+            <TOTALPARTS>6118</TOTALPARTS>
+            <REJECTPARTS>98</REJECTPARTS>
+            <GOODPARTS>6020</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M897</MOLD>
+            <SEMI>3025055</SEMI>
+            <DESCRIPTION>ATL SWITCH LENS</DESCRIPTION>
+            <TOTALPARTS>10805</TOTALPARTS>
+            <REJECTPARTS>1355</REJECTPARTS>
+            <GOODPARTS>9450</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M896</MOLD>
+            <SEMI>3025056</SEMI>
+            <DESCRIPTION>ATL SWITCH HSG</DESCRIPTION>
+            <TOTALPARTS>4266</TOTALPARTS>
+            <REJECTPARTS>621</REJECTPARTS>
+            <GOODPARTS>3645</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M891</MOLD>
+            <SEMI>3025057</SEMI>
+            <DESCRIPTION>CHR LIFT SPL SPRT</DESCRIPTION>
+            <TOTALPARTS>1322269</TOTALPARTS>
+            <REJECTPARTS>25765</REJECTPARTS>
+            <GOODPARTS>1296504</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1006</MOLD>
+            <SEMI>3025062</SEMI>
+            <DESCRIPTION>MANUAL SWTCH CVR</DESCRIPTION>
+            <TOTALPARTS>81481</TOTALPARTS>
+            <REJECTPARTS>9335</REJECTPARTS>
+            <GOODPARTS>72146</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M944A</MOLD>
+            <SEMI>3025062</SEMI>
+            <DESCRIPTION>MANUAL SWTCH BTN/CVR</DESCRIPTION>
+            <TOTALPARTS>6111</TOTALPARTS>
+            <REJECTPARTS>524</REJECTPARTS>
+            <GOODPARTS>5587</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1007</MOLD>
+            <SEMI>3025063</SEMI>
+            <DESCRIPTION>PR EYE BUTTON</DESCRIPTION>
+            <TOTALPARTS>63563</TOTALPARTS>
+            <REJECTPARTS>2198</REJECTPARTS>
+            <GOODPARTS>61365</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M944B</MOLD>
+            <SEMI>3025063</SEMI>
+            <DESCRIPTION>MANUAL SWTCH BTN/CVR</DESCRIPTION>
+            <TOTALPARTS>5936</TOTALPARTS>
+            <REJECTPARTS>349</REJECTPARTS>
+            <GOODPARTS>5587</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P237</MOLD>
+            <SEMI>3025064</SEMI>
+            <DESCRIPTION>MANUAL SWTCH HSG</DESCRIPTION>
+            <TOTALPARTS>32379</TOTALPARTS>
+            <REJECTPARTS>857</REJECTPARTS>
+            <GOODPARTS>31522</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M961</MOLD>
+            <SEMI>3025065</SEMI>
+            <DESCRIPTION>1.25 ARCH SPL ADPTR</DESCRIPTION>
+            <TOTALPARTS>15036</TOTALPARTS>
+            <REJECTPARTS>322</REJECTPARTS>
+            <GOODPARTS>14714</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M946B</MOLD>
+            <SEMI>3025068</SEMI>
+            <DESCRIPTION>PR SHFT SPRT R/L</DESCRIPTION>
+            <TOTALPARTS>6466</TOTALPARTS>
+            <REJECTPARTS>69</REJECTPARTS>
+            <GOODPARTS>6397</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M946A</MOLD>
+            <SEMI>3025069</SEMI>
+            <DESCRIPTION>PR SHFT SPRT</DESCRIPTION>
+            <TOTALPARTS>2141</TOTALPARTS>
+            <REJECTPARTS>11</REJECTPARTS>
+            <GOODPARTS>2130</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M982A</MOLD>
+            <SEMI>3025074</SEMI>
+            <DESCRIPTION>VIG STPTB/BR EC 2ON1</DESCRIPTION>
+            <TOTALPARTS>4346</TOTALPARTS>
+            <REJECTPARTS>179</REJECTPARTS>
+            <GOODPARTS>4168</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M979</MOLD>
+            <SEMI>3025075</SEMI>
+            <DESCRIPTION>FR PULL CRD BUSHING</DESCRIPTION>
+            <TOTALPARTS>25872</TOTALPARTS>
+            <REJECTPARTS>3810</REJECTPARTS>
+            <GOODPARTS>22062</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M987</MOLD>
+            <SEMI>3025075</SEMI>
+            <DESCRIPTION>FR PULL CRD BUSHING</DESCRIPTION>
+            <TOTALPARTS>8671</TOTALPARTS>
+            <REJECTPARTS>75</REJECTPARTS>
+            <GOODPARTS>8596</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M962A</MOLD>
+            <SEMI>3025076</SEMI>
+            <DESCRIPTION>PIR TR EC R/L</DESCRIPTION>
+            <TOTALPARTS>46190</TOTALPARTS>
+            <REJECTPARTS>2662</REJECTPARTS>
+            <GOODPARTS>43529</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M962B</MOLD>
+            <SEMI>3025077</SEMI>
+            <DESCRIPTION>PIR TR EC</DESCRIPTION>
+            <TOTALPARTS>48935</TOTALPARTS>
+            <REJECTPARTS>2287</REJECTPARTS>
+            <GOODPARTS>46649</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M963A</MOLD>
+            <SEMI>3025078</SEMI>
+            <DESCRIPTION>PIR LIMIT SCREW RH</DESCRIPTION>
+            <TOTALPARTS>22154</TOTALPARTS>
+            <REJECTPARTS>268</REJECTPARTS>
+            <GOODPARTS>21886</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P226</MOLD>
+            <SEMI>3025080</SEMI>
+            <DESCRIPTION>RETURN SPRNG ARBOR</DESCRIPTION>
+            <TOTALPARTS>15136</TOTALPARTS>
+            <REJECTPARTS>54</REJECTPARTS>
+            <GOODPARTS>15082</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P228</MOLD>
+            <SEMI>3025081</SEMI>
+            <DESCRIPTION>BRAKE SHUTTLE</DESCRIPTION>
+            <TOTALPARTS>13000</TOTALPARTS>
+            <REJECTPARTS>39</REJECTPARTS>
+            <GOODPARTS>12961</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M903A</MOLD>
+            <SEMI>3025084</SEMI>
+            <DESCRIPTION>MTR SHFT TLT</DESCRIPTION>
+            <TOTALPARTS>7611</TOTALPARTS>
+            <REJECTPARTS>222</REJECTPARTS>
+            <GOODPARTS>7389</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M903B</MOLD>
+            <SEMI>3025085</SEMI>
+            <DESCRIPTION>MTR SHFT TRAVERSE</DESCRIPTION>
+            <TOTALPARTS>12196</TOTALPARTS>
+            <REJECTPARTS>1369</REJECTPARTS>
+            <GOODPARTS>10827</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1013A</MOLD>
+            <SEMI>3025087</SEMI>
+            <DESCRIPTION>XL UG SHIFT ARM R/L</DESCRIPTION>
+            <TOTALPARTS>25731</TOTALPARTS>
+            <REJECTPARTS>387</REJECTPARTS>
+            <GOODPARTS>25344</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1014</MOLD>
+            <SEMI>3025088</SEMI>
+            <DESCRIPTION>XL UG BRK HSG</DESCRIPTION>
+            <TOTALPARTS>26576</TOTALPARTS>
+            <REJECTPARTS>1342</REJECTPARTS>
+            <GOODPARTS>25234</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1012A</MOLD>
+            <SEMI>3025089</SEMI>
+            <DESCRIPTION>XL UG CRD GUIDE R/L</DESCRIPTION>
+            <TOTALPARTS>18308</TOTALPARTS>
+            <REJECTPARTS>512</REJECTPARTS>
+            <GOODPARTS>17797</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1015A</MOLD>
+            <SEMI>3025090</SEMI>
+            <DESCRIPTION>XL CLTCH/IDLR EC R/L</DESCRIPTION>
+            <TOTALPARTS>32798</TOTALPARTS>
+            <REJECTPARTS>6576</REJECTPARTS>
+            <GOODPARTS>26222</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1015B</MOLD>
+            <SEMI>3025091</SEMI>
+            <DESCRIPTION>XL CLTCH/IDLR EC R/L</DESCRIPTION>
+            <TOTALPARTS>30515</TOTALPARTS>
+            <REJECTPARTS>5744</REJECTPARTS>
+            <GOODPARTS>24771</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1012B</MOLD>
+            <SEMI>3025092</SEMI>
+            <DESCRIPTION>XL UG CRD GUIDE R/L</DESCRIPTION>
+            <TOTALPARTS>17266</TOTALPARTS>
+            <REJECTPARTS>502</REJECTPARTS>
+            <GOODPARTS>16765</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1016A</MOLD>
+            <SEMI>3025093</SEMI>
+            <DESCRIPTION>XL CLTCH/IDLR EC L/R</DESCRIPTION>
+            <TOTALPARTS>11883</TOTALPARTS>
+            <REJECTPARTS>2818</REJECTPARTS>
+            <GOODPARTS>9065</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1016B</MOLD>
+            <SEMI>3025094</SEMI>
+            <DESCRIPTION>XL CLTCH/IDLR EC L/R</DESCRIPTION>
+            <TOTALPARTS>11376</TOTALPARTS>
+            <REJECTPARTS>2617</REJECTPARTS>
+            <GOODPARTS>8759</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1013B</MOLD>
+            <SEMI>3025095</SEMI>
+            <DESCRIPTION>XL UG SHIFT ARM R/L</DESCRIPTION>
+            <TOTALPARTS>14741</TOTALPARTS>
+            <REJECTPARTS>204</REJECTPARTS>
+            <GOODPARTS>14537</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M881</MOLD>
+            <SEMI>3025096</SEMI>
+            <DESCRIPTION>CHR TRANS CAP COMBO</DESCRIPTION>
+            <TOTALPARTS>467536</TOTALPARTS>
+            <REJECTPARTS>7198</REJECTPARTS>
+            <GOODPARTS>460338</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M975</MOLD>
+            <SEMI>3025098</SEMI>
+            <DESCRIPTION>RM DRV HUB CLTCH</DESCRIPTION>
+            <TOTALPARTS>27221</TOTALPARTS>
+            <REJECTPARTS>720</REJECTPARTS>
+            <GOODPARTS>26501</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M949</MOLD>
+            <SEMI>3025099</SEMI>
+            <DESCRIPTION>3/8 ADJ EC</DESCRIPTION>
+            <TOTALPARTS>82233</TOTALPARTS>
+            <REJECTPARTS>8989</REJECTPARTS>
+            <GOODPARTS>73244</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M950</MOLD>
+            <SEMI>3025100</SEMI>
+            <DESCRIPTION>3/4 ADJ EC</DESCRIPTION>
+            <TOTALPARTS>180694</TOTALPARTS>
+            <REJECTPARTS>3787</REJECTPARTS>
+            <GOODPARTS>176907</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M911C</MOLD>
+            <SEMI>3025101</SEMI>
+            <DESCRIPTION>SMPLX SPL SLEEVE</DESCRIPTION>
+            <TOTALPARTS>121498</TOTALPARTS>
+            <REJECTPARTS>2860</REJECTPARTS>
+            <GOODPARTS>118638</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M947</MOLD>
+            <SEMI>3025102</SEMI>
+            <DESCRIPTION>DUT CRD GUIDE BR</DESCRIPTION>
+            <TOTALPARTS>7604</TOTALPARTS>
+            <REJECTPARTS>260</REJECTPARTS>
+            <GOODPARTS>7344</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M948</MOLD>
+            <SEMI>3025103</SEMI>
+            <DESCRIPTION>DUT CR GUIDE MV RL</DESCRIPTION>
+            <TOTALPARTS>7807</TOTALPARTS>
+            <REJECTPARTS>227</REJECTPARTS>
+            <GOODPARTS>7580</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M983</MOLD>
+            <SEMI>3025104</SEMI>
+            <DESCRIPTION>CLIP ANGLE XL</DESCRIPTION>
+            <TOTALPARTS>3892</TOTALPARTS>
+            <REJECTPARTS>10</REJECTPARTS>
+            <GOODPARTS>3882</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M984</MOLD>
+            <SEMI>3025105</SEMI>
+            <DESCRIPTION>BRKT ANGLE XL</DESCRIPTION>
+            <TOTALPARTS>3037</TOTALPARTS>
+            <REJECTPARTS>68</REJECTPARTS>
+            <GOODPARTS>2969</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M985</MOLD>
+            <SEMI>3025106</SEMI>
+            <DESCRIPTION>BRKT KYHL-ARCH</DESCRIPTION>
+            <TOTALPARTS>2493</TOTALPARTS>
+            <REJECTPARTS>22</REJECTPARTS>
+            <GOODPARTS>2471</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1001</MOLD>
+            <SEMI>3025108</SEMI>
+            <DESCRIPTION>XL RMP BRKT</DESCRIPTION>
+            <TOTALPARTS>1584</TOTALPARTS>
+            <REJECTPARTS>93</REJECTPARTS>
+            <GOODPARTS>1491</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1017B</MOLD>
+            <SEMI>3025109</SEMI>
+            <DESCRIPTION>SMPLX HSG 3</DESCRIPTION>
+            <TOTALPARTS>125772</TOTALPARTS>
+            <REJECTPARTS>1726</REJECTPARTS>
+            <GOODPARTS>124046</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P234</MOLD>
+            <SEMI>3025110</SEMI>
+            <DESCRIPTION>3/4 BRK ACTVTR RH</DESCRIPTION>
+            <TOTALPARTS>13081</TOTALPARTS>
+            <REJECTPARTS>288</REJECTPARTS>
+            <GOODPARTS>12793</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>p233</MOLD>
+            <SEMI>3025111</SEMI>
+            <DESCRIPTION>3/4 BRK ACTVTR LH</DESCRIPTION>
+            <TOTALPARTS>376</TOTALPARTS>
+            <REJECTPARTS>75</REJECTPARTS>
+            <GOODPARTS>301</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P236</MOLD>
+            <SEMI>3025112</SEMI>
+            <DESCRIPTION>1 1/4 BRK ACTVTR RH</DESCRIPTION>
+            <TOTALPARTS>788</TOTALPARTS>
+            <REJECTPARTS>19</REJECTPARTS>
+            <GOODPARTS>769</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P235</MOLD>
+            <SEMI>3025113</SEMI>
+            <DESCRIPTION>1 1/4 BRK ACTVTR LH</DESCRIPTION>
+            <TOTALPARTS>795</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>795</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M830A</MOLD>
+            <SEMI>3025114</SEMI>
+            <DESCRIPTION>UG II 1 1/4 ADPTR</DESCRIPTION>
+            <TOTALPARTS>1172</TOTALPARTS>
+            <REJECTPARTS>176</REJECTPARTS>
+            <GOODPARTS>996</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M830B</MOLD>
+            <SEMI>3025115</SEMI>
+            <DESCRIPTION>ARCHTLA 1 1/4 ADPTR</DESCRIPTION>
+            <TOTALPARTS>1321</TOTALPARTS>
+            <REJECTPARTS>58</REJECTPARTS>
+            <GOODPARTS>1263</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M880B</MOLD>
+            <SEMI>3025116</SEMI>
+            <DESCRIPTION>DRP LMT CNTRL TUBE</DESCRIPTION>
+            <TOTALPARTS>966</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>966</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M880A</MOLD>
+            <SEMI>3025117</SEMI>
+            <DESCRIPTION>DRP LMT CNTRL TUBE</DESCRIPTION>
+            <TOTALPARTS>966</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>966</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P227</MOLD>
+            <SEMI>3025118</SEMI>
+            <DESCRIPTION>RETURN SPRNG HSG</DESCRIPTION>
+            <TOTALPARTS>2704</TOTALPARTS>
+            <REJECTPARTS>10</REJECTPARTS>
+            <GOODPARTS>2694</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P240</MOLD>
+            <SEMI>3025119</SEMI>
+            <DESCRIPTION>HR PUNCH PLUG</DESCRIPTION>
+            <TOTALPARTS>2342</TOTALPARTS>
+            <REJECTPARTS>532</REJECTPARTS>
+            <GOODPARTS>1810</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P239</MOLD>
+            <SEMI>3025120</SEMI>
+            <DESCRIPTION>HVN BR EC</DESCRIPTION>
+            <TOTALPARTS>30262</TOTALPARTS>
+            <REJECTPARTS>789</REJECTPARTS>
+            <GOODPARTS>29473</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M820B</MOLD>
+            <SEMI>3025122</SEMI>
+            <DESCRIPTION>UGII TOP HSG</DESCRIPTION>
+            <TOTALPARTS>12519</TOTALPARTS>
+            <REJECTPARTS>95</REJECTPARTS>
+            <GOODPARTS>12424</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M821B</MOLD>
+            <SEMI>3025123</SEMI>
+            <DESCRIPTION>UGII HSNG BTM</DESCRIPTION>
+            <TOTALPARTS>12392</TOTALPARTS>
+            <REJECTPARTS>116</REJECTPARTS>
+            <GOODPARTS>12276</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M822C</MOLD>
+            <SEMI>3025124</SEMI>
+            <DESCRIPTION>DRIVEN</DESCRIPTION>
+            <TOTALPARTS>18943</TOTALPARTS>
+            <REJECTPARTS>1124</REJECTPARTS>
+            <GOODPARTS>17819</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1038</MOLD>
+            <SEMI>3025125</SEMI>
+            <DESCRIPTION>UG RTRN SPRNG HSG</DESCRIPTION>
+            <TOTALPARTS>36331</TOTALPARTS>
+            <REJECTPARTS>9838</REJECTPARTS>
+            <GOODPARTS>26493</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M943C</MOLD>
+            <SEMI>3025126</SEMI>
+            <DESCRIPTION>PIN SNAP PCB</DESCRIPTION>
+            <TOTALPARTS>12820</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>12820</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1023</MOLD>
+            <SEMI>3025127</SEMI>
+            <DESCRIPTION>RLR LCK HSG CVR</DESCRIPTION>
+            <TOTALPARTS>1592</TOTALPARTS>
+            <REJECTPARTS>300</REJECTPARTS>
+            <GOODPARTS>1292</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>m1062</MOLD>
+            <SEMI>3025128</SEMI>
+            <DESCRIPTION>LR 1 1/4 FAB BR HNDL</DESCRIPTION>
+            <TOTALPARTS>16845</TOTALPARTS>
+            <REJECTPARTS>1716</REJECTPARTS>
+            <GOODPARTS>15129</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1057C</MOLD>
+            <SEMI>3025128</SEMI>
+            <DESCRIPTION>LR 1 1/4 FAB BR HNDL</DESCRIPTION>
+            <TOTALPARTS>8415</TOTALPARTS>
+            <REJECTPARTS>223</REJECTPARTS>
+            <GOODPARTS>8192</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1018A</MOLD>
+            <SEMI>3025129</SEMI>
+            <DESCRIPTION>MTR HSG BASE/CAP</DESCRIPTION>
+            <TOTALPARTS>15327</TOTALPARTS>
+            <REJECTPARTS>3950</REJECTPARTS>
+            <GOODPARTS>11377</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1018B</MOLD>
+            <SEMI>3025130</SEMI>
+            <DESCRIPTION>MTR HSG BASE/CAP</DESCRIPTION>
+            <TOTALPARTS>15353</TOTALPARTS>
+            <REJECTPARTS>3950</REJECTPARTS>
+            <GOODPARTS>11403</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1086</MOLD>
+            <SEMI>3025131</SEMI>
+            <DESCRIPTION>LINE BUS MTR BRKR</DESCRIPTION>
+            <TOTALPARTS>11824</TOTALPARTS>
+            <REJECTPARTS>394</REJECTPARTS>
+            <GOODPARTS>11430</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1052A</MOLD>
+            <SEMI>3025131</SEMI>
+            <DESCRIPTION>LINE BUS MTR BRKR</DESCRIPTION>
+            <TOTALPARTS>8585</TOTALPARTS>
+            <REJECTPARTS>12</REJECTPARTS>
+            <GOODPARTS>8573</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1087</MOLD>
+            <SEMI>3025132</SEMI>
+            <DESCRIPTION>MTR BRKR SPRT BUS</DESCRIPTION>
+            <TOTALPARTS>12982</TOTALPARTS>
+            <REJECTPARTS>918</REJECTPARTS>
+            <GOODPARTS>12064</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1052B</MOLD>
+            <SEMI>3025132</SEMI>
+            <DESCRIPTION>MTR BRKR SPRT BUS</DESCRIPTION>
+            <TOTALPARTS>8293</TOTALPARTS>
+            <REJECTPARTS>1047</REJECTPARTS>
+            <GOODPARTS>7246</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1057A</MOLD>
+            <SEMI>3025133</SEMI>
+            <DESCRIPTION>3/4 LR APPLAUSE HNDL</DESCRIPTION>
+            <TOTALPARTS>79445</TOTALPARTS>
+            <REJECTPARTS>3384</REJECTPARTS>
+            <GOODPARTS>76061</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1057B</MOLD>
+            <SEMI>3025134</SEMI>
+            <DESCRIPTION>3/8 LR APPLAUSE HNDL</DESCRIPTION>
+            <TOTALPARTS>19744</TOTALPARTS>
+            <REJECTPARTS>653</REJECTPARTS>
+            <GOODPARTS>19091</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1048</MOLD>
+            <SEMI>3025135</SEMI>
+            <DESCRIPTION>ER HVNLY SCRW STP</DESCRIPTION>
+            <TOTALPARTS>13449</TOTALPARTS>
+            <REJECTPARTS>553</REJECTPARTS>
+            <GOODPARTS>12896</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P241</MOLD>
+            <SEMI>3025136</SEMI>
+            <DESCRIPTION>ER HVNLY TRVL NUT</DESCRIPTION>
+            <TOTALPARTS>10302</TOTALPARTS>
+            <REJECTPARTS>4692</REJECTPARTS>
+            <GOODPARTS>5610</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1053A</MOLD>
+            <SEMI>3025137</SEMI>
+            <DESCRIPTION>ER HVNLY CLTCH MNTLH</DESCRIPTION>
+            <TOTALPARTS>3165</TOTALPARTS>
+            <REJECTPARTS>73</REJECTPARTS>
+            <GOODPARTS>3092</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1051</MOLD>
+            <SEMI>3025138</SEMI>
+            <DESCRIPTION>HVNLY CMN HR EC</DESCRIPTION>
+            <TOTALPARTS>21102</TOTALPARTS>
+            <REJECTPARTS>2409</REJECTPARTS>
+            <GOODPARTS>18693</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1054</MOLD>
+            <SEMI>3025139</SEMI>
+            <DESCRIPTION>CLTCH MNT CVR</DESCRIPTION>
+            <TOTALPARTS>8320</TOTALPARTS>
+            <REJECTPARTS>181</REJECTPARTS>
+            <GOODPARTS>8139</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1011</MOLD>
+            <SEMI>3025140</SEMI>
+            <DESCRIPTION>3/4 ER CLTCH MNT CVR</DESCRIPTION>
+            <TOTALPARTS>722</TOTALPARTS>
+            <REJECTPARTS>127</REJECTPARTS>
+            <GOODPARTS>595</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M993</MOLD>
+            <SEMI>3025141</SEMI>
+            <DESCRIPTION>1 1/4 CLTCH MNT CVR</DESCRIPTION>
+            <TOTALPARTS>519</TOTALPARTS>
+            <REJECTPARTS>29</REJECTPARTS>
+            <GOODPARTS>490</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M909</MOLD>
+            <SEMI>3025142</SEMI>
+            <DESCRIPTION>3/8 ER CLTCH MNT CVR</DESCRIPTION>
+            <TOTALPARTS>7363</TOTALPARTS>
+            <REJECTPARTS>185</REJECTPARTS>
+            <GOODPARTS>7178</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1009</MOLD>
+            <SEMI>3025143</SEMI>
+            <DESCRIPTION>3/4 ER LH CLTCH MNT</DESCRIPTION>
+            <TOTALPARTS>444</TOTALPARTS>
+            <REJECTPARTS>30</REJECTPARTS>
+            <GOODPARTS>414</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1010</MOLD>
+            <SEMI>3025144</SEMI>
+            <DESCRIPTION>3/4 ER RH CLTCH MNT</DESCRIPTION>
+            <TOTALPARTS>700</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>700</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M994A</MOLD>
+            <SEMI>3025145</SEMI>
+            <DESCRIPTION>1.25 ER LH CLTCH MNT</DESCRIPTION>
+            <TOTALPARTS>413</TOTALPARTS>
+            <REJECTPARTS>5</REJECTPARTS>
+            <GOODPARTS>408</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M994B</MOLD>
+            <SEMI>3025146</SEMI>
+            <DESCRIPTION>1.25 ER RH CLTCH MNT</DESCRIPTION>
+            <TOTALPARTS>352</TOTALPARTS>
+            <REJECTPARTS>48</REJECTPARTS>
+            <GOODPARTS>304</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M995</MOLD>
+            <SEMI>3025147</SEMI>
+            <DESCRIPTION>3/8 ER LH CLTCH MNT</DESCRIPTION>
+            <TOTALPARTS>885</TOTALPARTS>
+            <REJECTPARTS>245</REJECTPARTS>
+            <GOODPARTS>640</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M876</MOLD>
+            <SEMI>3025148</SEMI>
+            <DESCRIPTION>PGM TRAVERSE GEAR</DESCRIPTION>
+            <TOTALPARTS>7349</TOTALPARTS>
+            <REJECTPARTS>72</REJECTPARTS>
+            <GOODPARTS>7277</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M928</MOLD>
+            <SEMI>3025149</SEMI>
+            <DESCRIPTION>PG RAIL ATTACH</DESCRIPTION>
+            <TOTALPARTS>1340</TOTALPARTS>
+            <REJECTPARTS>0</REJECTPARTS>
+            <GOODPARTS>1340</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M929</MOLD>
+            <SEMI>3025150</SEMI>
+            <DESCRIPTION>PG TOP CVR</DESCRIPTION>
+            <TOTALPARTS>1613</TOTALPARTS>
+            <REJECTPARTS>250</REJECTPARTS>
+            <GOODPARTS>1363</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M942A</MOLD>
+            <SEMI>3025151</SEMI>
+            <DESCRIPTION>MODULAR LOCK</DESCRIPTION>
+            <TOTALPARTS>7939</TOTALPARTS>
+            <REJECTPARTS>264</REJECTPARTS>
+            <GOODPARTS>7675</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M942B</MOLD>
+            <SEMI>3025152</SEMI>
+            <DESCRIPTION>TRAVERSE SUPPORT</DESCRIPTION>
+            <TOTALPARTS>6860</TOTALPARTS>
+            <REJECTPARTS>318</REJECTPARTS>
+            <GOODPARTS>6542</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M943A</MOLD>
+            <SEMI>3025153</SEMI>
+            <DESCRIPTION>TLT GEAR SUPPORT</DESCRIPTION>
+            <TOTALPARTS>2575</TOTALPARTS>
+            <REJECTPARTS>132</REJECTPARTS>
+            <GOODPARTS>2443</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M943B</MOLD>
+            <SEMI>3025154</SEMI>
+            <DESCRIPTION>CVR HSG FRONT</DESCRIPTION>
+            <TOTALPARTS>5464</TOTALPARTS>
+            <REJECTPARTS>103</REJECTPARTS>
+            <GOODPARTS>5361</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M908</MOLD>
+            <SEMI>3025155</SEMI>
+            <DESCRIPTION>3/8 ER RH CLTCH MNT</DESCRIPTION>
+            <TOTALPARTS>1114</TOTALPARTS>
+            <REJECTPARTS>75</REJECTPARTS>
+            <GOODPARTS>1039</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M926A</MOLD>
+            <SEMI>3025157</SEMI>
+            <DESCRIPTION>LNG DROP COMMON SPL</DESCRIPTION>
+            <TOTALPARTS>3785</TOTALPARTS>
+            <REJECTPARTS>801</REJECTPARTS>
+            <GOODPARTS>2984</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1055</MOLD>
+            <SEMI>3025158</SEMI>
+            <DESCRIPTION>TAPE BUTTON V1</DESCRIPTION>
+            <TOTALPARTS>335376</TOTALPARTS>
+            <REJECTPARTS>1716</REJECTPARTS>
+            <GOODPARTS>333660</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1041</MOLD>
+            <SEMI>3025159</SEMI>
+            <DESCRIPTION>LVR BRKT BODY</DESCRIPTION>
+            <TOTALPARTS>7350</TOTALPARTS>
+            <REJECTPARTS>245</REJECTPARTS>
+            <GOODPARTS>7105</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1040</MOLD>
+            <SEMI>3025160</SEMI>
+            <DESCRIPTION>LVR BRKT REL STRIP</DESCRIPTION>
+            <TOTALPARTS>13532</TOTALPARTS>
+            <REJECTPARTS>148</REJECTPARTS>
+            <GOODPARTS>13384</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1039</MOLD>
+            <SEMI>3025161</SEMI>
+            <DESCRIPTION>LVR BRKT LVR</DESCRIPTION>
+            <TOTALPARTS>14316</TOTALPARTS>
+            <REJECTPARTS>497</REJECTPARTS>
+            <GOODPARTS>13819</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1056</MOLD>
+            <SEMI>3025162</SEMI>
+            <DESCRIPTION>NOTCHED TLT CLP</DESCRIPTION>
+            <TOTALPARTS>15038</TOTALPARTS>
+            <REJECTPARTS>248</REJECTPARTS>
+            <GOODPARTS>14790</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1053B</MOLD>
+            <SEMI>3025164</SEMI>
+            <DESCRIPTION>ER CLTCH MNT HEA RH</DESCRIPTION>
+            <TOTALPARTS>5020</TOTALPARTS>
+            <REJECTPARTS>111</REJECTPARTS>
+            <GOODPARTS>4909</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1061</MOLD>
+            <SEMI>3025165</SEMI>
+            <DESCRIPTION>DRIVE SPL</DESCRIPTION>
+            <TOTALPARTS>8427</TOTALPARTS>
+            <REJECTPARTS>596</REJECTPARTS>
+            <GOODPARTS>7831</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1103</MOLD>
+            <SEMI>3025166</SEMI>
+            <DESCRIPTION>CHR HND SMPL BASE</DESCRIPTION>
+            <TOTALPARTS>21876</TOTALPARTS>
+            <REJECTPARTS>243</REJECTPARTS>
+            <GOODPARTS>21633</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>P238</MOLD>
+            <SEMI>3025167</SEMI>
+            <DESCRIPTION>VIG KEYHOLE BRKT</DESCRIPTION>
+            <TOTALPARTS>230</TOTALPARTS>
+            <REJECTPARTS>66</REJECTPARTS>
+            <GOODPARTS>164</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1031</MOLD>
+            <SEMI>3025168</SEMI>
+            <DESCRIPTION>LR LFT TLT ROLL</DESCRIPTION>
+            <TOTALPARTS>6356</TOTALPARTS>
+            <REJECTPARTS>60</REJECTPARTS>
+            <GOODPARTS>6296</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1084</MOLD>
+            <SEMI>3025169</SEMI>
+            <DESCRIPTION>TSL BASE</DESCRIPTION>
+            <TOTALPARTS>17396</TOTALPARTS>
+            <REJECTPARTS>3822</REJECTPARTS>
+            <GOODPARTS>13574</GOODPARTS>
+        </Row>
+        <Row>
+            <MOLD>M1085</MOLD>
+            <SEMI>3025170</SEMI>
+            <DESCRIPTION>TSL COVER</DESCRIPTION>
+            <TOTALPARTS>29130</TOTALPARTS>
+            <REJECTPARTS>2497</REJECTPARTS>
+            <GOODPARTS>26633</GOODPARTS>
+        </Row>
+    </Rowset>
+</Rowsets>

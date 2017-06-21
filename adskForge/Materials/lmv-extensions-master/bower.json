@@ -1,0 +1,10 @@
+{
+  "name": "lmv-extensions",
+
+  "devDependencies": {
+    "bootstrap":              "3.3.2",
+    "bootstrap-social":       "4.9.0",
+    "dragula.js":             "1.5.1",
+    "font-awesome":           "4.3.0"
+  }
+}

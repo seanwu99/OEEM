@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Autodesk Forge Viewer</title>
+
+    <script id="sap-ui-bootstrap"
+            src="../sapui5/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_belize"
+            data-sap-ui-libs="sap.ui.core,sap.ui.commons,sap.ui.table,sap.ui.ux3"
+            data-sap-ui-language="en">
+    </script>
+    <!--<script src="jquery-ui.min.js"></script> &lt;!&ndash; http://jqueryui.com/ &ndash;&gt;-->
+
+    <!-- Autodesk Forge Viewer -->
+    <link href="../Common/forge/style.css" rel="stylesheet"/>
+    <script src="../Common/forge/three.min.js"></script>
+    <script src="../Common/forge/viewer3D.min.js"></script>
+
+
+    <script>
+        var docs = [{"path": "Materials/SLDPRT/1/Concept.svf", "name": "Scene"}];
+
+        var oViewer = null;
+        $(function () {
+
+            var options = {'docid': docs [0].path, env: 'Local'};
+
+//            oViewer =new Autodesk.Viewing.Viewer3D ($("#viewer") [0], {}) ; // No toolbar
+            oViewer = new Autodesk.Viewing.Private.GuiViewer3D($("#viewer") [0], {}); // With toolbar
+            Autodesk.Viewing.Initializer(options, function () {
+                oViewer.initialize();
+                oViewer.addEventListener(Autodesk.Viewing.GEOMETRY_LOADED_EVENT, function (event) {
+//                    oViewer.removeEventListener (Autodesk.Viewing.GEOMETRY_LOADED_EVENT, arguments.callee) ;
+                    oViewer.fitToView(false);
+                    setTimeout(function () {
+                        oViewer.autocam.setHomeViewFrom(oViewer.navigation.getCamera());
+                    }, 1000);
+                });
+                oViewer.loadModel(options.docid);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+
+<div>
+    <div id="viewer"
+         style=" height: 800px; cursor: pointer; padding: 0px; margin-bottom: 10px; position: relative; background-color: #eee; border: 2px dashed #aaa; border-radius: 10px;">
+    </div>
+</div>
+<br/>
+
+
+</body>
+</html>

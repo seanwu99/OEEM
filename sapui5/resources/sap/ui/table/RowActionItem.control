@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RowActionItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An action items to be displayed in a &lt;code&gt;RowAction&lt;/code&gt; control.
+This element must only be used in the context of the &lt;code&gt;sap.ui.table.Table&lt;/code&gt; control to define row actions.</documentation>
+    <since>1.45.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/URI" name="icon">
+            <documentation>The icon of the item.</documentation>
+        </property>
+        <property group="Misc" defaultValue="true" type="sap.ui.core/boolean" name="visible">
+            <documentation>Whether the item should be visible on the screen.</documentation>
+        </property>
+        <property group="Misc" defaultValue="" type="sap.ui.core/string" name="text">
+            <documentation>The text of the item. It is used as tooltip and for accessibility purposes.</documentation>
+        </property>
+        <property group="Behavior" defaultValue="Custom" type="sap.ui.table/RowActionType" name="type">
+            <documentation>The type of the item.
+Setting the type ensures default values for the properties &lt;code&gt;icon&lt;/code&gt; and &lt;code&gt;text&lt;/code&gt;.
+If an icon or text is set explicitly this setting is used.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="press">
+            <documentation>The &lt;code&gt;press&lt;/code&gt; is fired when the user triggers the corresponding action.</documentation>
+        </event>
+    </events>
+</control>

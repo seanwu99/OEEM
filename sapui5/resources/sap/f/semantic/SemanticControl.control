@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/SemanticControl</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The base class for the {@link sap.f.semantic.SemanticButton}.</documentation>
+    <since>1.46.0</since>
+    <abstract/>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property group="Appearance" defaultValue="true" type="sap.ui.core/boolean" name="visible">
+            <documentation>Determines whether the &lt;code&gt;SemanticControl&lt;/code&gt; is visible.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.ui.core/Control" name="_control">
+            <documentation>Hidden aggregation.</documentation>
+        </aggregation>
+    </aggregations>
+</control>
