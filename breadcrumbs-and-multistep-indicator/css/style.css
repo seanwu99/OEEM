@@ -51,8 +51,8 @@ Basic Style
 
 -------------------------------- */
 .cd-breadcrumb, .cd-multi-steps {
-  width: 90%;
-  max-width: 768px;
+  /*width: 90%;*/
+  /*max-width: 768px;*/
   padding: 0.5em 1em;
   margin: 1em auto;
   background-color: #edeff0;

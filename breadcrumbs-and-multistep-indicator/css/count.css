@@ -1,0 +1,156 @@
+
+html {
+    font-size: 62.5%;
+}
+
+.cd-multi-steps li {
+    display: inline-block;
+    float: left;
+
+}
+
+.cd-multi-steps li:last-of-type::after {
+    /* hide separator after the last item */
+    display: none;
+}
+
+/* --------------------------------
+
+Multi steps indicator 
+
+-------------------------------- */
+@media only screen and (min-width: 768px) {
+    .cd-multi-steps {
+        /* reset style */
+        background-color: transparent;
+        padding: 0;
+        text-align: center;
+    }
+
+    .cd-multi-steps li {
+        position: relative;
+        float: none;
+        /*margin: 0.4em 10px 0.4em 0;*/
+        margin: 0 0 0 0;
+    }
+
+    .cd-multi-steps li:last-of-type {
+        margin-right: 0;
+    }
+
+    .cd-multi-steps li::after {
+        /* this is the line connecting 2 adjacent items */
+        position: absolute;
+        content: '';
+        height: 4px;
+        background: #edeff0;
+        /* reset style */
+        margin: 0;
+    }
+
+    .cd-multi-steps li.visited::after {
+        background-color: #96c03d;
+    }
+
+    .cd-multi-steps.text-bottom li {
+        width: 28px;
+        text-align: center;
+    }
+
+    .cd-multi-steps.text-bottom li::after {
+        /* this is the line connecting 2 adjacent items */
+        position: absolute;
+        left: 0;
+        /* 40px is the <li> right margin value */
+        width: calc(100%);
+    }
+
+    .cd-multi-steps.text-bottom li:not(:first-of-type) > *::before {
+        /* this is the spot indicator */
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: auto;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background-color: #ff0000;
+    }
+    .cd-multi-steps.text-bottom li:first-of-type > *::before {
+        /* this is the spot indicator */
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: auto;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        height: 12px;
+        width: 12px;
+        border-radius: 5px;
+        background-color: #ff0000;
+    }
+    .cd-multi-steps.text-top li.visited > *::before,
+    .cd-multi-steps.text-top li.current > *::before, .cd-multi-steps.text-bottom li.visited > *::before,
+    .cd-multi-steps.text-bottom li.current > *::before {
+        background-color: #96c03d;
+    }
+
+    a:hover, .cd-multi-steps.text-bottom a:hover {
+        color: #96c03d;
+    }
+
+    a:hover::before, .cd-multi-steps.text-bottom a:hover::before {
+        box-shadow: 0 0 0 5px rgba(150, 192, 61, 0.3);
+    }
+
+    .cd-multi-steps.text-bottom li > *::before {
+        /* this is the spot indicator */
+        top: 0;
+    }
+}
+
+/* --------------------------------
+
+Add a counter to the multi-steps indicator 
+
+-------------------------------- */
+.cd-multi-steps.count li:not(:first-of-type) {
+    counter-increment: cc;
+}
+
+@media only screen {
+    .cd-multi-steps.text-bottom.count li:first-of-type > *::before {
+        /* this is the spot indicator */
+        /*content: 'content';*/
+        height: 28px;
+        width: 200px;
+        line-height: 28px;
+        font-size: 1.4rem;
+        color: #ffffff;
+    }
+
+    .cd-multi-steps.text-bottom.count li:not(:first-of-type) > *::before {
+        /* this is the spot indicator */
+        content: counter(cc);
+        height: 28px;
+        width: 28px;
+        line-height: 28px;
+        font-size: 1.4rem;
+        color: #ffffff;
+    }
+
+    .cd-multi-steps.text-bottom.count li::after {
+        top: 11px;
+    }
+
+}
