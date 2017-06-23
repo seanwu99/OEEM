@@ -291,7 +291,7 @@
         function panelTarget(parts) {
             if (!rtsOEEM.downtime) {
                 rtsOEEM.productCurrent += parts;
-                document.getElementById('TargetIcon').className = "fa fa-cog fa-spin fa-4x";
+                document.getElementById('TargetIcon').className = "fa fa-cog fa-spin fa-1x";
                 document.getElementById("TargetColor").className = "panel panel-green";
             } else {
                 document.getElementById('TargetIcon').className = "fa fa-cog fa-4x";
@@ -483,11 +483,16 @@
     <div class="panel-group" id="accordion">
         <div class="panel panel-default">
             <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                    <i class="fa fa-area-chart"></i>
+                    All seeing. All knowing.
+                </a>
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
                     <i class="fa fa-area-chart"></i>
                     All seeing. All knowing.
                 </a>
             </div>
+
 
             <div id="collapse4" class="panel-collapse collapse">
                 <div class="panel-body">
