@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 1px; /* for vertical scrollbars */
+            height: 1px; /* for horizontal scrollbars */
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(200, 200, 200, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(200, 200, 200, .3);
+        }
+
+
+        .calendar {
+            background: #fff;
+            /*border-radius: 0 0 1em 1em;*/
+            -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+            box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+            color: #555;
+            display: inline-block;
+            padding: 2em;
+        }
+
+        .calendar td {
+            padding: .5em .5em;
+            text-align: center;
+        }
+
+        /*.calendar td:hover {*/
+        /*background: #cacaca;*/
+        /*color: #fff;*/
+        /*}*/
+
+        /*.calendar td a:hover {*/
+        /*background: #cacaca;*/
+        /*color: #fff;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top " style="display: none;">
+    <div class="container-fluid">
+        <div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="#section1">day1</a></li>
+                    <li><a href="#section2">day2</a></li>
+                    <li><a href="#section3">day3</a></li>
+                    <li><a href="#section4">day4</a></li>
+                    <li><a href="#section5">day5</a></li>
+                    <li><a href="#section6">day6</a></li>
+                    <li><a href="#section7">day7</a></li>
+                    <li><a href="#section8">day8</a></li>
+                    <li><a href="#section9">day9</a></li>
+                    <li><a href="#section10">day10</a></li>
+                    <li><a href="#section11">day11</a></li>
+                    <li><a href="#section12">day12</a></li>
+                    <li><a href="#section13">day13</a></li>
+                    <li><a href="#section14">day14</a></li>
+                    <li><a href="#section15">day15</a></li>
+                    <li><a href="#section16">day16</a></li>
+                    <li><a href="#section17">day17</a></li>
+                    <li><a href="#section18">day18</a></li>
+                    <li><a href="#section19">day19</a></li>
+                    <li><a href="#section20">day20</a></li>
+                    <li><a href="#section21">day21</a></li>
+                    <li><a href="#section22">day22</a></li>
+                    <li><a href="#section23">day23</a></li>
+                    <li><a href="#section24">day24</a></li>
+                    <li><a href="#section25">day25</a></li>
+                    <li><a href="#section26">day26</a></li>
+                    <li><a href="#section27">day27</a></li>
+                    <li><a href="#section28">day28</a></li>
+                    <li><a href="#section29">day29</a></li>
+                    <li><a href="#section30">day30</a></li>
+                    <li><a href="#section31">day31</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="calendar-container" style="position:absolute;top: 100px;left: 70px;">
+
+    <table class="calendar">
+
+
+        <tr>
+            <td style="color:#cacaca;">29</td>
+            <td style="color:#cacaca;">30</td>
+            <td style="color:#cacaca;">31</td>
+            <td id="day1" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section1'">1</td>
+            <td id="day2" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section2'">2</td>
+            <td id="day3" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section3'">3</td>
+            <td id="day4" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section4'">4</td>
+        </tr>
+
+        <tr>
+            <td id="day5" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section5'">5</td>
+            <td id="day6" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section6'">6</td>
+            <td id="day7" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section7'">7</td>
+            <td id="day8" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section8'">8</td>
+            <td id="day9" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section9'">9</td>
+            <td id="day10" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section10'">10</td>
+            <td id="day11" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section11'">11</td>
+        </tr>
+
+        <tr>
+            <td id="day12" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section12'">12</td>
+            <td id="day13" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section13'">13</td>
+            <td id="day14" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section14'">14</td>
+            <td id="day15" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section15'">15</td>
+            <td id="day16" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section16'">16</td>
+            <td id="day17" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section17'">17</td>
+            <td id="day18" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section18'">18</td>
+        </tr>
+
+        <tr>
+            <td id="day19" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section19'">19</td>
+            <td id="day20" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section20'">20</td>
+            <td id="day21" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section21'">21</td>
+            <td id="day22" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section22'">22</td>
+            <td id="day23" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section23'">23</td>
+            <td id="day24" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section24'">24</td>
+            <td id="day25" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section25'">25</td>
+        </tr>
+
+        <tr>
+            <td id="day26" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section26'">26</td>
+            <td id="day27" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section27'">27</td>
+            <td id="day28" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section28'">28</td>
+            <td id="day29" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section29'">29</td>
+            <td id="day30" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section30'">30</td>
+            <td id="day31" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section31'">31</td>
+            <td style=" color: #cacaca;">1</td>
+        </tr>
+
+    </table>
+
+
+</div>
+
+<div class="container">
+    <div id="myScrollspy" style="position: relative; top: 50px; height: 800px; overflow: auto;">
+        <hr/>
+        <div id="section1" style="height: 400px">day1</div>
+        <hr/>
+        <div id="section2" style="height: 300px">day2</div>
+        <hr/>
+        <div id="section3" style="height: 400px">day3</div>
+        <hr/>
+        <div id="section4" style="height: 500px">day4</div>
+        <hr/>
+        <div id="section5" style="height: 400px">day5</div>
+        <hr/>
+        <div id="section6" style="height: 400px">day6</div>
+        <hr/>
+        <div id="section7" style="height: 400px">day7</div>
+        <hr/>
+        <div id="section8" style="height: 400px">day8</div>
+        <hr/>
+        <div id="section9" style="height: 400px">day9</div>
+        <hr/>
+        <div id="section10" style="height: 400px">day10</div>
+        <hr/>
+        <div id="section11" style="height: 400px">day11</div>
+        <hr/>
+        <div id="section12" style="height: 300px">day12</div>
+        <hr/>
+        <div id="section13" style="height: 400px">day13</div>
+        <hr/>
+        <div id="section14" style="height: 500px">day14</div>
+        <hr/>
+        <div id="section15" style="height: 400px">day15</div>
+        <hr/>
+        <div id="section16" style="height: 400px">day16</div>
+        <hr/>
+        <div id="section17" style="height: 400px">day17</div>
+        <hr/>
+        <div id="section18" style="height: 400px">day18</div>
+        <hr/>
+        <div id="section19" style="height: 400px">day19</div>
+        <hr/>
+        <div id="section20" style="height: 400px">day20</div>
+        <hr/>
+        <div id="section21" style="height: 400px">day21</div>
+        <hr/>
+        <div id="section22" style="height: 300px">day22</div>
+        <hr/>
+        <div id="section23" style="height: 400px">day23</div>
+        <hr/>
+        <div id="section24" style="height: 500px">day24</div>
+        <hr/>
+        <div id="section25" style="height: 400px">day25</div>
+        <hr/>
+        <div id="section26" style="height: 400px">day26</div>
+        <hr/>
+        <div id="section27" style="height: 400px">day27</div>
+        <hr/>
+        <div id="section28" style="height: 400px">day28</div>
+        <hr/>
+        <div id="section29" style="height: 400px">day29</div>
+        <hr/>
+        <div id="section30" style="height: 400px">day30</div>
+        <hr/>
+        <div id="section31" style="height: 400px">day31</div>
+        <hr/>
+    </div>
+</div>
+<script>
+    var dayT = 'day18';
+    $(document).ready(function () {
+//        removeSection = function (e) {
+//            $(e).parents("#myScrollspy > div").remove();
+//            $('#myScrollspy').each(function () {
+//                $(this).scrollspy('refresh');
+//            });
+//        };
+//        $('body').scrollspy({target: ".navbar", offset: 100});
+
+//        $('#navbar').scrollspy({
+//            offset: 150
+//        });
+        $("#myScrollspy").scrollspy({target: ".navbar", offset: 50});
+        $(".navbar").on("activate.bs.scrollspy", function () {
+            var dayN;
+            for (var n = 1; n <= 31; n++) {
+                dayN = document.getElementById('day' + n);
+                dayN.style.background = "#ffffff";
+                if (dayT != 'day' + n) {
+                    dayN.style.color = "#000000";
+                } else {
+                    dayN.style.color = "#e66b6b";
+                }
+
+            }
+            dayN = document.getElementById($(".nav li.active > a").text());
+//            log(dayN.style.color);
+            dayN.style.background = "#cacaca";
+            if ($(".nav li.active > a").text() != dayT) {
+                dayN.style.color = "#ffffff";
+            } else {
+                dayN.style.color = "#e66b6b";
+            }
+
+
+        });
+        $(".navbar").hide();
+        document.getElementById(dayT).style.background = "#ffffff";
+        document.getElementById(dayT).style.color = "#e66b6b";
+    });
+
+    function log(obj) {
+        console.log(obj);
+    }
+</script>
+
+</body>
+</html>

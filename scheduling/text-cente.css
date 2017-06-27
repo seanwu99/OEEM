@@ -12,11 +12,11 @@
 }
 
 /*.cd-breadcrumb li::after, .cd-multi-steps li::after {*/
-    /*!* this is the separator between items *!*/
-    /*display: inline-block;*/
-    /*content: '\00bb';*/
-    /*margin: 0 .6em;*/
-    /*color: #959fa5;*/
+/*!* this is the separator between items *!*/
+/*display: inline-block;*/
+/*content: '\00bb';*/
+/*margin: 0 .6em;*/
+/*color: #959fa5;*/
 /*}*/
 
 .cd-breadcrumb li:last-of-type::after, .cd-multi-steps li:last-of-type::after {
@@ -42,73 +42,73 @@
 }
 
 /*.cd-breadcrumb.custom-separator li::after, .cd-multi-steps.custom-separator li::after {*/
-    /*!* replace the default arrow separator with a custom icon *!*/
-    /*content: '';*/
-    /*height: 16px;*/
-    /*width: 16px;*/
-    /*background: url(../img/cd-custom-separator.svg) no-repeat center center;*/
-    /*vertical-align: middle;*/
+/*!* replace the default arrow separator with a custom icon *!*/
+/*content: '';*/
+/*height: 16px;*/
+/*width: 16px;*/
+/*background: url(../img/cd-custom-separator.svg) no-repeat center center;*/
+/*vertical-align: middle;*/
 /*}*/
 
-.cd-breadcrumb.custom-icons li > *::before, .cd-multi-steps.custom-icons li:first-of-type > *::before {
-    /* add a custom icon before each item */
-    content: '';
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    margin-right: .4em;
-    margin-top: -2px;
-    /*background: url(cd-custom-icons-01.svg) no-repeat 0 0;*/
-    background: url(bg.png) no-repeat 0 0;
-    vertical-align: middle;
-}
+/*.cd-breadcrumb.custom-icons li > *::before, .cd-multi-steps.custom-icons li:first-of-type > *::before {*/
+/*!* add a custom icon before each item *!*/
+/*content: '';*/
+/*display: inline-block;*/
+/*height: 20px;*/
+/*width: 20px;*/
+/*margin-right: .4em;*/
+/*margin-top: -2px;*/
+/*!*background: url(cd-custom-icons-01.svg) no-repeat 0 0;*!*/
+/*background: url(bg.png) no-repeat 0 0;*/
+/*vertical-align: middle;*/
+/*}*/
 
 /*.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(2) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(2) > *::before {*/
-    /*!* change custom icon using image sprites *!*/
-    /*background-position: -20px 0;*/
+/*!* change custom icon using image sprites *!*/
+/*background-position: -20px 0;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(3) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(3) > *::before {*/
-    /*background-position: -40px 0;*/
+/*background-position: -40px 0;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(4) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(4) > *::before {*/
-    /*background-position: -60px 0;*/
+/*background-position: -60px 0;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li.current:first-of-type > *::before, .cd-multi-steps.custom-icons li.current:first-of-type > *::before {*/
-    /*!* change custom icon for the current item *!*/
-    /*background-position: 0 -20px;*/
+/*!* change custom icon for the current item *!*/
+/*background-position: 0 -20px;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li.current:nth-of-type(2) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(2) > *::before {*/
-    /*background-position: -20px -20px;*/
+/*background-position: -20px -20px;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li.current:nth-of-type(3) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(3) > *::before {*/
-    /*background-position: -40px -20px;*/
+/*background-position: -40px -20px;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li.current:nth-of-type(4) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(4) > *::before {*/
-    /*background-position: -60px -20px;*/
+/*background-position: -60px -20px;*/
 /*}*/
 
 /*@media only screen and (min-width: 768px) {*/
-    /*.cd-breadcrumb, .cd-multi-steps {*/
-        /*padding: 0 1.2em;*/
-    /*}*/
+/*.cd-breadcrumb, .cd-multi-steps {*/
+/*padding: 0 1.2em;*/
+/*}*/
 
-    /*.cd-breadcrumb li, .cd-multi-steps li {*/
-        /*margin: 1.2em 0;*/
-    /*}*/
+/*.cd-breadcrumb li, .cd-multi-steps li {*/
+/*margin: 1.2em 0;*/
+/*}*/
 
-    /*.cd-breadcrumb li::after, .cd-multi-steps li::after {*/
-        /*margin: 0 1em;*/
-    /*}*/
+/*.cd-breadcrumb li::after, .cd-multi-steps li::after {*/
+/*margin: 0 1em;*/
+/*}*/
 
-    /*.cd-breadcrumb li > *, .cd-multi-steps li > * {*/
-        /*!*font-size: 1.6rem;*!*/
-    /*}*/
+/*.cd-breadcrumb li > *, .cd-multi-steps li > * {*/
+/*!*font-size: 1.6rem;*!*/
+/*}*/
 /*}*/
 
 /* --------------------------------
@@ -159,7 +159,8 @@ Multi steps indicator
         background: #edeff0;
     }
 
-    .cd-multi-steps.text-center li:not(:first-of-type)::after {
+    /*.cd-multi-steps.text-center li:not(:first-of-type)::after {*/
+    .cd-multi-steps.text-center li::after {
         width: 100%;
         top: 50%;
         left: 100%;
@@ -170,14 +171,14 @@ Multi steps indicator
         transform: translateY(-50%) translateX(-1px);
     }
 
-    .cd-multi-steps.text-center li:first-of-type > * {
-        z-index: 1;
-        padding: .2em .5em;
-        border-radius: .3em;
-        background-color: #edeff0;
-    }
-
-    .cd-multi-steps.text-center li:not(:first-of-type) > * {
+    /*.cd-multi-steps.text-center li:first-of-type > * {*/
+    /*z-index: 1;*/
+    /*padding: .2em .5em;*/
+    /*border-radius: .3em;*/
+    /*background-color: #edeff0;*/
+    /*}*/
+    /*.cd-multi-steps.text-center li:not(:first-of-type) > * {*/
+    .cd-multi-steps.text-center li > * {
         z-index: 1;
         padding: .2em .8em;
         border-radius: .7em;
@@ -205,11 +206,13 @@ Multi steps indicator
 Add a counter to the multi-steps indicator 
 
 -------------------------------- */
-.cd-multi-steps.count li:not(:first-of-type) {
+/*.cd-multi-steps.count li:not(:first-of-type) {*/
+.cd-multi-steps.count li {
     counter-increment: steps;
 }
 
-.cd-multi-steps.count li:not(:first-of-type) > *::before {
+/*.cd-multi-steps.count li:not(:first-of-type) > *::before {*/
+.cd-multi-steps.count li > *::before {
     font-weight: bold;
     content: counter(steps) " - ";
 }
