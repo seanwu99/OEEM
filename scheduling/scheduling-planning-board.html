@@ -141,16 +141,16 @@
                 function toggleAll(d) {
                     if (d.children) {
                         d.children.forEach(toggleAll);
-                        toggle(d);
+                        treeNodeToggle(d);
                     }
                 }
 
                 // Initialize the display to show a few nodes.
                 root.children.forEach(toggleAll);
-                toggle(root.children[1]);
-                toggle(root.children[1].children[2]);
-                toggle(root.children[9]);
-                toggle(root.children[9].children[0]);
+                treeNodeToggle(root.children[1]);
+                treeNodeToggle(root.children[1].children[2]);
+                treeNodeToggle(root.children[9]);
+                treeNodeToggle(root.children[9].children[0]);
 
                 update(root);
             });
@@ -179,7 +179,7 @@
                         return "translate(" + source.y0 + "," + source.x0 + ")";
                     })
                     .on("click", function (d) {
-                        toggle(d);
+                        treeNodeToggle(d);
                         update(d);
                     });
 
@@ -271,7 +271,7 @@
             }
 
             // Toggle children.
-            function toggle(d) {
+            function treeNodeToggle(d) {
                 if (d.children) {
                     d._children = d.children;
                     d.children = null;
@@ -280,8 +280,6 @@
                     d._children = null;
                 }
             }
-
-
             //todo e
 
         });
@@ -649,7 +647,6 @@
 
     </div>
 </div>
-
 
 
 <script>

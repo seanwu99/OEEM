@@ -21,7 +21,7 @@
     <style>
         ::-webkit-scrollbar {
             width: 1px; /* for vertical scrollbars */
-            height: 0px; /* for horizontal scrollbars */
+            height: 10px; /* for horizontal scrollbars */
         }
 
         ::-webkit-scrollbar-track {
@@ -120,8 +120,14 @@
     </style>
 </head>
 <body>
+<div class="panel panel-default" style="shadow:0;height:15vh;; margin: 1vh 5% 1vh 5%">
+    <div class="panel-body" style="text-align: center">
+        <h2>// Header</h2>
+    </div>
+</div>
 
-<nav class="navbar navbar-inverse navbar-fixed-top " style="display: none;">
+<!--<nav class="navbar navbar-inverse navbar-fixed-top" style="display: none;">-->
+<nav class="navbar">
     <div class="container-fluid">
         <div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -163,89 +169,116 @@
     </div>
 </nav>
 
-<div class="calendar-container" style="position:absolute;top: 150px;left: 50px;">
-
-    <table class="calendar">
-
-
-        <tr>
-            <td style="color:#cacaca;">29</td>
-            <td style="color:#cacaca;">30</td>
-            <td style="color:#cacaca;">31</td>
-            <td id="day1" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section1'">1</td>
-            <td id="day2" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section2'">2</td>
-            <td id="day3" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section3'">3</td>
-            <td id="day4" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section4'">4</td>
-        </tr>
-
-        <tr>
-            <td id="day5" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section5'">5</td>
-            <td id="day6" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section6'">6</td>
-            <td id="day7" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section7'">7</td>
-            <td id="day8" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section8'">8</td>
-            <td id="day9" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section9'">9</td>
-            <td id="day10" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section10'">10</td>
-            <td id="day11" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section11'">11</td>
-        </tr>
-
-        <tr>
-            <td id="day12" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section12'">12</td>
-            <td id="day13" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section13'">13</td>
-            <td id="day14" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section14'">14</td>
-            <td id="day15" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section15'">15</td>
-            <td id="day16" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section16'">16</td>
-            <td id="day17" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section17'">17</td>
-            <td id="day18" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section18'">18</td>
-        </tr>
-
-        <tr>
-            <td id="day19" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section19'">19</td>
-            <td id="day20" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section20'">20</td>
-            <td id="day21" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section21'">21</td>
-            <td id="day22" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section22'">22</td>
-            <td id="day23" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section23'">23</td>
-            <td id="day24" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section24'">24</td>
-            <td id="day25" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section25'">25</td>
-        </tr>
-
-        <tr>
-            <td id="day26" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section26'">26</td>
-            <td id="day27" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section27'">27</td>
-            <td id="day28" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section28'">28</td>
-            <td id="day29" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section29'">29</td>
-            <td id="day30" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section30'">30</td>
-            <td id="day31" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section31'">31</td>
-            <td style=" color: #cacaca;">1</td>
-        </tr>
-
-    </table>
-
-
-</div>
 
 <div class="container">
 
-    <div id="myScrollspy" style="position: relative; top: 150px; height: 500px; overflow: auto;">
+    <div id="myScrollspy" style="position: relative;  height: 70vh; overflow-x: hidden;">
 
         <div id="section1">
-            <div style=" overflow-x:scroll;white-space: nowrap;">
+            <hr/>
+            <div style=" overflow-x:hidden;white-space: nowrap;" onmouseover="overBar(this)" onmouseout="outOfBar(this)">
                 <ol class="cd-multi-steps text-center count" style="margin: auto;">
                     <li class="visited"><a data-toggle="collapse" data-parent="#collapse1" href="#collapse10" style="text-decoration: none">
                         <i id="row1" class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b> Fri, Junly 23</b></a>
                     </li>
                     <li class="visited"><a data-toggle="collapse" data-parent="#collapse1" href="#treePad11" style="text-decoration: none; ">3543</a></li>
                     <li class="visited"><a data-toggle="collapse" data-parent="#collapse1" href="#treePad12" style="text-decoration: none; ">1999</a></li>
-                    <li class="visited"><a href="#0" style="text-decoration: none; ">995435439</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">53453</a></li>
                     <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
                     <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
                     <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
-                    <li class="visited"><a href="#0" style="text-decoration: none; ">995435439</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">65654</a></li>
                     <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
                     <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
                     <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
                     <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
                     <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
                     <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">65654</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">65654</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">65654</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">65654</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">65654</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">65654</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">65654</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">65654</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">65654</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
+                    <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
                     <li class="visited"><a href="#0" style="text-decoration: none; ">1999</a></li>
                 </ol>
             </div>
@@ -574,69 +607,195 @@
                 </div>
 
             </div>
+
         </div>
-        <hr/>
-        <div id="section2">day2</div>
-        <hr/>
-        <div id="section3">day3</div>
-        <hr/>
-        <div id="section4">day4</div>
-        <hr/>
-        <div id="section5" style="height: 400px">day5</div>
-        <hr/>
-        <div id="section6" style="height: 400px">day6</div>
-        <hr/>
-        <div id="section7" style="height: 400px">day7</div>
-        <hr/>
-        <div id="section8" style="height: 400px">day8</div>
-        <hr/>
-        <div id="section9" style="height: 400px">day9</div>
-        <hr/>
-        <div id="section10" style="height: 400px">day10</div>
-        <hr/>
-        <div id="section11" style="height: 400px">day11</div>
-        <hr/>
-        <div id="section12" style="height: 300px">day12</div>
-        <hr/>
-        <div id="section13" style="height: 400px">day13</div>
-        <hr/>
-        <div id="section14" style="height: 500px">day14</div>
-        <hr/>
-        <div id="section15" style="height: 400px">day15</div>
-        <hr/>
-        <div id="section16" style="height: 400px">day16</div>
-        <hr/>
-        <div id="section17" style="height: 400px">day17</div>
-        <hr/>
-        <div id="section18" style="height: 400px">day18</div>
-        <hr/>
-        <div id="section19" style="height: 400px">day19</div>
-        <hr/>
-        <div id="section20" style="height: 400px">day20</div>
-        <hr/>
-        <div id="section21" style="height: 400px">day21</div>
-        <hr/>
-        <div id="section22" style="height: 300px">day22</div>
-        <hr/>
-        <div id="section23" style="height: 400px">day23</div>
-        <hr/>
-        <div id="section24" style="height: 500px">day24</div>
-        <hr/>
-        <div id="section25" style="height: 400px">day25</div>
-        <hr/>
-        <div id="section26" style="height: 400px">day26</div>
-        <hr/>
-        <div id="section27" style="height: 400px">day27</div>
-        <hr/>
-        <div id="section28" style="height: 400px">day28</div>
-        <hr/>
-        <div id="section29" style="height: 400px">day29</div>
-        <hr/>
-        <div id="section30" style="height: 400px">day30</div>
-        <hr/>
-        <div id="section31" style="height: 400px">day31</div>
-        <hr/>
+        <div id="section2">
+            <hr/>
+            day2
+        </div>
+        <div id="section3">
+            <hr/>
+            day3
+        </div>
+        <div id="section4">
+            <hr/>
+            day4
+        </div>
+        <div id="section5">
+            <hr/>
+            day5
+        </div>
+        <div id="section6">
+            <hr/>
+            day6
+        </div>
+        <div id="section7">
+            <hr/>
+            day7
+        </div>
+        <div id="section8">
+            <hr/>
+            day8
+        </div>
+        <div id="section9">
+            <hr/>
+            day9
+        </div>
+        <div id="section10">
+            <hr/>
+            day10
+        </div>
+        <div id="section11">
+            <hr/>
+            day11
+        </div>
+        <div id="section12">
+            <hr/>
+            day12
+        </div>
+        <div id="section13">
+            <hr/>
+            day13
+        </div>
+
+        <div id="section14">
+            <hr/>
+            day14
+        </div>
+        <div id="section15">
+            <hr/>
+            day15
+        </div>
+        <div id="section16">
+            <hr/>
+            day16
+        </div>
+        <div id="section17">
+            <hr/>
+            day17
+        </div>
+        <div id="section18">
+            <hr/>
+            day18
+        </div>
+        <div id="section19">
+            <hr/>
+            day19
+        </div>
+        <div id="section20">
+            <hr/>
+            day20
+        </div>
+        <div id="section21">
+            <hr/>
+            day21
+        </div>
+        <div id="section22">
+            <hr/>
+            day22
+        </div>
+        <div id="section23">
+            <hr/>
+            day23
+        </div>
+        <div id="section24">
+            <hr/>
+            day24
+        </div>
+        <div id="section25">
+            <hr/>
+            day25
+        </div>
+        <div id="section26">
+            <hr/>
+            day26
+        </div>
+        <div id="section27">
+            <hr/>
+            day27
+        </div>
+        <div id="section28">
+            <hr/>
+            day28
+        </div>
+        <div id="section29">
+            <hr/>
+            day29
+        </div>
+        <div id="section30">
+            <hr/>
+            day30
+        </div>
+        <div id="section31">
+            <hr/>
+            day31
+        </div>
     </div>
+
+</div>
+<div class="panel panel-default" style="shadow:0;height:10vh;; margin: 1vh 5% 1vh 5%">
+    <div class="panel-body" style="text-align: right">
+        RTS Consulting ...//
+    </div>
+</div>
+<div class="calendar-container" style="position:absolute; top: 25vh; left: 5%;">
+
+    <table class="calendar">
+
+
+        <tr>
+            <td style="color:#cacaca;">29</td>
+            <td style="color:#cacaca;">30</td>
+            <td style="color:#cacaca;">31</td>
+            <td id="day1" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section1'">1</td>
+            <td id="day2" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section2'">2</td>
+            <td id="day3" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section3'">3</td>
+            <td id="day4" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section4'">4</td>
+        </tr>
+
+        <tr>
+            <td id="day5" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section5'">5</td>
+            <td id="day6" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section6'">6</td>
+            <td id="day7" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section7'">7</td>
+            <td id="day8" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section8'">8</td>
+            <td id="day9" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section9'">9</td>
+            <td id="day10" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section10'">10</td>
+            <td id="day11" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section11'">11</td>
+        </tr>
+
+        <tr>
+            <td id="day12" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section12'">12</td>
+            <td id="day13" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section13'">13</td>
+            <td id="day14" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section14'">14</td>
+            <td id="day15" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section15'">15</td>
+            <td id="day16" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section16'">16</td>
+            <td id="day17" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section17'">17</td>
+            <td id="day18" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section18'">18</td>
+        </tr>
+
+        <tr>
+            <td id="day19" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section19'">19</td>
+            <td id="day20" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section20'">20</td>
+            <td id="day21" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section21'">21</td>
+            <td id="day22" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section22'">22</td>
+            <td id="day23" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section23'">23</td>
+            <td id="day24" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section24'">24</td>
+            <td id="day25" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section25'">25</td>
+        </tr>
+
+        <tr>
+            <td id="day26" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section26'">26</td>
+            <td id="day27" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section27'">27</td>
+            <td id="day28" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section28'">28</td>
+            <td id="day29" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section29'">29</td>
+            <td id="day30" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section30'">30</td>
+            <td id="day31" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section31'">31</td>
+            <td style=" color: #cacaca;">1</td>
+        </tr>
+
+    </table>
+
+
 </div>
 <script>
     var dayT = 'day18';
@@ -679,10 +838,191 @@
         $(".navbar").hide();
         document.getElementById(dayT).style.background = "#ffffff";
         document.getElementById(dayT).style.color = "#e66b6b";
+
+        var treeHeight = 570; //document.getElementById('treePad').clientHeight;
+        var treeWidth = 1140;// document.getElementById('treePad').clientWidth;
+        console.log(treeWidth);
+        console.log(treeHeight);
+        //dim treeWidth x treeHeight
+        var m = [20, 120, 20, 120],
+            w = treeWidth - m[1] - m[3],
+            h = treeHeight - m[0] - m[2],
+            i = 0,
+            root;
+
+        var tree = d3.layout.tree()
+            .size([h, w]);
+
+        var diagonal = d3.svg.diagonal()
+            .projection(function (d) {
+                return [d.y, d.x];
+            });
+
+        var vis = d3.select("#treePad11").append("svg:svg")
+            .attr("width", w + m[1] + m[3])
+            .attr("height", h + m[0] + m[2])
+            .append("svg:g")
+            .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+        d3.json("orderTree.json", function (json) {
+            root = json;
+            root.x0 = h / 2;
+            root.y0 = 0;
+
+            function toggleAll(d) {
+                if (d.children) {
+                    d.children.forEach(toggleAll);
+                    treeNodeToggle(d);
+                }
+            }
+
+            // Initialize the display to show a few nodes.
+            root.children.forEach(toggleAll);
+            treeNodeToggle(root.children[1]);
+            treeNodeToggle(root.children[1].children[2]);
+            treeNodeToggle(root.children[9]);
+            treeNodeToggle(root.children[9].children[0]);
+
+            update(root);
+        });
+
+        function update(source) {
+            var duration = d3.event && d3.event.altKey ? 5000 : 500;
+
+            // Compute the new tree layout.
+            var nodes = tree.nodes(root).reverse();
+
+            // Normalize for fixed-depth.
+            nodes.forEach(function (d) {
+                d.y = d.depth * 180;
+            });
+
+            // Update the nodes…
+            var node = vis.selectAll("g.node")
+                .data(nodes, function (d) {
+                    return d.id || (d.id = ++i);
+                });
+
+            // Enter any new nodes at the parent's previous position.
+            var nodeEnter = node.enter().append("svg:g")
+                .attr("class", "node")
+                .attr("transform", function (d) {
+                    return "translate(" + source.y0 + "," + source.x0 + ")";
+                })
+                .on("click", function (d) {
+                    treeNodeToggle(d);
+                    update(d);
+                });
+
+            nodeEnter.append("svg:circle")
+                .attr("r", 1e-6)
+                .style("fill", function (d) {
+                    return d._children ? "lightsteelblue" : "#fff";
+                });
+
+            nodeEnter.append("svg:text")
+                .attr("x", function (d) {
+                    return d.children || d._children ? -10 : 10;
+                })
+                .attr("dy", ".35em")
+                .attr("text-anchor", function (d) {
+                    return d.children || d._children ? "end" : "start";
+                })
+                .text(function (d) {
+                    return d.name;
+                })
+                .style("fill-opacity", 1e-6);
+
+            // Transition nodes to their new position.
+            var nodeUpdate = node.transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "translate(" + d.y + "," + d.x + ")";
+                });
+
+            nodeUpdate.select("circle")
+                .attr("r", 6.5)
+                .style("fill", function (d) {
+                    return d._children ? "lightsteelblue" : "#fff";
+                });
+
+            nodeUpdate.select("text")
+                .style("fill-opacity", 1);
+
+            // Transition exiting nodes to the parent's new position.
+            var nodeExit = node.exit().transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "translate(" + source.y + "," + source.x + ")";
+                })
+                .remove();
+
+            nodeExit.select("circle")
+                .attr("r", 1e-6);
+
+            nodeExit.select("text")
+                .style("fill-opacity", 1e-6);
+
+            // Update the links…
+            var link = vis.selectAll("path.link")
+                .data(tree.links(nodes), function (d) {
+                    return d.target.id;
+                });
+
+            // Enter any new links at the parent's previous position.
+            link.enter().insert("svg:path", "g")
+                .attr("class", "link")
+                .attr("d", function (d) {
+                    var o = {x: source.x0, y: source.y0};
+                    return diagonal({source: o, target: o});
+                })
+                .transition()
+                .duration(duration)
+                .attr("d", diagonal);
+
+            // Transition links to their new position.
+            link.transition()
+                .duration(duration)
+                .attr("d", diagonal);
+
+            // Transition exiting nodes to the parent's new position.
+            link.exit().transition()
+                .duration(duration)
+                .attr("d", function (d) {
+                    var o = {x: source.x, y: source.y};
+                    return diagonal({source: o, target: o});
+                })
+                .remove();
+
+            // Stash the old positions for transition.
+            nodes.forEach(function (d) {
+                d.x0 = d.x;
+                d.y0 = d.y;
+            });
+        }
+
+        // Toggle children.
+        function treeNodeToggle(d) {
+            if (d.children) {
+                d._children = d.children;
+                d.children = null;
+            } else {
+                d.children = d._children;
+                d._children = null;
+            }
+        }
     });
 
     function log(obj) {
         console.log(obj);
+    }
+    function overBar(dv) {
+        log(dv.style);
+        dv.style.overflowX = "scroll";
+    }
+    function outOfBar(dv) {
+        dv.style.overflowX = "hidden";
+
     }
 </script>
 
