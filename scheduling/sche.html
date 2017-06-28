@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>sche</title>
+    <title>sche11</title>
     <meta charset="utf-8">
-    <!--<script id="sap-ui-bootstrap"-->
-    <!--src="../sapui5/resources/sap-ui-core.js"-->
-    <!--data-sap-ui-libs="sap.m"-->
-    <!--data-sap-ui-theme="sap_belize">-->
-    <!--</script>-->
+    <script id="sap-ui-bootstrap"
+    src="../sapui5/resources/sap-ui-core.js"
+    data-sap-ui-libs="sap.m"
+    data-sap-ui-theme="sap_belize">
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="default.js"></script>
     <link href="../Common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +19,88 @@
     <script type="text/javascript" src="../Common/js/d3/d3.js"></script>
     <script type="text/javascript" src="../Common/js/d3/d3.layout.js"></script>
     <style>
+
+        .calendar-container {
+            position: relative;
+            width: 260px;
+        }
+
+        .calendar-container header {
+            border-radius: 1em 1em 0 0;
+            background: #e66b6b;
+            color: #fff;
+            padding: 3em 2em;
+        }
+
+        .day {
+            font-size: 5em;
+            font-weight: 900;
+            line-height: 1em;
+        }
+
+        .month {
+            font-size: 2.5em;
+            line-height: 1em;
+            text-transform: lowercase;
+        }
+
+        .calendar {
+            background: #fff;
+            border-radius: 0 0 1em 1em;
+            -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+            box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+            color: #555;
+            display: inline-block;
+            padding: 2em;
+        }
+
+        .calendar td {
+            padding: .3em 0.15em;
+            text-align: center;
+        }
+
+        .current-day {
+            color: #e66b6b;
+        }
+
+        .prev-month,
+        .next-month {
+            color: #cacaca;
+        }
+
+        .ring-left,
+        .ring-right {
+            position: absolute;
+            top: 165px;
+        }
+
+        .ring-left {
+            left: 2em;
+        }
+
+        .ring-right {
+            right: 2em;
+        }
+
+        .ring-left:before,
+        .ring-left:after,
+        .ring-right:before,
+        .ring-right:after {
+            background: #fff;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+            box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+            content: "";
+            display: inline-block;
+            margin: 8px;
+            height: 32px;
+            width: 8px;
+        }
+
+
+
+
+
         ::-webkit-scrollbar {
             width: 1px; /* for vertical scrollbars */
             height: 10px; /* for horizontal scrollbars */
@@ -32,30 +114,7 @@
             background: rgba(50, 50, 50, 0.1);
         }
 
-        .calendar {
-            background: #fff;
-            /*border-radius: 0 0 1em 1em;*/
-            -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
-            box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
-            color: #555;
-            display: inline-block;
-            padding: 2em;
-        }
 
-        .calendar td {
-            padding: .5em .5em;
-            text-align: center;
-        }
-
-        /*.calendar td:hover {*/
-        /*background: #cacaca;*/
-        /*color: #fff;*/
-        /*}*/
-
-        /*.calendar td a:hover {*/
-        /*background: #cacaca;*/
-        /*color: #fff;*/
-        /*}*/
         .flipped {
             -webkit-transform: rotateY(180deg);
             -moz-transform: rotateY(180deg);
@@ -71,7 +130,17 @@
 
         /*!* entire container, keeps perspective *!*/
         .flip-container {
+            /*perspective: 1000px;*/
+            /*transform-style: preserve-3d;*/
+            -webkit-perspective: 1000px;
+            -moz-perspective: 1000px;
+            -ms-perspective: 1000px;
             perspective: 1000px;
+
+            -ms-transform: perspective(1000px);
+            -moz-transform: perspective(1000px);
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
         }
 
         .flip-container, .flip-front, .flip-back {
@@ -82,30 +151,85 @@
         }
 
         /* flip speed goes here */
+        /*.flipper {*/
+            /*transition: 1s;*/
+            /*transform-style: preserve-3d;*/
+            /*position: relative;*/
+        /*}*/
         .flipper {
-            transition: 1s;
-            transform-style: preserve-3d;
-            position: inherit;
-        }
+            -webkit-transition: 0.6s;
+            -webkit-transform-style: preserve-3d;
+            -ms-transition: 0.6s;
 
+            -moz-transition: 0.6s;
+            -moz-transform: perspective(1000px);
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+
+            transition: 0.6s;
+            transform-style: preserve-3d;
+
+            position: relative;
+        }
         /* hide back of pane during swap */
+        /*.flip-front, .flip-back {*/
+            /*backface-visibility: hidden;*/
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left: 0;*/
+        /*}*/
         .flip-front, .flip-back {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
             backface-visibility: hidden;
+
+            -webkit-transition: 0.6s;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform: rotateY(0deg);
+
+            -moz-transition: 0.6s;
+            -moz-transform-style: preserve-3d;
+            -moz-transform: rotateY(0deg);
+
+            -o-transition: 0.6s;
+            -o-transform-style: preserve-3d;
+            -o-transform: rotateY(0deg);
+
+            -ms-transition: 0.6s;
+            -ms-transform-style: preserve-3d;
+            -ms-transform: rotateY(0deg);
+
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
             position: absolute;
             top: 0;
             left: 0;
         }
-
         /* front pane, placed above back */
+        /*.flip-front {*/
+            /*z-index: 2;*/
+            /*!* for firefox 31 *!*/
+            /*transform: rotateY(0deg);*/
+        /*}*/
         .flip-front {
+            -webkit-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            /*background: lightgreen;*/
             z-index: 2;
-            /* for firefox 31 */
-            transform: rotateY(0deg);
         }
-
         /* back, initially hidden pane */
-        .flip-back {
-            transform: rotateY(180deg);
+        /*.flip-back {*/
+            /*transform: rotateY(180deg);*/
+        /*}*/
+        .flip-back  {
+            /*background: lightblue;*/
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+            -o-transform: rotateY(-180deg);
+            -ms-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
         }
 
         .textBottom {
@@ -120,17 +244,17 @@
     </style>
 </head>
 <body>
-<div class="panel panel-default" style="shadow:0;height:15vh;; margin: 1vh 5% 1vh 5%">
+<div class="panel panel-default" style="shadow:0;height:15vh;; margin: 2vh 5% 1vh 5%;">
     <div class="panel-body" style="text-align: center">
         <h2>// Header</h2>
     </div>
 </div>
 
 <!--<nav class="navbar navbar-inverse navbar-fixed-top" style="display: none;">-->
-<nav class="navbar">
-    <div class="container-fluid">
+<nav class="navbar" style="display: none">
+    <div class="container-fluid"  >
         <div>
-            <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="collapse navbar-collapse" id="myNavbar" >
                 <ul class="nav navbar-nav">
                     <li><a href="#section1">day1</a></li>
                     <li><a href="#section2">day2</a></li>
@@ -179,7 +303,7 @@
             <div style=" overflow-x:hidden;white-space: nowrap;" onmouseover="overBar(this)" onmouseout="outOfBar(this)">
                 <ol class="cd-multi-steps text-center count" style="margin: auto;">
                     <li class="visited"><a data-toggle="collapse" data-parent="#collapse1" href="#collapse10" style="text-decoration: none">
-                        <i id="row1" class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b> Fri, Junly 23</b></a>
+                        <i id="row1" class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b>Sun, August 1</b></a>
                     </li>
                     <li class="visited"><a data-toggle="collapse" data-parent="#collapse1" href="#treePad11" style="text-decoration: none; ">3543</a></li>
                     <li class="visited"><a data-toggle="collapse" data-parent="#collapse1" href="#treePad12" style="text-decoration: none; ">1999</a></li>
@@ -733,69 +857,116 @@
     </div>
 
 </div>
-<div class="panel panel-default" style="shadow:0;height:10vh;; margin: 1vh 5% 1vh 5%">
+<div class="panel panel-default" style="shadow:0;height:9vh;; margin: 1vh 5% 2vh 5%;">
     <div class="panel-body" style="text-align: right">
-        RTS Consulting ...//
+        RTS Consulting ...
     </div>
 </div>
-<div class="calendar-container" style="position:absolute; top: 25vh; left: 5%;">
-
-    <table class="calendar">
 
 
-        <tr>
-            <td style="color:#cacaca;">29</td>
-            <td style="color:#cacaca;">30</td>
-            <td style="color:#cacaca;">31</td>
-            <td id="day1" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section1'">1</td>
-            <td id="day2" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section2'">2</td>
-            <td id="day3" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section3'">3</td>
-            <td id="day4" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section4'">4</td>
-        </tr>
+<div class="container1" style=" position:absolute; top: 20vh; left: 5%; background: #fff;  margin: 0;">
 
-        <tr>
-            <td id="day5" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section5'">5</td>
-            <td id="day6" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section6'">6</td>
-            <td id="day7" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section7'">7</td>
-            <td id="day8" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section8'">8</td>
-            <td id="day9" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section9'">9</td>
-            <td id="day10" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section10'">10</td>
-            <td id="day11" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section11'">11</td>
-        </tr>
+    <div class="calendar-container" >
 
-        <tr>
-            <td id="day12" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section12'">12</td>
-            <td id="day13" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section13'">13</td>
-            <td id="day14" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section14'">14</td>
-            <td id="day15" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section15'">15</td>
-            <td id="day16" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section16'">16</td>
-            <td id="day17" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section17'">17</td>
-            <td id="day18" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section18'">18</td>
-        </tr>
+        <header>
 
-        <tr>
-            <td id="day19" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section19'">19</td>
-            <td id="day20" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section20'">20</td>
-            <td id="day21" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section21'">21</td>
-            <td id="day22" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section22'">22</td>
-            <td id="day23" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section23'">23</td>
-            <td id="day24" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section24'">24</td>
-            <td id="day25" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section25'">25</td>
-        </tr>
+            <div class="day">18</div>
+            <div class="month">August</div>
 
-        <tr>
-            <td id="day26" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section26'">26</td>
-            <td id="day27" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section27'">27</td>
-            <td id="day28" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section28'">28</td>
-            <td id="day29" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section29'">29</td>
-            <td id="day30" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section30'">30</td>
-            <td id="day31" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section31'">31</td>
-            <td style=" color: #cacaca;">1</td>
-        </tr>
+        </header>
 
-    </table>
+        <table class="calendar" style="border-collapse: collapse; border-spacing: 0;">
+
+            <thead style=" color: #e66b6b; font-size: 90%; font-weight: 700; text-transform: uppercase;">
+
+            <tr>
+
+                <td>Mon</td>
+                <td>Tue</td>
+                <td>Wed</td>
+                <td>Thu</td>
+                <td>Fri</td>
+                <td>Sat</td>
+                <td>Sun</td>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <tr>
+                <td style="color:#cacaca;">29</td>
+                <td style="color:#cacaca;">30</td>
+                <td style="color:#cacaca;">31</td>
+                <td id="day1" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section1'">1</td>
+                <td id="day2" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section2'">2</td>
+                <td id="day3" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section3'">3</td>
+                <td id="day4" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section4'">4</td>
+            </tr>
+
+            <tr>
+                <td id="day5" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section5'">5</td>
+                <td id="day6" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section6'">6</td>
+                <td id="day7" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section7'">7</td>
+                <td id="day8" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section8'">8</td>
+                <td id="day9" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section9'">9</td>
+                <td id="day10" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section10'">10</td>
+                <td id="day11" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section11'">11</td>
+            </tr>
+
+            <tr>
+                <td id="day12" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section12'">12</td>
+                <td id="day13" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section13'">13</td>
+                <td id="day14" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section14'">14</td>
+                <td id="day15" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section15'">15</td>
+                <td id="day16" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section16'">16</td>
+                <td id="day17" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section17'">17</td>
+                <td id="day18" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section18'">18</td>
+            </tr>
+
+            <tr>
+                <td id="day19" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section19'">19</td>
+                <td id="day20" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section20'">20</td>
+                <td id="day21" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section21'">21</td>
+                <td id="day22" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section22'">22</td>
+                <td id="day23" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section23'">23</td>
+                <td id="day24" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section24'">24</td>
+                <td id="day25" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section25'">25</td>
+            </tr>
+
+            <tr>
+                <td id="day26" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section26'">26</td>
+                <td id="day27" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section27'">27</td>
+                <td id="day28" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section28'">28</td>
+                <td id="day29" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section29'">29</td>
+                <td id="day30" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section30'">30</td>
+                <td id="day31" style="background: #ffffff; cursor:pointer" onclick="location.href = '#section31'">31</td>
+                <td style=" color: #cacaca;">1</td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+        <div class="ring-left"></div>
+        <div class="ring-right"></div>
+
+    </div> <!-- end calendar-container -->
+
+</div> <!-- end container -->
 
 
+
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 70vh; height:16vh; width: 13%; left: 5%;">
+    <div class="panel-body" style="text-align: right">
+        A1
+    </div>
+</div>
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:65vh; width: 13%; left: 82%;">
+    <div class="panel-body" style="text-align: right">
+        A2
+    </div>
 </div>
 <script>
     var dayT = 'day18';
