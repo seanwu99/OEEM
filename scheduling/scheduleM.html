@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>sche11</title>
+    <title>schedule module</title>
     <meta charset="utf-8">
-    <script id="sap-ui-bootstrap"
-    src="../sapui5/resources/sap-ui-core.js"
-    data-sap-ui-libs="sap.m"
-    data-sap-ui-theme="sap_belize">
-    </script>
+
+    <!--<script id="sap-ui-bootstrap"-->
+    <!--src="../sapui5/resources/sap-ui-core.js"-->
+    <!--data-sap-ui-libs="sap.m"-->
+    <!--data-sap-ui-theme="sap_belize">-->
+    <!--</script>-->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="default.js"></script>
-    <link href="../Common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../Common/bootstrap/bootstrap.min.js"></script>
-    <link href="../Common/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="text-cente.css"> <!-- Resource style -->
-    <script src="modernizr.js"></script> <!-- Modernizr -->
-    <link type="text/css" rel="stylesheet" href="treeStyle.css"/>
-    <script type="text/javascript" src="../Common/js/d3/d3.js"></script>
-    <script type="text/javascript" src="../Common/js/d3/d3.layout.js"></script>
+
+    <!--<script src="//"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../Common/js/modernizr.js"></script>
+    <script src="../Common/d3/d3.js"></script>
+    <script src="../Common/d3/d3.layout.js"></script>
+
+    <!--<link href='//' rel='stylesheet' type='text/css'>-->
+    <link href='../Common/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='../Common/font-awesome-4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link href='../Common/css/text-cente.css' rel='stylesheet' type='text/css'>
+    <link href='../Common/css/treeStyle.css' rel='stylesheet' type='text/css'>
+
+
     <style>
 
         .calendar-container {
@@ -97,10 +104,6 @@
             width: 8px;
         }
 
-
-
-
-
         ::-webkit-scrollbar {
             width: 1px; /* for vertical scrollbars */
             height: 10px; /* for horizontal scrollbars */
@@ -113,7 +116,6 @@
         ::-webkit-scrollbar-thumb {
             background: rgba(50, 50, 50, 0.1);
         }
-
 
         .flipped {
             -webkit-transform: rotateY(180deg);
@@ -152,9 +154,9 @@
 
         /* flip speed goes here */
         /*.flipper {*/
-            /*transition: 1s;*/
-            /*transform-style: preserve-3d;*/
-            /*position: relative;*/
+        /*transition: 1s;*/
+        /*transform-style: preserve-3d;*/
+        /*position: relative;*/
         /*}*/
         .flipper {
             -webkit-transition: 0.6s;
@@ -171,12 +173,13 @@
 
             position: relative;
         }
+
         /* hide back of pane during swap */
         /*.flip-front, .flip-back {*/
-            /*backface-visibility: hidden;*/
-            /*position: absolute;*/
-            /*top: 0;*/
-            /*left: 0;*/
+        /*backface-visibility: hidden;*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 0;*/
         /*}*/
         .flip-front, .flip-back {
             -webkit-backface-visibility: hidden;
@@ -207,11 +210,12 @@
             top: 0;
             left: 0;
         }
+
         /* front pane, placed above back */
         /*.flip-front {*/
-            /*z-index: 2;*/
-            /*!* for firefox 31 *!*/
-            /*transform: rotateY(0deg);*/
+        /*z-index: 2;*/
+        /*!* for firefox 31 *!*/
+        /*transform: rotateY(0deg);*/
         /*}*/
         .flip-front {
             -webkit-transform: rotateY(0deg);
@@ -219,11 +223,12 @@
             /*background: lightgreen;*/
             z-index: 2;
         }
+
         /* back, initially hidden pane */
         /*.flip-back {*/
-            /*transform: rotateY(180deg);*/
+        /*transform: rotateY(180deg);*/
         /*}*/
-        .flip-back  {
+        .flip-back {
             /*background: lightblue;*/
             -webkit-transform: rotateY(-180deg);
             -moz-transform: rotateY(-180deg);
@@ -252,9 +257,9 @@
 
 <!--<nav class="navbar navbar-inverse navbar-fixed-top" style="display: none;">-->
 <nav class="navbar" style="display: none">
-    <div class="container-fluid"  >
+    <div class="container-fluid">
         <div>
-            <div class="collapse navbar-collapse" id="myNavbar" >
+            <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="#section1">day1</a></li>
                     <li><a href="#section2">day2</a></li>
@@ -866,7 +871,7 @@
 
 <div class="container1" style=" position:absolute; top: 20vh; left: 5%; background: #fff;  margin: 0;">
 
-    <div class="calendar-container" >
+    <div class="calendar-container">
 
         <header>
 
@@ -955,7 +960,6 @@
     </div> <!-- end calendar-container -->
 
 </div> <!-- end container -->
-
 
 
 <div class="panel panel-default" style="shadow:0; position: absolute; top: 70vh; height:16vh; width: 13%; left: 5%;">

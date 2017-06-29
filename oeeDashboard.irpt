@@ -1675,7 +1675,7 @@
                             <li data-target="#myCarousel" data-slide-to="1"></li>
                             <li data-target="#myCarousel" data-slide-to="2"></li>
                             <li data-target="#myCarousel" data-slide-to="3"></li>
-                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                            <!--<li data-target="#myCarousel" data-slide-to="4"></li>-->
                         </ol>
 
                         <div class="carousel-inner">
@@ -1714,11 +1714,11 @@
                                 </div>
                             </div>
 
-                            <div class="item" style="align-content: center">
-                                <div class="panel-body">
-                                    <div id="chart3D" style="width: 1080px;height: 400px"></div>
-                                </div>
-                            </div>
+                            <!--<div class="item" style="align-content: center">-->
+                                <!--<div class="panel-body">-->
+                                    <!--<div id="chart3D" style="width: 1080px;height: 400px"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
                         </div>
 
 
