@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>chartScroll</title>
+    <script id="sap-ui-bootstrap"
+            src="openui5/resources/sap-ui-core.js"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-theme="sap_belize">
+    </script>
+    <script>
+        $(function () {
+            var seriesDataArray = [], categoriesDataArray = [];
+            for (var n = 1; n < 100; n++) {
+//                seriesDataArray.push([Math.random() * 12 * 60, (Math.random() * 12 + 12) * 60]);
+                seriesDataArray.push(Math.random() * 2000);
+                categoriesDataArray.push(n + ' - ABCD' + Math.round(123456789 * Math.random()));
+            }
+//            $(function () {
+            $('#container').highcharts({
+
+                chart: {
+                    renderTo: 'container',
+                    Type: 'columnrange',
+//                        zoomType: 'xy'
+                },
+                title: {},
+                subtitle: {},
+                credits: {},
+                xAxis: {
+//                        categories: ['VGP resort <br/>in (USD)', 'Spec info city <br/>in (USD)', 'Balewadi <br/>in (USD)', 'WTC <br/>in (INR)', 'Vizag Homes <br/>in (INR)', 'Aditi farms <br/>in (INR)'],
+                    min: 0,
+//                        max: 20,
+
+                },
+                scrollbar: {
+                    enabled: true
+                },
+
+                yAxis: {
+                    min: 0,
+//                        max: 2000,
+                    title: {}
+                },
+                legend: {
+                    shadow: false
+                },
+                tooltip: {
+                    useHTML: true,
+//                        headerFormat: '<small>{point.key}</small><table>',
+//                        pointFormat: '<tr><td style="color: {series.color}">{series.name}:{point.y} </td>',
+//                        footerFormat: '</table>',
+//                        valueDecimals: 2,
+//                        crosshairs: [{
+//                            width: 1,
+//                            color: 'Gray'},
+//                            {
+//                                width: 1,
+//                                color: 'gray'}]
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0.5
+                    }
+                },
+                series: [
+                    {
+                        name: 'series',
+                        colorByPoint: true,
+//                            data: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
+//                            data: seriesDataArray
+                        data: [[10, 100], [100, 200], [200, 300]]
+                    },
+                ],
+
+                scrollbar: {
+                    enabled: true,
+//                        barBackgroundColor: 'gray',
+//                        barBorderRadius: 7,
+//                        barBorderWidth: 0,
+//                        buttonBackgroundColor: 'gray',
+//                        buttonBorderWidth: 0,
+//                        buttonArrowColor: 'yellow',
+//                        buttonBorderRadius: 7,
+//                        rifleColor: 'yellow',
+//                        trackBackgroundColor: 'white',
+//                        trackBorderWidth: 1,
+//                        trackBorderColor: 'silver',
+//                        trackBorderRadius: 7
+                }
+            });
+//            });
+        });
+    </script>
+</head>
+<body>
+<div id="container" style="height: 400px; min-width: 600px"></div>
+
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+
+</body>
+</html>

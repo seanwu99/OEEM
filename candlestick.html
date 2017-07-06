@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>//</title>
+
+    <script id="sap-ui-bootstrap"
+            src="openui5/resources/sap-ui-core.js"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-theme="sap_belize">
+    </script>
+
+
+    <script src="//"></script>
+    <script src="Common/bootstrap/bootstrap.min.js"></script>
+    <script src="Common/js/modernizr.js"></script>
+    <!--<script src="Common/d3/d3.js"></script>-->
+    <!--<script src="Common/d3/d3.layout.js"></script>-->
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="Common/highcharts/highcharts-more.js"></script>
+    <!--<script src="https://code.highcharts.com/modules/data.js"></script>-->
+
+    <!--<link href='//' rel='stylesheet' type='text/css'>-->
+    <link href='Common/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='Common/font-awesome-4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link href='Common/css/text-cente.css' rel='stylesheet' type='text/css'>
+    <!--<link href='Common/css/treeStyle.css' rel='stylesheet' type='text/css'>-->
+</head>
+<body>
+
+
+<div id="dailySchedule" style=" height: 500px; margin: 100px 500px 100px 500px"></div>
+
+
+<script>
+    var seriesDataArray = [], categoriesDataArray = [];
+    for (var n = 1; n < 100; n++) {
+        seriesDataArray.push([Math.random() * 12 * 60, (Math.random() * 12 + 12) * 60]);
+        categoriesDataArray.push(n + ' - ABCD' + Math.round(123456789 * Math.random()));
+    }
+    $('#dailySchedule').highcharts({
+        exporting: {
+            enabled: false
+        },
+        credits: {
+            enabled: false,
+            href: 'http://www.rtsperfectplant.com/',
+            position: {
+                align: 'right',
+                x: -10,
+                verticalAlign: 'bottom',
+                y: -5
+            },
+            style: {
+                cursor: 'pointer',
+                color: '#999999',
+                fontSize: '9px'
+            },
+            text: 'RTS Consulting Inc.'
+        },
+        chart: {
+            renderTo: 'dailySchedule',
+            type: 'columnrange',
+            inverted: false
+        },
+
+        title: {
+            text: null
+        },
+
+        subtitle: {
+            text: null
+        },
+
+        xAxis: {
+            opposite: true,
+            categories: categoriesDataArray,
+            labels: {
+                enabled: true
+            },
+            min: 0,
+            max: 12
+
+        },
+
+        yAxis: {
+            reversed: true,
+            title: {
+                text: null
+            },
+            labels: {
+                formatter: function () {
+                    if (this.value < 16 * 60) {
+                        return (new Date((this.value + 8 * 60) * 60 * 1000)).toISOString().substr(11, 8);
+                    } else if (this.value == 16 * 60) {
+                        return (new Date(0)).toISOString().substr(11, 8);
+                    } else {
+                        return (new Date((this.value - 16 * 60) * 60 * 1000)).toISOString().substr(11, 8);
+                    }
+                }
+            },
+            min: 0,
+            max: 1440,
+            tickInterval: 120,
+//            minTickInterval: 10,
+        },
+        plotOptions: {
+            series: {
+                pointWidth: 20//width of the column bars irrespective of the chart size
+            },
+            columnrange: {
+                dataLabels: {
+                    enabled: true,
+//                    useHTML: true,
+                    formatter: function () {
+                        var v = '';
+//                        return this.y + '/ff/';
+                        if (this.y < 16 * 60) {
+                            v = (new Date((this.y + 8 * 60) * 60 * 1000)).toISOString().substr(11, 5) + ':00';
+                        } else if (this.y == 16 * 60) {
+                            v = (new Date(0)).toISOString().substr(11, 8);
+                        } else {
+                            v = (new Date((this.y - 16 * 60) * 60 * 1000)).toISOString().substr(11, 5) + ':00';
+                        }
+                        return '<large>' + v + '</large>';
+                    }
+                }
+            }
+        },
+//        tooltip: {
+//            shared: true,
+//            useHTML: true,
+//            headerFormat: '<small>{point.key}</small><table>',
+//            pointFormat: '<tr><td style="color: {series.color}">{series.name}: </td>' +
+//            '<td style="text-align: right"><b>{point.y} EUR</b></td></tr>',
+//            footerFormat: '</table>',
+//            valueDecimals: 2
+//        },
+        tooltip: {
+            useHTML: true,
+            formatter: function () {
+//                log(this.key);
+                return '<b>' + this.key + '</b><br>' +
+                    'During: ' + (new Date((this.point.high - this.point.low ) * 60 * 1000)).toISOString().substr(11, 8);
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        scrollbar: {
+            enabled: true
+        },
+        series: [{
+            name: 'During',
+            colorByPoint: true,
+            data: seriesDataArray,
+        }]
+    });
+//    Highcharts.chart('dailySchedule', {
+//        exporting: {
+//            enabled: false
+//        },
+//        credits: {
+//            enabled: false,
+//            href: 'http://www.rtsperfectplant.com/',
+//            position: {
+//                align: 'right',
+//                x: -10,
+//                verticalAlign: 'bottom',
+//                y: -5
+//            },
+//            style: {
+//                cursor: 'pointer',
+//                color: '#999999',
+//                fontSize: '9px'
+//            },
+//            text: 'RTS Consulting Inc.'
+//        },
+//        chart: {
+//            type: 'columnrange',
+//            inverted: false
+//        },
+//
+//        title: {
+//            text: null
+//        },
+//
+//        subtitle: {
+//            text: null
+//        },
+//
+//        xAxis: {
+//            opposite: true,
+//            categories: categoriesDataArray,
+//            labels: {
+//                enabled: true
+//            },
+//            min: 0,
+//            max: 12
+//
+//        },
+//
+//        yAxis: {
+//            reversed: true,
+//            title: {
+//                text: null
+//            },
+//            labels: {
+//                formatter: function () {
+//                    if (this.value < 16 * 60) {
+//                        return (new Date((this.value + 8 * 60) * 60 * 1000)).toISOString().substr(11, 8);
+//                    } else if (this.value == 16 * 60) {
+//                        return (new Date(0)).toISOString().substr(11, 8);
+//                    } else {
+//                        return (new Date((this.value - 16 * 60) * 60 * 1000)).toISOString().substr(11, 8);
+//                    }
+//                }
+//            },
+//            min: 0,
+//            max: 1440,
+//            tickInterval: 120,
+////            minTickInterval: 10,
+//        },
+//        plotOptions: {
+//            series: {
+//                pointWidth: 20//width of the column bars irrespective of the chart size
+//            },
+//            columnrange: {
+//                dataLabels: {
+//                    enabled: true,
+//                    useHTML: true,
+//                    formatter: function () {
+//                        var v = '';
+////                        return this.y + '/ff/';
+//                        if (this.y < 16 * 60) {
+//                            v = (new Date((this.y + 8 * 60) * 60 * 1000)).toISOString().substr(11, 5) + ':00';
+//                        } else if (this.y == 16 * 60) {
+//                            v = (new Date(0)).toISOString().substr(11, 8);
+//                        } else {
+//                            v = (new Date((this.y - 16 * 60) * 60 * 1000)).toISOString().substr(11, 5) + ':00';
+//                        }
+//                        return '<large>' + v + '</large>';
+//                    }
+//                }
+//            }
+//        },
+////        tooltip: {
+////            shared: true,
+////            useHTML: true,
+////            headerFormat: '<small>{point.key}</small><table>',
+////            pointFormat: '<tr><td style="color: {series.color}">{series.name}: </td>' +
+////            '<td style="text-align: right"><b>{point.y} EUR</b></td></tr>',
+////            footerFormat: '</table>',
+////            valueDecimals: 2
+////        },
+//        tooltip: {
+//            useHTML: true,
+//            formatter: function () {
+////                log(this.key);
+//                return '<b>' + this.key + '</b><br>' +
+//                    'During: ' + (new Date((this.point.high - this.point.low ) * 60 * 1000)).toISOString().substr(11, 8);
+//            }
+//        },
+//        legend: {
+//            enabled: false
+//        },
+//        scrollbar: {
+//            enabled: true
+//        },
+//        series: [{
+//            name: 'During',
+//            colorByPoint: true,
+//            data: seriesDataArray,
+//        }]
+//
+//    });
+    function log(obj) {
+        console.log(obj)
+    }
+</script>
+</body>
+</html>

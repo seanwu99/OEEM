@@ -67,21 +67,33 @@
         }
     </style>
 
-    <script id="sap-ui-bootstrap"
-            src="../sapui5/resources/sap-ui-core.js"
-            data-sap-ui-libs="sap.m"
-            data-sap-ui-theme="sap_belize">
-    </script>
-    <script type="text/javascript" src="default.js"></script>
-    <link href="../Common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../Common/bootstrap/bootstrap.min.js"></script>
-    <link href="../Common/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="text-cente.css"> <!-- Resource style -->
-    <script src="modernizr.js"></script> <!-- Modernizr -->
-    <link type="text/css" rel="stylesheet" href="treeStyle.css"/>
-    <script type="text/javascript" src="../Common/js/d3/d3.js"></script>
-    <script type="text/javascript" src="../Common/js/d3/d3.layout.js"></script>
+    <!--<script id="sap-ui-bootstrap"-->
+            <!--src="../sapui5/resources/sap-ui-core.js"-->
+            <!--data-sap-ui-libs="sap.m"-->
+            <!--data-sap-ui-theme="sap_belize">-->
+    <!--</script>-->
+    <!--<script type="text/javascript" src="default.js"></script>-->
+    <!--<link href="../Common/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="../Common/bootstrap/bootstrap.min.js"></script>-->
+    <!--<link href="../Common/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="../Common/css/text-cente.css">-->
+    <!--<script src="../Common/js/modernizr.js"></script>-->
+    <!--<link type="text/css" rel="stylesheet" href="Common/css/treeStyle.css"/>-->
+    <!--<script type="text/javascript" src="../Common/js/d3/d3.js"></script>-->
+    <!--<script type="text/javascript" src="../Common/js/d3/d3.layout.js"></script>-->
 
+    <!--<script src="//"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../Common/bootstrap/bootstrap.min.js"></script>
+    <script src="../Common/js/modernizr.js"></script>
+    <script src="../Common/d3/d3.js"></script>
+    <script src="../Common/d3/d3.layout.js"></script>
+
+    <!--<link href='//' rel='stylesheet' type='text/css'>-->
+    <link href='../Common/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='../Common/font-awesome-4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link href='../Common/css/text-cente.css' rel='stylesheet' type='text/css'>
+    <link href='../Common/css/treeStyle.css' rel='stylesheet' type='text/css'>
 
     <script>
         var ww, hh;
@@ -133,7 +145,7 @@
                 .append("svg:g")
                 .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
 
-            d3.json("orderTree.json", function (json) {
+            d3.json("../Common/d3/orderTree.json", function (json) {
                 root = json;
                 root.x0 = h / 2;
                 root.y0 = 0;
@@ -341,8 +353,8 @@
                             </div>
 
                             <div class="flip-back">
-                                <img src="pics/1-1.png" class="img-rounded" alt="Cinque Terre" width="344" height="155">
-                                <img src="pics/bottomBar.png" width="344" height="30"
+                                <img src="../common/pics/1-1.png" class="img-rounded" alt="Cinque Terre" width="344" height="155">
+                                <img src="../common/pics/bottomBar.png" width="344" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description </p>
                             </div>
@@ -362,8 +374,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/1-2.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
-                                <img src="pics/bottomBar.png" width="255" height="30"
+                                <img src="../common/pics/1-2.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
+                                <img src="../common/pics/bottomBar.png" width="255" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description </p>
                             </div>
@@ -383,8 +395,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/1-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                <img src="pics/bottomBar.png" width="160" height="30"
+                                <img src="../common/pics/1-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                <img src="../common/pics/bottomBar.png" width="160" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description</p>
                             </div>
@@ -404,8 +416,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/1-4.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
-                                <img src="pics/bottomBar.png" width="255" height="30"
+                                <img src="../common/pics/1-4.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
+                                <img src="../common/pics/bottomBar.png" width="255" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description </p>
                             </div>
@@ -429,8 +441,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/2-1.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
-                                <img src="pics/bottomBar.png" width="255" height="30"
+                                <img src="../common/pics/2-1.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
+                                <img src="../common/pics/bottomBar.png" width="255" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description </p>
                             </div>
@@ -450,8 +462,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/2-2.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
-                                <img src="pics/bottomBar.png" width="255" height="30"
+                                <img src="../common/pics/2-2.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
+                                <img src="../common/pics/bottomBar.png" width="255" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description </p>
                             </div>
@@ -471,8 +483,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/2-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                <img src="pics/bottomBar.png" width="160" height="30"
+                                <img src="../common/pics/2-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                <img src="../common/pics/bottomBar.png" width="160" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description</p>
                             </div>
@@ -493,8 +505,8 @@
                             </div>
 
                             <div class="flip-back">
-                                <img src="pics/2-4.png" class="img-rounded" alt="Cinque Terre" width="344" height="155">
-                                <img src="pics/bottomBar.png" width="344" height="30"
+                                <img src="../common/pics/2-4.png" class="img-rounded" alt="Cinque Terre" width="344" height="155">
+                                <img src="../common/pics/bottomBar.png" width="344" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description</p>
                             </div>
@@ -518,8 +530,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/3-1.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                <img src="pics/bottomBar.png" width="160" height="30"
+                                <img src="../common/pics/3-1.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                <img src="../common/pics/bottomBar.png" width="160" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description</p>
                             </div>
@@ -539,8 +551,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/3-2.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                <img src="pics/bottomBar.png" width="160" height="30"
+                                <img src="../common/pics/3-2.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                <img src="../common/pics/bottomBar.png" width="160" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description</p>
                             </div>
@@ -560,8 +572,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/3-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                <img src="pics/bottomBar.png" width="160" height="30"
+                                <img src="../common/pics/3-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                <img src="../common/pics/bottomBar.png" width="160" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description</p>
                             </div>
@@ -581,8 +593,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/3-4.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                <img src="pics/bottomBar.png" width="160" height="30"
+                                <img src="../common/pics/3-4.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                <img src="../common/pics/bottomBar.png" width="160" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description</p>
                             </div>
@@ -602,8 +614,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/3-5.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                <img src="pics/bottomBar.png" width="160" height="30"
+                                <img src="../common/pics/3-5.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                <img src="../common/pics/bottomBar.png" width="160" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description</p>
                             </div>
@@ -623,8 +635,8 @@
                                 </div>
                             </div>
                             <div class="flip-back">
-                                <img src="pics/3-6.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                <img src="pics/bottomBar.png" width="160" height="30"
+                                <img src="../common/pics/3-6.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                <img src="../common/pics/bottomBar.png" width="160" height="30"
                                      style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                 <p class="textBottom">Description</p>
                             </div>
@@ -650,8 +662,8 @@
 
 
 <script>
-    hh = document.getElementById('treePad').clientHeight;
-    ww = document.getElementById('treePad').clientWidth;
+    hh = document.getElementById('treePad11').clientHeight;
+    ww = document.getElementById('treePad11').clientWidth;
 </script>
 </body>
 </html>

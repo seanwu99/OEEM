@@ -8,15 +8,16 @@
 .cd-breadcrumb li, .cd-multi-steps li {
     display: inline-block;
     float: left;
-    margin: 0.5em 0;
+    margin: 1.5em 0;
+
 }
 
 /*.cd-breadcrumb li::after, .cd-multi-steps li::after {*/
-    /*!* this is the separator between items *!*/
-    /*display: inline-block;*/
-    /*content: '\00bb';*/
-    /*margin: 0 .6em;*/
-    /*color: #959fa5;*/
+/*!* this is the separator between items *!*/
+/*display: inline-block;*/
+/*content: '\00bb';*/
+/*margin: 0 .6em;*/
+/*color: #959fa5;*/
 /*}*/
 
 .cd-breadcrumb li:last-of-type::after, .cd-multi-steps li:last-of-type::after {
@@ -42,12 +43,12 @@
 }
 
 /*.cd-breadcrumb.custom-separator li::after, .cd-multi-steps.custom-separator li::after {*/
-    /*!* replace the default arrow separator with a custom icon *!*/
-    /*content: '';*/
-    /*height: 16px;*/
-    /*width: 16px;*/
-    /*background: url(../img/cd-custom-separator.svg) no-repeat center center;*/
-    /*vertical-align: middle;*/
+/*!* replace the default arrow separator with a custom icon *!*/
+/*content: '';*/
+/*height: 16px;*/
+/*width: 16px;*/
+/*background: url(../img/cd-custom-separator.svg) no-repeat center center;*/
+/*vertical-align: middle;*/
 /*}*/
 
 .cd-breadcrumb.custom-icons li > *::before, .cd-multi-steps.custom-icons li:first-of-type > *::before {
@@ -64,51 +65,51 @@
 }
 
 /*.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(2) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(2) > *::before {*/
-    /*!* change custom icon using image sprites *!*/
-    /*background-position: -20px 0;*/
+/*!* change custom icon using image sprites *!*/
+/*background-position: -20px 0;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(3) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(3) > *::before {*/
-    /*background-position: -40px 0;*/
+/*background-position: -40px 0;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(4) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(4) > *::before {*/
-    /*background-position: -60px 0;*/
+/*background-position: -60px 0;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li.current:first-of-type > *::before, .cd-multi-steps.custom-icons li.current:first-of-type > *::before {*/
-    /*!* change custom icon for the current item *!*/
-    /*background-position: 0 -20px;*/
+/*!* change custom icon for the current item *!*/
+/*background-position: 0 -20px;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li.current:nth-of-type(2) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(2) > *::before {*/
-    /*background-position: -20px -20px;*/
+/*background-position: -20px -20px;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li.current:nth-of-type(3) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(3) > *::before {*/
-    /*background-position: -40px -20px;*/
+/*background-position: -40px -20px;*/
 /*}*/
 
 /*.cd-breadcrumb.custom-icons li.current:nth-of-type(4) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(4) > *::before {*/
-    /*background-position: -60px -20px;*/
+/*background-position: -60px -20px;*/
 /*}*/
 
 /*@media only screen and (min-width: 768px) {*/
-    /*.cd-breadcrumb, .cd-multi-steps {*/
-        /*padding: 0 1.2em;*/
-    /*}*/
+/*.cd-breadcrumb, .cd-multi-steps {*/
+/*padding: 0 1.2em;*/
+/*}*/
 
-    /*.cd-breadcrumb li, .cd-multi-steps li {*/
-        /*margin: 1.2em 0;*/
-    /*}*/
+/*.cd-breadcrumb li, .cd-multi-steps li {*/
+/*margin: 1.2em 0;*/
+/*}*/
 
-    /*.cd-breadcrumb li::after, .cd-multi-steps li::after {*/
-        /*margin: 0 1em;*/
-    /*}*/
+/*.cd-breadcrumb li::after, .cd-multi-steps li::after {*/
+/*margin: 0 1em;*/
+/*}*/
 
-    /*.cd-breadcrumb li > *, .cd-multi-steps li > * {*/
-        /*!*font-size: 1.6rem;*!*/
-    /*}*/
+/*.cd-breadcrumb li > *, .cd-multi-steps li > * {*/
+/*!*font-size: 1.6rem;*!*/
+/*}*/
 /*}*/
 
 /* --------------------------------
@@ -116,7 +117,7 @@
 Multi steps indicator 
 
 -------------------------------- */
-@media only screen and (min-width: 768px) {
+@media only screen {
     .cd-multi-steps {
         /* reset style */
         background-color: transparent;
@@ -127,7 +128,7 @@ Multi steps indicator
     .cd-multi-steps li {
         position: relative;
         float: none;
-        margin: 0.4em 10px 0.4em 0;
+        margin: 0.4em 5px 0.4em 0;
     }
 
     .cd-multi-steps li:last-of-type {
@@ -141,7 +142,9 @@ Multi steps indicator
         height: 3px;
         background: #edeff0;
         /* reset style */
-        margin: 0;
+        /*margin: 0;*/
+        /*padding: 0;*/
+        /*margin: 0;*/
     }
 
     .cd-multi-steps li.visited::after {
@@ -157,6 +160,8 @@ Multi steps indicator
         /* reset style */
         height: 4px;
         background: #edeff0;
+        padding: 0;
+        margin: 0;
     }
 
     .cd-multi-steps.text-center li:not(:first-of-type)::after {
@@ -168,20 +173,26 @@ Multi steps indicator
         -ms-transform: translateY(-50%) translateX(-1px);
         -o-transform: translateY(-50%) translateX(-1px);
         transform: translateY(-50%) translateX(-1px);
+        padding: 0;
+        margin: 0;
     }
 
     .cd-multi-steps.text-center li:first-of-type > * {
+        width: 150px;
         z-index: 1;
         padding: .2em .5em;
         border-radius: .3em;
         background-color: #edeff0;
+
     }
 
     .cd-multi-steps.text-center li:not(:first-of-type) > * {
+        width: 66px;
         z-index: 1;
         padding: .2em .8em;
-        border-radius: .7em;
+        border-radius: .5em;
         background-color: #edeff0;
+
     }
 
     .no-touch .cd-multi-steps.text-center a:hover {
@@ -211,6 +222,6 @@ Add a counter to the multi-steps indicator
 
 .cd-multi-steps.count li:not(:first-of-type) > *::before {
     font-weight: bold;
-    content: counter(steps) " - ";
+    content: counter(steps) ".";
 }
 

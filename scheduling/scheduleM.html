@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>schedule module</title>
+    <title>sche11</title>
     <meta charset="utf-8">
-
     <!--<script id="sap-ui-bootstrap"-->
     <!--src="../sapui5/resources/sap-ui-core.js"-->
     <!--data-sap-ui-libs="sap.m"-->
     <!--data-sap-ui-theme="sap_belize">-->
     <!--</script>-->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <!--<script src="//"></script>-->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../Common/bootstrap/bootstrap.min.js"></script>
     <script src="../Common/js/modernizr.js"></script>
     <script src="../Common/d3/d3.js"></script>
     <script src="../Common/d3/d3.layout.js"></script>
@@ -23,7 +21,6 @@
     <link href='../Common/font-awesome-4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
     <link href='../Common/css/text-cente.css' rel='stylesheet' type='text/css'>
     <link href='../Common/css/treeStyle.css' rel='stylesheet' type='text/css'>
-
 
     <style>
 
@@ -132,17 +129,7 @@
 
         /*!* entire container, keeps perspective *!*/
         .flip-container {
-            /*perspective: 1000px;*/
-            /*transform-style: preserve-3d;*/
-            -webkit-perspective: 1000px;
-            -moz-perspective: 1000px;
-            -ms-perspective: 1000px;
             perspective: 1000px;
-
-            -ms-transform: perspective(1000px);
-            -moz-transform: perspective(1000px);
-            -moz-transform-style: preserve-3d;
-            -ms-transform-style: preserve-3d;
         }
 
         .flip-container, .flip-front, .flip-back {
@@ -153,88 +140,30 @@
         }
 
         /* flip speed goes here */
-        /*.flipper {*/
-        /*transition: 1s;*/
-        /*transform-style: preserve-3d;*/
-        /*position: relative;*/
-        /*}*/
         .flipper {
-            -webkit-transition: 0.6s;
-            -webkit-transform-style: preserve-3d;
-            -ms-transition: 0.6s;
-
-            -moz-transition: 0.6s;
-            -moz-transform: perspective(1000px);
-            -moz-transform-style: preserve-3d;
-            -ms-transform-style: preserve-3d;
-
-            transition: 0.6s;
+            transition: 1s;
             transform-style: preserve-3d;
-
-            position: relative;
+            position: inherit;
         }
 
         /* hide back of pane during swap */
-        /*.flip-front, .flip-back {*/
-        /*backface-visibility: hidden;*/
-        /*position: absolute;*/
-        /*top: 0;*/
-        /*left: 0;*/
-        /*}*/
         .flip-front, .flip-back {
-            -webkit-backface-visibility: hidden;
-            -moz-backface-visibility: hidden;
-            -ms-backface-visibility: hidden;
             backface-visibility: hidden;
-
-            -webkit-transition: 0.6s;
-            -webkit-transform-style: preserve-3d;
-            -webkit-transform: rotateY(0deg);
-
-            -moz-transition: 0.6s;
-            -moz-transform-style: preserve-3d;
-            -moz-transform: rotateY(0deg);
-
-            -o-transition: 0.6s;
-            -o-transform-style: preserve-3d;
-            -o-transform: rotateY(0deg);
-
-            -ms-transition: 0.6s;
-            -ms-transform-style: preserve-3d;
-            -ms-transform: rotateY(0deg);
-
-            transition: 0.6s;
-            transform-style: preserve-3d;
-            transform: rotateY(0deg);
             position: absolute;
             top: 0;
             left: 0;
         }
 
         /* front pane, placed above back */
-        /*.flip-front {*/
-        /*z-index: 2;*/
-        /*!* for firefox 31 *!*/
-        /*transform: rotateY(0deg);*/
-        /*}*/
         .flip-front {
-            -webkit-transform: rotateY(0deg);
-            -ms-transform: rotateY(0deg);
-            /*background: lightgreen;*/
             z-index: 2;
+            /* for firefox 31 */
+            transform: rotateY(0deg);
         }
 
         /* back, initially hidden pane */
-        /*.flip-back {*/
-        /*transform: rotateY(180deg);*/
-        /*}*/
         .flip-back {
-            /*background: lightblue;*/
-            -webkit-transform: rotateY(-180deg);
-            -moz-transform: rotateY(-180deg);
-            -o-transform: rotateY(-180deg);
-            -ms-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
+            transform: rotateY(180deg);
         }
 
         .textBottom {
@@ -431,8 +360,8 @@
                                     </div>
 
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/1-1.png" class="img-rounded" alt="Cinque Terre" width="344" height="155">
-                                        <img src="pics/bottomBar.png" width="344" height="30"
+                                        <img src="../Common/pics/1-1.png" class="img-rounded" alt="Cinque Terre" width="344" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="344" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description </p>
                                     </div>
@@ -452,8 +381,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/1-2.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
-                                        <img src="pics/bottomBar.png" width="255" height="30"
+                                        <img src="../Common/pics/1-2.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="255" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description </p>
                                     </div>
@@ -473,8 +402,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/1-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                        <img src="pics/bottomBar.png" width="160" height="30"
+                                        <img src="../Common/pics/1-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="160" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description</p>
                                     </div>
@@ -494,8 +423,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/1-4.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
-                                        <img src="pics/bottomBar.png" width="255" height="30"
+                                        <img src="../Common/pics/1-4.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="255" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description </p>
                                     </div>
@@ -519,8 +448,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/2-1.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
-                                        <img src="pics/bottomBar.png" width="255" height="30"
+                                        <img src="../Common/pics/2-1.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="255" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description </p>
                                     </div>
@@ -540,8 +469,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/2-2.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
-                                        <img src="pics/bottomBar.png" width="255" height="30"
+                                        <img src="../Common/pics/2-2.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="255" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description </p>
                                     </div>
@@ -561,8 +490,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/2-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                        <img src="pics/bottomBar.png" width="160" height="30"
+                                        <img src="../Common/pics/2-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="160" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description</p>
                                     </div>
@@ -583,8 +512,8 @@
                                     </div>
 
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/2-4.png" class="img-rounded" alt="Cinque Terre" width="344" height="155">
-                                        <img src="pics/bottomBar.png" width="344" height="30"
+                                        <img src="../Common/pics/2-4.png" class="img-rounded" alt="Cinque Terre" width="344" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="344" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description</p>
                                     </div>
@@ -608,8 +537,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/3-1.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                        <img src="pics/bottomBar.png" width="160" height="30"
+                                        <img src="../Common/pics/3-1.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="160" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description</p>
                                     </div>
@@ -629,8 +558,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/3-2.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                        <img src="pics/bottomBar.png" width="160" height="30"
+                                        <img src="../Common/pics/3-2.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="160" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description</p>
                                     </div>
@@ -650,8 +579,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/3-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                        <img src="pics/bottomBar.png" width="160" height="30"
+                                        <img src="../Common/pics/3-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="160" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description</p>
                                     </div>
@@ -671,8 +600,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/3-4.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                        <img src="pics/bottomBar.png" width="160" height="30"
+                                        <img src="../Common/pics/3-4.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="160" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description</p>
                                     </div>
@@ -692,8 +621,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/3-5.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                        <img src="pics/bottomBar.png" width="160" height="30"
+                                        <img src="../Common/pics/3-5.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="160" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description</p>
                                     </div>
@@ -713,8 +642,8 @@
                                         </div>
                                     </div>
                                     <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">
-                                        <img src="pics/3-6.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
-                                        <img src="pics/bottomBar.png" width="160" height="30"
+                                        <img src="../Common/pics/3-6.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">
+                                        <img src="../Common/pics/bottomBar.png" width="160" height="30"
                                              style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">
                                         <p class="textBottom">Description</p>
                                     </div>
@@ -1039,7 +968,7 @@
             .append("svg:g")
             .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
 
-        d3.json("orderTree.json", function (json) {
+        d3.json("../Common/d3/orderTree.json", function (json) {
             root = json;
             root.x0 = h / 2;
             root.y0 = 0;

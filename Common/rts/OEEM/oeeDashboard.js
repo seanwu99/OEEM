@@ -84,7 +84,7 @@ function chartOeeTrendInit(title, series) {
         chart: {
             type: 'spline',
             margin: [0, 90, 0, 90],
-//          width: 1108,
+            // width: 3108,
             events: {
                 load: function () {
 // 					alert('load');
@@ -610,7 +610,7 @@ function chartFloorMapInit(title, series) {
                     //     stroke: '#c0c0c0'
                     // }).add();
 
-                    ren.path(['M', 535, 30, 'L', 535, 320,'L', 655, 320,'L', 655, 80,'L', 535, 80]).attr({
+                    ren.path(['M', 535, 30, 'L', 535, 320, 'L', 655, 320, 'L', 655, 80, 'L', 535, 80]).attr({
                         'stroke-width': 5,
                         stroke: '#c0c0c0'
                     }).add();
