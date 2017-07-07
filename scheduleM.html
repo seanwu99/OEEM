@@ -185,9 +185,16 @@
         $(document).ready(function () {
             sectionX();
             for (var i = 1; i <= 31; i++) {
-                dayOrder(i);
-                if (i <= 10)
-                    collapse_Chart(i);
+
+                var seriesDataArray = [], categoriesDataArray = [];
+                for (var n = 1; n < 10; n++) {
+                    seriesDataArray.push([Math.random() * 12 * 60, (Math.random() * 12 + 12) * 60]);
+                    categoriesDataArray.push(n + ' - ABCD' + Math.round(123456789 * Math.random()));
+                }
+                if (i == 1)
+                    dayOrderX(i);
+//                if (i <= 10)
+//                    collapse_Chart(i, seriesDataArray, categoriesDataArray);
             }
 
             $("#MonthlyCalendar").scrollspy({target: ".navbar", offset: 50});
@@ -230,7 +237,22 @@
             document.getElementById('sectionX').innerHTML = pr;
         }
 
+        function dayOrderX(_DAY_) {
+            var pr = '<div>' +
+                '<div class="progress-bar" role="progressbar" style="border-radius: 3px; width:150px; margin: 0px 10px 0px 20px;padding: 0 0 0 0 ">' +
+                '<i class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b>Sun, August 1</b>' +
+                '</div>' +
+                '</div>' +
+                '<div id="progress1" style="overflow-x: auto; ">' +
+                'div class="progress" style="width:8000px; margin: 0px 0px 0px 0px; padding: 0 0 0 0">' +
+                ' <div class="progress-bar progress-bar-success" role="progressbar" style="width:100px">' +
+                '1 - ACBD123456789' +
+                '</div></div></div></div>';
+            document.getElementById('dayOrderX' + _DAY_).innerHTML = pr;
+        }
+
         function dayOrder(_DAY_) {
+
             var pr = ' <ol class="cd-multi-steps text-center count">' +
                 ' <li class="visited"><a data-toggle="collapse" data-parent="#collapse1" href="#collapse' +
                 _DAY_ +
@@ -249,12 +271,8 @@
             document.getElementById('dayOrder' + _DAY_).innerHTML = pr;
         }
 
-        function collapse_Chart(_DAY_) {
-            var seriesDataArray = [], categoriesDataArray = [];
-            for (var n = 1; n < 100; n++) {
-                seriesDataArray.push([Math.random() * 12 * 60, (Math.random() * 12 + 12) * 60]);
-                categoriesDataArray.push(n + ' - ABCD' + Math.round(123456789 * Math.random()));
-            }
+        function collapse_Chart(_DAY_, seriesDataArray, categoriesDataArray) {
+
             $('#collapse' + _DAY_ + '_Chart').highcharts({
                 exporting: {
                     enabled: false
@@ -277,7 +295,7 @@
                 },
                 chart: {
                     type: 'columnrange',
-                    inverted: false
+                    inverted: true
                 },
 
                 title: {
@@ -289,9 +307,10 @@
                 },
 
                 xAxis: {
+//                    offset: 30,
                     min: 0,
-                    max: 12,
-                    opposite: true,
+                    max: 10,
+                    opposite: false,
                     categories: categoriesDataArray,
                     labels: {
                         enabled: true
@@ -318,7 +337,7 @@
 //                enabled: true
 //            },
                 scrollbar: {
-                    enabled: true,
+                    enabled: false,
 //                barBackgroundColor: 'gray',
 //                barBorderRadius: 7,
 //                barBorderWidth: 0,
@@ -333,13 +352,24 @@
 //                trackBorderRadius: 7
                 },
                 yAxis: {
-                    offset: 50,
-                    reversed: true,
+//                    offset: 40,
+                    reversed: false,
                     title: {
                         text: null
                     },
                     labels: {
                         formatter: function () {
+//                            var tm = this.value + 8 * 60;
+//                            if (tm < 12 * 60) {
+//                                return (new Date(tm * 60 * 1000)).toISOString().substr(11, 5) + 'AM';
+//                            } else if (tm == 12 * 60) {
+//                                return (new Date(tm * 60 * 1000)).toISOString().substr(11, 5) + 'PM';
+//                            } else if (tm > 12 * 60 && tm < 24 * 60) {
+//                                return (new Date((tm - 12 * 60) * 60 * 1000)).toISOString().substr(11, 5) + 'PM';
+//                            } else {
+//                                return (new Date((tm - 24 * 60) * 60 * 1000)).toISOString().substr(11, 5) + 'AM';
+//                            }
+//
                             if (this.value < 16 * 60) {
                                 return (new Date((this.value + 8 * 60) * 60 * 1000)).toISOString().substr(11, 8);
                             } else if (this.value == 16 * 60) {
@@ -421,10 +451,10 @@
         }
 
         function orderScroll(dv) {
-            log(dv.scrollTop + " " + dv.clientWidth);
-            log(dv.scrollLeft);
-            document.getElementById('a1').innerHTML = dv.scrollTop + "/" + dv.clientWidth + "/" + dv.scrollLeft +
-                '<br>' + collapse1_Chart.xAxis[0].min + '/' + collapse1_Chart.xAxis[0].max;
+//            log(dv.scrollTop + " " + dv.clientWidth);
+//            log(dv.scrollLeft);
+//            document.getElementById('a1').innerHTML = dv.scrollTop + "/" + dv.clientWidth + "/" + dv.scrollLeft +
+//                '<br>' + collapse1_Chart.xAxis[0].min + '/' + collapse1_Chart.xAxis[0].max;
 //        var m = dv.scrollLeft / 6435 * 99;
 //        collapse1_Chart.xAxis.min = m;
 //        collapse1_Chart.xAxis.max = 12 + m;
@@ -454,7 +484,8 @@
     </script>
 </head>
 <body>
-<div class="panel panel-default" style="shadow:0;height:15vh;; margin: 2vh 5% 1vh 5%;">
+
+<div class="panel panel-default" style="shadow:0;height:15vh;; margin: 2vh 5% 1vh 5%; background: #f0f0f0">
     <div class="panel-body" style="text-align: center">
         <h2>// Header</h2>
     </div>
@@ -476,18 +507,26 @@
 
 <div class="container">
 
-    <div id="MonthlyCalendar" style="position: relative;  height: 70vh; overflow-x: hidden;">
+    <div id="MonthlyCalendar" style="position: relative;  top:3vh; height: 70vh; overflow-x: hidden;">
+        <div id='dayOrderX1' class="row">
+            <div>
+                <div class="progress-bar" role="progressbar" style="border-radius: 3px; width:150px; margin: 0px 10px 0px 20px;padding: 0 0 0 0 ">
+                    <i class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b>Sun, August 1</b>
+                </div>
+            </div>
+            <div id="progress1" style="overflow-x: auto; ">
+                <div class="progress" style="width:8000px; margin: 0px 0px 0px 0px; padding: 0 0 0 0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" style="width:100px">
+                        1 - ACBD123456789
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div id="section1">
             <hr/>
-            <div id='dayOrder1' style="overflow-x:hidden; white-space:nowrap;margin: -10px 0 0 0">
-                <ol class="cd-multi-steps text-center count">
-                    <li class="visited"><a data-toggle="collapse" data-parent="#collapse1" href="#collapse1_Cards" style="background: #337ab7">
-                        <i class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b>Sun, August 1</b></a>
-                    </li>
-                    <li class="visited"><a data-toggle="collapse" data-parent="#collapse1" href="#collapse1_Chart" style="background: #7cb5ec"></a></li>
-                </ol>
-            </div>
+
+
             <div id="collapse1" style="margin: -15px 0 0 0">
 
                 <div class="panel panel-default" style="border:0; box-shadow: none;">
@@ -803,7 +842,7 @@
                 </div>
 
                 <div class="panel">
-                    <div id="collapse1_Chart" class="panel collapse" style="height:600px; border: 0px; box-shadow: none;margin: 0 0 0 40px;"></div>
+                    <div id="collapse1_Chart" class="panel collapse" style="height:600px; border: 0px; box-shadow: none;margin: 0 0 0 0px;"></div>
                 </div>
 
             </div>
@@ -4014,7 +4053,7 @@
     </div>
 
 </div>
-<div class="panel panel-default" style="shadow:0;height:9vh;; margin: 1vh 5% 2vh 5%;">
+<div class="panel panel-default" style="shadow:0;height:9vh;; margin: 1vh 5% 2vh 5%;background: #f0f0f0">
     <div class="panel-body" style="text-align: right">
         RTS Consulting ...
     </div>
@@ -4114,13 +4153,13 @@
 </div>
 
 
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 65vh; height:21vh; width: 13%; left: 5%;">
-    <div id='a1' class="panel-body" style="text-align: right">
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 65vh; height:21vh; width: 13%; left: 5%; background: #f0f0f0">
+    <div id='a1' class="panel-body" style="text-align: right; ">
         A1
     </div>
 </div>
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:66vh; width: 13%; left: 82%;">
-    <div class="panel-body" style="text-align: right">
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:66vh; width: 13%; left: 82%; background: #f0f0f0">
+    <div class="panel-body" style="text-align: right;">
         A2
     </div>
 </div>
