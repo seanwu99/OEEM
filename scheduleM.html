@@ -237,7 +237,7 @@
             document.getElementById('sectionX').innerHTML = pr;
         }
 
-        function dayOrderX(_DAY_) {
+        function dayOrderX(_index,_width,_title) {
             var pr = '<div>' +
                 '<div class="progress-bar" role="progressbar" style="border-radius: 3px; width:150px; margin: 0px 10px 0px 20px;padding: 0 0 0 0 ">' +
                 '<i class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b>Sun, August 1</b>' +
@@ -245,10 +245,12 @@
                 '</div>' +
                 '<div id="progress1" style="overflow-x: auto; ">' +
                 '<div class="progress" style="width:8000px; margin: 0px 0px 0px 0px; padding: 0 0 0 0">' +
-                ' <div class="progress-bar progress-bar-success" role="progressbar" style="width:150px">' +
+                ' <div class="progress-bar progress-bar-success" role="progressbar" style="width:' +
+                '150' +
+                'px">' +
                 '1 - ACBD923456789' +
                 '</div></div></div></div>';
-            document.getElementById('dayOrderX' + _DAY_).innerHTML = pr;
+            document.getElementById('dayOrderX' + _index).innerHTML = pr;
         }
 
         function dayOrder(_DAY_) {
