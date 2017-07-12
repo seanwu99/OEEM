@@ -192,7 +192,9 @@
             for (var i = 1; i <= Months[tMonth][1]; i++) {
 
                 var seriesDataArray = [], categoriesDataArray = [];
-                for (var n = 1; n < 100; n++) {
+                var n0 = 1, n1 = Math.random() * 80 + 20;
+                for (var n = n0; n <= n1; n++) {
+
                     var ss = Math.random() * 20;
                     seriesDataArray.push([ss * 60, (ss + 2) * 60 + Math.random() * (22 - ss) * 60]);
                     categoriesDataArray.push(n + ' - ABCD' + Math.round(123456789 * Math.random()));
@@ -209,7 +211,7 @@
                 for (var n = 1; n <= Months[tMonth][1]; n++) {
                     dayN = document.getElementById('day' + n);
                     dayN.style.background = "#ffffff";
-                    if (_today != 'day' + n) {
+                    if (tm.getDate() != n) {
                         dayN.style.color = "#000000";
                     } else {
                         dayN.style.color = "#ff0000";
@@ -219,7 +221,7 @@
                 dayN = document.getElementById($(".nav li.active > a").text());
 //            log(dayN.style.color);
                 dayN.style.background = "#cacaca";
-                if ($(".nav li.active > a").text() != _today) {
+                if ($(".nav li.active > a").text() != 'day' + tm.getDate()) {
                     dayN.style.color = "#ffffff";
                 } else {
                     dayN.style.color = "#ff0000";
@@ -229,8 +231,8 @@
             });
             $(".navbar").hide();
 
-            document.getElementById(_today).style.background = "#ffffff";
-            document.getElementById(_today).style.color = "#e66b6b";
+            document.getElementById('day' + tm.getDate()).style.background = "#ffffff";
+            document.getElementById('day' + tm.getDate()).style.color = "red";
 
 
         });
@@ -293,11 +295,11 @@
                 '<div class="month">' + Months[tMonth][0] + '</div>' +
                 '</header>' +
                 '<table class="calendar" style="border-collapse: collapse; border-spacing: 0;">' +
-                '<thead style="color: #e66b6b; font-size: 90%; font-weight: 700; padding: 0 0 0 0; margin: 0 0 0 0">' +
+                '<thead style="color: #ff0000; font-size: 90%; font-weight: 700; padding: 0 0 0 0; margin: 0 0 0 0">' +
                 '<tr style="margin: 0 0 0 0">';
 //            var pl = '10px';
             for (var i = 1; i <= days.length; i++) {
-                pr += '<td style="padding-left: 10px;">' + days[i - 1].substring(0, 2) + '</td>';
+                pr += '<td style="padding-left: 5px; padding-right: 5px;">' + days[i - 1].substring(0, 2) + '</td>';
             }
             pr +=
                 '</tr>' +
@@ -366,7 +368,7 @@
                     _categoriesDataArray[i] + '</div>';
                 ww += ( ( ( _seriesDataArray[i][1] - _seriesDataArray[i][0] ) / 5) > 70 ? (( _seriesDataArray[i][1] - _seriesDataArray[i][0] ) / 5) : 70);
             }
-            log('week0 ' + (_day + week0) % 7);
+//            log('week0 ' + (_day + week0) % 7);
             var pr = '<div>' +
                 '<a data-toggle="collapse" data-parent="#collapse' + _day +
                 '" href="#collapse' + _day + '_Cards">' +
