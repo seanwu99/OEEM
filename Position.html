@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Position - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        #parent {
+            /*width: 60%;*/
+            /*height: 40px;*/
+            /*margin: 10px auto;*/
+            /*padding: 5px;*/
+            border: 1px solid #777;
+            /*background-color: #fbca93;*/
+            /*text-align: center;*/
+        }
+
+
+        /*select, input {*/
+            /*margin-left: 15px;*/
+        /*}*/
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            function position() {
+                $(".positionable").position({
+                    of: $("#parent"),
+                    my: $("#my_horizontal").val() + " " + $("#my_vertical").val(),
+                    at: $("#at_horizontal").val() + " " + $("#at_vertical").val(),
+                    collision: $("#collision_horizontal").val() + " " + $("#collision_vertical").val()
+                });
+            }
+
+//
+//            $( ".positionable" ).css( "opacity", 0.5 );
+//
+//            $( "select, input" ).on( "click keyup change", position );
+
+            $("#parent").draggable({
+                drag: position
+            });
+
+            position();
+        });
+    </script>
+</head>
+<body>
+
+<div id="parent">
+    <p>
+        This is the position parent element.
+    </p>
+</div>
+
+
+</body>
+</html>
