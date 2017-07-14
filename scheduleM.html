@@ -301,10 +301,7 @@
             for (var i = 1; i <= days.length; i++) {
                 pr += '<td style="padding-left: 5px; padding-right: 5px;">' + days[i - 1].substring(0, 2) + '</td>';
             }
-            pr +=
-                '</tr>' +
-                '</thead>' +
-                '<tbody >';
+            pr += '</tr></thead><tbody >';
             var dd = 0;
             for (var m = 1; m <= d35.length / 7; m++) {
                 pr += '<tr>';
@@ -318,22 +315,9 @@
                 }
                 pr += '</tr>';
             }
-            pr +=
-                '</tbody>' +
-                '</table>' +
-                '<div class="ring-left"></div>' +
-                '<div class="ring-right"></div>';
+            pr += '</tbody></table><div class="ring-left"></div><div class="ring-right"></div>';
             document.getElementById('calendar-container').innerHTML = pr;
-
         }
-
-        //        function sectionX() {
-        //            var pr = '';
-        //            for (var i = 1; i <= 28; i++) {
-        //                pr = pr + '<li><a href="#section' + i + '">day' + i + '</a></li>';
-        //            }
-        //            document.getElementById('sectionX').innerHTML = pr;
-        //        }
 
         function sectionN(_day) {
             var pr = ' <div id="dayOrderX' + _day +
@@ -357,17 +341,11 @@
             for (var i = 0; i < _seriesDataArray.length; i++) {
 //                log(i + '/' + _seriesDataArray[i][1] + '/' + _seriesDataArray[i][0]);
                 ss += '<div class="progress-bar " role="progressbar" style="width:' +
-                    ( 100 + 150 * ( _seriesDataArray[i][1] - _seriesDataArray[i][0] ) / 1440) +
-                    'px; background: ' +
-                    chartColors[i % 10] +
-                    '" onclick="progressClick(' +
-                    'this,' +
-                    _day +
-                    ',' +
-                    i +
-                    ')">' +
+                    ( 100 + 200 * ( _seriesDataArray[i][1] - _seriesDataArray[i][0] ) / 1440) +
+                    'px; background: ' + chartColors[i % 10] + '" ' +
+                    'onclick="progressClick(' + 'this,' + _day + ',' + i + ')">' +
                     _categoriesDataArray[i] + '</div>';
-                ww += 100 + 150 * ( _seriesDataArray[i][1] - _seriesDataArray[i][0] ) / 1440;
+                ww += 100 + 200 * ( _seriesDataArray[i][1] - _seriesDataArray[i][0] ) / 1440;
             }
 //            log('week0 ' + (_day + week0) % 7);
             var pr = '<div>' +
@@ -377,28 +355,11 @@
                 'style="border-radius: 3px; width:150px; margin: 0px 10px 0px 20px; font-size: 14px" ' +
                 'onclick="progressClick0(' + 'this,' + _day + ')">' +
                 '<i class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b>' +
-                (days[(_day + week0 - 2) % 7]).substring(0, 3) +
-                ', ' +
-                (Months[tMonth][0]).substring(0) + ' ' +
-                _day +
-                '</b>' +
-                '</div>' +
-                '</a>' +
-                '<div id="progress' +
-                _day +
-                '" style="overflow-x: hidden;" onmouseover="overBar(this)" onmouseout="outOfBar(this)">' +
-//                ' <a data-toggle="collapse" data-parent="#collapse' +
-//                _day +
-//                '" href="#collapse' +
-//                _day +
-//                '_Chart" >' +
-                '<div class="progress" style="cursor: pointer;margin: 0px 0px 0px 0px; padding: 0 0 0 0; background: #ccc; width: ' +
-                ww +
-                'px;">' +
-                ss +
-                '</div>' +
-//                '</a>' +
-                '</div></div>';
+                (days[(_day + week0 - 2) % 7]).substring(0, 3) + ',' + (Months[tMonth][0]).substring(0) + ' ' + _day + '</b></div></a>' +
+                '<div id="progress' + _day + '" ' +
+                'style="overflow-x: hidden;" onmouseover="overBar(this)" onmouseout="outOfBar(this)">' +
+                '<div class="progress" style="cursor: pointer;margin: 0px 0px 0px 0px; padding: 0 0 0 0; background: #ccc; width: ' + ww + 'px;">' + ss +
+                '</div></div></div>';
             document.getElementById('dayOrderX' + _day).innerHTML = pr;
         }
 
@@ -627,291 +588,314 @@
 
         function collapse_Cards(_day) {
             var pr =
-                '                        <div class="row" style="height: 190px">' +
-                '                            <div class="flip-container col-sm-4" style="margin: 20px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active" style="padding: 5px 10px 5px 10px; text-align: center;"><b>Order I</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
-                '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/1-1.png" class="img-rounded" alt="Cinque Terre" width="344" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="344" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description </p>' +
-                '                                    </div>' +
+                '                    <div class="row" style="height: 200px;">' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
                 '                                </div>' +
-                '                            </div>' +
-                '                            <div class="flip-container col-sm-3" style="margin: 20px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 0px 5px 0px; text-align: center"><b>Order II</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/1-2.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="255" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description </p>' +
-                '                                    </div>' +
-                '                                </div>' +
-                '                            </div>' +
-                '                            <div class="flip-container col-sm-2" style="margin: 20px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 0px 5px 0px; text-align: center;"><b>Order III</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
-                '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/1-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="160" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description</p>' +
-                '                                    </div>' +
-                '                                </div>' +
-                '                            </div>' +
-                '                            <div class="flip-container col-sm-3" style="margin: 20px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center"><b>Order IV</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
-                '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/1-4.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="255" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description </p>' +
-                '                                    </div>' +
+                '                                    <ul class="list-group" >' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
                 '                                </div>' +
                 '                            </div>' +
                 '                        </div>' +
-                '                        <div class="row" style="height: 190px">' +
-                '                            <div class="flip-container col-sm-3" style="margin: 15px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center"><b>Order V</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
-                '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/2-1.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="255" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description </p>' +
-                '                                    </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
                 '                                </div>' +
-                '                            </div>' +
-                '                            <div class="flip-container col-sm-3" style="margin: 15px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center"><b>Order VI</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/2-2.png" class="img-rounded" alt="Cinque Terre" width="255" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="255" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description </p>' +
-                '                                    </div>' +
-                '                                </div>' +
-                '                            </div>' +
-                '                            <div class="flip-container col-sm-2" style="margin: 15px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center;"><b>Order VII</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
-                '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/2-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="160" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description</p>' +
-                '                                    </div>' +
-                '                                </div>' +
-                '                            </div>' +
-                '                            <div class="flip-container col-sm-4" style="margin: 15px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center;"><b>Order VIII</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
-                '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/2-4.png" class="img-rounded" alt="Cinque Terre" width="344" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="344" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description</p>' +
-                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
                 '                                </div>' +
                 '                            </div>' +
                 '                        </div>' +
-                '                        <div class="row" style="height: 190px">' +
-                '                            <div class="flip-container col-sm-2" style="margin: 15px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center;"><b>Order IX</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/3-1.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="160" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description</p>' +
-                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
                 '                                </div>' +
                 '                            </div>' +
-                '                            <div class="flip-container col-sm-2" style="margin: 15px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center;"><b>Order X</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/3-2.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="160" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description</p>' +
-                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
                 '                                </div>' +
                 '                            </div>' +
-                '                            <div class="flip-container col-sm-2" style="margin: 15px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center;"><b>Order XIII</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
+                '                        </div>' +
+                '                    </div>' +
+                '                    <div class="row" style="height: 200px;">' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/3-3.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="160" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description</p>' +
-                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
                 '                                </div>' +
                 '                            </div>' +
-                '                            <div class="flip-container col-sm-2" style="margin: 15px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center;"><b>Order XII</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/3-4.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="160" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description</p>' +
-                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
                 '                                </div>' +
                 '                            </div>' +
-                '                            <div class="flip-container col-sm-2" style="margin: 15px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center;"><b>Order XIII</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/3-5.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="160" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description</p>' +
-                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
                 '                                </div>' +
                 '                            </div>' +
-                '                            <div class="flip-container col-sm-2" style="margin: 15px 0 0 0">' +
-                '                                <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                    <div class="flip-front" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <div class="list-group">' +
-                '                                            <a class="list-group-item active"' +
-                '                                               style="padding: 5px 10px 5px 10px; text-align: center;"><b>Order XIV</b></a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">First item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px;">Second item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Third item</a>' +
-                '                                            <a class="list-group-item" style="padding: 5px 20px 5px 20px; ">Forth item</a>' +
-                '                                        </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
-                '                                    <div class="flip-back" style="width: 100%; padding-left: 2%; padding-right: 2%">' +
-                '                                        <img src="Common/pics/3-6.png" class="img-rounded" alt="Cinque Terre" width="160" height="155">' +
-                '                                        <img src="Common/pics/bottomBar.png" width="160" height="30"' +
-                '                                             style="position: inherit;top: 125px;opacity: 0.5;filter: alpha(opacity=50);">' +
-                '                                        <p class="textBottom">Description</p>' +
-                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+
                 '                                </div>' +
                 '                            </div>' +
-                '                        </div>';
+                '                        </div>' +
+                '                    </div>' +
+                '                    <div class="row" style="height: 200px;">' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                    </div>';
             document.getElementById('collapse' + _day + '_Cards').innerHTML = pr;
         }
 
@@ -956,9 +940,10 @@
 
 <div class="container">
 
+
     <div id="MonthlyCalendar" style="position: relative;  top:2vh; height: 65vh; overflow-x: hidden;">
 
-        <div id="section1">
+        <div id="section1" >
             <div id='dayOrderX1' class="row" style="margin: 10px 0px 0px 0px; padding: 10px 0 0 0;">
                 <a data-toggle="collapse" data-parent="#collapse1" href="#collapse1_Cards">
                     <div class="progress-bar" role="progressbar"
@@ -1007,7 +992,7 @@
 </div>
 
 
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 65vh; height:21vh; width: 13%; left: 5%; background: #f0f0f0">
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 62vh; height:24vh; width: 13%; left: 5%; background: #f0f0f0">
     <div id='a1' class="panel-body" style="text-align: right; ">
         A1
     </div>
