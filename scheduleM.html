@@ -13,8 +13,12 @@
 
     <!--<script src="//"></script>-->
     <script src="Common/bootstrap/bootstrap.min.js"></script>
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="Common/highcharts/highstock.js"></script>
+
+    <!--<script src="Common/highcharts/draggable-points.js"></script>-->
     <script src="Common/highcharts/highcharts-more.js"></script>
+
+    <!--<script src="Common/highcharts/draggable-points.js"></script>-->
     <!--<script src="https://code.highcharts.com/modules/data.js"></script>-->
 
     <!--<link href='//' rel='stylesheet' type='text/css'>-->
@@ -202,7 +206,10 @@
                 sectionN(i);
                 dayOrderX(i, seriesDataArray, categoriesDataArray);
                 collapse_Cards(i);
-                collapse_Chart(i, seriesDataArray, categoriesDataArray);
+                if (i < 5) {
+                    collapse_Chart(i, seriesDataArray, categoriesDataArray);
+                }
+
             }
 
             $("#MonthlyCalendar").scrollspy({target: ".navbar", offset: 50});
@@ -337,7 +344,7 @@
 
         function dayOrderX(_day, _seriesDataArray, _categoriesDataArray) {
             var ss = '', ww = 0;
-            log(_day + "/section/ " + document.getElementById("section" + _day).offsetWidth);
+//            log(_day + "/section/ " + document.getElementById("section" + _day).offsetWidth);
             for (var i = 0; i < _seriesDataArray.length; i++) {
 //                log(i + '/' + _seriesDataArray[i][1] + '/' + _seriesDataArray[i][0]);
                 ss += '<div class="progress-bar " role="progressbar" style="width:' +
@@ -390,7 +397,8 @@
                 },
                 chart: {
                     type: 'columnrange',
-                    inverted: true
+                    inverted: false,
+
                 },
 
                 title: {
@@ -483,10 +491,31 @@
                 plotOptions: {
                     series: {
                         events: {
-                            mouseOut: function (e) {
-                                console.log('mouseOut');
-                                console.log(e);
-                            }
+//                            load: function () {
+//                                //add report div
+////                            var ch = this,
+////                                x = 20,
+////                                y = 57;
+////
+////                            ch.flashText = ch.renderer.text('<div id="flash"><div id="report"></div></div>', x, y + 10, true).attr({
+////                                zIndex: 101
+////                            }).add();
+//                            },
+//                            mouse
+//                            dblclick: function () {
+//                                console.log('dblclick');
+////                            reloadFlash();
+////                            $('#report').html('dbclick on chart');
+//                            },
+//                            click: function () {
+//                                console.log('click chart');
+////                            reloadFlash();
+////                            $('#report').html('click on chart');
+//                            },
+//                            contextmenu: function () {
+////                            reloadFlash();
+////                            $('#report').html('context menu on chart');
+//                            }
                         },
                         pointWidth: 20//width of the column bars irrespective of the chart size
                     },
@@ -534,6 +563,8 @@
                     name: 'During',
                     colorByPoint: true,
                     data: seriesDataArray,
+//                    draggableY: true,
+//                    draggableX: false,
                 }]
 
             });
@@ -943,7 +974,7 @@
 
     <div id="MonthlyCalendar" style="position: relative;  top:2vh; height: 65vh; overflow-x: hidden;">
 
-        <div id="section1" >
+        <div id="section1">
             <div id='dayOrderX1' class="row" style="margin: 10px 0px 0px 0px; padding: 10px 0 0 0;">
                 <a data-toggle="collapse" data-parent="#collapse1" href="#collapse1_Cards">
                     <div class="progress-bar" role="progressbar"

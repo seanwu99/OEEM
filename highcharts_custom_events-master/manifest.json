@@ -1,0 +1,47 @@
+{
+        "name": "Custom-Events",
+        "version": "2.0.16",
+        "title": "Custom-Events",
+        "author": {
+                "name": "Black Label",
+                "url": "http://www.blacklabel.pl/"
+        },
+        "licenses": [
+                {
+                        "type": "Creative Commons Attribution (CC)",
+                        "url": "https://github.com/blacklabel/custom_events/blob/master/license.txt"
+                }
+        ],
+        "dependencies": {
+                "highcharts": "4.2.6"
+        },
+        "demo": [
+                "https://jsfiddle.net/BlackLabel/Utx8g/"
+        ],
+        "description": "Plugin that allows you to add extra events, like double / right click on each chart element, for Highcharts.",
+        "keywords": [
+                "highcharts",
+                "highstock",
+                "highmaps",
+                "events"
+        ],
+        "maintainers": [
+                {
+                        "name": "Sebastian Bochan",
+                        "email": "sebastian@blacklabel.pl",
+                        "url": "http://www.blacklabel.pl"
+                }, {
+                        "name": "Paweł Fus",
+                        "email": "pawel@blacklabel.pl",
+                        "url": "http://www.blacklabel.pl"
+                }, {
+                        "name": "Kacper Madej",
+                        "email": "kacper@blacklabel.pl",
+                        "url": "http://www.blacklabel.pl"
+                }
+        ],
+        "homepage": "http://blacklabel.github.io/custom_events/",        
+        "docs": "https://github.com/blacklabel/custom_events/",        
+        "bugs": "https://github.com/blacklabel/custom_events/issues",
+        "download": "https://github.com/blacklabel/custom_events/archive/master.zip"
+}
