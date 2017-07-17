@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script id="sap-ui-bootstrap"
-            src="openui5/resources/sap-ui-core.js"
+            src="../openui5/resources/sap-ui-core.js"
             data-sap-ui-libs="sap.m"
             data-sap-ui-theme="sap_belize">
     </script>
-
+    <script src="../Common/highcharts/highstock.js"></script>
+    <script src="../Common/highcharts/highcharts-more.js"></script>
     <script>
         $(function () {
 
@@ -227,6 +228,69 @@
                     addEvent(container, 'mouseleave', drop);
                 });
 
+                /**
+                 * Extend the column chart tracker by visualizing the tracker object for small points
+                 */
+                Highcharts.seriesTypes.column.prototype.useDragHandle = function () {
+                    var is3d = this.chart.is3d && this.chart.is3d();
+                    return !is3d;
+                };
+
+                Highcharts.seriesTypes.column.prototype.dragHandlePath = function (shapeArgs, strokeW) {
+                    var x1 = shapeArgs.x,
+                        y = shapeArgs.y,
+                        x2 = shapeArgs.x + shapeArgs.width;
+
+                    return [
+                        'M', x1, y + 6 * strokeW,
+                        'L', x1, y,
+                        'L', x2, y,
+                        'L', x2, y + 2 * strokeW,
+                        'L', x1, y + 2 * strokeW,
+                        'L', x2, y + 2 * strokeW,
+                        'L', x2, y + 4 * strokeW,
+                        'L', x1, y + 4 * strokeW,
+                        'L', x2, y + 4 * strokeW,
+                        'L', x2, y + 6 * strokeW
+                    ];
+                };
+
+                Highcharts.wrap(Highcharts.seriesTypes.column.prototype, 'drawTracker', function (proceed) {
+                    var series = this,
+                        options = series.options,
+                        strokeW = series.borderWidth || 0;
+
+                    proceed.apply(series);
+
+                    if (this.useDragHandle() && (options.draggableX || options.draggableY)) {
+
+                        each(series.points, function (point) {
+
+                            var path = (options.dragHandlePath || series.dragHandlePath)(point.shapeArgs, strokeW);
+
+                            if (!point.handle) {
+                                point.handle = series.chart.renderer.path(path)
+                                    .attr({
+                                        fill: options.dragHandleFill || 'rgba(0,0,0,0.5)',
+                                        'class': 'highcharts-handle',
+                                        'stroke-width': strokeW,
+                                        'stroke': options.dragHandleStroke || options.borderColor || 1
+                                    })
+                                    .css({
+                                        cursor: 'ns-resize'
+                                    })
+                                    .add(series.group);
+
+                                point.handle.element.point = point;
+                            } else {
+                                point.handle.attr({
+                                    d: path
+                                });
+                            }
+                        });
+                    }
+                });
+
             }));
 
             function log(o) {
@@ -246,12 +310,10 @@
                         [1, 3],
                         [2, 5]
                     ],
-                    cursor: 'ns-resize',
+                    cursor: 'move',
                     draggableY: true,
-                    dragMinY: 0,
-                    dragMaxY: 10,
                     draggableX: false,
-                    dragSensitivity: 1
+                    dragSensitivity:2
                 }]
 
             });
@@ -261,8 +323,7 @@
     </script>
 </head>
 <body>
-<script src="https://code.highcharts.com/stock/highstock.js"></script>
-<script src="https://code.highcharts.com/stock/highcharts-more.js"></script>
+
 <div id="container"></div>
 </body>
 </html>

@@ -1,0 +1,98 @@
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script id="sap-ui-bootstrap"
+            src="../openui5/resources/sap-ui-core.js"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-theme="sap_belize">
+    </script>
+    <script src="../Common/highcharts/highstock.js"></script>
+    <script src="../Common/highcharts/highcharts-more.js"></script>
+    <script src="draggable-points.js"></script>
+
+
+    <title>Highcharts Draggable Points by highcharts</title>
+
+
+    <script type="text/javascript">//<![CDATA[
+    $(function () {
+        var chart = new Highcharts.Chart({
+
+            chart: {
+                renderTo: 'container',
+                animation: false
+            },
+
+            title: {
+                text: 'Highcharts draggable bubbles demo'
+            },
+
+            plotOptions: {
+                series: {
+                    point: {
+                        events: {
+                            drag: function (e) {
+                                console.log(e);
+                                // Returning false stops the drag and drops. Example:
+                                /*
+                                 if (e.newY > 300) {
+                                 this.y = 300;
+                                 return false;
+                                 }
+                                 */
+                                $('#drag').html(
+                                    'Dragging <b>' + this.series.name + '</b> to <b>[' + Highcharts.numberFormat(e.newX, 2) + ', ' + Highcharts.numberFormat(e.newY, 2) + ']</b>');
+                            },
+                            drop: function () {
+                                console.log('drop');
+                                $('#drop').html(
+                                    'Dropped <b>' + this.series.name + '</b> at <b>[' + Highcharts.numberFormat(this.x, 2) + ', ' + Highcharts.numberFormat(this.y, 2) + ']</b>');
+                            }
+                        }
+                    }
+                }
+            },
+
+            tooltip: {
+                yDecimals: 2
+            },
+
+            series: [{
+                type: 'bubble',
+                cursor: 'move',
+                draggableX: true,
+                draggableY: false,
+                dragSensitivity: 10,
+//                dragHandleFill: function(){return red;},
+                data: [
+                    [1, 240, 3],
+                    [2, 130, 10],
+                    [4.5, 290, 15]
+                ]
+            }]
+
+        });
+    });//]]>
+
+    function log(obj) {
+        console.log(obj);
+    };
+
+    </script>
+
+
+</head>
+
+<body>
+
+<div id="container" style="height: 400px" data-highcharts-chart="0">
+    <div id="highcharts-qmtvr2t-0" class="highcharts-container "
+         style="position: relative; overflow: hidden; width: 423px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+    </div>
+</div>
+<div id="drag"></div>
+<div id="drop"></div>
+
+
+</body>
+</html>

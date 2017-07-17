@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script id="sap-ui-bootstrap"
-            src="openui5/resources/sap-ui-core.js"
+            src="../openui5/resources/sap-ui-core.js"
             data-sap-ui-libs="sap.m"
             data-sap-ui-theme="sap_belize">
     </script>
@@ -39,7 +39,14 @@
                 /**
                  * Filter by dragMin and dragMax
                  */
-                function filterRange(newY, series, XOrY) {
+                var newH;
+
+                function filterRange(newY, series, XOrY, id) {
+//                    log('filterRange ' + id);
+//                    if (id == 'newHigh') {
+//                        log('newHigh: ' + newY)
+//                    }
+
                     var options = series.options,
                         dragMin = pick(options['dragMin' + XOrY], undefined),
                         dragMax = pick(options['dragMax' + XOrY], undefined);
@@ -48,6 +55,25 @@
                         newY = dragMin;
                     } else if (newY > dragMax) {
                         newY = dragMax;
+                    }
+
+                    if (id == 'newLow') {
+                        log('newLow: ' + newY);
+//                        log('dragMin: ' + dragMin);
+//                        log('dragMax: ' + dragMax);
+                        if (newY > dragMax - newH) {
+                            newY = dragMax - newH;
+                        }
+
+                    }
+                    if (id == 'newHigh') {
+                        log('newHigh: ' + newY);
+//                        log('dragMin: ' + dragMin);
+//                        log('dragMax: ' + dragMax);
+                        if (newY < newH + dragMin) {
+                            newY = newH + dragMin;
+                        }
+
                     }
                     return newY;
                 }
@@ -69,40 +95,44 @@
                      * Get the new values based on the drag event
                      */
                     function getNewPos(e) {
-                        var originalEvent = e.originalEvent || e,
-                            pageX = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageX : e.pageX,
-                            pageY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY,
-                            draggableX = dragPoint.series.options.draggableX,
-                            draggableY = dragPoint.series.options.draggableY,
-                            deltaX = dragX - pageX,
-                            deltaY = dragY - pageY,
-                            series = dragPoint.series,
-                            newPlotX = dragPlotX - deltaX,
-                            newPlotY = dragPlotY - deltaY,
-                            newX = dragX === undefined ? dragPoint.x : series.xAxis.toValue(newPlotX, true),
-                            newY = dragY === undefined ? dragPoint.y : series.yAxis.toValue(newPlotY, true);
+                        var originalEvent = e.originalEvent || e;
+                        var pageX = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageX : e.pageX;
+                        var pageY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY;
+                        var draggableX = dragPoint.series.options.draggableX;
+                        var draggableY = dragPoint.series.options.draggableY;
+                        var deltaX = dragX - pageX;
+                        var deltaY = dragY - pageY;
+                        var series = dragPoint.series;
+                        var newPlotX = dragPlotX - deltaX;
+                        var newPlotY = dragPlotY - deltaY;
+                        var newX = dragX === undefined ? dragPoint.x : series.xAxis.toValue(newPlotX, true);
+                        var newY = dragY === undefined ? dragPoint.y : series.yAxis.toValue(newPlotY, true);
 
-                        newX = filterRange(newX, series, 'X');
-                        newY = filterRange(newY, series, 'Y');
-                        if (dragPoint.low) {
-                            var newPlotHigh = dragPlotHigh - deltaY,
-                                newPlotLow = dragPlotLow - deltaY,
-                                newHigh = dragY === undefined ? dragPoint.high : series.yAxis.toValue(newPlotHigh, true),
-                                newLow = dragY === undefined ? dragPoint.low : series.yAxis.toValue(newPlotLow, true);
-                            newHigh = filterRange(newHigh, series, 'Y');
-                            newLow = filterRange(newLow, series, 'Y');
-
-                            return {
-                                x: draggableX ? newX : dragPoint.x,
-                                high: (draggableY && !changeLow) ? newHigh : dragPoint.high,
-                                low: (draggableY && changeLow) ? newLow : dragPoint.low,
-                            };
-                        }
+                        newX = filterRange(newX, series, 'X', 'newX');
+                        newY = filterRange(newY, series, 'Y', 'newY');
+//                        log(' dragPoint.low ==============' + dragPoint.low);
+//                        if (dragPoint.low || true) {
+                        var newPlotHigh = dragPlotHigh - deltaY,
+                            newPlotLow = dragPlotLow - deltaY,
+                            newHigh = dragY === undefined ? dragPoint.high : series.yAxis.toValue(newPlotHigh, true),
+                            newLow = dragY === undefined ? dragPoint.low : series.yAxis.toValue(newPlotLow, true);
+                        newHigh = filterRange(newHigh, series, 'Y', 'newHigh');
+                        newLow = filterRange(newLow, series, 'Y', 'newLow');
 
                         return {
                             x: draggableX ? newX : dragPoint.x,
-                            y: draggableY ? newY : dragPoint.y
+//                            high: (draggableY && !changeLow) ? newHigh : dragPoint.high,
+//                            low: (draggableY && changeLow) ? newLow : dragPoint.low,
+                            high: newHigh,
+                            low: newLow,
                         };
+//                        } else {
+//                        return {
+//                            x: draggableX ? newX : dragPoint.x,
+//                            y: draggableY ? newY : dragPoint.y
+//                        };
+//                        }
+
                     }
 
                     /**
@@ -123,12 +153,14 @@
                      * Handler for mousedown
                      */
                     function mouseDown(e) {
+                        log('mouseDown');
 
+//newH=e.
                         var options,
                             originalEvent = e.originalEvent || e,
                             hoverPoint,
                             series;
-                        log('mouseDown');
+
 
                         if ((originalEvent.target.getAttribute('class') || '').indexOf('highcharts-handle') !== -1) {
                             hoverPoint = originalEvent.target.point;
@@ -165,7 +197,8 @@
                                 dragPoint.series.directTouch = true; // Prevent k-d-tree to cause flickering (#43)
                             }
                         }
-                        log(dragPoint);
+                        newH = dragPoint.high - dragPoint.low;
+                        log('newH ' + newH);
                     }
 
                     /**
@@ -238,19 +271,21 @@
                 chart: {
                     type: 'columnrange',
                     animation: false,
+                    inverted: true
                 },
-
+                yAxis: {
+                    min: -1,
+                    max: 11,
+                },
                 series: [{
-                    data: [
-                        [1, 2],
-                        [1, 3],
-                        [2, 5]
-                    ],
-                    cursor: 'ns-resize',
+                    data: [[1, 2], [3, 4], [3, 8]],
+
+                    cursor: 'ew-resize',
                     draggableY: true,
                     dragMinY: 0,
                     dragMaxY: 10,
-                    draggableX: false,
+                    draggableX: true,
+                    draggableY: false,
                     dragSensitivity: 1
                 }]
 
