@@ -9,16 +9,6 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.7.1.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
-
-
-    <style type="text/css">
-        body {
-            font-family: Arial, Verdana, sans-serif;
-            font-size: 0.8em;
-        }
-    </style>
-
     <title>Highcharts Draggable Points by highcharts</title>
 
 
@@ -28,16 +18,17 @@
 
             chart: {
                 renderTo: 'container',
-                animation: false
+                animation: false,
+                type: 'columnrange',
             },
 
             title: {
                 text: 'Highcharts draggable points demo'
             },
 
-            xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            },
+//            yAxis: {
+//                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+//            },
 
             plotOptions: {
                 series: {
@@ -77,14 +68,15 @@
             },
 
             series: [{
-                data: [0, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+//                data: [0, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+                data: [[10, 0], [20, 71.5], [30, 106.4], [40, 129.2], [0, 144.0], [0, 176.0], [0, 135.6], [0, 148.5], [0, 216.4], [0, 194.1], [0, 95.6], [0, 54.4]],
                 //draggableX: true,
                 draggableY: true,
-                dragMinY: 0,
-                type: 'column',
-                minPointLength: 2,
-                dragHandleFill: 'red',
-                dragHandleStroke: 'red',
+                dragMinY: 10,
+//                type: 'column',
+//                minPointLength: 2,
+//                dragHandleFill: 'red',
+//                dragHandleStroke: 'red',
             }]
 
         });
@@ -96,7 +88,8 @@
 </head>
 
 <body>
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="../Common/highcharts/highstock.js"></script>
+<script src="../Common/highcharts/highcharts-more.js"></script>
 <script src="draggable-points.js"></script>
 <div id="container" style="height: 400px" data-highcharts-chart="0">
     <div id="highcharts-uwuzhgs-0" class="highcharts-container "

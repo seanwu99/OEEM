@@ -71,20 +71,20 @@
 
             newX = filterRange(newX, series, 'X');
             newY = filterRange(newY, series, 'Y');
-            // if (dragPoint.low ) {
-            var newPlotHigh = dragPlotHigh - deltaY,
-                newPlotLow = dragPlotLow - deltaY;
-            newHigh = dragY === undefined ? dragPoint.high : series.yAxis.toValue(newPlotHigh, true);
-            newLow = dragY === undefined ? dragPoint.low : series.yAxis.toValue(newPlotLow, true);
-            newHigh = filterRange(newHigh, series, 'Y');
-            newLow = filterRange(newLow, series, 'Y');
-            // }
+            if (dragPoint.low) {
+                var newPlotHigh = dragPlotHigh - deltaY,
+                    newPlotLow = dragPlotLow - deltaY;
+                newHigh = dragY === undefined ? dragPoint.high : series.yAxis.toValue(newPlotHigh, true);
+                newLow = dragY === undefined ? dragPoint.low : series.yAxis.toValue(newPlotLow, true);
+                newHigh = filterRange(newHigh, series, 'Y');
+                newLow = filterRange(newLow, series, 'Y');
+            }
             if (Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2)) > dragSensitivity) {
                 return {
                     x: draggableX ? newX : dragPoint.x,
                     y: draggableY ? newY : dragPoint.y,
-                    high: (draggableY ) ? newHigh : dragPoint.high,
-                    low: (draggableY ) ? newLow : dragPoint.low,
+                    high: (draggableY && !changeLow) ? newHigh : dragPoint.high,
+                    low: (draggableY && changeLow) ? newLow : dragPoint.low,
                 };
             } else {
                 return null;

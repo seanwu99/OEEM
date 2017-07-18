@@ -153,6 +153,8 @@
                      */
                     function mouseDown(e) {
                         log('mouseDown');
+                        log('chart');
+                        log(chart);
 
 //newH=e.
                         var options,
@@ -166,10 +168,13 @@
                         }
 
                         series = chart.hoverPoint && chart.hoverPoint.series;
-                        if (!hoverPoint && chart.hoverPoint && (!series.useDragHandle || !series.useDragHandle())) {
+                        log('series');
+                        log(series);
+                        if (!hoverPoint && chart.hoverPoint) {
                             hoverPoint = chart.hoverPoint;
                         }
-
+                        log('hoverPoint');
+                        log(hoverPoint);
                         if (hoverPoint) {
                             options = hoverPoint.series.options;
                             if (options.draggableX) {
@@ -182,12 +187,16 @@
                                 dragPoint = hoverPoint;
 
                                 dragY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY;
+
                                 dragPlotY = dragPoint.plotY + (chart.plotHeight - (dragPoint.yBottom || chart.plotHeight));
                                 if (dragPoint.plotHigh) {
                                     dragPlotHigh = dragPoint.plotHigh;
                                     dragPlotLow = dragPoint.plotLow;
                                     changeLow = (Math.abs(dragPlotLow - (dragY - 60)) < Math.abs(dragPlotHigh - (dragY - 60))) ? true : false;
                                 }
+                                log();
+                                log();
+
                             }
 
                             // Disable zooming when dragging
@@ -273,18 +282,17 @@
                     inverted: false
                 },
                 yAxis: {
-                    min: -1,
-                    max: 11,
+//                    min: -1,
+//                    max: 11,
                 },
                 series: [{
-                    data: [[1, 2], [3, 4], [3, 8]],
+                    data: [[1, 3], [2, 4], [3, 8]],
 
                     cursor: 'ew-resize',
                     draggableY: true,
+                    draggableX: false,
                     dragMinY: 0,
                     dragMaxY: 10,
-                    draggableX: true,
-                    draggableY: false,
                     dragSensitivity: 1
                 }]
 
@@ -300,3 +308,4 @@
 <div id="container"></div>
 </body>
 </html>
+
