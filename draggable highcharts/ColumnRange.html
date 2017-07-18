@@ -2,14 +2,20 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
+
+    <script id="sap-ui-bootstrap"
+            src="../openui5/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_belize"
+            data-sap-ui-libs="sap.ui.core,sap.ui.commons,sap.ui.table,sap.ui.ux3"
+            data-sap-ui-language="en">
+    </script>
+
+    <script src="../Common/highcharts/highstock.js"></script>
+    <script src="../Common/highcharts/highcharts-more.js"></script>
+    <script src="ColumnRange.js"></script>
 
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.7.1.js"></script>
-
-
-    <title>Highcharts Draggable Points by highcharts</title>
+    <title>ColumnRange.js</title>
 
 
     <script type="text/javascript">//<![CDATA[
@@ -72,7 +78,8 @@
                 data: [[10, 0], [20, 71.5], [30, 106.4], [40, 129.2], [0, 144.0], [0, 176.0], [0, 135.6], [0, 148.5], [0, 216.4], [0, 194.1], [0, 95.6], [0, 54.4]],
                 //draggableX: true,
                 draggableY: true,
-                dragMinY: 10,
+                dragMinY: 0,
+                dragMaxY: 1000,
 //                type: 'column',
 //                minPointLength: 2,
 //                dragHandleFill: 'red',
@@ -88,9 +95,7 @@
 </head>
 
 <body>
-<script src="../Common/highcharts/highstock.js"></script>
-<script src="../Common/highcharts/highcharts-more.js"></script>
-<script src="draggable-points.js"></script>
+
 <div id="container" style="height: 400px" data-highcharts-chart="0">
     <div id="highcharts-uwuzhgs-0" class="highcharts-container "
          style="position: relative; overflow: hidden; width: 299px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">

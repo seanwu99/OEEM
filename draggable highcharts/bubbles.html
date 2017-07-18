@@ -8,7 +8,7 @@
     </script>
     <script src="../Common/highcharts/highstock.js"></script>
     <script src="../Common/highcharts/highcharts-more.js"></script>
-    <script src="draggable-points.js"></script>
+    <script src="draggable-points-master/draggable-points.js"></script>
 
 
     <title>Highcharts Draggable Points by highcharts</title>
@@ -20,7 +20,8 @@
 
             chart: {
                 renderTo: 'container',
-                animation: false
+                animation: false,
+                inverted: false
             },
 
             title: {
@@ -61,7 +62,7 @@
                 type: 'bubble',
                 cursor: 'move',
                 draggableX: true,
-                draggableY: false,
+                draggableY: true,
                 dragSensitivity: 10,
 //                dragHandleFill: function(){return red;},
                 data: [
