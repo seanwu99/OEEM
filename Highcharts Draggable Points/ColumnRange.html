@@ -10,9 +10,9 @@
             data-sap-ui-language="en">
     </script>
 
-    <script src="../Common/highcharts/highstock.js"></script>
-    <script src="../Common/highcharts/highcharts-more.js"></script>
-    <script src="ColumnRange.js"></script>
+    <script src="draggable-points-master/node_modules/highcharts/highstock.js"></script>
+    <script src="draggable-points-master/node_modules/highcharts/highcharts-more.js"></script>
+    <script src="draggable-points.js"></script>
 
 
     <title>ColumnRange.js</title>
@@ -23,21 +23,26 @@
         var chart = new Highcharts.Chart({
 
             chart: {
+
                 renderTo: 'container',
                 animation: false,
-                type: 'columnrange',
+//                type: 'columnrange',
+                inverted: true,
             },
 
             title: {
                 text: 'Highcharts draggable points demo'
             },
 
-//            yAxis: {
+            yAxis: {
+//                min: 0,
+//                max: 1000,
 //                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-//            },
+            },
 
             plotOptions: {
                 series: {
+                    cursor: 'pointer',
                     point: {
                         events: {
 
@@ -61,12 +66,12 @@
                     },
                     stickyTracking: false
                 },
-                column: {
-                    stacking: 'normal'
-                },
-                line: {
-                    cursor: 'ns-resize'
-                }
+//                column: {
+//                    stacking: 'normal'
+//                },
+//                line: {
+//                    cursor: 'ns-resize'
+//                }
             },
 
             tooltip: {
@@ -75,12 +80,14 @@
 
             series: [{
 //                data: [0, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-                data: [[10, 0], [20, 71.5], [30, 106.4], [40, 129.2], [0, 144.0], [0, 176.0], [0, 135.6], [0, 148.5], [0, 216.4], [0, 194.1], [0, 95.6], [0, 54.4]],
+                data: [[10, 35], [20, 71.5], [30, 106.4], [40, 129.2], [0, 144.0], [0, 176.0], [0, 135.6], [0, 148.5], [0, 216.4], [0, 194.1], [0, 95.6], [0, 54.4]],
                 //draggableX: true,
-                draggableY: true,
-                dragMinY: 0,
-                dragMaxY: 1000,
-//                type: 'column',
+                draggableX: true,
+                draggableY: false,
+                dragMinY: 100,
+                dragMaxY: 900,
+                cursor: 'ew-resize',
+                type: 'columnrange',
 //                minPointLength: 2,
 //                dragHandleFill: 'red',
 //                dragHandleStroke: 'red',
@@ -96,23 +103,10 @@
 
 <body>
 
-<div id="container" style="height: 400px" data-highcharts-chart="0">
-    <div id="highcharts-uwuzhgs-0" class="highcharts-container "
-         style="position: relative; overflow: hidden; width: 299px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-    </div>
+<div id="container" style="height: 600px" data-highcharts-chart="0">
 </div>
 <div id="drag"></div>
 <div id="drop"></div>
-
-<script>
-    // tell the embed parent frame the height of the content
-    if (window.parent && window.parent.parent) {
-        window.parent.parent.postMessage(["resultsFrame", {
-            height: document.body.getBoundingClientRect().height,
-            slug: "AyUbx"
-        }], "*")
-    }
-</script>
 
 
 </body>
