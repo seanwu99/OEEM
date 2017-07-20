@@ -1,11 +1,3 @@
-/**
- * Draggable points plugin for Highcharts JS
- * Author: Torstein Honsi
- * License: MIT License
- * Version: 2.0.5 (2016-11-03)
- */
-
-/*global document, Highcharts */
 (function (factory) {
     if (typeof module === 'object' && module.exports) {
         module.exports = factory;
