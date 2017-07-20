@@ -42,11 +42,9 @@
         return newY;
     }
 
-
     function log(obj) {
         console.log(obj);
     }
-
 
     Highcharts.Chart.prototype.callbacks.push(function (chart) {
 
@@ -62,14 +60,10 @@
             changeLow,
             newHigh,
             newLow;
-        var isColumnRange;
-        var isInverted;
-        var newWH;
-        // console.log(chart);
-        // console.log(chart.options.plotOptions.series.cursor);
-        // chart.options.plotOptions.series.cursor='move';
-        // console.log(chart.options.plotOptions.series.cursor);
-        // chart.redraw();
+        var isInverted = chart.inverted;
+        var isColumnRange = (chart.options.chart.type == 'columnrange');
+        var newK;
+
         /**
          * Get the new values based on the drag event
          */
@@ -91,20 +85,20 @@
 
             newX = filterRange(newX, series, 'X');
             newY = filterRange(newY, series, 'Y');
-            // if (dragPoint.low) {
-            var newPlotHigh = dragPlotHigh - deltaY,
-                newPlotLow = dragPlotLow - deltaY;
-            newHigh = dragY === undefined ? dragPoint.high : series.yAxis.toValue(newPlotHigh, true);
-            newLow = dragY === undefined ? dragPoint.low : series.yAxis.toValue(newPlotLow, true);
-            newHigh = filterRange(newHigh, series, 'Y');
-            newLow = filterRange(newLow, series, 'Y');
-            // }
+            if (dragPoint.low || dragPoint.low == 0) {
+                var newPlotHigh = dragPlotHigh - deltaY,
+                    newPlotLow = dragPlotLow - deltaY;
+                newHigh = dragY === undefined ? dragPoint.high : series.yAxis.toValue(newPlotHigh, true);
+                newLow = dragY === undefined ? dragPoint.low : series.yAxis.toValue(newPlotLow, true);
+                newHigh = filterRange(newHigh, series, 'Y');
+                newLow = filterRange(newLow, series, 'Y');
+            }
             if (Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2)) > dragSensitivity) {
                 return {
                     x: draggableX ? newX : dragPoint.x,
                     y: draggableY ? newY : dragPoint.y,
-                    high: (draggableY && !changeLow) ? newHigh : dragPoint.high,
-                    low: (draggableY && changeLow) ? newLow : dragPoint.low,
+                    high: (draggableY ) ? newHigh : dragPoint.high,
+                    low: (draggableY) ? newLow : dragPoint.low,
                 };
             } else {
                 return null;
@@ -139,6 +133,12 @@
          * Handler for mousedown
          */
         function mouseDown(e) {
+            log('mouseDown');
+            log('isInverted: ' + isInverted);
+            log('isColumnRange: ' + isColumnRange);
+            log(e);
+            log('ChartXY: ' + e.chartX + '/' + e.chartY + '/' + e.x + '/' + e.y);
+            // log('mouseDown');
             var options,
                 originalEvent = e.originalEvent || e,
                 hoverPoint,
@@ -149,58 +149,58 @@
             }
 
             series = chart.hoverPoint && chart.hoverPoint.series;
-
             if (!hoverPoint && chart.hoverPoint && (!series.useDragHandle || !series.useDragHandle())) {
                 hoverPoint = chart.hoverPoint;
             }
+            // log('hoverPoint');
+            // log(hoverPoint);
+
+            // log(chart);
+            // log(chart.options.chart.type);
+            // log('high:' + hoverPoint.high + ' low:' + hoverPoint.low + ' plotHigh:' +
+            //     hoverPoint.plotHigh + ' plotLow:' + hoverPoint.plotLow + ' plotX:' +
+            //     hoverPoint.plotX + ' plotY:' + hoverPoint.plotY + ' x:' +
+            //     hoverPoint.x + ' y:' + hoverPoint.y);
 
             if (hoverPoint) {
-                // log('hoverPoint');
-                // log(hoverPoint);
-                newWH = Math.abs(hoverPoint.high - hoverPoint.low);
-                // log(newWH);
+
                 options = hoverPoint.series.options;
                 dragStart = {};
-                if (options.draggableX && hoverPoint.draggableX !== false) {
-                    dragPoint = hoverPoint;
-                    dragX = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageX : e.pageX;
-                    dragPlotX = dragPoint.plotX;
-                    dragStart.x = dragPoint.x;
-                    log('plotY :'+dragPoint.plotY);
-                    // log(dragPoint);
-                    // log('chart.plotWidth');
-                    // log(chart.plotTop + '/' + chart.plotWidth);
-                    // log('dragPoint.xBottom');
-                    // log(dragPoint);
-                    // log(chart.axes[1].min + '/' + chart.axes[1].max);
-                    var dt = chart.containerWidth - chart.plotWidth;
-                    // log('dt:' + dt);
-                    // log('cx:' + dragX);
-                    // var dx = (chart.axes[1].max - chart.axes[1].min ) / chart.plotWidth * (dragX - chart.plotTop) + chart.axes[1].min;
-                    var dx = chart.axes[1].min + (dragX - dt) * (chart.axes[1].max - chart.axes[1].min) / chart.plotWidth;
-                    log('dx: ' + '/' + dx);
-                    // log(chart);
 
-                    // log('chart');
-
-                }
-
-                if (options.draggableY && hoverPoint.draggableY !== false) {
-                    dragPoint = hoverPoint;
-
-                    dragY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY;
-                    dragPlotY = dragPoint.plotY + (chart.plotHeight - (dragPoint.yBottom || chart.plotHeight));
-                    dragStart.y = dragPoint.y;
-                    if (dragPoint.plotHigh) {
-                        dragPlotHigh = dragPoint.plotHigh;
-                        dragPlotLow = dragPoint.plotLow;
-                        changeLow = (Math.abs(dragPlotLow - (dragY - 60)) < Math.abs(dragPlotHigh - (dragY - 60))) ? true : false;
+                if (isInverted && isColumnRange) {
+                    if (options.draggableY && hoverPoint.draggableY !== false) {
+                        log('high:' + hoverPoint.high + ' low:' + hoverPoint.low + ' plotHigh:' +
+                            hoverPoint.plotHigh + ' plotLow:' + hoverPoint.plotLow + ' plotX:' +
+                            hoverPoint.plotX + ' plotY:' + hoverPoint.plotY + ' x:' +
+                            hoverPoint.x + ' y:' + hoverPoint.y);
+                        log('pageXY:' + e.pageX + '/' + e.pageY)
+                        log(chart);
+                        log(chart.chartWidth);
+                        log('axes: '+chart.axes[1].max + '/' + chart.axes[1].min);
                     }
-                    // log(dragPlotLow + '/' + dragPlotHigh);
-                    // log(dragStart);
-                    // log(dragY);
+                } else {
+                    if (options.draggableX && hoverPoint.draggableX !== false) {
+                        dragPoint = hoverPoint;
+                        dragX = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageX : e.pageX;
+                        dragPlotX = dragPoint.plotX;
+                        dragStart.x = dragPoint.x;
+                    }
+
+                    if (options.draggableY && hoverPoint.draggableY !== false) {
+                        dragPoint = hoverPoint;
+
+                        dragY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY;
+                        dragPlotY = dragPoint.plotY + (chart.plotHeight - (dragPoint.yBottom || chart.plotHeight));
+                        dragStart.y = dragPoint.y;
+                        if (dragPoint.plotHigh) {
+                            dragPlotHigh = dragPoint.plotHigh;
+                            dragPlotLow = dragPoint.plotLow;
+                            changeLow = (Math.abs(dragPlotLow - (dragY - 60)) < Math.abs(dragPlotHigh - (dragY - 60))) ? true : false;
+                        }
+                    }
                 }
 
+                log(dragStart);
                 // Disable zooming when dragging
                 if (dragPoint) {
                     chart.mouseIsDown = false;
