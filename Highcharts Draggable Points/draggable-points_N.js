@@ -76,13 +76,13 @@
             var dragSensitivity = pick(series.options.dragSensitiviy, 1);
             var deltaX = draggableX ? dragX - pageX : 0;
             var deltaY = draggableY ? dragY - pageY : 0;
-            log('deltaXY ' + deltaX + '/' + deltaY);
+            // log('deltaXY ' + deltaX + '/' + deltaY);
             var newPlotX = dragPlotX - deltaY;
             var newPlotY = dragPlotY - deltaX;
-            // log('newPlotXY ' + newPlotX + '/' + newPlotY + '/' + deltaX + '/' + deltaY);
+            log('newPlotXY ' + newPlotX + '/' + newPlotY);
             var newX = dragX === undefined ? dragPoint.x : series.xAxis.toValue(newPlotX, true);
             var newY = dragY === undefined ? dragPoint.y : series.yAxis.toValue(newPlotY, true);
-            log('newXY ' + newX + '/' + newY );
+            log('newXY ' + newX + '/' + newY);
 
 
             // newX = filterRange(newX, series, 'Y');
@@ -103,7 +103,7 @@
                 var _y = draggableX ? newY : dragPoint.y;
                 var _high = (draggableY && !changeLow) ? newHigh : dragPoint.high;
                 var _low = (draggableY && changeLow) ? newLow : dragPoint.low;
-                log('_x:' + _x + ' _y: ' + _y + '_high:' + _high + '_low' + _low);
+                // log('_x:' + _x + ' _y: ' + _y + '_high:' + _high + '_low' + _low);
                 return {
                     x: _x,
                     y: _y,
