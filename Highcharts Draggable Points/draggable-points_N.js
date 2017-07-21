@@ -42,9 +42,6 @@
         return newY;
     }
 
-    function log(obj) {
-        console.log(obj);
-    }
 
     Highcharts.Chart.prototype.callbacks.push(function (chart) {
 
@@ -82,7 +79,6 @@
 
             newX = filterRange(newX, series, 'X');
             newY = filterRange(newY, series, 'Y');
-
             if (dragPoint.low) {
                 var newPlotHigh = dragPlotHigh - deltaY,
                     newPlotLow = dragPlotLow - deltaY;
@@ -159,12 +155,8 @@
                     dragPoint = hoverPoint;
 
                     dragY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY;
-                    //
                     dragPlotY = dragPoint.plotY + (chart.plotHeight - (dragPoint.yBottom || chart.plotHeight));
                     dragStart.y = dragPoint.y;
-                    log('dragPlotLow: ' + dragPlotLow);
-                    log('dragPlotHigh: ' + dragPlotHigh);
-                    log('dragY: ' + dragY);
                     if (dragPoint.plotHigh) {
                         dragPlotHigh = dragPoint.plotHigh;
                         dragPlotLow = dragPoint.plotLow;
@@ -184,9 +176,9 @@
          */
         function mouseMove(e) {
 
-            e.preventDefault();
-
             if (dragPoint) {
+
+                e.preventDefault();
 
                 var evtArgs = getNewPos(e), // Gets x and y
                     proceed;
@@ -281,7 +273,6 @@
     };
 
     Highcharts.wrap(Highcharts.seriesTypes.column.prototype, 'drawTracker', function (proceed) {
-        log('Highcharts.wrap');
         var series = this,
             options = series.options,
             strokeW = series.borderWidth || 0;
@@ -303,7 +294,7 @@
                             'stroke': options.dragHandleStroke || options.borderColor || 1
                         })
                         .css({
-                            cursor: 'ew-resize'
+                            cursor: 'ns-resize'
                         })
                         .add(series.group);
 

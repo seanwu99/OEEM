@@ -12,7 +12,7 @@
 
     <script src="draggable-points-master/node_modules/highcharts/highstock.js"></script>
     <script src="draggable-points-master/node_modules/highcharts/highcharts-more.js"></script>
-    <script src="draggable-points.js"></script>
+    <script src="draggable-points-master/draggable-points.js"></script>
 
 
     <title>ColumnRange.js</title>
@@ -65,9 +65,9 @@
                     },
                     stickyTracking: false
                 },
-//                column: {
-//                    stacking: 'normal'
-//                },
+                column: {
+                    stacking: 'normal'
+                },
 //                line: {
 //                    cursor: 'ns-resize'
 //                }
@@ -81,14 +81,13 @@
                 type: 'columnrange',
                 data: [[10, 35], [20, 71.5], [30, 106.4], [40, 129.2], [0, 144.0], [0, 176.0], [0, 135.6], [0, 148.5], [0, 216.4], [0, 194.1], [0, 95.6], [0, 54.4]],
 
-                draggableX: false,
+//                draggableX: true,
                 draggableY: true,
                 dragMinY: 0,
                 dragMaxY: 1000,
-                cursor: 'move',
-//                minPointLength: 2,
-//                dragHandleFill: 'red',
-//                dragHandleStroke: 'red',
+//                cursor: 'move',
+                minPointLength: 2,
+
             }]
 
         });
