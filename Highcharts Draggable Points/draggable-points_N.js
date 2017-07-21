@@ -42,6 +42,9 @@
         return newY;
     }
 
+    function log(obj) {
+        console.log(obj);
+    }
 
     Highcharts.Chart.prototype.callbacks.push(function (chart) {
 
@@ -62,37 +65,50 @@
          * Get the new values based on the drag event
          */
         function getNewPos(e) {
-            var originalEvent = e.originalEvent || e,
-                pageX = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageX : e.pageX,
-                pageY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY,
-                series = dragPoint.series,
-                draggableX = series.options.draggableX && dragPoint.draggableX !== false,
-                draggableY = series.options.draggableY && dragPoint.draggableY !== false,
-                dragSensitivity = pick(series.options.dragSensitiviy, 1),
-                deltaX = draggableX ? dragX - pageX : 0,
-                deltaY = draggableY ? dragY - pageY : 0,
-                newPlotX = dragPlotX - deltaX,
-                newPlotY = dragPlotY - deltaY,
-                newX = dragX === undefined ? dragPoint.x : series.xAxis.toValue(newPlotX, true),
-                newY = dragY === undefined ? dragPoint.y : series.yAxis.toValue(newPlotY, true),
-                ret;
+            var originalEvent = e.originalEvent || e;
+            var pageX = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageX : e.pageX;
+            var pageY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY;
+            // log('pageXY ' + pageX + '/' + pageY);
+            var series = dragPoint.series;
+            var draggableX = series.options.draggableX && dragPoint.draggableX !== false;
+            var draggableY = series.options.draggableY && dragPoint.draggableY !== false;
 
-            newX = filterRange(newX, series, 'X');
-            newY = filterRange(newY, series, 'Y');
-            if (dragPoint.low) {
+            var dragSensitivity = pick(series.options.dragSensitiviy, 1);
+            var deltaX = draggableX ? dragX - pageX : 0;
+            var deltaY = draggableY ? dragY - pageY : 0;
+            log('deltaXY ' + deltaX + '/' + deltaY);
+            var newPlotX = dragPlotX - deltaY;
+            var newPlotY = dragPlotY - deltaX;
+            // log('newPlotXY ' + newPlotX + '/' + newPlotY + '/' + deltaX + '/' + deltaY);
+            var newX = dragX === undefined ? dragPoint.x : series.xAxis.toValue(newPlotX, true);
+            var newY = dragY === undefined ? dragPoint.y : series.yAxis.toValue(newPlotY, true);
+            log('newXY ' + newX + '/' + newY );
+
+
+            // newX = filterRange(newX, series, 'Y');
+            // newY = filterRange(newY, series, 'X');
+
+            if (dragPoint.low != null) {
                 var newPlotHigh = dragPlotHigh - deltaY,
                     newPlotLow = dragPlotLow - deltaY;
                 newHigh = dragY === undefined ? dragPoint.high : series.yAxis.toValue(newPlotHigh, true);
                 newLow = dragY === undefined ? dragPoint.low : series.yAxis.toValue(newPlotLow, true);
+                log('new: ' + newHigh + '/' + newLow);
                 newHigh = filterRange(newHigh, series, 'Y');
                 newLow = filterRange(newLow, series, 'Y');
             }
             if (Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2)) > dragSensitivity) {
+                // log('return' + draggableX ? newY : dragPoint.y);
+                var _x = draggableY ? newX : dragPoint.x;
+                var _y = draggableX ? newY : dragPoint.y;
+                var _high = (draggableY && !changeLow) ? newHigh : dragPoint.high;
+                var _low = (draggableY && changeLow) ? newLow : dragPoint.low;
+                log('_x:' + _x + ' _y: ' + _y + '_high:' + _high + '_low' + _low);
                 return {
-                    x: draggableX ? newX : dragPoint.x,
-                    y: draggableY ? newY : dragPoint.y,
-                    high: (draggableY && !changeLow) ? newHigh : dragPoint.high,
-                    low: (draggableY && changeLow) ? newLow : dragPoint.low,
+                    x: _x,
+                    y: _y,
+                    high: _high,
+                    low: _low,
                 };
             } else {
                 return null;
@@ -142,6 +158,7 @@
             }
 
             if (hoverPoint) {
+                log('hoverPoint');
                 options = hoverPoint.series.options;
                 dragStart = {};
                 if (options.draggableX && hoverPoint.draggableX !== false) {
@@ -151,12 +168,21 @@
                     dragStart.x = dragPoint.x;
                 }
 
-                if (options.draggableY && hoverPoint.draggableY !== false) {
+                if (options.draggableX && hoverPoint.draggableX !== false) {
                     dragPoint = hoverPoint;
 
                     dragY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY;
-                    dragPlotY = dragPoint.plotY + (chart.plotHeight - (dragPoint.yBottom || chart.plotHeight));
-                    dragStart.y = dragPoint.y;
+                    // dragPlotY = dragPoint.plotY + (chart.plotHeight - (dragPoint.yBottom || chart.plotHeight));
+                    dragPlotY = chart.plotWidth - dragPoint.plotY;
+                    // series.yAxis.toValue(newPlotHigh, true);
+                    log('dragPoint.y ' + dragPoint.y);
+                    log('e.pageX ' + e.pageX);
+                    log(series.yAxis.toValue(e.chartX, false));
+                    // dragStart.y = dragPoint.y;
+                    dragStart.y = series.yAxis.toValue(e.chartX, false);
+                    log('dragPlotLow: ' + dragPlotLow);
+                    log('dragPlotHigh: ' + dragPlotHigh);
+                    log('dragY: ' + dragY);
                     if (dragPoint.plotHigh) {
                         dragPlotHigh = dragPoint.plotHigh;
                         dragPlotLow = dragPoint.plotLow;
@@ -169,6 +195,7 @@
                     chart.mouseIsDown = false;
                 }
             }
+            log(dragStart);
         }
 
         /**
@@ -176,9 +203,9 @@
          */
         function mouseMove(e) {
 
-            if (dragPoint) {
+            e.preventDefault();
 
-                e.preventDefault();
+            if (dragPoint) {
 
                 var evtArgs = getNewPos(e), // Gets x and y
                     proceed;
@@ -186,6 +213,8 @@
                 // Fire the 'drag' event with a default action to move the point.
                 if (evtArgs) {
                     evtArgs.dragStart = dragStart;
+                    log('evtArgs');
+                    log(evtArgs);
                     dragPoint.firePointEvent(
                         'drag',
                         evtArgs,
@@ -254,10 +283,10 @@
     };
 
     Highcharts.seriesTypes.column.prototype.dragHandlePath = function (shapeArgs, strokeW) {
+
         var x1 = shapeArgs.x,
             y = shapeArgs.y,
             x2 = shapeArgs.x + shapeArgs.width;
-
         return [
             'M', x1, y + 6 * strokeW,
             'L', x1, y,

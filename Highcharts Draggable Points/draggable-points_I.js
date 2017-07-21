@@ -2,7 +2,7 @@
  * Draggable points plugin for Highcharts JS
  * Author: Torstein Honsi
  * License: MIT License
- * Version: 2.0.4 (2016-05-23)
+ * Version: 2.0.5 (2016-11-03)
  */
 
 /*global document, Highcharts */
@@ -65,21 +65,24 @@
          * Get the new values based on the drag event
          */
         function getNewPos(e) {
-            var originalEvent = e.originalEvent || e,
-                pageX = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageX : e.pageX,
-                pageY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY,
-                series = dragPoint.series,
-                draggableX = series.options.draggableX && dragPoint.draggableX !== false,
-                draggableY = series.options.draggableY && dragPoint.draggableY !== false,
-                dragSensitivity = pick(series.options.dragSensitiviy, 1),
-                deltaX = draggableX ? dragX - pageX : 0,
-                deltaY = draggableY ? dragY - pageY : 0,
-                newPlotX = dragPlotX - deltaY,
-                newPlotY = dragPlotY - deltaX,
-                newX = dragX === undefined ? dragPoint.x : series.xAxis.toValue(newPlotX, true),
-                newY = dragY === undefined ? dragPoint.y : series.yAxis.toValue(newPlotY, true),
-                ret;
-
+            log('getNewPos');
+            var originalEvent = e.originalEvent || e;
+            var pageX = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageX : e.pageX;
+            var pageY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY;
+            // log('pageXY ' + pageX + '/' + pageY)
+            var series = dragPoint.series;
+            var draggableX = series.options.draggableX && dragPoint.draggableX !== false;
+            var draggableY = series.options.draggableY && dragPoint.draggableY !== false;
+            var dragSensitivity = pick(series.options.dragSensitiviy, 1);
+            var deltaX = draggableX ? dragX - pageX : 0;
+            var deltaY = draggableY ? dragY - pageY : 0;
+            log('deltaXY ' + deltaX + '/' + deltaY);
+            var newPlotX = dragPlotX - deltaY;
+            var newPlotY = dragPlotY - deltaX;
+            log('newPlotXY ' + newPlotX + '/' + newPlotY + '/' + deltaX + '/' + deltaY);
+            var newX = dragX === undefined ? dragPoint.x : series.xAxis.toValue(newPlotX, true);
+            var newY = dragY === undefined ? dragPoint.y : series.yAxis.toValue(newPlotY, true);
+            log('newXY ' + newX + '/' + newY );
             newX = filterRange(newX, series, 'Y');
             newY = filterRange(newY, series, 'X');
 
@@ -92,11 +95,16 @@
                 newLow = filterRange(newLow, series, 'Y');
             }
             if (Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2)) > dragSensitivity) {
+                var _x = draggableY ? newX : dragPoint.x;
+                var _y = draggableX ? newY : dragPoint.y;
+                var _high = (draggableY && !changeLow) ? newHigh : dragPoint.high;
+                var _low = (draggableY && changeLow) ? newLow : dragPoint.low;
+                log('_x:' + _x + ' _y: ' + _y + '_high:' + _high + '_low' + _low);
                 return {
-                    x: draggableY ? newX : dragPoint.x,
-                    y: draggableX ? newY : dragPoint.y,
-                    high: (draggableY && !changeLow) ? newHigh : dragPoint.high,
-                    low: (draggableY && changeLow) ? newLow : dragPoint.low,
+                    x: _x,
+                    y: _y,
+                    high: _high,
+                    low: _low,
                 };
             } else {
                 return null;
@@ -177,6 +185,7 @@
                     chart.mouseIsDown = false;
                 }
             }
+            log(dragStart);
         }
 
         /**
@@ -262,10 +271,10 @@
     };
 
     Highcharts.seriesTypes.column.prototype.dragHandlePath = function (shapeArgs, strokeW) {
+
         var x1 = shapeArgs.x,
             y = shapeArgs.y,
             x2 = shapeArgs.x + shapeArgs.width;
-
         return [
             'M', x1, y + 6 * strokeW,
             'L', x1, y,
@@ -281,12 +290,12 @@
     };
 
     Highcharts.wrap(Highcharts.seriesTypes.column.prototype, 'drawTracker', function (proceed) {
-        log('Highcharts.wrap');
         var series = this,
             options = series.options,
             strokeW = series.borderWidth || 0;
 
-        // proceed.apply(series);
+        proceed.apply(series);
+
         if (this.useDragHandle() && (options.draggableX || options.draggableY)) {
 
             each(series.points, function (point) {
@@ -296,20 +305,19 @@
                 if (!point.handle) {
                     point.handle = series.chart.renderer.path(path)
                         .attr({
-                            // fill: options.dragHandleFill || 'rgba(0,0,0,0.5)',
+                            fill: options.dragHandleFill || 'rgba(0,0,0,0.5)',
                             'class': 'highcharts-handle',
-                            'stroke-width': 1,
+                            'stroke-width': strokeW,
                             'stroke': options.dragHandleStroke || options.borderColor || 1
                         })
                         .css({
-                            cursor: 'ew-resize'
+                            cursor: 'ns-resize'
                         })
                         .add(series.group);
 
                     point.handle.element.point = point;
                 } else {
                     point.handle.attr({d: path});
-                    // point.handle.element.point = point;
                 }
             });
         }

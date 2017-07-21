@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>points_I</title>
+    <script id="sap-ui-bootstrap"
+            src="../openui5/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_belize"
+            data-sap-ui-libs="sap.ui.core,sap.ui.commons,sap.ui.table,sap.ui.ux3"
+            data-sap-ui-language="en">
+    </script>
+    <script src="draggable-points-master/node_modules/highcharts/highstock.js"></script>
+    <script src="draggable-points-master/node_modules/highcharts/highcharts-more.js"></script>
+    <script src="draggable-points_I.js"></script>
+    <script>
+        $(function () {
+
+
+            var chart = new Highcharts.Chart({
+
+                chart: {
+                    renderTo: 'container',
+                    animation: false,
+                    inverted: true
+                },
+
+                title: {
+                    text: 'points_I '
+                },
+
+                xAxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                },
+
+                plotOptions: {
+                    series: {
+                        point: {
+                            events: {
+
+                                drag: function (e) {
+                                    // Returning false stops the drag and drops. Example:
+                                    /*
+                                    if (e.newY > 300) {
+                                        this.y = 300;
+                                        return false;
+                                    }
+                                    */
+
+                                    $('#drag').html(
+                                        'Dragging <b>' + this.series.name + '</b>, <b>' + this.category + '</b> to <b>' + Highcharts.numberFormat(e.y, 2) + '</b>');
+                                },
+                                drop: function () {
+                                    $('#drop').html(
+                                        'In <b>' + this.series.name + '</b>, <b>' + this.category + '</b> was set to <b>' + Highcharts.numberFormat(this.y, 2) + '</b>');
+                                }
+                            }
+                        },
+//                        stickyTracking: false
+                    },
+//                    bar: {
+//                        stacking: 'normal'
+//                    }
+                },
+
+                tooltip: {
+                    yDecimals: 2
+                },
+
+                series: [{
+                    data: [0, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+//                    data: [[0.5, 1], [0.5, 2], [0.5, 3]],
+                    //draggableX: true,
+                    draggableX: true,
+                    dragMinX: 0,
+                    type: 'column',
+//                    cursor: 'move',
+//                    minPointLength: 2
+                }
+//                , {
+//                        data: [0, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+//                        draggableX: true
+//                    }
+                ]
+            });
+        })
+    </script>
+</head>
+<body>
+
+<div id="container" style="height: 600px"></div>
+<div id="drag"></div>
+<div id="drop"></div>
+</body>
+</html>
