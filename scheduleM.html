@@ -17,6 +17,7 @@
 
     <!--<script src="Common/highcharts/draggable-points.js"></script>-->
     <script src="Common/highcharts/highcharts-more.js"></script>
+    <script src="Highcharts Draggable Points/draggable-points.js"></script>
 
     <!--<script src="Common/highcharts/draggable-points.js"></script>-->
     <!--<script src="https://code.highcharts.com/modules/data.js"></script>-->
@@ -260,10 +261,7 @@
         var tMonth = tm.getMonth();
         var tDays = tm.getDay();
         var week0 = (new Date(tm - (tDate - 1) * 24 * 3600 * 1000)).getDay();
-        log(tDate);
-        log(tMonth);
-        log(tDays);
-        log(week0);
+
         var d35 = [];
         var _today = 'day' + tm.getDate();
 
@@ -380,6 +378,7 @@
                     enabled: false
                 },
                 credits: {
+
                     enabled: true,
                     href: 'http://www.rtsperfectplant.com/',
                     position: {
@@ -396,9 +395,9 @@
                     text: 'RTS Consulting Inc.'
                 },
                 chart: {
-                    type: 'columnrange',
-                    inverted: true,
-
+                    height: 500,
+                    inverted: false,
+                    animation: false,
                 },
 
                 title: {
@@ -412,7 +411,7 @@
                 xAxis: {
 //                    offset: 30,
                     min: 0,
-                    max: 10,
+                    max: 14,
                     opposite: false,
                     categories: categoriesDataArray,
                     labels: {
@@ -560,9 +559,15 @@
                 },
 
                 series: [{
+                    type: 'columnrange',
                     name: 'During',
                     colorByPoint: true,
                     data: seriesDataArray,
+                    draggableY: true,
+                    dragMinY: 0,
+                    dragMaxY: 1440,
+                    dragSensitivity: 10,
+                    dragPrecisionY: 10,
 //                    draggableY: true,
 //                    draggableX: false,
                 }]
@@ -609,12 +614,13 @@
                 $('#collapse' + d + '_Chart').collapse('hide');
             }
         }
+
         function progressClick(dv, d, i) {
             if ($('#collapse' + d + '_Chart').hasClass('in') == false) {
                 $('#collapse' + d + '_Cards').collapse('hide');
                 $('#collapse' + d + '_Chart').collapse('show');
             }
-            collapse_ChartV[d].xAxis[0].setExtremes(i, i + 10);
+            collapse_ChartV[d].xAxis[0].setExtremes(i, i + 14);
         }
 
         function collapse_Cards(_day) {

@@ -12,7 +12,7 @@
 
     <script src="draggable-points-master/node_modules/highcharts/highstock.js"></script>
     <script src="draggable-points-master/node_modules/highcharts/highcharts-more.js"></script>
-    <script src="draggable-points_N.js"></script>
+    <script src="draggable-points.js"></script>
 
 
     <title>ColumnRange.js</title>
@@ -33,12 +33,44 @@
                 text: 'ColumnRange'
             },
 
-            yAxis: {
+//            yAxis: {
 //                min: 0,
-//                max: 1000,
-//                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+//                max: 1440,
+////                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+//            },
+            yAxis: {
+//                    offset: 40,
+                reversed: false,
+                title: {
+                    text: null
+                },
+                labels: {
+                    formatter: function () {
+//                            var tm = this.value + 8 * 60;
+//                            if (tm < 12 * 60) {
+//                                return (new Date(tm * 60 * 1000)).toISOString().substr(11, 5) + 'AM';
+//                            } else if (tm == 12 * 60) {
+//                                return (new Date(tm * 60 * 1000)).toISOString().substr(11, 5) + 'PM';
+//                            } else if (tm > 12 * 60 && tm < 24 * 60) {
+//                                return (new Date((tm - 12 * 60) * 60 * 1000)).toISOString().substr(11, 5) + 'PM';
+//                            } else {
+//                                return (new Date((tm - 24 * 60) * 60 * 1000)).toISOString().substr(11, 5) + 'AM';
+//                            }
+//
+                        if (this.value < 16 * 60) {
+                            return (new Date((this.value + 8 * 60) * 60 * 1000)).toISOString().substr(11, 8);
+                        } else if (this.value == 16 * 60) {
+                            return (new Date(0)).toISOString().substr(11, 8);
+                        } else {
+                            return (new Date((this.value - 16 * 60) * 60 * 1000)).toISOString().substr(11, 8);
+                        }
+                    }
+                },
+                min: 0,
+                max: 1440,
+                tickInterval: 120,
+//            minTickInterval: 10,
             },
-
             plotOptions: {
                 series: {
                     cursor: 'pointer',
@@ -65,30 +97,54 @@
                     },
                     stickyTracking: false
                 },
-                column: {
-                    stacking: 'normal'
-                },
+                columnrange: {
+                    dataLabels: {
+                        enabled: true,
+//                        useHTML: true,
+                        formatter: function () {
+                            var v = '';
+//                        return this.y + '/ff/';
+                            if (this.y < 16 * 60) {
+                                v = (new Date((this.y + 8 * 60) * 60 * 1000)).toISOString().substr(11, 5) + ':00';
+                            } else if (this.y == 16 * 60) {
+                                v = (new Date(0)).toISOString().substr(11, 8);
+                            } else {
+                                v = (new Date((this.y - 16 * 60) * 60 * 1000)).toISOString().substr(11, 5) + ':00';
+                            }
+                            return v;
+                        }
+                    }
+                }
 //                line: {
 //                    cursor: 'ns-resize'
 //                }
             },
 
             tooltip: {
-                yDecimals: 2
+                useHTML: false,
+                formatter: function () {
+//                log(this.key);
+                    return '<b>' + this.key + '</b><br>' +
+                        'During: ' + (new Date((this.point.high - this.point.low ) * 60 * 1000)).toISOString().substr(11, 8);
+                }
             },
-
+            legend: {
+                enabled: false
+            },
             series: [{
                 type: 'columnrange',
-                data: [[10, 35], [20, 71.5], [30, 106.4], [40, 129.2], [0, 144.0], [0, 176.0], [0, 135.6], [0, 148.5], [0, 216.4], [0, 194.1], [0, 95.6], [0, 54.4]],
+                data: [[10, 35], [20, 71.5], [30, 106.4], [40, 129.2]],
 
 //                draggableX: true,
                 draggableY: true,
                 dragMinY: 0,
-                dragMaxY: 1000,
+                dragMaxY: 1440,
+                dragSensitivity: 10,
+                dragPrecisionY: 10,
 //                cursor: 'move',
-                minPointLength: 2,
+//                minPointLength: 2,
 
-            }]
+            }],
 
         });
     });//]]>

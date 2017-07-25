@@ -29,7 +29,7 @@
             dragMin = pick(options['dragMin' + XOrY], undefined),
             dragMax = pick(options['dragMax' + XOrY], undefined),
             precision = pick(options['dragPrecision' + XOrY], undefined);
-
+        // log(series);
         if (!isNaN(precision)) {
             newY = Math.round(newY / precision) * precision;
         }
@@ -42,6 +42,9 @@
         return newY;
     }
 
+    function log(obj) {
+        console.log(obj);
+    }
 
     Highcharts.Chart.prototype.callbacks.push(function (chart) {
 
@@ -55,6 +58,7 @@
             dragPlotHigh,
             dragPlotLow,
             changeLow,
+            newWidth,
             newHigh,
             newLow;
 
@@ -68,7 +72,8 @@
                 series = dragPoint.series,
                 draggableX = series.options.draggableX && dragPoint.draggableX !== false,
                 draggableY = series.options.draggableY && dragPoint.draggableY !== false,
-                dragSensitivity = pick(series.options.dragSensitiviy, 1),
+                dragSensitivity = pick(series.options.dragSensitivity, 1),
+                // dragSensitivity = series.options.dragSensitivity,
                 deltaX = draggableX ? dragX - pageX : 0,
                 deltaY = draggableY ? dragY - pageY : 0,
                 newPlotX = dragPlotX - deltaX,
@@ -76,23 +81,34 @@
                 newX = dragX === undefined ? dragPoint.x : series.xAxis.toValue(newPlotX, true),
                 newY = dragY === undefined ? dragPoint.y : series.yAxis.toValue(newPlotY, true),
                 ret;
-
             newX = filterRange(newX, series, 'X');
             newY = filterRange(newY, series, 'Y');
-            if (dragPoint.low) {
+            if (dragPoint.low != null) {
                 var newPlotHigh = dragPlotHigh - deltaY,
                     newPlotLow = dragPlotLow - deltaY;
                 newHigh = dragY === undefined ? dragPoint.high : series.yAxis.toValue(newPlotHigh, true);
                 newLow = dragY === undefined ? dragPoint.low : series.yAxis.toValue(newPlotLow, true);
                 newHigh = filterRange(newHigh, series, 'Y');
                 newLow = filterRange(newLow, series, 'Y');
+                var dragMinY = series.options.dragMinY;
+                var dragMaxY = series.options.dragMaxY;
+                if (newHigh == dragMaxY) {
+
+                    if (newHigh - newLow < newWidth) {
+                        newLow = newHigh - newWidth;
+                    }
+                } else if (newLow == dragMinY) {
+                    if (newHigh - newLow < newWidth) {
+                        newHigh = newLow + newWidth;
+                    }
+                }
             }
             if (Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2)) > dragSensitivity) {
                 return {
                     x: draggableX ? newX : dragPoint.x,
                     y: draggableY ? newY : dragPoint.y,
-                    high: (draggableY && !changeLow) ? newHigh : dragPoint.high,
-                    low: (draggableY && changeLow) ? newLow : dragPoint.low,
+                    high: (draggableY && (changeLow == -1) || draggableY && (changeLow == 0)) ? newHigh : dragPoint.high,
+                    low: (draggableY && (changeLow == 1) || draggableY && (changeLow == 0)) ? newLow : dragPoint.low,
                 };
             } else {
                 return null;
@@ -152,6 +168,7 @@
                 }
 
                 if (options.draggableY && hoverPoint.draggableY !== false) {
+                    // log(hoverPoint);
                     dragPoint = hoverPoint;
 
                     dragY = originalEvent.changedTouches ? originalEvent.changedTouches[0].pageY : e.pageY;
@@ -162,6 +179,18 @@
                         dragPlotLow = dragPoint.plotLow;
                         changeLow = (Math.abs(dragPlotLow - (dragY - 60)) < Math.abs(dragPlotHigh - (dragY - 60))) ? true : false;
                     }
+                    newWidth = hoverPoint.high - hoverPoint.low;
+
+                    var yy = dragY;
+                    log('yy ' + yy + '/' + hoverPoint.high + '/' + hoverPoint.low);
+                    if (Math.abs(yy - dragPlotLow) < Math.abs(dragPlotHigh - dragPlotLow) / 10) {
+                        changeLow = 1;
+                    } else if (Math.abs(yy - dragPlotHigh) < Math.abs(dragPlotHigh - dragPlotLow) / 10) {
+                        changeLow = -1;
+                    } else {
+                        changeLow = 0;
+                    }
+                    log('newWidth: ' + newWidth + '/' + changeLow);
                 }
 
                 // Disable zooming when dragging
