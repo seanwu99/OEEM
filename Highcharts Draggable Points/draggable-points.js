@@ -39,6 +39,8 @@
         } else if (newY > dragMax) {
             newY = dragMax;
         }
+
+
         return newY;
     }
 
@@ -92,8 +94,8 @@
                 newLow = filterRange(newLow, series, 'Y');
                 var dragMinY = series.options.dragMinY;
                 var dragMaxY = series.options.dragMaxY;
-                if (newHigh == dragMaxY) {
 
+                if (newHigh == dragMaxY) {
                     if (newHigh - newLow < newWidth) {
                         newLow = newHigh - newWidth;
                     }
@@ -102,6 +104,7 @@
                         newHigh = newLow + newWidth;
                     }
                 }
+
             }
             if (Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2)) > dragSensitivity) {
                 return {
@@ -143,6 +146,8 @@
          * Handler for mousedown
          */
         function mouseDown(e) {
+            // log('mouseDown(e)');
+            // log(e);
             var options,
                 originalEvent = e.originalEvent || e,
                 hoverPoint,
@@ -168,6 +173,7 @@
                 }
 
                 if (options.draggableY && hoverPoint.draggableY !== false) {
+                    // log('hoverPoint');
                     // log(hoverPoint);
                     dragPoint = hoverPoint;
 
@@ -177,10 +183,15 @@
                     if (dragPoint.plotHigh) {
                         dragPlotHigh = dragPoint.plotHigh;
                         dragPlotLow = dragPoint.plotLow;
-                        changeLow = (Math.abs(dragPlotLow - (dragY - 60)) < Math.abs(dragPlotHigh - (dragY - 60))) ? true : false;
+                        // changeLow = (Math.abs(dragPlotLow - (dragY - 60)) < Math.abs(dragPlotHigh - (dragY - 60))) ? true : false;
                     }
+                    var yAxis = hoverPoint.series.yAxis.toValue(e.chartY, false);
+                    // log('yAxis: ' + yAxis);
+                    var yy = dragPlotLow + (dragPlotHigh - dragPlotLow) * (yAxis - dragPoint.low) / (dragPoint.high - dragPoint.low);
+                    // log('dragPlotHigh: ' + dragPlotHigh + '/' + dragPlotLow + '/' + yAxis + '/' + yy);
+
+
                     newWidth = hoverPoint.high - hoverPoint.low;
-                    var yy = Math.abs(dragY - 60);
                     if (Math.abs(yy - dragPlotLow) < Math.abs(dragPlotHigh - dragPlotLow) / 10) {
                         changeLow = 1;
                     } else if (Math.abs(yy - dragPlotHigh) < Math.abs(dragPlotHigh - dragPlotLow) / 10) {
@@ -188,8 +199,8 @@
                     } else {
                         changeLow = 0;
                     }
-                    log('dragPlotHigh: ' + dragPoint.plotHigh + '/' + dragPoint.plotLow);
-                    log('yy: ' + yy + '/' + newWidth + '/' + changeLow);
+                    // log('dragPlotHigh: ' + dragPoint.plotHigh + '/' + dragPoint.plotLow);
+                    // log('yy: ' + yy + '/' + newWidth + '/' + changeLow);
                 }
 
                 // Disable zooming when dragging

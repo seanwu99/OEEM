@@ -207,9 +207,9 @@
                 sectionN(i);
                 dayOrderX(i, seriesDataArray, categoriesDataArray);
                 collapse_Cards(i);
-                if (i < 5) {
-                    collapse_Chart(i, seriesDataArray, categoriesDataArray);
-                }
+//                if (i < 5) {
+                collapse_Chart(i, seriesDataArray, categoriesDataArray);
+//                }
 
             }
 
@@ -373,43 +373,19 @@
 
         function collapse_Chart(_DAY_, seriesDataArray, categoriesDataArray) {
             collapse_ChartV[_DAY_] = Highcharts.chart('collapse' + _DAY_ + '_Chart', {
-//            $('#collapse' + _DAY_ + '_Chart').highcharts({
-                exporting: {
-                    enabled: false
-                },
-                credits: {
-
-                    enabled: true,
-                    href: 'http://www.rtsperfectplant.com/',
-                    position: {
-                        align: 'right',
-                        x: -10,
-                        verticalAlign: 'bottom',
-                        y: -5
-                    },
-                    style: {
-                        cursor: 'pointer',
-                        color: '#999999',
-                        fontSize: '9px'
-                    },
-                    text: 'RTS Consulting Inc.'
-                },
                 chart: {
-                    height: 500,
+                    height: 600,
                     inverted: false,
                     animation: false,
                 },
-
                 title: {
                     text: null
                 },
-
                 subtitle: {
                     text: null
                 },
 
                 xAxis: {
-//                    offset: 30,
                     min: 0,
                     max: 14,
                     opposite: false,
@@ -419,28 +395,16 @@
                     },
                     events: {
                         setExtremes: function (e) {
-
                             if (false && e.trigger === 'navigator') {
-//                            console.log('scrolled');
-//                            console.log(e);
-//                                var _DIV = document.getElementById('orderBar');
-//                                document.getElementById('a1').innerHTML = Math.round(100 * this.min) / 100 + "/" + Math.round(100 * this.max) / 100 + '<br>' + _DIV.clientWidth + "/" + _DIV.scrollLeft;
-
-//                                var _DIV = document.getElementById('orderBar');
                                 document.getElementById('dayOrder' + _DAY_).scrollLeft = 6435 * ((100 * this.min) / 100) / 86;
-//                           .innerHTML = dv.scrollTop + "/" + dv.clientWidth + "/" + dv.scrollLeft +
-//                                '<br>' + collapse1_Chart.xAxis[0].min + '/' + collapse1_Chart.xAxis[0].max;
                             }
                         }
                     }
                 },
-//            scrollbar: {
-//                showFull: false,
-//                liveRedraw: false,
-//                enabled: true
-//            },
                 scrollbar: {
                     enabled: false,
+//                    showFull: false,
+//                    liveRedraw: false,
 //                    barBackgroundColor: 'white',
 //                    barBorderRadius: 7,
 //                    barBorderWidth: 0,
@@ -455,7 +419,6 @@
 //                    trackBorderRadius: 7
                 },
                 yAxis: {
-//                    offset: 40,
                     reversed: false,
                     title: {
                         text: null
@@ -472,7 +435,6 @@
 //                            } else {
 //                                return (new Date((tm - 24 * 60) * 60 * 1000)).toISOString().substr(11, 5) + 'AM';
 //                            }
-//
                             if (this.value < 16 * 60) {
                                 return (new Date((this.value + 8 * 60) * 60 * 1000)).toISOString().substr(11, 8);
                             } else if (this.value == 16 * 60) {
@@ -485,7 +447,6 @@
                     min: 0,
                     max: 1440,
                     tickInterval: 120,
-//            minTickInterval: 10,
                 },
                 plotOptions: {
                     series: {
@@ -537,41 +498,49 @@
                         }
                     }
                 },
-//        tooltip: {
-//            shared: true,
-//            useHTML: true,
-//            headerFormat: '<small>{point.key}</small><table>',
-//            pointFormat: '<tr><td style="color: {series.color}">{series.name}: </td>' +
-//            '<td style="text-align: right"><b>{point.y} EUR</b></td></tr>',
-//            footerFormat: '</table>',
-//            valueDecimals: 2
-//        },
-                tooltip: {
-                    useHTML: false,
-                    formatter: function () {
-//                log(this.key);
-                        return '<b>' + this.key + '</b><br>' +
-                            'During: ' + (new Date((this.point.high - this.point.low ) * 60 * 1000)).toISOString().substr(11, 8);
-                    }
-                },
-                legend: {
-                    enabled: false
-                },
 
                 series: [{
                     type: 'columnrange',
-                    name: 'During',
+                    name: 'Duration',
                     colorByPoint: true,
                     data: seriesDataArray,
                     draggableY: true,
                     dragMinY: 0,
                     dragMaxY: 1440,
-                    dragSensitivity: 10,
-                    dragPrecisionY: 10,
+//                    dragSensitivity: 10,
+                    dragPrecisionY: 5,
 //                    draggableY: true,
 //                    draggableX: false,
-                }]
-
+                }],
+                tooltip: {
+                    useHTML: false,
+                    formatter: function () {
+                        return '<b>' + this.key + '</b><br>' +
+                            'Duration: ' + (new Date((this.point.high - this.point.low ) * 60 * 1000)).toISOString().substr(11, 8);
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: true,
+                    href: 'http://www.rtsperfectplant.com/',
+                    position: {
+                        align: 'right',
+                        x: -10,
+                        verticalAlign: 'bottom',
+                        y: -5
+                    },
+                    style: {
+                        cursor: 'pointer',
+                        color: '#999999',
+                        fontSize: '9px'
+                    },
+                    text: 'RTS Consulting Inc.'
+                },
+                exporting: {
+                    enabled: false
+                },
             });
 
         }
@@ -612,6 +581,69 @@
         function progressClick0(dv, d) {
             if ($('#collapse' + d + '_Chart').hasClass('in')) {
                 $('#collapse' + d + '_Chart').collapse('hide');
+
+            }
+            log(collapse_ChartV[d].series[0].data.length);
+            for (var i = 1; i <= 12; i++) {
+                if (i + collapse_ChartV[d].series[0].xAxis.min <= collapse_ChartV[d].series[0].data.length) {
+                    cards12(d, i, 'F');
+                } else {
+                    cards0(d, i, 'F');
+                }
+
+            }
+
+//            var DIV = document.getElementById('collapse' + d + '_Cards1F');
+//            log(DIV);
+//            cards(1, 1, 'F');
+        }
+
+        function d2t(t) {
+            var v = '';
+            if (t < 16 * 60) {
+                v = (new Date((t + 8 * 60) * 60 * 1000)).toISOString().substr(11, 5);
+            } else if (t == 16 * 60) {
+                v = (new Date(0)).toISOString().substr(11, 5);
+            } else {
+                v = (new Date((t - 16 * 60) * 60 * 1000)).toISOString().substr(11, 5);
+            }
+            return v;
+        }
+
+        function cards12(d, n, side) {
+            if (side == 'F') {
+                var nm = n + collapse_ChartV[d].series[0].xAxis.min - 1;
+//                log('nm: ' + nm);
+                var pr =
+                    '<ul class="list-group">' +
+                    '    <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center; background-color: ' +
+                    chartColors[nm % 10] + '; border-color: ' + chartColors[nm % 10] + ';"><b>' +
+                    collapse_ChartV[d].series[0].data[nm].category + '</b></li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
+                    'Duration: ' + Math.round(collapse_ChartV[d].series[0].data[nm].high - collapse_ChartV[d].series[0].data[nm].low) +
+                    ' min, ' + d2t(collapse_ChartV[d].series[0].data[nm].low) + ' to ' + d2t(collapse_ChartV[d].series[0].data[nm].high) + '</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
+                    'Part No. ---------- Quantity: ------' + '</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
+                    'Mold: ---------------------------------' + '</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
+                    'Press: --------------------------------' + '</li>' +
+                    '</ul>';
+                document.getElementById('collapse' + d + '_Cards' + n + 'F').innerHTML = pr;
+            }
+        }
+
+        function cards0(d, n, side) {
+            if (side == 'F') {
+                var pr =
+                    '<ul class="list-group">' +
+                    '    <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center; background-color:lightgrey; border-color: lightgrey"><b>---</b></li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">---</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">---</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">---</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">---</li>' +
+                    '</ul>';
+                document.getElementById('collapse' + d + '_Cards' + n + 'F').innerHTML = pr;
             }
         }
 
@@ -628,8 +660,8 @@
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
-                '                                    <ul class="list-group">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards1F">' +
+                '                                    <ul class="list-group" >' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -653,7 +685,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards2F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -678,7 +710,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards3F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -703,7 +735,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards4F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -730,7 +762,7 @@
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards5F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -755,7 +787,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards6F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -780,7 +812,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards7F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -805,7 +837,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards8F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -833,7 +865,7 @@
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards9F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -858,7 +890,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards10F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -883,7 +915,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards11F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -908,7 +940,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards12F">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
