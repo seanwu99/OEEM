@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>sche11</title>
+    <meta charset="utf-8">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script id="sap-ui-bootstrap"
+            src="openui5/resources/sap-ui-core.js"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-theme="sap_belize">
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!--<script src="//"></script>-->
+    <script src="Common/bootstrap/bootstrap.min.js"></script>
+    <script src="Common/highcharts/highstock.js"></script>
+
+    <!--<script src="Common/highcharts/draggable-points.js"></script>-->
+    <script src="Common/highcharts/highcharts-more.js"></script>
+    <script src="Highcharts Draggable Points/draggable-points.js"></script>
+
+    <!--<script src="Common/highcharts/draggable-points.js"></script>-->
+    <!--<script src="https://code.highcharts.com/modules/data.js"></script>-->
+
+    <!--<link href='//' rel='stylesheet' type='text/css'>-->
+    <link href='Common/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='Common/font-awesome-4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link href='Common/css/text-cente.css' rel='stylesheet' type='text/css'>
+
+
+    <style>
+
+        .calendar-container {
+            position: relative;
+            width: 242px;
+        }
+
+        .calendar-container header {
+            border-radius: 1em 1em 0 0;
+            /*background: #e66b6b;*/
+            background: #337ab7;
+            color: #fff;
+            padding: 3em 2em;
+        }
+
+        .day {
+            font-size: 5em;
+            font-weight: 900;
+            line-height: 1em;
+        }
+
+        .month {
+            font-size: 2.5em;
+            line-height: 1em;
+            padding-left: .3em;
+            /*padding: 3em 2em;*/
+            /*text-transform: lowercase;*/
+        }
+
+        .calendar {
+            background: #fff;
+            border-radius: 0 0 1em 1em;
+            -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+            box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+            color: #555;
+            display: inline-block;
+            padding: 2em;
+        }
+
+        .calendar td {
+            padding-top: .2em;
+            text-align: center;
+        }
+
+        /*.current-day {*/
+        /*color: #e66b6b;*/
+        /*}*/
+
+        /*.prev-month,*/
+        /*.next-month {*/
+        /*color: #cacaca;*/
+        /*}*/
+
+        .ring-left,
+        .ring-right {
+            position: absolute;
+            top: 165px;
+        }
+
+        .ring-left {
+            left: 2em;
+        }
+
+        .ring-right {
+            right: 2em;
+        }
+
+        .ring-left:before,
+        .ring-left:after,
+        .ring-right:before,
+        .ring-right:after {
+            background: #fff;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+            box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+            content: "";
+            display: inline-block;
+            margin: 8px;
+            height: 32px;
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 1px; /* for vertical scrollbars */
+            height: 10px; /* for horizontal scrollbars */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(200, 200, 200, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(50, 50, 50, 0.1);
+        }
+
+        .flipped {
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        /* flip the pane when hovered */
+        /*.flip-container:hover .flipper, .flip-container.hover .flipper {*/
+        /*transform: rotateY(180deg);*/
+        /*}*/
+
+        /*!* entire container, keeps perspective *!*/
+        .flip-container {
+            perspective: 1000px;
+        }
+
+        .flip-container, .flip-front, .flip-back {
+            /*width: 100%;*/
+            /*padding-left: 2%;*/
+            /*padding-right: 2%;*/
+            /*height: 90%;*/
+        }
+
+        /* flip speed goes here */
+        .flipper {
+            transition: 1s;
+            transform-style: preserve-3d;
+            position: inherit;
+        }
+
+        /* hide back of pane during swap */
+        .flip-front, .flip-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* front pane, placed above back */
+        .flip-front {
+            z-index: 2;
+            /* for firefox 31 */
+            transform: rotateY(0deg);
+        }
+
+        /* back, initially hidden pane */
+        .flip-back {
+            transform: rotateY(180deg);
+        }
+
+        .textBottom {
+            z-index: 99;
+            position: inherit;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            left: 20px;
+            top: 130px;
+        }
+
+    </style>
+
+    <script>
+
+
+        $(document).ready(function () {
+            $( "#draggable" ).draggable();
+            cal();
+//            sectionX();
+            for (var i = 1; i <= Months[tMonth][1]; i++) {
+
+                var seriesDataArray = [], categoriesDataArray = [];
+                var n0 = 1, n1 = Math.random() * 80 + 20;
+                for (var n = n0; n <= n1; n++) {
+
+                    var ss = Math.random() * 20;
+                    seriesDataArray.push([ss * 60, (ss + 2) * 60 + Math.random() * (22 - ss) * 60]);
+                    categoriesDataArray.push(n + ' - ABCD' + Math.round(123456789 * Math.random()));
+                }
+                sectionN(i);
+                dayOrderX(i, seriesDataArray, categoriesDataArray);
+                collapse_Cards(i);
+//                if (i < 5) {
+                collapse_Chart(i, seriesDataArray, categoriesDataArray);
+//                }
+
+            }
+
+            $("#MonthlyCalendar").scrollspy({target: ".navbar", offset: 50});
+            $(".navbar").on("activate.bs.scrollspy", function () {
+                var dayN;
+                for (var n = 1; n <= Months[tMonth][1]; n++) {
+                    dayN = document.getElementById('day' + n);
+                    dayN.style.background = "#ffffff";
+                    if (tm.getDate() != n) {
+                        dayN.style.color = "#000000";
+                    } else {
+                        dayN.style.color = "#ff0000";
+                    }
+
+                }
+                dayN = document.getElementById($(".nav li.active > a").text());
+//            log(dayN.style.color);
+                dayN.style.background = "#cacaca";
+                if ($(".nav li.active > a").text() != 'day' + tm.getDate()) {
+                    dayN.style.color = "#ffffff";
+                } else {
+                    dayN.style.color = "#ff0000";
+                }
+
+
+            });
+            $(".navbar").hide();
+
+            document.getElementById('day' + tm.getDate()).style.background = "#ffffff";
+            document.getElementById('day' + tm.getDate()).style.color = "red";
+
+
+        });
+
+
+        //        var tmDay1 = (new Date(tm - (tDate - 1) * 24 * 3600 * 1000));
+        //        log(tmDay1.getDate());
+        //        log(tmDay1.getMonth());
+        //        log(tmDay1.getDay());
+
+        var Months = [['January', 31], ['February', 28], ['March', 31], ['April', 30], ['May', 31], ['June', 30], ['July', 31], ['August', 31], ['September', 30], ['October', 31], ['November', 30], ['December', 31]];
+        var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+        //        log(dt.toDateString());
+        //        log(dt.toISOString());
+        //        log(dt.toLocaleString());
+        var tm = new Date(new Date() - 0 * 24 * 3600 * 1000);
+        var tDate = tm.getDate();
+        var tMonth = tm.getMonth();
+        var tDays = tm.getDay();
+        var week0 = (new Date(tm - (tDate - 1) * 24 * 3600 * 1000)).getDay();
+
+        var d35 = [];
+        var _today = 'day' + tm.getDate();
+
+        function cal() {
+
+            for (var i = Months[tMonth - 1][1] - week0 + 2; i <= Months[tMonth - 1][1]; i++) {
+                d35.push('L' + i);
+            }
+            for (var i = 1; i <= Months[tMonth][1]; i++) {
+                d35.push('P' + i);
+            }
+            var tt = 1;
+            while (d35.length < 35) {
+//                for (var i = 1; i <= Months[tMonth][1]; i++) {
+                d35.push('N' + tt++);
+//                }
+            }
+//            log(d35);
+            while (d35.length > 35 && d35.length < 42) {
+                d35.push('N' + tt++);
+            }
+
+            var pr1 = '', pr2 = '';
+            for (var i = 1; i <= Months[tMonth][1]; i++) {
+                pr1 += '<li><a href="#section' + i + '">day' + i + '</a></li>';
+                pr2 += '<div id="section' + i + '"></div>';
+            }
+            document.getElementById('sectionX').innerHTML = pr1;
+            document.getElementById('MonthlyCalendar').innerHTML = pr2;
+            var pr = '';
+
+
+            var pr =
+                '<header>' +
+                '<div class="day">' + tDate + '</div>' +
+                '<div class="month">' + Months[tMonth][0] + '</div>' +
+                '</header>' +
+                '<table class="calendar" style="border-collapse: collapse; border-spacing: 0;">' +
+                '<thead style="color: #ff0000; font-size: 90%; font-weight: 700; padding: 0 0 0 0; margin: 0 0 0 0">' +
+                '<tr style="margin: 0 0 0 0">';
+//            var pl = '10px';
+            for (var i = 1; i <= days.length; i++) {
+                pr += '<td style="padding-left: 5px; padding-right: 5px;">' + days[i - 1].substring(0, 2) + '</td>';
+            }
+            pr += '</tr></thead><tbody >';
+            var dd = 0;
+            for (var m = 1; m <= d35.length / 7; m++) {
+                pr += '<tr>';
+                for (var n = 1; n <= 7; n++) {
+                    if (d35[dd].substring(0, 1) == 'P') {
+                        pr += '<td id="day' + d35[dd].substring(1) + '" style="background: #ffffff; cursor:pointer" onclick="location.href = \'#section' + d35[dd].substring(1) + '\'">' +
+                            d35[dd++].substring(1) + '</td>';
+                    } else {
+                        pr += '<td style="color:#cacaca;">' + d35[dd++].substring(1) + '</td>';
+                    }
+                }
+                pr += '</tr>';
+            }
+            pr += '</tbody></table><div class="ring-left"></div><div class="ring-right"></div>';
+            document.getElementById('calendar-container').innerHTML = pr;
+        }
+
+        function sectionN(_day) {
+            var pr = ' <div id="dayOrderX' + _day +
+                '" class="row" style="padding: 15px 0 0 0;"></div>' +
+                '<hr/>' +
+                '<div id="collapse' + _day + '"' + ' style="margin: -15px 0 0 0">' +
+                '<div class="panel panel-default" style="border:0; box-shadow: none;">' +
+                '<div id="collapse' + _day + '_Cards" class="collapse" style="border:0; box-shadow: none;"></div>' +
+                '</div>' +
+                '<div class="panel" style="border:0; box-shadow: none;">' +
+                '<div id="collapse' + _day + '_Chart" class="panel collapse" style="height:600px; margin: 0 0 0 0px;"></div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+            document.getElementById('section' + _day).innerHTML = pr;
+        }
+
+        function dayOrderX(_day, _seriesDataArray, _categoriesDataArray) {
+            var ss = '', ww = 0;
+//            log(_day + "/section/ " + document.getElementById("section" + _day).offsetWidth);
+            for (var i = 0; i < _seriesDataArray.length; i++) {
+//                log(i + '/' + _seriesDataArray[i][1] + '/' + _seriesDataArray[i][0]);
+                ss += '<div class="progress-bar " role="progressbar" style="width:' +
+                    ( 100 + 200 * ( _seriesDataArray[i][1] - _seriesDataArray[i][0] ) / 1440) +
+                    'px; background: ' + chartColors[i % 10] + '" ' +
+                    'onclick="progressClick(' + 'this,' + _day + ',' + i + ')">' +
+                    _categoriesDataArray[i] + '</div>';
+                ww += 100 + 200 * ( _seriesDataArray[i][1] - _seriesDataArray[i][0] ) / 1440;
+            }
+//            log('week0 ' + (_day + week0) % 7);
+            var pr = '<div>' +
+                '<a data-toggle="collapse" data-parent="#collapse' + _day +
+                '" href="#collapse' + _day + '_Cards">' +
+                '<div class="progress-bar" role="progressbar" ' +
+                'style="border-radius: 3px; width:150px; margin: 0px 10px 0px 20px; font-size: 14px" ' +
+                'onclick="progressClick0(' + 'this,' + _day + ')">' +
+                '<i class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b>' +
+                (days[(_day + week0 - 2) % 7]).substring(0, 3) + ',' + (Months[tMonth][0]).substring(0) + ' ' + _day + '</b></div></a>' +
+                '<div id="progress' + _day + '" ' +
+                'style="overflow-x: hidden;" onmouseover="overBar(this)" onmouseout="outOfBar(this)">' +
+                '<div class="progress" style="cursor: pointer;margin: 0px 0px 0px 0px; padding: 0 0 0 0; background: #ccc; width: ' + ww + 'px;">' + ss +
+                '</div></div></div>';
+            document.getElementById('dayOrderX' + _day).innerHTML = pr;
+        }
+
+
+        var collapse_ChartV = [];
+
+        function collapse_Chart(_DAY_, seriesDataArray, categoriesDataArray) {
+            collapse_ChartV[_DAY_] = Highcharts.chart('collapse' + _DAY_ + '_Chart', {
+                chart: {
+                    height: 600,
+                    inverted: false,
+                    animation: false,
+                },
+                title: {
+                    text: null
+                },
+                subtitle: {
+                    text: null
+                },
+
+                xAxis: {
+                    min: 0,
+                    max: 14,
+                    opposite: false,
+                    categories: categoriesDataArray,
+                    labels: {
+                        enabled: true
+                    },
+                    events: {
+                        setExtremes: function (e) {
+                            if (false && e.trigger === 'navigator') {
+                                document.getElementById('dayOrder' + _DAY_).scrollLeft = 6435 * ((100 * this.min) / 100) / 86;
+                            }
+                        }
+                    }
+                },
+                scrollbar: {
+                    enabled: false,
+//                    showFull: false,
+//                    liveRedraw: false,
+//                    barBackgroundColor: 'white',
+//                    barBorderRadius: 7,
+//                    barBorderWidth: 0,
+//                    buttonBackgroundColor: 'white',
+//                    buttonBorderWidth: 0,
+//                    buttonArrowColor: 'white',
+//                    buttonBorderRadius: 7,
+//                    rifleColor: 'yellow',
+//                    trackBackgroundColor: 'white',
+//                    trackBorderWidth: 0,
+//                    trackBorderColor: 'white',
+//                    trackBorderRadius: 7
+                },
+                yAxis: {
+                    reversed: false,
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        formatter: function () {
+//                            var tm = this.value + 8 * 60;
+//                            if (tm < 12 * 60) {
+//                                return (new Date(tm * 60 * 1000)).toISOString().substr(11, 5) + 'AM';
+//                            } else if (tm == 12 * 60) {
+//                                return (new Date(tm * 60 * 1000)).toISOString().substr(11, 5) + 'PM';
+//                            } else if (tm > 12 * 60 && tm < 24 * 60) {
+//                                return (new Date((tm - 12 * 60) * 60 * 1000)).toISOString().substr(11, 5) + 'PM';
+//                            } else {
+//                                return (new Date((tm - 24 * 60) * 60 * 1000)).toISOString().substr(11, 5) + 'AM';
+//                            }
+                            if (this.value < 16 * 60) {
+                                return (new Date((this.value + 8 * 60) * 60 * 1000)).toISOString().substr(11, 8);
+                            } else if (this.value == 16 * 60) {
+                                return (new Date(0)).toISOString().substr(11, 8);
+                            } else {
+                                return (new Date((this.value - 16 * 60) * 60 * 1000)).toISOString().substr(11, 8);
+                            }
+                        }
+                    },
+                    min: 0,
+                    max: 1440,
+                    tickInterval: 120,
+                },
+                plotOptions: {
+                    series: {
+                        events: {
+//                            load: function () {
+//                                //add report div
+////                            var ch = this,
+////                                x = 20,
+////                                y = 57;
+////
+////                            ch.flashText = ch.renderer.text('<div id="flash"><div id="report"></div></div>', x, y + 10, true).attr({
+////                                zIndex: 101
+////                            }).add();
+//                            },
+//                            mouse
+//                            dblclick: function () {
+//                                console.log('dblclick');
+////                            reloadFlash();
+////                            $('#report').html('dbclick on chart');
+//                            },
+//                            click: function () {
+//                                console.log('click chart');
+////                            reloadFlash();
+////                            $('#report').html('click on chart');
+//                            },
+//                            contextmenu: function () {
+////                            reloadFlash();
+////                            $('#report').html('context menu on chart');
+//                            }
+                        },
+                        pointWidth: 20//width of the column bars irrespective of the chart size
+                    },
+                    columnrange: {
+                        dataLabels: {
+                            enabled: true,
+//                        useHTML: true,
+                            formatter: function () {
+                                var v = '';
+//                        return this.y + '/ff/';
+                                if (this.y < 16 * 60) {
+                                    v = (new Date((this.y + 8 * 60) * 60 * 1000)).toISOString().substr(11, 5) + ':00';
+                                } else if (this.y == 16 * 60) {
+                                    v = (new Date(0)).toISOString().substr(11, 8);
+                                } else {
+                                    v = (new Date((this.y - 16 * 60) * 60 * 1000)).toISOString().substr(11, 5) + ':00';
+                                }
+                                return v;
+                            }
+                        }
+                    }
+                },
+
+                series: [{
+                    type: 'columnrange',
+                    name: 'Duration',
+                    colorByPoint: true,
+                    data: seriesDataArray,
+                    draggableY: true,
+                    dragMinY: 0,
+                    dragMaxY: 1440,
+//                    dragSensitivity: 10,
+                    dragPrecisionY: 5,
+//                    draggableY: true,
+//                    draggableX: false,
+                }],
+                tooltip: {
+                    useHTML: false,
+                    formatter: function () {
+                        return '<b>' + this.key + '</b><br>' +
+                            'Duration: ' + (new Date((this.point.high - this.point.low ) * 60 * 1000)).toISOString().substr(11, 8);
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: true,
+                    href: 'http://www.rtsperfectplant.com/',
+                    position: {
+                        align: 'right',
+                        x: -10,
+                        verticalAlign: 'bottom',
+                        y: -5
+                    },
+                    style: {
+                        cursor: 'pointer',
+                        color: '#999999',
+                        fontSize: '9px'
+                    },
+                    text: 'RTS Consulting Inc.'
+                },
+                exporting: {
+                    enabled: false
+                },
+            });
+
+        }
+
+
+        function collapseX(_day) {
+
+        }
+
+        function log(obj) {
+            console.log(obj);
+        }
+
+        function overBar(dv) {
+//            log(dv.style);
+            dv.style.overflowX = "scroll";
+        }
+
+        function orderScroll(dv) {
+//            log(dv.scrollTop + " " + dv.clientWidth);
+//            log(dv.scrollLeft);
+//            document.getElementById('a1').innerHTML = dv.scrollTop + "/" + dv.clientWidth + "/" + dv.scrollLeft +
+//                '<br>' + collapse1_Chart.xAxis[0].min + '/' + collapse1_Chart.xAxis[0].max;
+//        var m = dv.scrollLeft / 6435 * 99;
+//        collapse1_Chart.xAxis.min = m;
+//        collapse1_Chart.xAxis.max = 12 + m;
+//        collapse1_Chart.refresh();
+
+//        collapse1_Chart.xAxis[0].isDirty = true;
+//        collapse1_Chart.redraw(true);
+        }
+
+        function outOfBar(dv) {
+            dv.style.overflowX = "hidden";
+
+        }
+
+        function progressClick0(dv, d) {
+            if ($('#collapse' + d + '_Chart').hasClass('in')) {
+                $('#collapse' + d + '_Chart').collapse('hide');
+
+            }
+            log(collapse_ChartV[d].series[0].data.length);
+            for (var i = 1; i <= 12; i++) {
+                if (i + collapse_ChartV[d].series[0].xAxis.min <= collapse_ChartV[d].series[0].data.length) {
+                    cards12(d, i, 'F');
+                } else {
+                    cards0(d, i, 'F');
+                }
+
+            }
+
+//            var DIV = document.getElementById('collapse' + d + '_Cards1F');
+//            log(DIV);
+//            cards(1, 1, 'F');
+        }
+
+        function d2t(t) {
+            var v = '';
+            if (t < 16 * 60) {
+                v = (new Date((t + 8 * 60) * 60 * 1000)).toISOString().substr(11, 5);
+            } else if (t == 16 * 60) {
+                v = (new Date(0)).toISOString().substr(11, 5);
+            } else {
+                v = (new Date((t - 16 * 60) * 60 * 1000)).toISOString().substr(11, 5);
+            }
+            return v;
+        }
+
+        function cards12(d, n, side) {
+            if (side == 'F') {
+                var nm = n + collapse_ChartV[d].series[0].xAxis.min - 1;
+//                log('nm: ' + nm);
+                var pr =
+                    '<ul class="list-group">' +
+                    '    <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center; background-color: ' +
+                    chartColors[nm % 10] + '; border-color: ' + chartColors[nm % 10] + ';"><b>' +
+                    collapse_ChartV[d].series[0].data[nm].category + '</b></li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
+                    'Duration: ' + Math.round(collapse_ChartV[d].series[0].data[nm].high - collapse_ChartV[d].series[0].data[nm].low) +
+                    ' min, ' + d2t(collapse_ChartV[d].series[0].data[nm].low) + ' to ' + d2t(collapse_ChartV[d].series[0].data[nm].high) + '</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
+                    'Part No. ---------- Quantity: ------' + '</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
+                    'Mold: ---------------------------------' + '</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
+                    'Press: --------------------------------' + '</li>' +
+                    '</ul>';
+                document.getElementById('collapse' + d + '_Cards' + n + 'F').innerHTML = pr;
+            }
+        }
+
+        function cards0(d, n, side) {
+            if (side == 'F') {
+                var pr =
+                    '<ul class="list-group">' +
+                    '    <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center; background-color:lightgrey; border-color: lightgrey"><b>---</b></li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">---</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">---</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">---</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">---</li>' +
+                    '</ul>';
+                document.getElementById('collapse' + d + '_Cards' + n + 'F').innerHTML = pr;
+            }
+        }
+
+        function progressClick(dv, d, i) {
+            if ($('#collapse' + d + '_Chart').hasClass('in') == false) {
+                $('#collapse' + d + '_Cards').collapse('hide');
+                $('#collapse' + d + '_Chart').collapse('show');
+            }
+            collapse_ChartV[d].xAxis[0].setExtremes(i, i + 14);
+        }
+
+        function collapse_Cards(_day) {
+            var pr =
+                '                    <div class="row" style="height: 200px;">' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards1F">' +
+                '                                    <ul class="list-group" >' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group" >' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards2F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards3F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards4F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                    </div>' +
+                '                    <div class="row" style="height: 200px;">' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards5F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards6F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards7F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards8F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                    </div>' +
+                '                    <div class="row" style="height: 200px;">' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards9F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards10F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards11F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                        <div class="flip-container col-sm-3">' +
+                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards12F">' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
+                '                                    </ul>' +
+                '                                </div>' +
+                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                '                                    </div>' +
+                '                                    <ul class="list-group">' +
+                '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;" >...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
+                '                                    </ul>' +
+
+                '                                </div>' +
+                '                            </div>' +
+                '                        </div>' +
+                '                    </div>';
+            document.getElementById('collapse' + _day + '_Cards').innerHTML = pr;
+        }
+
+
+        var chartColors = [
+            '#7cb5ec',
+            '#434348',
+            '#90ed7d',
+            '#f7a35c',
+            '#8085e9',
+            '#f15c80',
+            '#e4d354',
+            '#2B9091',
+            '#f45b5b',
+            '#91e8e1'
+        ]
+
+    </script>
+</head>
+<body>
+
+
+<div class="panel panel-default" style="shadow:0;height:15vh;; margin: 2vh 5% 1vh 5%; background: #f0f0f0">
+    <div class="panel-body" style="text-align: center">
+        <h2>// Header</h2>
+    </div>
+</div>
+
+<!--<nav class="navbar navbar-inverse navbar-fixed-top" style="display: none;">-->
+<nav class="navbar" style="display: none">
+    <div class="container-fluid">
+        <div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" id="sectionX">
+                    <li><a href="#section(x)">day(x)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+
+    <div id="MonthlyCalendar" style="position: relative;  top:2vh; height: 65vh; overflow-x: hidden;">
+
+        <div id="section1">
+            <div id='dayOrderX1' class="row" style="margin: 10px 0px 0px 0px; padding: 10px 0 0 0;">
+                <a data-toggle="collapse" data-parent="#collapse1" href="#collapse1_Cards">
+                    <div class="progress-bar" role="progressbar"
+                         style="font-size:14px; border-radius: 3px; width:150px; margin: 0px 10px 0px 20px;">
+                        <i class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b>Sun, August 1</b>
+                    </div>
+                </a>
+                <div id="progress1" style="overflow-x: auto; ">
+                    <a data-toggle="collapse" data-parent="#collapse1" href="#collapse1_Chart" style="background: #7cb5ec">
+                        <div class="progress" style="width:1900px; margin: 0px 0px 0px 0px; padding: 0 0 0 0; background: #ccc">
+                            <div class="progress-bar " role="progressbar" style="width:100px; background: #ddd;" onclick="progressClick(1,1)">
+                                1 - ACBD111111111
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div id="collapse1" style="margin: -15px 0 0 0">
+
+                <div class="panel panel-default" style="border:0; box-shadow: none;"></div>
+
+                <div class="panel" style="border:0; box-shadow: none;">
+                    <div id="collapse1_Chart" class="panel collapse" style="height:600px; margin: 0 0 0 0px;"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="panel panel-default" style="shadow:0;height:9vh;top: 1vh; margin: 6vh 5% 2vh 5%;background: #f0f0f0">
+    <div class="panel-body" style="text-align: right">
+        RTS Consulting ...
+    </div>
+</div>
+
+
+<div style=" position:absolute; top: 20vh; left: 5%; background: #fff;  margin: 0;">
+
+    <div class="calendar-container" id="calendar-container"></div>
+
+</div>
+
+
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 62vh; height:24vh; width: 13%; left: 5%; background: #f0f0f0">
+    <div id='a1' class="panel-body" style="text-align: right; ">
+        A1
+    </div>
+</div>
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:66vh; width: 13%; left: 82%; background: #f0f0f0">
+    <div class="panel-body" style="text-align: right;">
+        A2
+        <div id="draggable"><p>Drag me </p></div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
