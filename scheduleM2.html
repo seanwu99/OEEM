@@ -192,24 +192,30 @@
 
 
         $(document).ready(function () {
-            $( "#draggable" ).draggable();
+            $("#draggable").draggable();
             cal();
 //            sectionX();
             for (var i = 1; i <= Months[tMonth][1]; i++) {
 
-                var seriesDataArray = [], categoriesDataArray = [];
+                var seriesDataDuration = [], categoriesDataOrder = [], categoriesDataPartNo = [], categoriesDataMold = [], categoriesDataPress = [],
+                    categoriesDataQuantity = [];
                 var n0 = 1, n1 = Math.random() * 80 + 20;
                 for (var n = n0; n <= n1; n++) {
 
                     var ss = Math.random() * 20;
-                    seriesDataArray.push([ss * 60, (ss + 2) * 60 + Math.random() * (22 - ss) * 60]);
-                    categoriesDataArray.push(n + ' - ABCD' + Math.round(123456789 * Math.random()));
+                    seriesDataDuration.push([ss * 60, (ss + 2) * 60 + Math.random() * (22 - ss) * 60]);
+                    categoriesDataOrder.push(n + ' - Order' + Math.round(123456789 * Math.random()));
+                    categoriesDataPartNo.push('PN' + (100000 + Math.round(900000 * Math.random())) + '  ( ' + (100 + 100 * Math.round(500 * Math.random())) + ' )');
+                    categoriesDataMold.push('M' + (1000000 + Math.round(9000000 * Math.random())) + '  ( ' + (100 + 10 * Math.round(100 * Math.random())) + ' )');
+                    categoriesDataPress.push('P' + (1000 + Math.round(9000 * Math.random())) + '  ( ---- )');
+                    categoriesDataQuantity.push(100 + 100 * Math.round(500 * Math.random()));
                 }
+//                log(categoriesDataOrder);
                 sectionN(i);
-                dayOrderX(i, seriesDataArray, categoriesDataArray);
+                dayOrderX(i, seriesDataDuration, categoriesDataOrder);
                 collapse_Cards(i);
 //                if (i < 5) {
-                collapse_Chart(i, seriesDataArray, categoriesDataArray);
+                collapse_Chart(i, seriesDataDuration, categoriesDataOrder, categoriesDataPartNo, categoriesDataMold, categoriesDataPress, categoriesDataQuantity);
 //                }
 
             }
@@ -341,17 +347,17 @@
             document.getElementById('section' + _day).innerHTML = pr;
         }
 
-        function dayOrderX(_day, _seriesDataArray, _categoriesDataArray) {
+        function dayOrderX(_day, _seriesDataDuration, _categoriesDataOrder) {
             var ss = '', ww = 0;
 //            log(_day + "/section/ " + document.getElementById("section" + _day).offsetWidth);
-            for (var i = 0; i < _seriesDataArray.length; i++) {
-//                log(i + '/' + _seriesDataArray[i][1] + '/' + _seriesDataArray[i][0]);
+            for (var i = 0; i < _seriesDataDuration.length; i++) {
+//                log(i + '/' + _seriesDataDuration[i][1] + '/' + _seriesDataDuration[i][0]);
                 ss += '<div class="progress-bar " role="progressbar" style="width:' +
-                    ( 100 + 200 * ( _seriesDataArray[i][1] - _seriesDataArray[i][0] ) / 1440) +
+                    ( 100 + 200 * ( _seriesDataDuration[i][1] - _seriesDataDuration[i][0] ) / 1440) +
                     'px; background: ' + chartColors[i % 10] + '" ' +
                     'onclick="progressClick(' + 'this,' + _day + ',' + i + ')">' +
-                    _categoriesDataArray[i] + '</div>';
-                ww += 100 + 200 * ( _seriesDataArray[i][1] - _seriesDataArray[i][0] ) / 1440;
+                    _categoriesDataOrder[i] + '</div>';
+                ww += 100 + 200 * ( _seriesDataDuration[i][1] - _seriesDataDuration[i][0] ) / 1440;
             }
 //            log('week0 ' + (_day + week0) % 7);
             var pr = '<div>' +
@@ -372,7 +378,7 @@
 
         var collapse_ChartV = [];
 
-        function collapse_Chart(_DAY_, seriesDataArray, categoriesDataArray) {
+        function collapse_Chart(_DAY_, seriesDataDuration, categoriesDataOrder, categoriesDataPartNo, categoriesDataMold, categoriesDataPress, categoriesDataQuantity) {
             collapse_ChartV[_DAY_] = Highcharts.chart('collapse' + _DAY_ + '_Chart', {
                 chart: {
                     height: 600,
@@ -385,23 +391,60 @@
                 subtitle: {
                     text: null
                 },
-
-                xAxis: {
-                    min: 0,
-                    max: 14,
-                    opposite: false,
-                    categories: categoriesDataArray,
-                    labels: {
-                        enabled: true
-                    },
-                    events: {
-                        setExtremes: function (e) {
-                            if (false && e.trigger === 'navigator') {
-                                document.getElementById('dayOrder' + _DAY_).scrollLeft = 6435 * ((100 * this.min) / 100) / 86;
+//
+//                xAxis:
+//                    {
+//                        min: 0,
+//                        max: 14,
+//                        opposite: false,
+//                        categories: categoriesDataOrder,
+//                        labels: {
+//                            enabled: true
+//                        },
+//                        events: {
+//                            setExtremes: function (e) {
+//                                if (false && e.trigger === 'navigator') {
+//                                    document.getElementById('dayOrder' + _DAY_).scrollLeft = 6435 * ((100 * this.min) / 100) / 86;
+//                                }
+//                            }
+//                        }
+//                    },
+                xAxis: [
+                    {
+                        min: 0,
+                        max: 14,
+                        opposite: false,
+                        categories: categoriesDataOrder,
+                        labels: {
+                            enabled: true
+                        },
+                        events: {
+                            setExtremes: function (e) {
+                                if (false && e.trigger === 'navigator') {
+                                    document.getElementById('dayOrder' + _DAY_).scrollLeft = 6435 * ((100 * this.min) / 100) / 86;
+                                }
                             }
-                        }
+                        },
+                        visible: true,
+                    },
+                    {
+                        categories: categoriesDataPartNo,
+                        visible: false,
+                    },
+                    {
+                        categories: categoriesDataMold,
+                        visible: false,
+                    },
+                    {
+                        categories: categoriesDataPress,
+                        visible: false,
+                    },
+                    {
+                        categories: categoriesDataQuantity,
+                        visible: false,
                     }
-                },
+                ],
+
                 scrollbar: {
                     enabled: false,
 //                    showFull: false,
@@ -501,10 +544,11 @@
                 },
 
                 series: [{
+                    visible: true,
                     type: 'columnrange',
                     name: 'Duration',
                     colorByPoint: true,
-                    data: seriesDataArray,
+                    data: seriesDataDuration,
                     draggableY: true,
                     dragMinY: 0,
                     dragMaxY: 1440,
@@ -587,9 +631,9 @@
             log(collapse_ChartV[d].series[0].data.length);
             for (var i = 1; i <= 12; i++) {
                 if (i + collapse_ChartV[d].series[0].xAxis.min <= collapse_ChartV[d].series[0].data.length) {
-                    cards12(d, i, 'F');
+                    cardsF12(d, i, 'F');
                 } else {
-                    cards0(d, i, 'F');
+                    cardsF0(d, i, 'F');
                 }
 
             }
@@ -611,30 +655,36 @@
             return v;
         }
 
-        function cards12(d, n, side) {
+        function cardsF12(d, n, side) {
             if (side == 'F') {
                 var nm = n + collapse_ChartV[d].series[0].xAxis.min - 1;
-//                log('nm: ' + nm);
+//                log('collapse_ChartV[d]');
+//                log(collapse_ChartV[d].xAxis[1].categories);
                 var pr =
-                    '<ul class="list-group">' +
+                    '<ul class="list-group" >' +
                     '    <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center; background-color: ' +
                     chartColors[nm % 10] + '; border-color: ' + chartColors[nm % 10] + ';"><b>' +
-                    collapse_ChartV[d].series[0].data[nm].category + '</b></li>' +
+                    collapse_ChartV[d].xAxis[0].categories[nm] + '</b></li>' +
                     '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
-                    'Duration: ' + Math.round(collapse_ChartV[d].series[0].data[nm].high - collapse_ChartV[d].series[0].data[nm].low) +
-                    ' min, ' + d2t(collapse_ChartV[d].series[0].data[nm].low) + ' to ' + d2t(collapse_ChartV[d].series[0].data[nm].high) + '</li>' +
+                    'from ' + d2t(collapse_ChartV[d].series[0].data[nm].low) + ' to ' + d2t(collapse_ChartV[d].series[0].data[nm].high) +
+                    '  ( ' + Math.round(collapse_ChartV[d].series[0].data[nm].high - collapse_ChartV[d].series[0].data[nm].low) + ' min) ' + '</li>' +
                     '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
-                    'Part No. ---------- Quantity: ------' + '</li>' +
+                    'Part No. ' +
+                    collapse_ChartV[d].xAxis[1].categories[nm] + '</li>' +
                     '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
-                    'Mold: ---------------------------------' + '</li>' +
+                    'Mold: ' +
+                    collapse_ChartV[d].xAxis[2].categories[nm] +
+                    '</li>' +
                     '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
-                    'Press: --------------------------------' + '</li>' +
+                    'Press: ' +
+                    collapse_ChartV[d].xAxis[3].categories[nm] +
+                    '</li>' +
                     '</ul>';
                 document.getElementById('collapse' + d + '_Cards' + n + 'F').innerHTML = pr;
             }
         }
 
-        function cards0(d, n, side) {
+        function cardsF0(d, n, side) {
             if (side == 'F') {
                 var pr =
                     '<ul class="list-group">' +
@@ -661,7 +711,7 @@
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards1F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards1F" ondrop="moldDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group" >' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -983,6 +1033,27 @@
             '#91e8e1'
         ]
 
+        function moldDarg(e) {
+//            log('moldDarg');
+            log('dragging: ' + e.target.id);
+            moldID = e.target.id;
+        }
+
+        function moldDrop(e) {
+            log('moldDrop');
+            var pp = e.target.parentElement.parentElement;
+
+            log(pp.id);
+            log(pp.childNodes);
+//            log('dropped: ' + e.target.id);
+//            moldID = e.target.id;
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        var moldID = '';
     </script>
 </head>
 <body>
@@ -1067,14 +1138,84 @@
         A1
     </div>
 </div>
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:66vh; width: 13%; left: 82%; background: #f0f0f0">
-    <div class="panel-body" style="text-align: right;">
-        A2
-        <div id="draggable"><p>Drag me </p></div>
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:32vh; width: 13%; left: 82%; background: #f0f0f0; overflow-y: auto;"
+     ondrop="moldDrop(event)" ondragover="allowDrop(event)">
+    <table class="table" style="position: inherit; height:50vh;">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Mold</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--<p draggable="true" ondrag="myFunction(event)">Drag me!</p>-->
+        <tr>
+            <td><img src="Common/pics/1-1.png" class="img-rounded" width="50" height="40" id="mold1" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M111111111<br/>200 /H</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-2.png" class="img-rounded" width="50" height="40" id="mold2" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M222222222</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-3.png" class="img-rounded" width="50" height="40" id="mold3" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M333333333</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold4" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M444444444</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-1.png" class="img-rounded" width="50" height="40" id="mold5" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M5555555555</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-2.png" class="img-rounded" width="50" height="40" id="mold6" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M66666666666</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-3.png" class="img-rounded" width="50" height="40" id="mold7" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M7777777777</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M88888888888888</td>
+        </tr>
+        </tbody>
+    </table>
 
-    </div>
 </div>
 
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 55vh; height:30vh; width: 13%; left: 82%; background: #f0f0f0; overflow-y: auto;"
+     ondrop="moldDrop(event)" ondragover="allowDrop(event)">
+    <table class="table" style="position: inherit; height:50vh;">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Press</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><img src="Common/pics/1-1.png" class="img-rounded" width="50" height="40" id="Press1" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>P111111111</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-2.png" class="img-rounded" width="50" height="40" id="Press2" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>P222222222</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-3.png" class="img-rounded" width="50" height="40" id="Press3" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>P333333333</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>P444444444</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
 
 </body>
 </html>

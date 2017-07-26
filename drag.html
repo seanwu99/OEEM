@@ -1,116 +1,51 @@
-<!DOCTYPE html>
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
-
-    <script id="sap-ui-bootstrap"
-            src="openui5/resources/sap-ui-core.js"
-            data-sap-ui-libs="sap.m"
-            data-sap-ui-theme="sap_belize">
-    </script>
-    <script src="Common/highcharts/highstock.js"></script>
-    <script src="Common/highcharts/draggable-points.js"></script>
-
-
-    <title>Highcharts Draggable Points by highcharts</title>
-
-
-    <script>
-
-        $(function () {
-            var chart = new Highcharts.Chart({
-
-                chart: {
-//                    type: 'column',
-                    renderTo: 'container',
-                    animation: false,
-                    inverted: true,
-
-                },
-
-                title: {
-                    text: 'Highcharts draggable points demo'
-                },
-
-                xAxis: {
-//                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-                },
-
-                plotOptions: {
-                    series: {
-                        point: {
-                            events: {
-//                                drag: function (e) {
-//                                    // Returning false stops the drag and drops. Example:
-//                                    /*
-//                                     if (e.newY > 300) {
-//                                     this.y = 300;
-//                                     return false;
-//                                     }
-//                                     */
-//
-////                                    $('#drag').html(
-////                                        'Dragging <b>' + this.series.name + '</b>, <b>' + this.category + '</b> to <b>' + Highcharts.numberFormat(e.y, 2) + '</b>');
-//                                },
-//                                drop: function () {
-////                                    $('#drop').html(
-////                                        'In <b>' + this.series.name + '</b>, <b>' + this.category + '</b> was set to <b>' + Highcharts.numberFormat(this.y, 2) + '</b>');
-//                                }
-                            }
-                        },
-                        stickyTracking: false
-                    },
-//                    column: {
-//                        stacking: 'normal'
-//                    },
-//                    line: {
-//                        cursor: 'ns-resize'
-//                    }
-                },
-
-                tooltip: {
-                    yDecimals: 2
-                },
-
-                series: [{
-                    data: [10,20,30],
-                    //draggableX: true,
-                    draggableY: true,
-//                    dragMinY: 0,
-                    type: 'column',
-//                    minPointLength: 2
-                },
-//                    {
-//                    data: [0, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4].reverse(),
-//                    draggableY: true,
-//                    dragMinY: 0,
-//                    type: 'column',
-//                    minPointLength: 2
-//                },
-//                    {
-//                    data: [0, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-//                    draggableY: true,
-//                    dragMinY: 0,
-//                }
-                ]
-
-            });
-        });//]]>
-
-    </script>
-
-
+    <style>
+        .droptarget {
+            float: left;
+            width: 100px;
+            height: 35px;
+            margin: 15px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
 </head>
-
 <body>
 
-<div id="container" style="height: 400px">
+<p>Drag the p element back and forth between the two rectangles:</p>
 
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">Drag me!</p>
 </div>
-<div id="drag"></div>
-<div id="drop"></div>
 
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<p style="clear:both;"><strong>Note:</strong> drag events are not supported in Internet Explorer 8 and earlier versions or Safari 5.1 and earlier versions.</p>
+
+<p id="demo"></p>
+
+<script>
+    function dragStart(event) {
+        event.dataTransfer.setData("Text", event.target.id);
+    }
+
+    function dragging(event) {
+        document.getElementById("demo").innerHTML = "The p element is being dragged";
+    }
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("Text");
+        event.target.appendChild(document.getElementById(data));
+        document.getElementById("demo").innerHTML = "The p element was dropped";
+    }
+</script>
 
 </body>
 </html>
