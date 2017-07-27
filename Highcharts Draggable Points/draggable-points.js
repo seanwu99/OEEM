@@ -95,11 +95,11 @@
                 var dragMinY = series.options.dragMinY;
                 var dragMaxY = series.options.dragMaxY;
 
-                if (newHigh == dragMaxY) {
+                if ((changeLow == 0) && newHigh == dragMaxY) {
                     if (newHigh - newLow < newWidth) {
                         newLow = newHigh - newWidth;
                     }
-                } else if (newLow == dragMinY) {
+                } else if ((changeLow == 0) && newLow == dragMinY) {
                     if (newHigh - newLow < newWidth) {
                         newHigh = newLow + newWidth;
                     }

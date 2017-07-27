@@ -9,8 +9,8 @@
             data-sap-ui-libs="sap.m"
             data-sap-ui-theme="sap_belize">
     </script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+    <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 
     <!--<script src="//"></script>-->
     <script src="Common/bootstrap/bootstrap.min.js"></script>
@@ -192,30 +192,27 @@
 
 
         $(document).ready(function () {
-            $("#draggable").draggable();
+//            $("#draggable").draggable();
             cal();
 //            sectionX();
             for (var i = 1; i <= Months[tMonth][1]; i++) {
 
-                var seriesDataDuration = [], categoriesDataOrder = [], categoriesDataPartNo = [], categoriesDataMold = [], categoriesDataPress = [],
-                    categoriesDataQuantity = [];
+                var seriesDataDuration = [], categoriesDataOrder = [], categoriesDataPartNo = [], categoriesDataMold = [], categoriesDataPress = [];
                 var n0 = 1, n1 = Math.random() * 80 + 20;
                 for (var n = n0; n <= n1; n++) {
 
                     var ss = Math.random() * 20;
                     seriesDataDuration.push([ss * 60, (ss + 2) * 60 + Math.random() * (22 - ss) * 60]);
                     categoriesDataOrder.push(n + ' - Order' + Math.round(123456789 * Math.random()));
-                    categoriesDataPartNo.push('PN' + (100000 + Math.round(900000 * Math.random())) + '  ( ' + (100 + 100 * Math.round(500 * Math.random())) + ' )');
-                    categoriesDataMold.push('M' + (1000000 + Math.round(9000000 * Math.random())) + '  ( ' + (100 + 10 * Math.round(100 * Math.random())) + ' )');
-                    categoriesDataPress.push('P' + (1000 + Math.round(9000 * Math.random())) + '  ( ---- )');
-                    categoriesDataQuantity.push(100 + 100 * Math.round(500 * Math.random()));
+                    categoriesDataPartNo.push('PN' + (100000 + Math.round(900000 * Math.random())) + '/' + (100 + 100 * Math.round(500 * Math.random())));
+                    categoriesDataMold.push('M' + (1000000 + Math.round(9000000 * Math.random())) + '/' + (100 + 10 * Math.round(100 * Math.random())));
+                    categoriesDataPress.push('P' + (1000 + Math.round(9000 * Math.random())) + '/------');
                 }
-//                log(categoriesDataOrder);
                 sectionN(i);
                 dayOrderX(i, seriesDataDuration, categoriesDataOrder);
                 collapse_Cards(i);
 //                if (i < 5) {
-                collapse_Chart(i, seriesDataDuration, categoriesDataOrder, categoriesDataPartNo, categoriesDataMold, categoriesDataPress, categoriesDataQuantity);
+                collapse_Chart(i, seriesDataDuration, categoriesDataOrder, categoriesDataPartNo, categoriesDataMold, categoriesDataPress);
 //                }
 
             }
@@ -248,7 +245,7 @@
 
             document.getElementById('day' + tm.getDate()).style.background = "#ffffff";
             document.getElementById('day' + tm.getDate()).style.color = "red";
-
+            moldTable();
 
         });
 
@@ -334,13 +331,13 @@
         function sectionN(_day) {
             var pr = ' <div id="dayOrderX' + _day +
                 '" class="row" style="padding: 15px 0 0 0;"></div>' +
-                '<hr/>' +
+                '<br/>' +
                 '<div id="collapse' + _day + '"' + ' style="margin: -15px 0 0 0">' +
                 '<div class="panel panel-default" style="border:0; box-shadow: none;">' +
                 '<div id="collapse' + _day + '_Cards" class="collapse" style="border:0; box-shadow: none;"></div>' +
                 '</div>' +
                 '<div class="panel" style="border:0; box-shadow: none;">' +
-                '<div id="collapse' + _day + '_Chart" class="panel collapse" style="height:600px; margin: 0 0 0 0px;"></div>' +
+                '<div id="collapse' + _day + '_Chart" class="panel collapse" style="height:600px; margin: 0 0 0 0px; border:0; box-shadow: none;"></div>' +
                 '</div>' +
                 '</div>' +
                 '</div>';
@@ -378,13 +375,18 @@
 
         var collapse_ChartV = [];
 
-        function collapse_Chart(_DAY_, seriesDataDuration, categoriesDataOrder, categoriesDataPartNo, categoriesDataMold, categoriesDataPress, categoriesDataQuantity) {
+        function collapse_Chart(_DAY_, seriesDataDuration, categoriesDataOrder, categoriesDataPartNo, categoriesDataMold, categoriesDataPress) {
             collapse_ChartV[_DAY_] = Highcharts.chart('collapse' + _DAY_ + '_Chart', {
                 chart: {
+                    marginTop: 100,
+                    marginBottom: 50,
+//                    marginLeft: 50,
+//                    marginRight: 50,
                     height: 600,
                     inverted: false,
                     animation: false,
                 },
+
                 title: {
                     text: null
                 },
@@ -413,19 +415,20 @@
                     {
                         min: 0,
                         max: 14,
-                        opposite: false,
+                        visible: true,
+                        opposite: true,
                         categories: categoriesDataOrder,
                         labels: {
                             enabled: true
                         },
                         events: {
                             setExtremes: function (e) {
+                                log('setExtremes/xAxis');
                                 if (false && e.trigger === 'navigator') {
                                     document.getElementById('dayOrder' + _DAY_).scrollLeft = 6435 * ((100 * this.min) / 100) / 86;
                                 }
                             }
                         },
-                        visible: true,
                     },
                     {
                         categories: categoriesDataPartNo,
@@ -437,10 +440,6 @@
                     },
                     {
                         categories: categoriesDataPress,
-                        visible: false,
-                    },
-                    {
-                        categories: categoriesDataQuantity,
                         visible: false,
                     }
                 ],
@@ -463,7 +462,7 @@
 //                    trackBorderRadius: 7
                 },
                 yAxis: {
-                    reversed: false,
+                    reversed: true,
                     title: {
                         text: null
                     },
@@ -554,6 +553,7 @@
                     dragMaxY: 1440,
 //                    dragSensitivity: 10,
                     dragPrecisionY: 5,
+                    cursor: 'ns-resize',
 //                    draggableY: true,
 //                    draggableX: false,
                 }],
@@ -568,7 +568,7 @@
                     enabled: false
                 },
                 credits: {
-                    enabled: true,
+                    enabled: false,
                     href: 'http://www.rtsperfectplant.com/',
                     position: {
                         align: 'right',
@@ -660,24 +660,29 @@
                 var nm = n + collapse_ChartV[d].series[0].xAxis.min - 1;
 //                log('collapse_ChartV[d]');
 //                log(collapse_ChartV[d].xAxis[1].categories);
+//                var pn=collapse_ChartV[d].xAxis[1].categories[nm]
                 var pr =
                     '<ul class="list-group" >' +
                     '    <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center; background-color: ' +
                     chartColors[nm % 10] + '; border-color: ' + chartColors[nm % 10] + ';"><b>' +
                     collapse_ChartV[d].xAxis[0].categories[nm] + '</b></li>' +
                     '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
-                    'from ' + d2t(collapse_ChartV[d].series[0].data[nm].low) + ' to ' + d2t(collapse_ChartV[d].series[0].data[nm].high) +
-                    '  ( ' + Math.round(collapse_ChartV[d].series[0].data[nm].high - collapse_ChartV[d].series[0].data[nm].low) + ' min) ' + '</li>' +
+                    'From ' + d2t(collapse_ChartV[d].series[0].data[nm].low) + ' To ' + d2t(collapse_ChartV[d].series[0].data[nm].high) +
+                    ' ,  ' + Math.round(collapse_ChartV[d].series[0].data[nm].high - collapse_ChartV[d].series[0].data[nm].low) + ' min' + '</li>' +
                     '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
-                    'Part No. ' +
-                    collapse_ChartV[d].xAxis[1].categories[nm] + '</li>' +
+                    'Part No.: ' +
+                    collapse_ChartV[d].xAxis[1].categories[nm].split("/")[0] + ' , ' +
+                    collapse_ChartV[d].xAxis[1].categories[nm].split("/")[1] +
+                    '</li>' +
                     '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
                     'Mold: ' +
-                    collapse_ChartV[d].xAxis[2].categories[nm] +
+                    collapse_ChartV[d].xAxis[2].categories[nm].split("/")[0] + ' , ' +
+                    collapse_ChartV[d].xAxis[2].categories[nm].split("/")[1] +
                     '</li>' +
                     '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">' +
                     'Press: ' +
-                    collapse_ChartV[d].xAxis[3].categories[nm] +
+                    collapse_ChartV[d].xAxis[3].categories[nm].split("/")[0] + ' , ' +
+                    collapse_ChartV[d].xAxis[3].categories[nm].split("/")[1] +
                     '</li>' +
                     '</ul>';
                 document.getElementById('collapse' + d + '_Cards' + n + 'F').innerHTML = pr;
@@ -707,7 +712,7 @@
         }
 
         function collapse_Cards(_day) {
-            var pr =
+            var pr = '<br/>' +
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
@@ -1019,6 +1024,30 @@
             document.getElementById('collapse' + _day + '_Cards').innerHTML = pr;
         }
 
+        function moldTable() {
+            pr = '<thead><tr><th></th><th>Mold</th></tr></thead><tbody>';
+//            categoriesDataOrder.push(n + ' - Order' + Math.round(123456789 * Math.random()));
+//            categoriesDataPartNo.push('PN' + (100000 + Math.round(900000 * Math.random())) + '/' + (100 + 100 * Math.round(500 * Math.random())));
+//            categoriesDataMold.push('M' + (1000000 + Math.round(9000000 * Math.random())) + '/' + (100 + 10 * Math.round(100 * Math.random())));
+//            categoriesDataPress.push('P' + (1000 + Math.round(9000 * Math.random())) + '/------');
+
+            for (var i = 0; i < 20; i++) {
+
+                var mold = 'M' + (1000000 + Math.round(9000000 * Math.random())) + '/' + (100 + 10 * Math.round(100 * Math.random()));
+                pr = pr +
+                    '<tr>' +
+                    '<td><img src="Common/pics/' +
+                    (1 + Math.round(14 * Math.random())) +
+                    '.png" class="img-rounded" width="50" height="40" id="mold1" ondrag="moldDarg(event)" draggable="true"></td>' +
+                    '<td>' +
+                    mold.split("/")[0] +
+                    '<br/>' +
+                    mold.split("/")[1] +
+                    '</td></tr>';
+            }
+            pr = pr + '</tbody>';
+            document.getElementById('moldTable').innerHTML = pr;
+        }
 
         var chartColors = [
             '#7cb5ec',
@@ -1103,7 +1132,7 @@
                 </div>
             </div>
 
-            <hr/>
+            <!--<hr/>-->
 
             <div id="collapse1" style="margin: -15px 0 0 0">
 
@@ -1138,9 +1167,9 @@
         A1
     </div>
 </div>
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:32vh; width: 13%; left: 82%; background: #f0f0f0; overflow-y: auto;"
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:42vh; width: 13%; left: 82%; background: #f0f0f0; overflow-y: auto;"
      ondrop="moldDrop(event)" ondragover="allowDrop(event)">
-    <table class="table" style="position: inherit; height:50vh;">
+    <table id="moldTable" class="table" style="position: inherit; height:50vh;">
         <thead>
         <tr>
             <th></th>
@@ -1148,7 +1177,6 @@
         </tr>
         </thead>
         <tbody>
-        <!--<p draggable="true" ondrag="myFunction(event)">Drag me!</p>-->
         <tr>
             <td><img src="Common/pics/1-1.png" class="img-rounded" width="50" height="40" id="mold1" ondrag="moldDarg(event)" draggable="true"></td>
             <td>M111111111<br/>200 /H</td>
@@ -1181,14 +1209,38 @@
             <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
             <td>M88888888888888</td>
         </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M88888888888888</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M88888888888888</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M88888888888888</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M88888888888888</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M88888888888888</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>M88888888888888</td>
+        </tr>
         </tbody>
     </table>
 
 </div>
 
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 55vh; height:30vh; width: 13%; left: 82%; background: #f0f0f0; overflow-y: auto;"
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 65vh; height:20vh; width: 13%; left: 82%; background: #f0f0f0; overflow-y: auto;"
      ondrop="moldDrop(event)" ondragover="allowDrop(event)">
-    <table class="table" style="position: inherit; height:50vh;">
+    <table id="pressTable" class="table" style="position: inherit; height:50vh;">
         <thead>
         <tr>
             <th></th>
@@ -1207,6 +1259,30 @@
         <tr>
             <td><img src="Common/pics/1-3.png" class="img-rounded" width="50" height="40" id="Press3" ondrag="moldDarg(event)" draggable="true"></td>
             <td>P333333333</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>P444444444</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>P444444444</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>P444444444</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>P444444444</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>P444444444</td>
+        </tr>
+        <tr>
+            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
+            <td>P444444444</td>
         </tr>
         <tr>
             <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
