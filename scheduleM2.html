@@ -204,12 +204,8 @@
                     var pm = (1000000 + Math.round(9000000 * Math.random())) + '/' + (100 + 10 * Math.round(100 * Math.random()));
                     var ss = 5 * Math.round(parseInt(pn.split("/")[1]) / parseInt(pm.split("/")[1]) * 12);
                     if (ss > 1440) ss = 1440;
-//                    log();
-
-//                    seriesDataDuration.push([ss * 60, (ss + 2) * 60 + Math.random() * (22 - ss) * 60]);
                     var s0 = (1440 - ss) * Math.random();
                     seriesDataDuration.push([s0, s0 + ss]);
-//                    log(s0 + '/' + ss);
                     categoriesDataOrder.push(n + ' - Order' + Math.round(123456789 * Math.random()));
                     categoriesDataPartNo.push('PN' + pn.split("/")[0] + '/' + pn.split("/")[1]);
                     categoriesDataMold.push('M' + pm.split("/")[0] + '/' + pm.split("/")[1]);
@@ -636,7 +632,7 @@
                 $('#collapse' + d + '_Chart').collapse('hide');
 
             }
-            log(collapse_ChartV[d].series[0].data.length);
+//            log(collapse_ChartV[d].series[0].data.length);
             for (var i = 1; i <= 12; i++) {
                 if (i + collapse_ChartV[d].series[0].xAxis.min <= collapse_ChartV[d].series[0].data.length) {
                     cardsF12(d, i, 'F');
@@ -1091,19 +1087,19 @@
 
         function moldDarg(e) {
 //            log('moldDarg');
-            log('dragging: ' + e.target.id);
+//            log('dragging: ' + e.target.id);
             dragID = 'moldDarg:' + e.target.id;
         }
 
         function pressDarg(e) {
 //            log('moldDarg');
-            log('dragging: ' + e.target.id);
+//            log('dragging: ' + e.target.id);
             dragID = 'pressDarg:' + e.target.id;
         }
-        
+
 
         function mpDrop(e) {
-            log('mpDrop');
+//            log('mpDrop');
 //            log(e);
             var pp = e.target.parentElement.parentElement;
             var id = pp.id;
@@ -1114,6 +1110,30 @@
                     var chart = collapse_ChartV[parseInt(id.split("collapse")[1])];
                     chart.xAxis[2].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1] = dragID.split(":")[1];
                     //todo
+
+                    var data = [];
+                    $.each(chart.series[0].data, function (i, _data) {
+                        data.push([_data.low, _data.high]);
+                    });
+//                    log('data');
+//                    log(data);
+//                    log(chart.series[0].data[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1]);
+                    var pn = chart.xAxis[1].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1];
+                    //                    var pn = (100000 + Math.round(900000 * Math.random())) + '/' + (100 + 100 * Math.round(100 * Math.random()));
+                    var pm = chart.xAxis[2].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1];
+
+                    var ss = 5 * Math.round(parseInt(pn.split("/")[1]) / parseInt(pm.split("/")[1]) * 12);
+                    if (ss > 1440) ss = 1440;
+                    var s0 = (1440 - ss) * Math.random();
+//                    log("ss >>>" + s0 + '   ' + ss);
+                    data[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1] = [s0, s0 + ss];
+//                    data[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1].high = ss;
+                    chart.series[0].update({
+                        data: data
+                    }, true);
+//                    seriesDataDuration.push([s0, s0 + ss]);
+
+
                 } else if (dragID.split(":")[0] == "pressDarg") {
                     var collapse = parseInt(id.split("collapse")[1]);
                     var Cards = parseInt(id.split("Cards")[1]);
