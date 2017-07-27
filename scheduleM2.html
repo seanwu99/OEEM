@@ -200,12 +200,19 @@
                 var seriesDataDuration = [], categoriesDataOrder = [], categoriesDataPartNo = [], categoriesDataMold = [], categoriesDataPress = [];
                 var n0 = 1, n1 = Math.random() * 80 + 20;
                 for (var n = n0; n <= n1; n++) {
+                    var pn = (100000 + Math.round(900000 * Math.random())) + '/' + (100 + 100 * Math.round(100 * Math.random()));
+                    var pm = (1000000 + Math.round(9000000 * Math.random())) + '/' + (100 + 10 * Math.round(100 * Math.random()));
+                    var ss = 5 * Math.round(parseInt(pn.split("/")[1]) / parseInt(pm.split("/")[1]) * 12);
+                    if (ss > 1440) ss = 1440;
+//                    log();
 
-                    var ss = Math.random() * 20;
-                    seriesDataDuration.push([ss * 60, (ss + 2) * 60 + Math.random() * (22 - ss) * 60]);
+//                    seriesDataDuration.push([ss * 60, (ss + 2) * 60 + Math.random() * (22 - ss) * 60]);
+                    var s0 = (1440 - ss) * Math.random();
+                    seriesDataDuration.push([s0, s0 + ss]);
+//                    log(s0 + '/' + ss);
                     categoriesDataOrder.push(n + ' - Order' + Math.round(123456789 * Math.random()));
-                    categoriesDataPartNo.push('PN' + (100000 + Math.round(900000 * Math.random())) + '/' + (100 + 100 * Math.round(500 * Math.random())));
-                    categoriesDataMold.push('M' + (1000000 + Math.round(9000000 * Math.random())) + '/' + (100 + 10 * Math.round(100 * Math.random())));
+                    categoriesDataPartNo.push('PN' + pn.split("/")[0] + '/' + pn.split("/")[1]);
+                    categoriesDataMold.push('M' + pm.split("/")[0] + '/' + pm.split("/")[1]);
                     categoriesDataPress.push('P' + (1000 + Math.round(9000 * Math.random())) + '/------');
                 }
                 sectionN(i);
@@ -246,6 +253,7 @@
             document.getElementById('day' + tm.getDate()).style.background = "#ffffff";
             document.getElementById('day' + tm.getDate()).style.color = "red";
             moldTable();
+            pressTable();
 
         });
 
@@ -716,7 +724,7 @@
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards1F" ondrop="moldDrop(event)" ondragover="allowDrop(event)">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards1F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group" >' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -741,7 +749,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards2F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards2F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -766,7 +774,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards3F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards3F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -791,7 +799,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards4F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards4F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -818,7 +826,7 @@
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards5F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards5F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -843,7 +851,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards6F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards6F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -868,7 +876,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards7F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards7F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -893,7 +901,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards8F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards8F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -921,7 +929,7 @@
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards9F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards9F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -946,7 +954,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards10F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards10F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -971,7 +979,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards11F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards11F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -996,7 +1004,7 @@
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
                 '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards12F">' +
+                '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards12F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group">' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
@@ -1025,28 +1033,47 @@
         }
 
         function moldTable() {
-            pr = '<thead><tr><th></th><th>Mold</th></tr></thead><tbody>';
-//            categoriesDataOrder.push(n + ' - Order' + Math.round(123456789 * Math.random()));
-//            categoriesDataPartNo.push('PN' + (100000 + Math.round(900000 * Math.random())) + '/' + (100 + 100 * Math.round(500 * Math.random())));
-//            categoriesDataMold.push('M' + (1000000 + Math.round(9000000 * Math.random())) + '/' + (100 + 10 * Math.round(100 * Math.random())));
-//            categoriesDataPress.push('P' + (1000 + Math.round(9000 * Math.random())) + '/------');
-
+            var pr = '<thead><tr><th></th><th>Mold</th></tr></thead><tbody>';
             for (var i = 0; i < 20; i++) {
 
                 var mold = 'M' + (1000000 + Math.round(9000000 * Math.random())) + '/' + (100 + 10 * Math.round(100 * Math.random()));
                 pr = pr +
                     '<tr>' +
                     '<td><img src="Common/pics/' +
-                    (1 + Math.round(14 * Math.random())) +
-                    '.png" class="img-rounded" width="50" height="40" id="mold1" ondrag="moldDarg(event)" draggable="true"></td>' +
+                    (1 + Math.round(19 * Math.random())) +
+                    '.png" class="img-rounded" width="60" height="60" id="' +
+                    mold +
+                    '" ondrag="moldDarg(event)" draggable="true"></td>' +
                     '<td>' +
                     mold.split("/")[0] +
                     '<br/>' +
                     mold.split("/")[1] +
+                    '<br/>' +
+                    'per hour' +
                     '</td></tr>';
             }
             pr = pr + '</tbody>';
             document.getElementById('moldTable').innerHTML = pr;
+        }
+
+        function pressTable() {
+            var pr = '<thead><tr><th></th><th>Press</th></tr></thead><tbody>';
+            for (var i = 0; i < 10; i++) {
+
+                var press = 'P' + (1000 + Math.round(9000 * Math.random())) + '/------';
+                pr = pr +
+                    '<tr>' +
+                    '<td><img src="Common/pics/tm.png" class="img-rounded" width="60" height="60" id="' +
+                    press +
+                    '" ondrag="pressDarg(event)" draggable="true"></td>' +
+                    '<td>' +
+                    press.split("/")[0] +
+                    '<br/>' +
+                    press.split("/")[1] +
+                    '</td></tr>';
+            }
+            pr = pr + '</tbody>';
+            document.getElementById('pressTable').innerHTML = pr;
         }
 
         var chartColors = [
@@ -1065,24 +1092,44 @@
         function moldDarg(e) {
 //            log('moldDarg');
             log('dragging: ' + e.target.id);
-            moldID = e.target.id;
+            dragID = 'moldDarg:' + e.target.id;
         }
 
-        function moldDrop(e) {
-            log('moldDrop');
-            var pp = e.target.parentElement.parentElement;
+        function pressDarg(e) {
+//            log('moldDarg');
+            log('dragging: ' + e.target.id);
+            dragID = 'pressDarg:' + e.target.id;
+        }
+        
 
-            log(pp.id);
-            log(pp.childNodes);
-//            log('dropped: ' + e.target.id);
-//            moldID = e.target.id;
+        function mpDrop(e) {
+            log('mpDrop');
+//            log(e);
+            var pp = e.target.parentElement.parentElement;
+            var id = pp.id;
+            if (id != null) {
+                if (dragID.split(":")[0] == "moldDarg") {
+                    var collapse = parseInt(id.split("collapse")[1]);
+                    var Cards = parseInt(id.split("Cards")[1]);
+                    var chart = collapse_ChartV[parseInt(id.split("collapse")[1])];
+                    chart.xAxis[2].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1] = dragID.split(":")[1];
+                    //todo
+                } else if (dragID.split(":")[0] == "pressDarg") {
+                    var collapse = parseInt(id.split("collapse")[1]);
+                    var Cards = parseInt(id.split("Cards")[1]);
+                    var chart = collapse_ChartV[parseInt(id.split("collapse")[1])];
+                    chart.xAxis[3].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1] = dragID.split(":")[1];
+                }
+
+                cardsF12(collapse, Cards, 'F');
+            }
         }
 
         function allowDrop(event) {
             event.preventDefault();
         }
 
-        var moldID = '';
+        var dragID = '';
     </script>
 </head>
 <body>
@@ -1168,7 +1215,7 @@
     </div>
 </div>
 <div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:42vh; width: 13%; left: 82%; background: #f0f0f0; overflow-y: auto;"
-     ondrop="moldDrop(event)" ondragover="allowDrop(event)">
+     ondrop="mpDrop(event)" ondragover="allowDrop(event)">
     <table id="moldTable" class="table" style="position: inherit; height:50vh;">
         <thead>
         <tr>
@@ -1179,59 +1226,7 @@
         <tbody>
         <tr>
             <td><img src="Common/pics/1-1.png" class="img-rounded" width="50" height="40" id="mold1" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M111111111<br/>200 /H</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-2.png" class="img-rounded" width="50" height="40" id="mold2" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M222222222</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-3.png" class="img-rounded" width="50" height="40" id="mold3" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M333333333</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold4" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M444444444</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-1.png" class="img-rounded" width="50" height="40" id="mold5" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M5555555555</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-2.png" class="img-rounded" width="50" height="40" id="mold6" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M66666666666</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-3.png" class="img-rounded" width="50" height="40" id="mold7" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M7777777777</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M88888888888888</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M88888888888888</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M88888888888888</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M88888888888888</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M88888888888888</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M88888888888888</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="mold8" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M88888888888888</td>
+            <td>M111111111<br/>200</td>
         </tr>
         </tbody>
     </table>
@@ -1239,7 +1234,7 @@
 </div>
 
 <div class="panel panel-default" style="shadow:0; position: absolute; top: 65vh; height:20vh; width: 13%; left: 82%; background: #f0f0f0; overflow-y: auto;"
-     ondrop="moldDrop(event)" ondragover="allowDrop(event)">
+     ondrop="mpDrop(event)" ondragover="allowDrop(event)">
     <table id="pressTable" class="table" style="position: inherit; height:50vh;">
         <thead>
         <tr>
@@ -1249,44 +1244,8 @@
         </thead>
         <tbody>
         <tr>
-            <td><img src="Common/pics/1-1.png" class="img-rounded" width="50" height="40" id="Press1" ondrag="moldDarg(event)" draggable="true"></td>
+            <td><img src="Common/pics/tm.png" class="img-rounded" id="Press1" width="50" height="50" ondrag="pressDarg(event)" draggable="true"></td>
             <td>P111111111</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-2.png" class="img-rounded" width="50" height="40" id="Press2" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>P222222222</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-3.png" class="img-rounded" width="50" height="40" id="Press3" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>P333333333</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>P444444444</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>P444444444</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>P444444444</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>P444444444</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>P444444444</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>P444444444</td>
-        </tr>
-        <tr>
-            <td><img src="Common/pics/1-4.png" class="img-rounded" width="50" height="40" id="Press4" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>P444444444</td>
         </tr>
         </tbody>
     </table>
