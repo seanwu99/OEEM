@@ -31,12 +31,12 @@
 
     <style>
 
-        .calendar-container {
+        .calendarPAD {
             position: relative;
             width: 242px;
         }
 
-        .calendar-container header {
+        .calendarPAD header {
             border-radius: 1em 1em 0 0;
             /*background: #e66b6b;*/
             background: #337ab7;
@@ -213,7 +213,7 @@
                 }
                 sectionN(i);
                 dayOrderX(i, seriesDataDuration, categoriesDataOrder);
-                collapse_Cards(i);
+                collapseCards_innerHTML(i);
 //                if (i < 5) {
                 collapse_Chart(i, seriesDataDuration, categoriesDataOrder, categoriesDataPartNo, categoriesDataMold, categoriesDataPress);
 //                }
@@ -248,8 +248,8 @@
 
             document.getElementById('day' + tm.getDate()).style.background = "#ffffff";
             document.getElementById('day' + tm.getDate()).style.color = "red";
-            moldTable();
-            pressTable();
+            tableMold_innerHTML();
+            tablePress_innerHTML();
 
         });
 
@@ -272,6 +272,7 @@
 
         var d35 = [];
         var _today = 'day' + tm.getDate();
+
 
         function cal() {
 
@@ -329,7 +330,7 @@
                 pr += '</tr>';
             }
             pr += '</tbody></table><div class="ring-left"></div><div class="ring-right"></div>';
-            document.getElementById('calendar-container').innerHTML = pr;
+            document.getElementById('calendarPAD').innerHTML = pr;
         }
 
         function sectionN(_day) {
@@ -356,7 +357,7 @@
                 ss += '<div class="progress-bar " role="progressbar" style="width:' +
                     ( 100 + 200 * ( _seriesDataDuration[i][1] - _seriesDataDuration[i][0] ) / 1440) +
                     'px; background: ' + chartColors[i % 10] + '" ' +
-                    'onclick="progressClick(' + 'this,' + _day + ',' + i + ')">' +
+                    'onclick="orderBar_Click(' + 'this,' + _day + ',' + i + ')">' +
                     _categoriesDataOrder[i] + '</div>';
                 ww += 100 + 200 * ( _seriesDataDuration[i][1] - _seriesDataDuration[i][0] ) / 1440;
             }
@@ -366,11 +367,12 @@
                 '" href="#collapse' + _day + '_Cards">' +
                 '<div class="progress-bar" role="progressbar" ' +
                 'style="border-radius: 3px; width:150px; margin: 0px 10px 0px 20px; font-size: 14px" ' +
-                'onclick="progressClick0(' + 'this,' + _day + ')">' +
+                'onclick="dayBar_Click(' + 'this,' + _day + ')">' +
                 '<i class="fa fa-calendar-check-o  fa-1x" style="width: 30px"></i><b>' +
                 (days[(_day + week0 - 2) % 7]).substring(0, 3) + ',' + (Months[tMonth][0]).substring(0) + ' ' + _day + '</b></div></a>' +
                 '<div id="progress' + _day + '" ' +
-                'style="overflow-x: hidden;" onmouseover="overBar(this)" onmouseout="outOfBar(this)">' +
+                'style="overflow-x: hidden;" onmouseover="orderBar_onmouseover(this)" onmouseout="orderBar_onmouseout(this)">' +
+                //                'style="overflow-x: hidden;" onmouseover=function () {this.style.overflowX = "scroll";  } onmouseout="outOfBar(this)">' +
                 '<div class="progress" style="cursor: pointer;margin: 0px 0px 0px 0px; padding: 0 0 0 0; background: #ccc; width: ' + ww + 'px;">' + ss +
                 '</div></div></div>';
             document.getElementById('dayOrderX' + _day).innerHTML = pr;
@@ -603,7 +605,7 @@
             console.log(obj);
         }
 
-        function overBar(dv) {
+        function orderBar_onmouseover(dv) {
 //            log(dv.style);
             dv.style.overflowX = "scroll";
         }
@@ -622,29 +624,23 @@
 //        collapse1_Chart.redraw(true);
         }
 
-        function outOfBar(dv) {
+        function orderBar_onmouseout(dv) {
             dv.style.overflowX = "hidden";
 
         }
 
-        function progressClick0(dv, d) {
+        function dayBar_Click(dv, d) {
             if ($('#collapse' + d + '_Chart').hasClass('in')) {
                 $('#collapse' + d + '_Chart').collapse('hide');
-
             }
-//            log(collapse_ChartV[d].series[0].data.length);
             for (var i = 1; i <= 12; i++) {
                 if (i + collapse_ChartV[d].series[0].xAxis.min <= collapse_ChartV[d].series[0].data.length) {
-                    cardsF12(d, i, 'F');
+                    collapseCardsF_innerHTML(d, i, 'F');
                 } else {
-                    cardsF0(d, i, 'F');
+                    collapseCardsF_innerHTML(d, i, 'f');
                 }
 
             }
-
-//            var DIV = document.getElementById('collapse' + d + '_Cards1F');
-//            log(DIV);
-//            cards(1, 1, 'F');
         }
 
         function d2t(t) {
@@ -659,12 +655,9 @@
             return v;
         }
 
-        function cardsF12(d, n, side) {
+        function collapseCardsF_innerHTML(d, n, side) {
             if (side == 'F') {
                 var nm = n + collapse_ChartV[d].series[0].xAxis.min - 1;
-//                log('collapse_ChartV[d]');
-//                log(collapse_ChartV[d].xAxis[1].categories);
-//                var pn=collapse_ChartV[d].xAxis[1].categories[nm]
                 var pr =
                     '<ul class="list-group" >' +
                     '    <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center; background-color: ' +
@@ -690,11 +683,7 @@
                     '</li>' +
                     '</ul>';
                 document.getElementById('collapse' + d + '_Cards' + n + 'F').innerHTML = pr;
-            }
-        }
-
-        function cardsF0(d, n, side) {
-            if (side == 'F') {
+            } else if (side == 'f') {
                 var pr =
                     '<ul class="list-group">' +
                     '    <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center; background-color:lightgrey; border-color: lightgrey"><b>---</b></li>' +
@@ -707,7 +696,8 @@
             }
         }
 
-        function progressClick(dv, d, i) {
+
+        function orderBar_Click(dv, d, i) {
             if ($('#collapse' + d + '_Chart').hasClass('in') == false) {
                 $('#collapse' + d + '_Cards').collapse('hide');
                 $('#collapse' + d + '_Chart').collapse('show');
@@ -715,11 +705,19 @@
             collapse_ChartV[d].xAxis[0].setExtremes(i, i + 14);
         }
 
-        function collapse_Cards(_day) {
+        function cards_flipper(event) {
+            log('cards_flipper');
+            log(event);
+            event.classList.toggle('flipped');
+            tableMold_innerHTML();
+        }
+
+        function collapseCards_innerHTML(_day) {
             var pr = '<br/>' +
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                //                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper" onclick="cards_flipper(this)">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards1F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group" >' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
@@ -1028,16 +1026,27 @@
             document.getElementById('collapse' + _day + '_Cards').innerHTML = pr;
         }
 
-        function moldTable() {
+        function tableMold_innerHTML(pn) {
             var pr = '<thead><tr><th></th><th>Mold</th></tr></thead><tbody>';
+            var rr = [];
+            var r = Math.round(25 * Math.random());
             for (var i = 0; i < 20; i++) {
-
+                do {
+                    var _exit = true;
+                    r = Math.round(25 * Math.random());
+                    $.each(rr, function (i, _r) {
+                        if (_r == r) {
+                            _exit = false;
+                        }
+                    });
+                } while (!_exit);
+                rr.push(r);
                 var mold = 'M' + (1000000 + Math.round(9000000 * Math.random())) + '/' + (100 + 10 * Math.round(100 * Math.random()));
                 pr = pr +
                     '<tr>' +
-                    '<td><img src="Common/pics/' +
-                    (1 + Math.round(19 * Math.random())) +
-                    '.png" class="img-rounded" width="60" height="60" id="' +
+                    '<td><img src="Common/pics/p' +
+                    r +
+                    '.jpg" class="img-rounded"  height="60" id="' +
                     mold +
                     '" ondrag="moldDarg(event)" draggable="true"></td>' +
                     '<td>' +
@@ -1048,18 +1057,34 @@
                     'per hour' +
                     '</td></tr>';
             }
+            log(rr);
             pr = pr + '</tbody>';
             document.getElementById('moldTable').innerHTML = pr;
         }
 
-        function pressTable() {
+        function tablePress_innerHTML(mold) {
             var pr = '<thead><tr><th></th><th>Press</th></tr></thead><tbody>';
+            var rr = [];
+            var r = Math.round(25 * Math.random());
+
             for (var i = 0; i < 10; i++) {
+                do {
+                    var _exit = true;
+                    r = Math.round(25 * Math.random());
+                    $.each(rr, function (i, _r) {
+                        if (_r == r) {
+                            _exit = false;
+                        }
+                    });
+                } while (!_exit);
+                rr.push(r);
 
                 var press = 'P' + (1000 + Math.round(9000 * Math.random())) + '/------';
                 pr = pr +
                     '<tr>' +
-                    '<td><img src="Common/pics/tm.png" class="img-rounded" width="60" height="60" id="' +
+                    '<td><img src="Common/pics/m' +
+                    r +
+                    '.jpg" class="img-rounded"  height="60" id="' +
                     press +
                     '" ondrag="pressDarg(event)" draggable="true"></td>' +
                     '<td>' +
@@ -1068,6 +1093,7 @@
                     press.split("/")[1] +
                     '</td></tr>';
             }
+            log(rr);
             pr = pr + '</tbody>';
             document.getElementById('pressTable').innerHTML = pr;
         }
@@ -1099,8 +1125,6 @@
 
 
         function mpDrop(e) {
-//            log('mpDrop');
-//            log(e);
             var pp = e.target.parentElement.parentElement;
             var id = pp.id;
             if (id != null) {
@@ -1115,9 +1139,6 @@
                     $.each(chart.series[0].data, function (i, _data) {
                         data.push([_data.low, _data.high]);
                     });
-//                    log('data');
-//                    log(data);
-//                    log(chart.series[0].data[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1]);
                     var pn = chart.xAxis[1].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1];
                     //                    var pn = (100000 + Math.round(900000 * Math.random())) + '/' + (100 + 100 * Math.round(100 * Math.random()));
                     var pm = chart.xAxis[2].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1];
@@ -1125,14 +1146,11 @@
                     var ss = 5 * Math.round(parseInt(pn.split("/")[1]) / parseInt(pm.split("/")[1]) * 12);
                     if (ss > 1440) ss = 1440;
                     var s0 = (1440 - ss) * Math.random();
-//                    log("ss >>>" + s0 + '   ' + ss);
                     data[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1] = [s0, s0 + ss];
-//                    data[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1].high = ss;
                     chart.series[0].update({
                         data: data
                     }, true);
-//                    seriesDataDuration.push([s0, s0 + ss]);
-
+                    tablePress_innerHTML();
 
                 } else if (dragID.split(":")[0] == "pressDarg") {
                     var collapse = parseInt(id.split("collapse")[1]);
@@ -1141,7 +1159,7 @@
                     chart.xAxis[3].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1] = dragID.split(":")[1];
                 }
 
-                cardsF12(collapse, Cards, 'F');
+                collapseCardsF_innerHTML(collapse, Cards, 'F');
             }
         }
 
@@ -1191,7 +1209,7 @@
                 <div id="progress1" style="overflow-x: auto; ">
                     <a data-toggle="collapse" data-parent="#collapse1" href="#collapse1_Chart" style="background: #7cb5ec">
                         <div class="progress" style="width:1900px; margin: 0px 0px 0px 0px; padding: 0 0 0 0; background: #ccc">
-                            <div class="progress-bar " role="progressbar" style="width:100px; background: #ddd;" onclick="progressClick(1,1)">
+                            <div class="progress-bar " role="progressbar" style="width:100px; background: #ddd;" onclick="orderBar_Click(1,1)">
                                 1 - ACBD111111111
                             </div>
                         </div>
@@ -1224,7 +1242,7 @@
 
 <div style=" position:absolute; top: 20vh; left: 5%; background: #fff;  margin: 0;">
 
-    <div class="calendar-container" id="calendar-container"></div>
+    <div class="calendarPAD" id="calendarPAD"></div>
 
 </div>
 
@@ -1234,7 +1252,7 @@
         A1
     </div>
 </div>
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:42vh; width: 13%; left: 82%; background: #f0f0f0; overflow-y: auto;"
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:42vh; width: 13%; left: 82%; overflow-y: auto;"
      ondrop="mpDrop(event)" ondragover="allowDrop(event)">
     <table id="moldTable" class="table" style="position: inherit; height:50vh;">
         <thead>
@@ -1245,15 +1263,15 @@
         </thead>
         <tbody>
         <tr>
-            <td><img src="Common/pics/1-1.png" class="img-rounded" width="50" height="40" id="mold1" ondrag="moldDarg(event)" draggable="true"></td>
-            <td>M111111111<br/>200</td>
+            <td></td>
+            <td>M111111111</td>
         </tr>
         </tbody>
     </table>
 
 </div>
 
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 65vh; height:20vh; width: 13%; left: 82%; background: #f0f0f0; overflow-y: auto;"
+<div class="panel panel-default" style="shadow:0; position: absolute; top: 65vh; height:20vh; width: 13%; left: 82%; overflow-y: auto;"
      ondrop="mpDrop(event)" ondragover="allowDrop(event)">
     <table id="pressTable" class="table" style="position: inherit; height:50vh;">
         <thead>
@@ -1264,7 +1282,7 @@
         </thead>
         <tbody>
         <tr>
-            <td><img src="Common/pics/tm.png" class="img-rounded" id="Press1" width="50" height="50" ondrag="pressDarg(event)" draggable="true"></td>
+            <td></td>
             <td>P111111111</td>
         </tr>
         </tbody>
