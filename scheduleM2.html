@@ -635,9 +635,11 @@
             }
             for (var i = 1; i <= 12; i++) {
                 if (i + collapse_ChartV[d].series[0].xAxis.min <= collapse_ChartV[d].series[0].data.length) {
-                    collapseCardsF_innerHTML(d, i, 'F');
+                    dayCard_innerHTML(d, i, 'F');
+                    dayCard_innerHTML(d, i, 'B');
                 } else {
-                    collapseCardsF_innerHTML(d, i, 'f');
+                    dayCard_innerHTML(d, i, 'f');
+                    dayCard_innerHTML(d, i, 'b');
                 }
 
             }
@@ -655,8 +657,10 @@
             return v;
         }
 
-        function collapseCardsF_innerHTML(d, n, side) {
+        function dayCard_innerHTML(d, n, side) {
+//            log('dayCard_innerHTML');
             if (side == 'F') {
+//                log('d' + d + '/' + n + '/' + side);
                 var nm = n + collapse_ChartV[d].series[0].xAxis.min - 1;
                 var pr =
                     '<ul class="list-group" >' +
@@ -683,6 +687,37 @@
                     '</li>' +
                     '</ul>';
                 document.getElementById('collapse' + d + '_Cards' + n + 'F').innerHTML = pr;
+            } else if (side == 'BX') {
+                var pr =
+                    '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                    '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                    '                                    </div>';
+                var nm = n + collapse_ChartV[d].series[0].xAxis.min - 1;
+                pr = pr +
+                    '<ul class="list-group" >' +
+                    '    <li class="list-group-item active" style="padding: 5px 20px 5px 20px; opacity: 0.9; text-align: center; background-color: ' +
+                    chartColors[nm % 10] + '; border-color: ' + chartColors[nm % 10] + ';"><b>' +
+                    collapse_ChartV[d].xAxis[0].categories[nm] + '</b></li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">' +
+                    'From ' + d2t(collapse_ChartV[d].series[0].data[nm].low) + ' To ' + d2t(collapse_ChartV[d].series[0].data[nm].high) +
+                    ' ,  ' + Math.round(collapse_ChartV[d].series[0].data[nm].high - collapse_ChartV[d].series[0].data[nm].low) + ' min' + '</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">' +
+                    'Part No.: ' +
+                    collapse_ChartV[d].xAxis[1].categories[nm].split("/")[0] + ' , ' +
+                    collapse_ChartV[d].xAxis[1].categories[nm].split("/")[1] +
+                    '</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">' +
+                    'Mold: ' +
+                    collapse_ChartV[d].xAxis[2].categories[nm].split("/")[0] + ' , ' +
+                    collapse_ChartV[d].xAxis[2].categories[nm].split("/")[1] +
+                    '</li>' +
+                    '    <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">' +
+                    'Press: ' +
+                    collapse_ChartV[d].xAxis[3].categories[nm].split("/")[0] + ' , ' +
+                    collapse_ChartV[d].xAxis[3].categories[nm].split("/")[1] +
+                    '</li>' +
+                    '</ul>';
+                document.getElementById('collapse' + d + '_Cards' + n + 'B').innerHTML = pr;
             } else if (side == 'f') {
                 var pr =
                     '<ul class="list-group">' +
@@ -693,6 +728,19 @@
                     '    <li class="list-group-item" style="padding: 5px 20px 5px 20px;">---</li>' +
                     '</ul>';
                 document.getElementById('collapse' + d + '_Cards' + n + 'F').innerHTML = pr;
+            } else if (side == 'b' || side == 'B') {
+                var pr =
+                    '                                    <div style="position: inherit; top: 30px; left: 0">' +
+                    '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
+                    '                                    </div>' +
+                    '                                    <ul class="list-group" >' +
+                    '                                        <li class="list-group-item" style="background: #f0ad4e; padding: 5px 20px 5px 20px; text-align: center; color: #ffffff"><b>Description</b></li>' +
+                    '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.90;" >...</li>' +
+                    '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.90;">...</li>' +
+                    '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.90;">...</li>' +
+                    '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.90;">...</li>' +
+                    '                                    </ul>';
+                document.getElementById('collapse' + d + '_Cards' + n + 'B').innerHTML = pr;
             }
         }
 
@@ -706,10 +754,40 @@
         }
 
         function cards_flipper(event) {
-//            log('cards_flipper');
+//            log('cards_flipper>>>>>>>>>>>>>>>');
+            var dv = event;
+//            log(dv.id);
+//            log(event.id);
 //            log(event);
+//            log(event.parentElement);
             event.classList.toggle('flipped');
-            tableMold_innerHTML();
+//            log(event.id);
+            var day = parseInt(event.id.split("collapse")[1]);
+            for (var i = 1; i <= 12; i++) {
+                var dv = document.getElementById("collapse" + day + "_Cards" + i + "F");
+                dv.setAttribute("ondrop", "");
+                dv.setAttribute("ondragover", "");
+//                log(dv);
+            }
+            log(event);
+            if (!$(event).hasClass('flipped')) {
+                log('flipped');
+                var dv = document.getElementById(event.id + "F");
+                dv.setAttribute("ondrop", "mpDrop(event)");
+                dv.setAttribute("ondragover", "allowDrop(event)");
+                tableMold_innerHTML();
+//                document.getElementById('moldTable').style.visible = 'visible';
+                document.getElementById('A2').style.display = 'initial';
+                document.getElementById('A3').style.display = 'initial';
+//                $('moldTable').show();
+            } else {
+//                document.getElementById('moldTable').style.visible = 'hidden';
+                document.getElementById('A2').style.display = 'none';
+                document.getElementById('A3').style.display = 'none';
+//                $('moldTable').hide();
+            }
+//            event.setAttribute("ondragover","");
+
         }
 
         function collapseCards_innerHTML(_day) {
@@ -717,7 +795,7 @@
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
                 //                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
-                '                            <div class="flipper" onclick="cards_flipper(this)">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards1">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards1F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
                 '                                    <ul class="list-group" >' +
                 '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
@@ -727,7 +805,7 @@
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
                 '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards1B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -742,17 +820,10 @@
                 '                            </div>' +
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards2">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards2F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards2B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -767,17 +838,10 @@
                 '                            </div>' +
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards3">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards3F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards3B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -792,17 +856,10 @@
                 '                            </div>' +
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards4">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards4F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards4B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -819,17 +876,10 @@
                 '                    </div>' +
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards5">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards5F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards5B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -844,17 +894,10 @@
                 '                            </div>' +
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards6">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards6F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards6B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -869,17 +912,10 @@
                 '                            </div>' +
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards7">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards7F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards7B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -894,17 +930,10 @@
                 '                            </div>' +
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards8">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards8F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards8B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -922,17 +951,10 @@
                 '                    </div>' +
                 '                    <div class="row" style="height: 200px;">' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards9">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards9F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards9B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -947,17 +969,10 @@
                 '                            </div>' +
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards10">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards10F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards10B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -972,17 +987,10 @@
                 '                            </div>' +
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards11">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards11F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards11B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -997,17 +1005,10 @@
                 '                            </div>' +
                 '                        </div>' +
                 '                        <div class="flip-container col-sm-3">' +
-                '                            <div class="flipper" onclick="this.classList.toggle(\'flipped\')">' +
+                '                            <div class="flipper flipped" onclick="cards_flipper(this)" id="collapse' + _day + '_Cards12">' +
                 '                                <div class="flip-front" style="width: 100%;" id="collapse' + _day + '_Cards12F" ondrop="mpDrop(event)" ondragover="allowDrop(event)">' +
-                '                                    <ul class="list-group">' +
-                '                                        <li class="list-group-item active" style="padding: 5px 20px 5px 20px; text-align: center;"><b>Order</b></li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px;">...</li>' +
-                '                                    </ul>' +
                 '                                </div>' +
-                '                                <div class="flip-back" style="width: 100%;">' +
+                '                                <div class="flip-back" style="width: 100%;" id="collapse' + _day + '_Cards12B">' +
                 '                                    <div style="position: inherit; top: 30px; left: 0">' +
                 '                                        <img src="Common/pics/1-1.png" alt="Forest" width="100%" height="125">' +
                 '                                    </div>' +
@@ -1018,7 +1019,6 @@
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
                 '                                        <li class="list-group-item" style="padding: 5px 20px 5px 20px; opacity: 0.9;">...</li>' +
                 '                                    </ul>' +
-
                 '                                </div>' +
                 '                            </div>' +
                 '                        </div>' +
@@ -1127,39 +1127,41 @@
         function mpDrop(e) {
             var pp = e.target.parentElement.parentElement;
             var id = pp.id;
+            var day, card, chart;
             if (id != null) {
                 if (dragID.split(":")[0] == "moldDarg") {
-                    var collapse = parseInt(id.split("collapse")[1]);
-                    var Cards = parseInt(id.split("Cards")[1]);
-                    var chart = collapse_ChartV[parseInt(id.split("collapse")[1])];
-                    chart.xAxis[2].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1] = dragID.split(":")[1];
+                    day = parseInt(id.split("collapse")[1]);
+                    card = parseInt(id.split("Cards")[1]);
+                    chart = collapse_ChartV[parseInt(id.split("collapse")[1])];
+                    chart.xAxis[2].categories[card + collapse_ChartV[day].series[0].xAxis.min - 1] = dragID.split(":")[1];
                     //todo
 
                     var data = [];
                     $.each(chart.series[0].data, function (i, _data) {
                         data.push([_data.low, _data.high]);
                     });
-                    var pn = chart.xAxis[1].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1];
+                    var pn = chart.xAxis[1].categories[card + collapse_ChartV[day].series[0].xAxis.min - 1];
                     //                    var pn = (100000 + Math.round(900000 * Math.random())) + '/' + (100 + 100 * Math.round(100 * Math.random()));
-                    var pm = chart.xAxis[2].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1];
+                    var pm = chart.xAxis[2].categories[card + collapse_ChartV[day].series[0].xAxis.min - 1];
 
                     var ss = 5 * Math.round(parseInt(pn.split("/")[1]) / parseInt(pm.split("/")[1]) * 12);
                     if (ss > 1440) ss = 1440;
                     var s0 = (1440 - ss) * Math.random();
-                    data[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1] = [s0, s0 + ss];
+                    data[card + collapse_ChartV[day].series[0].xAxis.min - 1] = [s0, s0 + ss];
                     chart.series[0].update({
                         data: data
                     }, true);
                     tablePress_innerHTML();
 
                 } else if (dragID.split(":")[0] == "pressDarg") {
-                    var collapse = parseInt(id.split("collapse")[1]);
-                    var Cards = parseInt(id.split("Cards")[1]);
-                    var chart = collapse_ChartV[parseInt(id.split("collapse")[1])];
-                    chart.xAxis[3].categories[Cards + collapse_ChartV[collapse].series[0].xAxis.min - 1] = dragID.split(":")[1];
+                    day = parseInt(id.split("collapse")[1]);
+                    card = parseInt(id.split("Cards")[1]);
+                    chart = collapse_ChartV[parseInt(id.split("collapse")[1])];
+                    chart.xAxis[3].categories[card + collapse_ChartV[day].series[0].xAxis.min - 1] = dragID.split(":")[1];
                 }
 
-                collapseCardsF_innerHTML(collapse, Cards, 'F');
+                dayCard_innerHTML(day, card, 'F');
+                dayCard_innerHTML(day, card, 'B');
             }
         }
 
@@ -1247,12 +1249,13 @@
 </div>
 
 
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 62vh; height:24vh; width: 13%; left: 5%; background: #f0f0f0">
+<div class="panel panel-default" style="display: none; shadow:0; position: absolute; top: 62vh; height:24vh; width: 13%; left: 5%; background: #f0f0f0">
     <div id='a1' class="panel-body" style="text-align: right; ">
         A1
     </div>
 </div>
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 20vh; height:42vh; width: 13%; left: 82%; overflow-y: auto;"
+
+<div id="A2" class="panel panel-default" style="display: none; shadow:0; position: absolute; top: 20vh; height:42vh; width: 13%; left: 82%; overflow-y: auto;"
      ondrop="mpDrop(event)" ondragover="allowDrop(event)">
     <table id="moldTable" class="table" style="position: inherit; height:50vh;">
         <thead>
@@ -1271,7 +1274,7 @@
 
 </div>
 
-<div class="panel panel-default" style="shadow:0; position: absolute; top: 65vh; height:20vh; width: 13%; left: 82%; overflow-y: auto;"
+<div id="A3" class="panel panel-default" style="display: none; shadow:0; position: absolute; top: 65vh; height:20vh; width: 13%; left: 82%; overflow-y: auto;"
      ondrop="mpDrop(event)" ondragover="allowDrop(event)">
     <table id="pressTable" class="table" style="position: inherit; height:50vh;">
         <thead>
