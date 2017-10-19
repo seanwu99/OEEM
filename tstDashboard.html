@@ -13,7 +13,7 @@
     <script src="Common/highcharts/highcharts-3d.js"></script>
     <link href="Common/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="Common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="Common/bootstrap/bootstrap.min.js"></script>
+    <script src="Common/bootstrap/js/bootstrap.min.js"></script>
     <link href="Common/rts/OEEM/oeeDashboard.css" rel="stylesheet">
     <script src="Common/rts/OEEM/oeeDashboard.js"></script>
     <script src="Common/three/three.js"></script>
@@ -291,7 +291,7 @@
         function panelTarget(parts) {
             if (!rtsOEEM.downtime) {
                 rtsOEEM.productCurrent += parts;
-                document.getElementById('TargetIcon').className = "fa fa-cog fa-spin fa-1x";
+                document.getElementById('TargetIcon').className = "fa fa-cog fa-spin fa-4x";
                 document.getElementById("TargetColor").className = "panel panel-green";
             } else {
                 document.getElementById('TargetIcon').className = "fa fa-cog fa-4x";
