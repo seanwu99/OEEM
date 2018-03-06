@@ -17,7 +17,7 @@ function chartOeeTrendInit(title, series) {
         var Availability = [];
         var Performance = [];
         var Quality = [];
-        var n = 100;
+        var n = 10000;
         var tm = Math.round(new Date().getTime() / 1000) * 1000 - n * 3000;
         for (var i = 0; i < n; i++) {
             tm += 3000;
